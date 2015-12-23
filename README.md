@@ -1,5 +1,6 @@
 # DevelopFramework
-总结整理下一个快速开发框架，分离控制器代码，降低代码耦合
+总结整理下一个快速开发框架，分离控制器代码，降低代码耦合；
+妈妈再也不用担心ViewController中一坨坨tableView的烦人代码了
 
 在此基础之上:
 https://github.com/Akateason/XTTableDatasourceDelegateSeparation
