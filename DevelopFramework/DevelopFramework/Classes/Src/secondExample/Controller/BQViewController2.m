@@ -18,7 +18,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 
 @interface BQViewController2 ()
 @property (nonatomic, strong) NSMutableArray *arrayList ;
-@property (nonatomic,strong) XTCollectionDataDelegate *tableHander ;
+@property (nonatomic,strong) XTCollectionDataDelegate *collectionHander ;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
@@ -84,25 +84,25 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
         NSLog(@"click row : %@",@(indexPath.row)) ;
         [self dismissViewControllerAnimated:YES completion:nil];
     } ;
-    
-    CellItemSize cellItemSizeBlock = ^() {
+
+    CellItemSize cellItemSizeBlock = ^ {
         return CGSizeMake(120, 120);
     };
     
-    CellItemMargin cellItemMarginBlock = ^() {
+    CellItemMargin cellItemMarginBlock = ^ {
         return UIEdgeInsetsMake(3, 3, 3, 3);
     };
     
-    self.tableHander = [[XTCollectionDataDelegate alloc] initWithItems:self.arrayList
+    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithItems:self.arrayList
                                                         cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]
+                                                        collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]  // 可以使用自定义的UICollectionViewLayout
                                                         configureCellBlock:configureCell
                                                         cellHeightBlock:nil
                                                         CellItemSizeBlock:cellItemSizeBlock
                                                         CellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
     
-    [self.tableHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
+    [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
     
 }
 
