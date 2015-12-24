@@ -68,7 +68,7 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
         return UIEdgeInsetsMake(3, 3, 3, 3);
     };
     
-    self.tableHander = [[XTCollectionDataDelegate alloc] initWithItems:self.arrayList
+    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithItems:self.arrayList
                                                         cellIdentifier:MyCellIdentifier
                                                         collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]
                                                         configureCellBlock:configureCell
@@ -77,7 +77,7 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
                                                         CellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
     
-    [self.tableHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
+    [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
     
 }
 
