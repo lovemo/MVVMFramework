@@ -60,11 +60,11 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
         [self dismissViewControllerAnimated:YES completion:nil];
     } ;
     
-    CellItemSize cellItemSizeBlock = ^() {
+    CellItemSize cellItemSizeBlock = ^ {
         return CGSizeMake(120, 120);
     };
     
-    CellItemMargin cellItemMarginBlock = ^() {
+    CellItemMargin cellItemMarginBlock = ^ {
         return UIEdgeInsetsMake(3, 3, 3, 3);
     };
     
