@@ -13,6 +13,7 @@
 #import "UITableViewCell+Extension.h"
 #import "BQViewController2.h"
 #import "BQViewModel.h"
+
 static NSString *const MyCellIdentifier = @"BQCell" ; // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
 @interface BQViewController ()
@@ -45,7 +46,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ; // `cellIdentifier` AND `N
         BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
         [weakSelf presentViewController:vc animated:YES completion:nil];
         
-        LxPrintf(@"click row : %@",@(indexPath.row)) ;
+        NSLog(@"click row : %@",@(indexPath.row)) ;
     } ;
     
     self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]

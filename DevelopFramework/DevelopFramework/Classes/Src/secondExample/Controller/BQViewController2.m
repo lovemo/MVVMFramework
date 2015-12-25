@@ -48,7 +48,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
     } ;
 
     CellItemSize cellItemSizeBlock = ^ {
-        return CGSizeMake(120, 120);
+        return CGSizeMake(110, 120);
     };
     
     CellItemMargin cellItemMarginBlock = ^ {

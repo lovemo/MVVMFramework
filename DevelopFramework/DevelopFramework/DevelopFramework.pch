@@ -10,9 +10,7 @@
 #define DevelopFramework_pch
 
 #import "BQHttpTool.h"
-#import "LxDBAnything.h"
 #import "MJRefresh.h"
-#import "MJExtension.h"
 #import "SVProgressHUD.h"
 
 #endif /* DevelopFramework_pch */
