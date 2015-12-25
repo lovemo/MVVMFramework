@@ -1,5 +1,5 @@
 # DevelopFramework
-总结整理下一个快速开发框架，分离控制器代码，降低代码耦合；
+再看了几篇简书博客后，总结整理下一个快速开发框架，分离控制器代码，降低代码耦合；
 
 妈妈再也不用担心ViewController中一坨坨tableView和collectionView的烦人代码了
 
