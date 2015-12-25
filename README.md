@@ -3,8 +3,6 @@
 
 妈妈再也不用担心ViewController中一坨坨tableView和collectionView的烦人代码了
 
-受此启发:
-https://github.com/Akateason/XTTableDatasourceDelegateSeparation
 
 进行了一些改动，并加入了阳神的cell自适应高度代码，MJExtension，MJExtension，AFNetworking等常用开发框架，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。
 
@@ -32,13 +30,16 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
         LxPrintf(@"click row : %@",@(indexPath.row)) ;
     } ;
     
-    self.tableHander = [[XTTableDataDelegate alloc] initWithItems:self.arrayList
-                                                   cellIdentifier:MyCellIdentifier
+    self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
+                                                 cellIdentifier:MyCellIdentifier
                                                    configureCellBlock:configureCell
                                                    cellHeightBlock:nil
                                                    didSelectBlock:selectedBlock] ;
     
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+//    self.tableHander.tableViewSectionsBlock = ^ {
+//        return (NSInteger)3;
+//    };
 }
 
 ```
@@ -54,12 +55,16 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
     CollectionViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQTestModel *obj, UICollectionViewCell *cell) {
         [cell configure:cell customObj:obj indexPath:indexPath] ;
     } ;
-
+//    // UICollectionView可不用实现
+//    CellHeightBlock heightBlock = ^CGFloat(NSIndexPath *indexPath, id item) {
+//        return [BQCollectionCell getCellHeightWithCustomObj:item indexPath:indexPath] ;
+//    } ;
+    
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
         [self dismissViewControllerAnimated:YES completion:nil];
     } ;
-    
+
     CellItemSize cellItemSizeBlock = ^ {
         return CGSizeMake(120, 120);
     };
@@ -68,13 +73,13 @@ https://github.com/Akateason/XTTableDatasourceDelegateSeparation
         return UIEdgeInsetsMake(3, 3, 3, 3);
     };
     
-    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithItems:self.arrayList
+    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
                                                         cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]
+                                                        collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]  // 可以使用自定义的UICollectionViewLayout
                                                         configureCellBlock:configureCell
                                                         cellHeightBlock:nil
-                                                        CellItemSizeBlock:cellItemSizeBlock
-                                                        CellItemMarginBlock:cellItemMarginBlock
+                                                        cellItemSizeBlock:cellItemSizeBlock
+                                                        cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
     
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
