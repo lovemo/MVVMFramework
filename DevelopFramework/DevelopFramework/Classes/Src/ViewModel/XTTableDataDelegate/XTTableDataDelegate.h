@@ -9,20 +9,46 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void    (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
+/**
+ *  配置UITableViewCell的内容Block
+ */
+typedef void (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
+/**
+ *  选中UITableViewCell的Block
+ */
+typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+/**
+ *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
+ */
 typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
-typedef void    (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+/**
+ *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
+ */
+typedef NSInteger(^TableViewSectionsBlock)();
+
 
 @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
 
+/**
+ *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
+ */
+@property (nonatomic, copy) TableViewSectionsBlock tableViewSectionsBlock;
+
+/**
+ *  初始化方法
+ */
 - (id)initWithItems:(NSArray *)anItems
      cellIdentifier:(NSString *)aCellIdentifier
- configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
-    cellHeightBlock:(CellHeightBlock)aHeightBlock
+     configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
+     cellHeightBlock:(CellHeightBlock)aHeightBlock
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
-
+/**
+ *  设置UITableView的Datasource和Delegate为self
+ */
 - (void)handleTableViewDatasourceAndDelegate:(UITableView *)table ;
-
+/**
+ *  获取UITableView中Item所在的indexPath
+ */
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
 
 @end

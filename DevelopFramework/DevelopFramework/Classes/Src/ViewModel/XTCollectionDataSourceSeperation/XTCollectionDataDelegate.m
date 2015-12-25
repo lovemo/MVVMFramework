@@ -27,8 +27,8 @@
 collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
  configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
     cellHeightBlock:(CellHeightBlock)aHeightBlock
-         CellItemSizeBlock:(CellItemSize)cellItemSize
-CellItemMarginBlock:(CellItemMargin)cellItemMargin
+         cellItemSizeBlock:(CellItemSize)cellItemSize
+cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
     self = [super init] ;

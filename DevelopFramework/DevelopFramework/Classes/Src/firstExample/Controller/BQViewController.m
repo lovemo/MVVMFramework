@@ -93,6 +93,9 @@ static NSString *const MyCellIdentifier = @"BQCell" ; // `cellIdentifier` AND `N
                                                    didSelectBlock:selectedBlock] ;
     
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+//    self.tableHander.tableViewSectionsBlock = ^ {
+//        return (NSInteger)3;
+//    };
 }
 
 @end

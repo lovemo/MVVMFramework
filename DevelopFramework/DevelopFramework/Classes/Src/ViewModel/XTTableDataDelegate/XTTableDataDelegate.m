@@ -33,7 +33,7 @@
         self.configureCellBlock = aConfigureCellBlock ;
         self.heightConfigureBlock = aHeightBlock ;
         self.didSelectCellBlock = didselectBlock ;
- 
+        self.tableViewSectionsBlock = ^{ return (NSInteger)1; };
     }
     
     return self ;
@@ -52,6 +52,11 @@
 
 #pragma mark --
 #pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.tableViewSectionsBlock();
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.items.count ;

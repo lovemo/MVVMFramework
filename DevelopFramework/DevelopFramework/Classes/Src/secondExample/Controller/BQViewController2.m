@@ -98,8 +98,8 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
                                                         collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]  // 可以使用自定义的UICollectionViewLayout
                                                         configureCellBlock:configureCell
                                                         cellHeightBlock:nil
-                                                        CellItemSizeBlock:cellItemSizeBlock
-                                                        CellItemMarginBlock:cellItemMarginBlock
+                                                        cellItemSizeBlock:cellItemSizeBlock
+                                                        cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
     
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
