@@ -30,12 +30,17 @@ typedef CGSize (^CellItemSize)() ;
  */
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
+
+
+// - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+
+@class BQBaseViewModel;
 @interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
  *  初始化方法
  */
-- (id)initWithItems:(NSArray *)anItems
+- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock

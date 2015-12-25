@@ -27,6 +27,11 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 typedef NSInteger(^TableViewSectionsBlock)();
 
 
+
+
+ // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+
+@class BQBaseViewModel;
 @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
 
 /**
@@ -37,7 +42,7 @@ typedef NSInteger(^TableViewSectionsBlock)();
 /**
  *  初始化方法
  */
-- (id)initWithItems:(NSArray *)anItems
+- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
      cellHeightBlock:(CellHeightBlock)aHeightBlock
@@ -50,5 +55,6 @@ typedef NSInteger(^TableViewSectionsBlock)();
  *  获取UITableView中Item所在的indexPath
  */
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
+
 
 @end
