@@ -163,12 +163,15 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 @end
 
 ```
-        
-* 功能模块中的类集合: 
-        * Controller : 存放ViewController类资源文件
-        * View : 用来呈现用户界面
-        * Model : 用来呈现数据
-        * ViewModel : 存放各种业务逻辑和网络请求
+
+### <a id="功能模块结构"></a> 功能模块结构
+
+* [功能模块中的类集合](#功能模块)
+	* [Controller - 存放ViewController类资源文件](#Controller)
+	* [View - 用来呈现用户界面](#View)
+	* [Model - 用来呈现数据](#Model)
+	* [ViewModel - 存放各种业务逻辑和网络请求](#ViewModel)
+---     
 
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
