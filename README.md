@@ -34,6 +34,7 @@ MVVMFramework
 ### <a id="BaseViewModel"></a> BaseViewModel中代码实现
 
 ```objc
+// ViewModel基类
 @interface BQBaseViewModel : NSObject
 
 @property (nonatomic, weak) UIViewController *viewController;
