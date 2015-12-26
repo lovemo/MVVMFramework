@@ -1,11 +1,12 @@
-# MVVMFramework
-再看了几篇简书博客后，总结整理下一个快速开发MVVM框架，分离控制器代码，降低代码耦合；
-
+MVVMFramework
+===
+再看了几篇博客后，总结整理下一个快速开发MVVM框架，分离控制器代码，降低代码耦合；
 妈妈再也不用担心ViewController中一坨坨tableView和collectionView的烦人代码了
-
 
 加入了cell自适应高度代码，配合MJExtension，MJExtension，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
 
+##现在的代码结构
+![image](https://github.com/lovemo/MVVMFramework/raw/master/screenshots/directory_tree.png)
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 ```objc
