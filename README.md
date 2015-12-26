@@ -11,99 +11,104 @@ MVVMFramework
 ### <a id="结构分析"></a> 结构分析
 * Common中BQViewModel抽象出的类集合:
         * BaseViewModel 声明了一些基本的方法
-        ===
-        ```objc
-       @interface BQBaseViewModel : NSObject
-       
-       @property (nonatomic, weak) UIViewController *viewController;
-       @property (nonatomic, strong) NSMutableArray *dataArrayList;
-       
-       + (instancetype)modelWithViewController:(UIViewController *)viewController;
-       
-       /**
-        *  返回指定indexPath的item
-        */
-       - (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath;
-       
-       /**
-        *  显示多少组
-        */
-       - (NSUInteger)numberOfSections;
-       
-       /**
-        *  每组中显示多少行 (用于tableView)
-        */
-       - (NSUInteger)numberOfRowsInSection:(NSUInteger)section;
-       
-       /**
-        *  每组中显示多少个 (用于collectionView)
-        */
-       - (NSUInteger)numberOfItemsInSection:(NSUInteger)section;
-       
-       /**
-        *  分离加载首页控制器内容
-        */
-       - (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success               failure:(void (^)(NSError *error))failure;
-       + (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success               failure:(void (^)(NSError *error))failure;
-       
-       @end
-
-       ```
-       ===
         * XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法
-         ===
-         ```objc
-       /**
-        *  配置UITableViewCell的内容Block
-        */
-       typedef void (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
-       /**
-        *  选中UITableViewCell的Block
-        */
-       typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-       /**
-        *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
-        */
-       typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
-       /**
-        *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
-        */
-       typedef NSInteger(^TableViewSectionsBlock)();
-       
-       
-        // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- -        - - - -- -//
-       
-       @class BQBaseViewModel;
-       @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
-       
-       /**
-        *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
-        */
-       @property (nonatomic, copy) TableViewSectionsBlock tableViewSectionsBlock;
-       
-       /**
-        *  初始化方法
-        */
-       - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
-            cellIdentifier:(NSString *)aCellIdentifier
-            configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
-            cellHeightBlock:(CellHeightBlock)aHeightBlock
-            didSelectBlock:(DidSelectCellBlock)didselectBlock ;
-       /**
-        *  设置UITableView的Datasource和Delegate为self
-        */
-       - (void)handleTableViewDatasourceAndDelegate:(UITableView *)table ;
-       /**
-        *  获取UITableView中Item所在的indexPath
-        */
-       - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
-       
-       @end
-
-       ```
-       ===
         * XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法
-                ```objc
+## <a id="代码分析"></a> 代码分析
+### <a id="BaseViewModel"></a> BaseViewModel中代码实现
+
+```objc
+ @interface BQBaseViewModel : NSObject
+
+@property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, strong) NSMutableArray *dataArrayList;
+
++ (instancetype)modelWithViewController:(UIViewController *)viewController;
+
+/**
+ *  返回指定indexPath的item
+ */
+- (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  显示多少组
+ */
+- (NSUInteger)numberOfSections;
+
+/**
+ *  每组中显示多少行 (用于tableView)
+ */
+- (NSUInteger)numberOfRowsInSection:(NSUInteger)section;
+
+/**
+ *  每组中显示多少个 (用于collectionView)
+ */
+- (NSUInteger)numberOfItemsInSection:(NSUInteger)section;
+
+/**
+ *  分离加载首页控制器内容
+ */
+- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
++ (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+
+@end
+
+```
+       
+### <a id="XTTableDataDelegate"></a> XTTableDataDelegate中代码实现
+         
+```objc
+/**
+ *  配置UITableViewCell的内容Block
+ */
+typedef void (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
+/**
+ *  选中UITableViewCell的Block
+ */
+typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+/**
+ *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
+ */
+typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
+/**
+ *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
+ */
+typedef NSInteger(^TableViewSectionsBlock)();
+
+
+ // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+
+@class BQBaseViewModel;
+@interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
+
+/**
+ *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
+ */
+@property (nonatomic, copy) TableViewSectionsBlock tableViewSectionsBlock;
+
+/**
+ *  初始化方法
+ */
+- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
+     cellIdentifier:(NSString *)aCellIdentifier
+     configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
+     cellHeightBlock:(CellHeightBlock)aHeightBlock
+     didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+/**
+ *  设置UITableView的Datasource和Delegate为self
+ */
+- (void)handleTableViewDatasourceAndDelegate:(UITableView *)table ;
+/**
+ *  获取UITableView中Item所在的indexPath
+ */
+- (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
+
+@end
+
+```
+
+### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中代码实现
+
+```objc
 /**
  *  配置UICollectionViewCell的内容Block
  */
