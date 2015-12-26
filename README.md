@@ -19,7 +19,7 @@ MVVMFramework
 
 ---
 
-### <a id="功能模块结构"></a> 功能模块结构
+### <a id="模块结构"></a> 模块结构
   
 * [功能模块中的类集合](#Examples)
 	* [Controller - 存放ViewController类资源文件](#JSON_Model)
