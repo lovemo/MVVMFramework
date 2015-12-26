@@ -165,27 +165,13 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 ```
 
 ### <a id="功能模块结构"></a> 功能模块结构
-
-* [功能模块中的类集合](#Main)
-	* [Controller - 存放ViewController类资源文件](#Controller)
-	* [ViewModel - 存放各种业务逻辑和网络请求](#aViewModel)
-	* [View - 用来呈现用户界面](#View)
-	* [Model - 用来呈现数据](#Model)
----     
+  
 * [功能模块中的类集合](#Examples)
 	* [Controller - 存放ViewController类资源文件](#JSON_Model)
 	* [View - 用来呈现用户界面](#JSONString_Model)
 	* [Model - 用来呈现数据](#Model_contains_model)
 	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
-	* [Model name - JSON key mapping](#Model_name_JSON_key_mapping)
-	* [JSON array -> model array](#JSON_array_model_array)
-	* [Model -> JSON](#Model_JSON)
-	* [Model array -> JSON array](#Model_array_JSON_array)
-	* [Core Data](#Core_Data)
-	* [Coding](#Coding)
-	* [Camel -> underline](#Camel_underline)
-	* [NSString -> NSDate, nil -> @""](#NSString_NSDate)
-	* [More use cases](#More_use_cases)
+
 
 ---
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
