@@ -179,6 +179,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
+
 ```objc
 /**
  *  tableView的一些初始化工作
@@ -188,70 +189,74 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
+    // 配置tableView的每个cell
     TableViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQModel *obj, UITableViewCell *cell) {
         [cell configure:cell customObj:obj indexPath:indexPath] ;
     } ;
-
+    // 设置点击tableView的每个cell做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         [weakSelf.table deselectRowAtIndexPath:indexPath animated:YES];
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
         [weakSelf presentViewController:vc animated:YES completion:nil];
-        
-        LxPrintf(@"click row : %@",@(indexPath.row)) ;
+        NSLog(@"click row : %@",@(indexPath.row)) ;
     } ;
-    
+    // 将上述block设置给tableHander
     self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
                                                  cellIdentifier:MyCellIdentifier
                                                    configureCellBlock:configureCell
                                                    cellHeightBlock:nil
                                                    didSelectBlock:selectedBlock] ;
-    
+    // 设置UITableView的delegate和dataSourse为collectionHander
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+    // 设置tableView的section组数 (当tableView为Group类型时设置可用)
 //    self.tableHander.tableViewSectionsBlock = ^ {
 //        return (NSInteger)3;
 //    };
 }
 
+
 ```
 
 ## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
+
 ```objc
 /**
  *  collectionView的一些初始化工作
  */
 - (void)setupCollectionView
 {
-    
+    // 配置collectionView的每个item
     CollectionViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQTestModel *obj, UICollectionViewCell *cell) {
         [cell configure:cell customObj:obj indexPath:indexPath] ;
     } ;
-    
+    // 设置点击collectionView的每个item做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
         [self dismissViewControllerAnimated:YES completion:nil];
     } ;
-
+    // 配置collectionView的每个item的size
     CellItemSize cellItemSizeBlock = ^ {
-        return CGSizeMake(120, 120);
+        return CGSizeMake(110, 120);
     };
-    
+    // 配置collectionView的每个item的margin
     CellItemMargin cellItemMarginBlock = ^ {
-        return UIEdgeInsetsMake(3, 3, 3, 3);
+        return UIEdgeInsetsMake(0, 20, 0, 20);
     };
-    
+    // 将上述block设置给collectionHander
     self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
                                                         cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout:[[UICollectionViewFlowLayout alloc]init]  // 可以使用自定义的UICollectionViewLayout
+                                                        collectionViewLayout: [[UICollectionViewFlowLayout alloc] init] // 可以使用自定义的UICollectionViewLayout
                                                         configureCellBlock:configureCell
                                                         cellHeightBlock:nil
                                                         cellItemSizeBlock:cellItemSizeBlock
                                                         cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
-    
+    // 设置UICollectionView的delegate和dataSourse为collectionHander
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
-    
+
 }
+
 
 ```
 
