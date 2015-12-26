@@ -34,7 +34,7 @@ MVVMFramework
 ### <a id="BaseViewModel"></a> BaseViewModel中代码实现
 
 ```objc
- @interface BQBaseViewModel : NSObject
+@interface BQBaseViewModel : NSObject
 
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, strong) NSMutableArray *dataArrayList;
