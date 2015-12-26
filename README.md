@@ -22,7 +22,7 @@ MVVMFramework
 ### <a id="模块结构"></a> 模块结构
   
 * [功能模块中的类集合](#Examples)
-	* [Controller - 存放ViewController类资源文件](#JSON_Model)
+	* [Controller - 负责View和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
 	* [View - 用来呈现用户界面](#JSONString_Model)
 	* [Model - 用来呈现数据](#Model_contains_model)
 	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
