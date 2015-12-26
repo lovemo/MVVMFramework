@@ -10,15 +10,6 @@ MVVMFramework
 ##现在的工程代码结构
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/directory_tree.png)
 
-### <a id="结构分析"></a> 结构分析
-
-* [Common中BQViewModel抽象出的类集合](#Common)
-	* [BaseViewModel 声明了一些基本的方法](#BaseViewModel)
-	* [XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTTableDataDelegate)
-	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
-
----
-
 ### <a id="模块结构"></a> 模块结构
   
 * [功能模块中的类集合](#Examples)
@@ -27,6 +18,15 @@ MVVMFramework
 	* [Model - 用来呈现数据](#Model_contains_model)
 	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
 
+
+---
+
+### <a id="结构分析"></a> 结构分析
+
+* [Common中BQViewModel抽象出的类集合](#Common)
+	* [BaseViewModel 声明了一些基本的方法](#BaseViewModel)
+	* [XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTTableDataDelegate)
+	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
 
 ---
 
