@@ -9,10 +9,21 @@ MVVMFramework
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/directory_tree.png)
 
 ### <a id="结构分析"></a> 结构分析
-* Common中BQViewModel抽象出的类集合:
-        * BaseViewModel 声明了一些基本的方法
-        * XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法
-        * XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法
+
+## Contents
+* [Common中BQViewModel抽象出的类集合](#Getting_Started)
+	* [BaseViewModel 声明了一些基本的方法](#Features)
+	* [XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#Installation)
+	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#Installation)
+* [Examples 【示例】](#Examples)
+	* [JSON -> Model](#JSON_Model)
+	* [JSONString -> Model](#JSONString_Model)
+	* [Model contains model](#Model_contains_model)
+	* [Model contains model-array](#Model_contains_model_array)
+	* [Model name - JSON key mapping](#Model_name_JSON_key_mapping)
+
+---
+
 ## <a id="代码分析"></a> 代码分析
 ### <a id="BaseViewModel"></a> BaseViewModel中代码实现
 
