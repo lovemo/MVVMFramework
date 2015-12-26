@@ -79,7 +79,7 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 typedef NSInteger(^TableViewSectionsBlock)();
 
 
- // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+ // - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
 
 @class BQBaseViewModel;
 @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
@@ -135,7 +135,7 @@ typedef CGSize (^CellItemSize)() ;
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
-// - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+// - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
 
 @class BQBaseViewModel;
 @interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
