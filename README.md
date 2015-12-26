@@ -168,9 +168,9 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 * [功能模块中的类集合](#Main)
 	* [Controller - 存放ViewController类资源文件](#Controller)
+	* [ViewModel - 存放各种业务逻辑和网络请求](#aViewModel)
 	* [View - 用来呈现用户界面](#View)
 	* [Model - 用来呈现数据](#Model)
-	* [ViewModel - 存放各种业务逻辑和网络请求](#aViewModel)
 ---     
 
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
