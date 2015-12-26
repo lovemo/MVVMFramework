@@ -166,7 +166,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ### <a id="功能模块结构"></a> 功能模块结构
 
-* [功能模块中的类集合](#功能模块)
+* [功能模块中的类集合](#Main)
 	* [Controller - 存放ViewController类资源文件](#Controller)
 	* [View - 用来呈现用户界面](#View)
 	* [Model - 用来呈现数据](#Model)
