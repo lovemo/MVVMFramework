@@ -10,7 +10,7 @@ MVVMFramework
 ##现在的工程代码结构
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/directory_tree.png)
 
-### <a id="模块结构"></a> 模块结构
+### <a id="模块构建"></a> 模块构建
   
 * [功能模块中的类集合](#Examples)
 	* [Controller - 负责View和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
