@@ -16,22 +16,7 @@ MVVMFramework
 	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
 
 ---
-* [Examples 【示例】](#Examples)
-	* [JSON -> Model](#JSON_Model)
-	* [JSONString -> Model](#JSONString_Model)
-	* [Model contains model](#Model_contains_model)
-	* [Model contains model-array](#Model_contains_model_array)
-	* [Model name - JSON key mapping](#Model_name_JSON_key_mapping)
-	* [JSON array -> model array](#JSON_array_model_array)
-	* [Model -> JSON](#Model_JSON)
-	* [Model array -> JSON array](#Model_array_JSON_array)
-	* [Core Data](#Core_Data)
-	* [Coding](#Coding)
-	* [Camel -> underline](#Camel_underline)
-	* [NSString -> NSDate, nil -> @""](#NSString_NSDate)
-	* [More use cases](#More_use_cases)
 
----
 ## <a id="代码分析"></a> 代码分析
 ### <a id="BaseViewModel"></a> BaseViewModel中代码实现
 
@@ -187,7 +172,22 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 	* [View - 用来呈现用户界面](#View)
 	* [Model - 用来呈现数据](#Model)
 ---     
+* [功能模块中的类集合](#Examples)
+	* [Controller - 存放ViewController类资源文件](#JSON_Model)
+	* [View - 用来呈现用户界面](#JSONString_Model)
+	* [Model - 用来呈现数据](#Model_contains_model)
+	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
+	* [Model name - JSON key mapping](#Model_name_JSON_key_mapping)
+	* [JSON array -> model array](#JSON_array_model_array)
+	* [Model -> JSON](#Model_JSON)
+	* [Model array -> JSON array](#Model_array_JSON_array)
+	* [Core Data](#Core_Data)
+	* [Coding](#Coding)
+	* [Camel -> underline](#Camel_underline)
+	* [NSString -> NSDate, nil -> @""](#NSString_NSDate)
+	* [More use cases](#More_use_cases)
 
+---
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 ```objc
