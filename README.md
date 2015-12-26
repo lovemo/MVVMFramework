@@ -3,9 +3,10 @@ MVVMFramework
 再看了几篇博客后，总结整理下一个快速开发MVVM框架，分离控制器代码，降低代码耦合；
 妈妈再也不用担心ViewController中一坨坨tableView和collectionView的烦人代码了
 
-加入了cell自适应高度代码，配合MJExtension，MJExtension，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+代码加入了cell自适应高度代码，配合MJExtension，MJExtension，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
 
-##现在的代码结构
+
+##现在的工程代码结构
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/directory_tree.png)
 
 ### <a id="结构分析"></a> 结构分析
@@ -174,6 +175,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
 ---
+
 ## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
 由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
 ```objc
@@ -255,3 +257,16 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 }
 
 ```
+
+### <a id="demo效果"></a> demo效果
+- 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
+![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/demo.gif)
+
+### <a id="使用方法"></a> 使用方法
+- 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
+- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTTableDataDelegate或者XTCollectionDat	aDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
+- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
+
+## 期待
+* 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
+* 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
