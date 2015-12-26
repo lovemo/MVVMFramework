@@ -226,10 +226,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     CollectionViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQTestModel *obj, UICollectionViewCell *cell) {
         [cell configure:cell customObj:obj indexPath:indexPath] ;
     } ;
-//    // UICollectionView可不用实现
-//    CellHeightBlock heightBlock = ^CGFloat(NSIndexPath *indexPath, id item) {
-//        return [BQCollectionCell getCellHeightWithCustomObj:item indexPath:indexPath] ;
-//    } ;
     
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
