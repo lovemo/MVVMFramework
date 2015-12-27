@@ -65,27 +65,18 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(collection) weakCollection = collection;
     
-    [SVProgressHUD show];
-    [self.viewModel getDataList:nil params:nil success:^(NSArray *array) {
-        [SVProgressHUD dismiss];
-        weakSelf.viewModel.dataArrayList = [NSMutableArray arrayWithArray:array];
-
-       [weakCollection reloadData];
-    } failure:^(NSError *error) {
-
+    [self.viewModel getDataListSuccess:^{
+         [weakCollection reloadData];
+    } failure:^{
     }];
     
     // 下拉刷新
     collection.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        [SVProgressHUD show];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.viewModel getDataList:nil params:nil success:^(NSArray *array) {
-                [SVProgressHUD dismiss];
-                [weakSelf.viewModel.dataArrayList addObjectsFromArray:array];
+            [weakSelf.viewModel getDataListSuccess:^{
                 [weakCollection reloadData];
-            } failure:^(NSError *error) {
-
+            } failure:^{
             }];
             // 结束刷新
             [weakCollection.mj_header endRefreshing];

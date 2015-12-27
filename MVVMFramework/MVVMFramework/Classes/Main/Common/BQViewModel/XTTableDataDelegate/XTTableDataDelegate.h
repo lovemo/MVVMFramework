@@ -27,8 +27,6 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 typedef NSInteger(^TableViewSectionsBlock)();
 
 
-
-
  // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;
@@ -55,6 +53,5 @@ typedef NSInteger(^TableViewSectionsBlock)();
  *  获取UITableView中Item所在的indexPath
  */
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
-
 
 @end

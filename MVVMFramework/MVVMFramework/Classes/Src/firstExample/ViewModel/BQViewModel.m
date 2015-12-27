@@ -9,7 +9,7 @@
 #import "BQViewModel.h"
 #import "BQModel.h"
 #import "BQTestModel.h"
-
+#import "SVProgressHUD.h"
 
 @interface BQViewModel ()
 
@@ -43,6 +43,9 @@
 //    } failure:^(NSError *error) {
 //        failure(error);
 //    }];
+    
+    [SVProgressHUD show];
+    
     // 模拟网络请求加载，设置延迟
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
@@ -55,26 +58,16 @@
             [self.dataArrayList addObject:obj] ;
         }
         if (success) {
+            [SVProgressHUD dismiss];
             success(self.dataArrayList);
         }
         if (failure) {
+            [SVProgressHUD dismiss];
             failure(nil);
         }
         
     });
 
-}
-+ (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
-    BQViewModel *mv = [[BQViewModel alloc]init];
-    [mv getDataList:url params:params success:^(NSArray *array) {
-        if (success) {
-            success(array);
-        }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure(nil);
-        }
-    }];
 }
 
 @end

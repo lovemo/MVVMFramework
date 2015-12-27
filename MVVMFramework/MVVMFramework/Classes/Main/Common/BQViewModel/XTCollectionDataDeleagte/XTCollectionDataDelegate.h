@@ -31,7 +31,6 @@ typedef CGSize (^CellItemSize)() ;
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
-
 // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;

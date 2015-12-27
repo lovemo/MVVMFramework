@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3v-QZ-X4s">
-                        <rect key="frame" x="3" y="23" width="314" height="165"/>
+                        <rect key="frame" x="3" y="23" width="314" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.95686274510000002" green="0.31683502866585589" blue="0.52384383329148154" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -33,8 +33,12 @@
                             <constraint firstAttribute="height" constant="6" id="rrI-qF-kvZ"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-ob-sKY">
+                        <rect key="frame" x="2" y="40" width="231" height="147"/>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="zzn-ob-sKY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="41b-4S-1Xa"/>
                     <constraint firstItem="l3v-QZ-X4s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="4co-iy-epr"/>
                     <constraint firstAttribute="trailing" secondItem="DX1-JP-l6Z" secondAttribute="trailing" constant="2" id="7QF-PJ-VyU"/>
                     <constraint firstAttribute="bottom" secondItem="cdF-yr-eGF" secondAttribute="bottom" id="CSi-3n-GBG"/>
@@ -43,17 +47,22 @@
                     <constraint firstItem="cdF-yr-eGF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RnX-7P-Adq"/>
                     <constraint firstAttribute="bottom" secondItem="l3v-QZ-X4s" secondAttribute="bottom" id="SjJ-bS-Rwg"/>
                     <constraint firstItem="DX1-JP-l6Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="WTi-CA-wZG"/>
+                    <constraint firstItem="zzn-ob-sKY" firstAttribute="top" secondItem="l3v-QZ-X4s" secondAttribute="bottom" constant="2" id="crg-aK-K6o"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zzn-ob-sKY" secondAttribute="trailing" constant="16" id="fMX-F8-jkv"/>
                     <constraint firstItem="l3v-QZ-X4s" firstAttribute="top" secondItem="DX1-JP-l6Z" secondAttribute="bottom" constant="2" id="hfp-hq-czj"/>
                     <constraint firstItem="cdF-yr-eGF" firstAttribute="top" secondItem="l3v-QZ-X4s" secondAttribute="bottom" constant="1" id="jlc-Gs-ERz"/>
                     <constraint firstAttribute="trailing" secondItem="cdF-yr-eGF" secondAttribute="trailing" id="kcV-du-prO"/>
+                    <constraint firstItem="cdF-yr-eGF" firstAttribute="top" secondItem="zzn-ob-sKY" secondAttribute="bottom" constant="3" id="yiO-Cd-oYh"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="SjJ-bS-Rwg"/>
+                        <exclude reference="jlc-Gs-ERz"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="contentImage" destination="zzn-ob-sKY" id="e9i-Da-8eX"/>
                 <outlet property="lbHeight" destination="l3v-QZ-X4s" id="4en-Ir-fMw"/>
                 <outlet property="lbTitle" destination="DX1-JP-l6Z" id="BxJ-od-rYX"/>
             </connections>

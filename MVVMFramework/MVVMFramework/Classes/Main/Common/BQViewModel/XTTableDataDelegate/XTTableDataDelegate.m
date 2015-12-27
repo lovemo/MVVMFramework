@@ -57,26 +57,21 @@
     
     __weak typeof(self) weakSelf = self;
     __weak typeof(table) weakTable = table;
-    [SVProgressHUD show];
+ 
     // 第一次刷新数据
-    [self.viewModel getDataList:nil params:nil success:^(NSArray *array) {
-        [SVProgressHUD dismiss];
-        weakSelf.viewModel.dataArrayList = [NSMutableArray arrayWithArray:array];
+    [self.viewModel getDataListSuccess:^{
         [weakTable reloadData];
-    } failure:^(NSError *error) {
-        
+    } failure:^{
     }];
 
     // 下拉刷新
     table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        [SVProgressHUD show];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.viewModel getDataList:nil params:nil success:^(NSArray *array) {
-                [SVProgressHUD dismiss];
-                [weakSelf.viewModel.dataArrayList addObjectsFromArray:array];
+            [weakSelf.viewModel getDataListSuccess:^{
                 [weakTable reloadData];
-            } failure:^(NSError *error) {
+            } failure:^{
             }];
             // 结束刷新
             [weakTable.mj_header endRefreshing];

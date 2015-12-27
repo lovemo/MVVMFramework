@@ -23,6 +23,7 @@
     NSString *shortStr = @"Swift. A modern programming language that is safe, fast, and interactive.";
     
     self.lbHeight.text = ((indexPath.row) % 2 == 0) ? lengthStr : shortStr;
+    self.contentImage.image = ((indexPath.row) % 2 == 0) ? [UIImage imageNamed:@"phil"] : [UIImage imageNamed:@"dogebread"];
 }
 
 - (void)awakeFromNib {

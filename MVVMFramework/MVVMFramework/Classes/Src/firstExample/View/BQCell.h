@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lbHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImage;
 
 @end
