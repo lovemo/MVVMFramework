@@ -18,10 +18,6 @@ typedef void (^CollectionViewCellConfigureBlock)(NSIndexPath *indexPath, id item
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 /**
- *  设置UICollectionViewCell高度的Block
- */
-typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
-/**
  *  设置UICollectionViewCell大小的Block
  */
 typedef CGSize (^CellItemSize)() ;
@@ -43,7 +39,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
-     cellHeightBlock:(CellHeightBlock)aHeightBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;

@@ -21,21 +21,12 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
  */
 typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
- */
-typedef NSInteger(^TableViewSectionsBlock)();
 
 
  // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;
 @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
-
-/**
- *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
- */
-@property (nonatomic, copy) TableViewSectionsBlock tableViewSectionsBlock;
 
 /**
  *  初始化方法

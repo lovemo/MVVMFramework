@@ -21,7 +21,7 @@
 - (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
- *  显示多少组
+ *  显示多少组 (当tableView为Group类型时设置可用)
  */
 - (NSUInteger)numberOfSections;
 

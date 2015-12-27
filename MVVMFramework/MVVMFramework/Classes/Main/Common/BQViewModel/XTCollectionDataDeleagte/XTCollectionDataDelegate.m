@@ -17,7 +17,6 @@
 @property (nonatomic, copy) NSString *cellIdentifier ;
 @property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
 @property (nonatomic, copy) CollectionViewCellConfigureBlock configureCellBlock ;
-@property (nonatomic, copy) CellHeightBlock             heightConfigureBlock ;
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, copy) CellItemSize cellItemSize;
 @property (nonatomic, copy) CellItemMargin cellItemMargin;
@@ -30,7 +29,6 @@
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
-     cellHeightBlock:(CellHeightBlock)aHeightBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock
@@ -41,7 +39,6 @@
         self.cellIdentifier = aCellIdentifier ;
         self.collectionViewLayout = collectionViewLayout;
         self.configureCellBlock = aConfigureCellBlock ;
-        self.heightConfigureBlock = aHeightBlock ;
         self.cellItemSize = cellItemSize;
         self.cellItemMargin = cellItemMargin;
         self.didSelectCellBlock = didselectBlock ;

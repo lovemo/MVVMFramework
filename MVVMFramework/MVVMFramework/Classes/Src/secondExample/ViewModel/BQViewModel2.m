@@ -13,9 +13,6 @@
 
 @implementation BQViewModel2
 
-- (NSUInteger)numberOfSections {
-    return 1;
-}
 
 - (NSUInteger)numberOfItemsInSection:(NSUInteger)section {
     

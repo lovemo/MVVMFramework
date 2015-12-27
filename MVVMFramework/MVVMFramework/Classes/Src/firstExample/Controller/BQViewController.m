@@ -56,10 +56,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
                                                    didSelectBlock:selectedBlock] ;
     // 设置UITableView的delegate和dataSourse为collectionHander
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
-    // 设置tableView的section组数 (当tableView为Group类型时设置可用)
-//    self.tableHander.tableViewSectionsBlock = ^ {
-//        return (NSInteger)3;
-//    };
+
 }
 
 @end

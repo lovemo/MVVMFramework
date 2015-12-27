@@ -29,7 +29,7 @@
 }
 
 - (NSUInteger)numberOfSections {
-    return 0;
+    return 1;
 }
 - (NSUInteger)numberOfRowsInSection:(NSUInteger)section {
     return 0;

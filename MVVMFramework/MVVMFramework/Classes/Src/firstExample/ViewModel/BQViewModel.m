@@ -18,11 +18,6 @@
 @implementation BQViewModel
 
 
-
-- (NSUInteger)numberOfSections {
-    return 1;
-}
-
 - (NSUInteger)numberOfRowsInSection:(NSUInteger)section {
   
     return self.dataArrayList.count;
