@@ -24,7 +24,7 @@ MVVMFramework
 ### <a id="结构分析"></a> 结构分析
 
 * [Handler中BQViewModel抽象出的类集合](#Handler)
-	* [BaseViewModel 声明了一些基本的方法](#BaseViewModel)
+	* [BaseViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#BaseViewModel)
 	* [XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTTableDataDelegate)
 	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
 
