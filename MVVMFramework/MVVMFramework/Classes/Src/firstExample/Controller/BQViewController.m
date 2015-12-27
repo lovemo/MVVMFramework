@@ -14,7 +14,7 @@
 #import "BQViewController2.h"
 #import "BQViewModel.h"
 
-static NSString *const MyCellIdentifier = @"BQCell" ; // `cellIdentifier` AND `NibName` HAS TO BE SAME !
+static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
 @interface BQViewController ()
 @property (nonatomic, strong) XTTableDataDelegate *tableHander ;
