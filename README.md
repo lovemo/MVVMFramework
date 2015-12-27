@@ -193,7 +193,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     } ;
     // 将上述block设置给tableHander
     self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
-                                                 cellIdentifier:MyCellIdentifier
+                                                   cellIdentifier:MyCellIdentifier
                                                    configureCellBlock:configureCell
                                                    cellHeightBlock:nil
                                                    didSelectBlock:selectedBlock] ;
