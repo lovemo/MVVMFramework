@@ -48,7 +48,7 @@ MVVMFramework
 - (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
- *  显示多少组
+ *  显示多少组 (当tableView为Group类型时设置可用)
  */
 - (NSUInteger)numberOfSections;
 
@@ -91,21 +91,12 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
  */
 typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
- */
-typedef NSInteger(^TableViewSectionsBlock)();
 
 
- // - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
+// - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
 
 @class BQBaseViewModel;
 @interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
-
-/**
- *  设置UITableViewCell的组数 (当tableView为Group类型时设置可用)
- */
-@property (nonatomic, copy) TableViewSectionsBlock tableViewSectionsBlock;
 
 /**
  *  初始化方法
@@ -125,7 +116,6 @@ typedef NSInteger(^TableViewSectionsBlock)();
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
 
 @end
-
 ```
 
 ### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中代码实现
@@ -139,10 +129,6 @@ typedef void (^CollectionViewCellConfigureBlock)(NSIndexPath *indexPath, id item
  *  选中UICollectionViewCell的Block
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UICollectionViewCell高度的Block
- */
-typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 /**
  *  设置UICollectionViewCell大小的Block
  */
@@ -165,7 +151,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
-     cellHeightBlock:(CellHeightBlock)aHeightBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
@@ -214,12 +199,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
                                                    didSelectBlock:selectedBlock] ;
     // 设置UITableView的delegate和dataSourse为collectionHander
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
-    // 设置tableView的section组数 (当tableView为Group类型时设置可用)
-//    self.tableHander.tableViewSectionsBlock = ^ {
-//        return (NSInteger)3;
-//    };
-}
 
+}
 
 ```
 
@@ -253,7 +234,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
                                                         cellIdentifier:MyCellIdentifier
                                                         collectionViewLayout: [[UICollectionViewFlowLayout alloc] init] // 可以使用自定义的UICollectionViewLayout
                                                         configureCellBlock:configureCell
-                                                        cellHeightBlock:nil
                                                         cellItemSizeBlock:cellItemSizeBlock
                                                         cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
@@ -261,7 +241,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
 
 }
-
 
 ```
 
