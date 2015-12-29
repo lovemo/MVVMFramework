@@ -26,7 +26,7 @@
 
 * [Handler中BQViewModel抽象出的类集合](#Handler)
 	* [BaseViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#BaseViewModel)
-	* [XTTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTTableDataDelegate)
+	* [XTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTableDataDelegate)
 	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
 
 ---
@@ -193,7 +193,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
         NSLog(@"click row : %@",@(indexPath.row)) ;
     } ;
     // 将上述block设置给tableHander
-    self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
+    self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
                                                    cellIdentifier:MyCellIdentifier
                                                    configureCellBlock:configureCell
                                                    cellHeightBlock:nil
@@ -252,7 +252,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ### <a id="使用方法"></a> 使用方法
 - 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
-- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTTableDataDelegate或者XTCollectionDat	aDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
+- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTableDataDelegate或者XTCollectionDat	aDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
 - 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 
 ## 期待
