@@ -17,10 +17,10 @@
 }
 
 #pragma mark - Public
-+ (void)registerTable:(UICollectionView *)table
++ (void)registerCollect:(UICollectionView *)collect
         nibIdentifier:(NSString *)identifier
 {
-    [table registerNib:[self nibWithIdentifier:identifier] forCellWithReuseIdentifier:identifier];
+    [collect registerNib:[self nibWithIdentifier:identifier] forCellWithReuseIdentifier:identifier];
   
 }
 

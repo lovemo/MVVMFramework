@@ -113,7 +113,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     id item = [self itemAtIndexPath:indexPath] ;
 
-    [UICollectionViewCell registerTable:collectionView nibIdentifier:self.cellIdentifier];
+    [UICollectionViewCell registerCollect:collectionView nibIdentifier:self.cellIdentifier];
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
     self.configureCellBlock(indexPath,item,cell) ;

@@ -1,5 +1,5 @@
 //
-//  XTTableDataDelegate.h
+//  XTableDataDelegate.h
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
@@ -26,7 +26,7 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
  // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;
-@interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
+@interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
 
 /**
  *  初始化方法

@@ -26,7 +26,7 @@
 		346F0FEA1C2FE8C20020463F /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F891C2FE8C20020463F /* UICollectionViewCell+Extension.m */; };
 		346F0FEB1C2FE8C20020463F /* XTCollectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F8B1C2FE8C20020463F /* XTCollectionDataDelegate.m */; };
 		346F0FEC1C2FE8C20020463F /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F8E1C2FE8C20020463F /* UITableViewCell+Extension.m */; };
-		346F0FED1C2FE8C20020463F /* XTTableDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F901C2FE8C20020463F /* XTTableDataDelegate.m */; };
+		346F0FED1C2FE8C20020463F /* XTableDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F901C2FE8C20020463F /* XTableDataDelegate.m */; };
 		346F0FEE1C2FE8C20020463F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F941C2FE8C20020463F /* AFHTTPSessionManager.m */; };
 		346F0FEF1C2FE8C20020463F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F971C2FE8C20020463F /* AFNetworkReachabilityManager.m */; };
 		346F0FF01C2FE8C20020463F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F991C2FE8C20020463F /* AFSecurityPolicy.m */; };
@@ -100,8 +100,8 @@
 		346F0F8B1C2FE8C20020463F /* XTCollectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCollectionDataDelegate.m; sourceTree = "<group>"; };
 		346F0F8D1C2FE8C20020463F /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
 		346F0F8E1C2FE8C20020463F /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
-		346F0F8F1C2FE8C20020463F /* XTTableDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTableDataDelegate.h; sourceTree = "<group>"; };
-		346F0F901C2FE8C20020463F /* XTTableDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTableDataDelegate.m; sourceTree = "<group>"; };
+		346F0F8F1C2FE8C20020463F /* XTableDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTableDataDelegate.h; sourceTree = "<group>"; };
+		346F0F901C2FE8C20020463F /* XTableDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTableDataDelegate.m; sourceTree = "<group>"; };
 		346F0F931C2FE8C20020463F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		346F0F941C2FE8C20020463F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		346F0F951C2FE8C20020463F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 			children = (
 				346F0F841C2FE8C20020463F /* BaseViewModel */,
 				346F0F871C2FE8C20020463F /* XTCollectionDataDeleagte */,
-				346F0F8C1C2FE8C20020463F /* XTTableDataDelegate */,
+				346F0F8C1C2FE8C20020463F /* XTableDataDelegate */,
 			);
 			path = BQViewModel;
 			sourceTree = "<group>";
@@ -415,14 +415,15 @@
 			path = XTCollectionDataDeleagte;
 			sourceTree = "<group>";
 		};
-		346F0F8C1C2FE8C20020463F /* XTTableDataDelegate */ = {
+		346F0F8C1C2FE8C20020463F /* XTableDataDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				346F0F8D1C2FE8C20020463F /* UITableViewCell+Extension.h */,
 				346F0F8E1C2FE8C20020463F /* UITableViewCell+Extension.m */,
-				346F0F8F1C2FE8C20020463F /* XTTableDataDelegate.h */,
-				346F0F901C2FE8C20020463F /* XTTableDataDelegate.m */,
+				346F0F8F1C2FE8C20020463F /* XTableDataDelegate.h */,
+				346F0F901C2FE8C20020463F /* XTableDataDelegate.m */,
 			);
+			name = XTableDataDelegate;
 			path = XTTableDataDelegate;
 			sourceTree = "<group>";
 		};
@@ -704,7 +705,7 @@
 				346F10051C2FE8C20020463F /* UIScrollView+MJRefresh.m in Sources */,
 				346F10111C2FE8C20020463F /* Foundation+Log.m in Sources */,
 				346F0FFD1C2FE8C20020463F /* MJRefreshBackNormalFooter.m in Sources */,
-				346F0FED1C2FE8C20020463F /* XTTableDataDelegate.m in Sources */,
+				346F0FED1C2FE8C20020463F /* XTableDataDelegate.m in Sources */,
 				346F0FF61C2FE8C20020463F /* MJRefreshComponent.m in Sources */,
 				346F10001C2FE8C20020463F /* MJRefreshNormalHeader.m in Sources */,
 				346F0FEE1C2FE8C20020463F /* AFHTTPSessionManager.m in Sources */,

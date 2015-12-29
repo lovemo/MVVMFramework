@@ -13,7 +13,7 @@
 /**
  *  从nib文件中根据重用标识符注册UICollectionViewcell
  */
-+ (void)registerTable:(UICollectionView *)table
++ (void)registerCollect:(UICollectionView *)table
         nibIdentifier:(NSString *)identifier ;
 /**
  *  配置UICollectionViewcell，设置UICollectionViewcell内容

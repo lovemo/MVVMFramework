@@ -7,7 +7,7 @@
 //
 
 #import "BQViewController.h"
-#import "XTTableDataDelegate.h"
+#import "XTableDataDelegate.h"
 #import "BQCell.h"
 #import "BQModel.h"
 #import "UITableViewCell+Extension.h"
@@ -17,7 +17,7 @@
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
 @interface BQViewController ()
-@property (nonatomic, strong) XTTableDataDelegate *tableHander ;
+@property (nonatomic, strong) XTableDataDelegate *tableHander ;
 @end
 
 @implementation BQViewController
@@ -49,7 +49,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
         NSLog(@"click row : %@",@(indexPath.row)) ;
     } ;
     // 将上述block设置给tableHander
-    self.tableHander = [[XTTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
+    self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
                                                    cellIdentifier:MyCellIdentifier
                                                    configureCellBlock:configureCell
                                                    cellHeightBlock:nil

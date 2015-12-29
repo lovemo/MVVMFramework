@@ -1,12 +1,12 @@
 //
-//  XTTableDataDelegate.m
+//  XTableDataDelegate.m
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "XTTableDataDelegate.h"
+#import "XTableDataDelegate.h"
 #import "UITableViewCell+Extension.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "BQViewModel.h"
@@ -14,7 +14,7 @@
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
 
-@interface XTTableDataDelegate ()
+@interface XTableDataDelegate ()
 
 @property (nonatomic, copy) NSString *cellIdentifier ;
 @property (nonatomic, copy) TableViewCellConfigureBlock configureCellBlock ;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation XTTableDataDelegate
+@implementation XTableDataDelegate
 
 -(id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
     cellIdentifier:(NSString *)aCellIdentifier
