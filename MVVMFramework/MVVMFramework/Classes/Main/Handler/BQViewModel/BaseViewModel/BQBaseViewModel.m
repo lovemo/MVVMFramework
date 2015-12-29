@@ -47,30 +47,11 @@
  *  分离加载首页控制器内容
  */
 - (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure {
- 
-    // 模拟网络请求加载，设置延迟
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (success) {
-            success(self.dataArrayList);
-        }
-        if (failure) {
-            failure(nil);
-        }
-    });
     
 }
 
 - (void)getDataListSuccess:(void (^)())success failure:(void (^)())failure {
-    
-    [self getDataList:nil params:nil success:^(NSArray *array) {
-        if (success) {
-            success();
-        }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure();
-        }
-    }];
+
 }
 
 - (NSString *)description{

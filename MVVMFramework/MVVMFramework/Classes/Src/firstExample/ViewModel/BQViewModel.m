@@ -64,5 +64,16 @@
     });
 
 }
-
+- (void)getDataListSuccess:(void (^)())success failure:(void (^)())failure {
+    // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
+    [self getDataList:nil params:nil success:^(NSArray *array) {
+        if (success) {
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure();
+        }
+    }];
+}
 @end
