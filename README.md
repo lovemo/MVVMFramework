@@ -210,7 +210,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ```objc
 /**
- *  collectionView的一些初始化工作
+ *  collectionView的一些初始化工作..
  */
 - (void)setupCollectionView
 {
