@@ -9,19 +9,40 @@
 #import "BQHttpTool.h"
 #import "AFNetworking.h"
 
+@interface BQHttpTool ()
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@end
+
 @implementation BQHttpTool
+
+- (id)init{
+    if (self = [super init]){
+        // 创建请求管理者
+        self.manager = [AFHTTPSessionManager manager];
+        // 请求参数序列化类型
+        self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        // 设置请求ContentType
+        // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
+        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    }
+    return self;
+}
+
++ (BQHttpTool *)defaultHttpTool {
+    static BQHttpTool *instance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
 
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
 {
-    // 1.创建请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    // 设置请求ContentType
-    // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
+  
     if ([AFNetworkReachabilityManager manager].isReachable) {
         // 2.发送请求
-        [mgr GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (success) {
                 success(responseObject);
             }
@@ -39,14 +60,10 @@
 
 + (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
 {
-    // 1.创建请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    // 设置请求ContentType
-    // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+
     if ([AFNetworkReachabilityManager manager].isReachable) {
         // 2.发送请求
-        [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (success) {
                 success(responseObject);
             }
