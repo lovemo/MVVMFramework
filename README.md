@@ -77,7 +77,7 @@
 
 ```
        
-### <a id="XTTableDataDelegate"></a> XTTableDataDelegate中代码实现
+### <a id="XTableDataDelegate"></a> XTableDataDelegate中代码实现
          
 ```objc
 /**
