@@ -1,6 +1,6 @@
 #MVVMFramework
 ###Swift版本地址：https://github.com/lovemo/MVVMFramework-Swift
-===
+====
 再看了几篇博客后，总结整理下一个快速开发MVVM框架，分离控制器代码，降低代码耦合
 
 终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
