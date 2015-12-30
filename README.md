@@ -98,7 +98,7 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 // - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
 
 @class BQBaseViewModel;
-@interface XTTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
+@interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
 
 /**
  *  初始化方法
@@ -144,7 +144,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 // - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
 
 @class BQBaseViewModel;
-@interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface XTXTCollectionDataDelegate : NSObjXTect <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
  *  初始化方法
