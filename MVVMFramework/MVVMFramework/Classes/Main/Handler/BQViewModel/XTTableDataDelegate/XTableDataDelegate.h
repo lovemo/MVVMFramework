@@ -10,17 +10,9 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  配置UITableViewCell的内容Block
- */
-typedef void (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
-/**
  *  选中UITableViewCell的Block
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
- */
-typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 
 
  // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
@@ -33,8 +25,6 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
  */
 - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
-     configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
-     cellHeightBlock:(CellHeightBlock)aHeightBlock
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self

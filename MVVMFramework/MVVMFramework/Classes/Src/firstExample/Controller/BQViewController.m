@@ -36,10 +36,6 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    // 配置tableView的每个cell
-    TableViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQModel *obj, UITableViewCell *cell) {
-        [cell configure:cell customObj:obj indexPath:indexPath] ;
-    } ;
     // 设置点击tableView的每个cell做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         [weakSelf.table deselectRowAtIndexPath:indexPath animated:YES];
@@ -51,8 +47,6 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     // 将上述block设置给tableHander
     self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
                                                    cellIdentifier:MyCellIdentifier
-                                                   configureCellBlock:configureCell
-                                                   cellHeightBlock:nil
                                                    didSelectBlock:selectedBlock] ;
     // 设置UITableView的delegate和dataSourse为collectionHander
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;

@@ -33,10 +33,6 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
  */
 - (void)setupCollectionView
 {
-    // 配置collectionView的每个item
-    CollectionViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQTestModel *obj, UICollectionViewCell *cell) {
-        [cell configure:cell customObj:obj indexPath:indexPath] ;
-    } ;
     // 设置点击collectionView的每个item做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
@@ -53,8 +49,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
     // 将上述block设置给collectionHander
     self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
                                                         cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout: [[UICollectionViewFlowLayout alloc] init] // 可以使用自定义的UICollectionViewLayout
-                                                        configureCellBlock:configureCell
+                                                        collectionViewLayout: nil // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
                                                         cellItemSizeBlock:cellItemSizeBlock
                                                         cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;

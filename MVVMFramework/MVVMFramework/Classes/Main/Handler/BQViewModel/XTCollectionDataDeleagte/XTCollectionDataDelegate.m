@@ -16,7 +16,6 @@
 
 @property (nonatomic, copy) NSString *cellIdentifier ;
 @property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
-@property (nonatomic, copy) CollectionViewCellConfigureBlock configureCellBlock ;
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, copy) CellItemSize cellItemSize;
 @property (nonatomic, copy) CellItemMargin cellItemMargin;
@@ -28,7 +27,6 @@
 - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock
@@ -37,8 +35,7 @@
     if (self) {
         self.viewModel = viewModel;
         self.cellIdentifier = aCellIdentifier ;
-        self.collectionViewLayout = collectionViewLayout;
-        self.configureCellBlock = aConfigureCellBlock ;
+        self.collectionViewLayout = collectionViewLayout == nil ? [[UICollectionViewFlowLayout alloc]init] : collectionViewLayout;
         self.cellItemSize = cellItemSize;
         self.cellItemMargin = cellItemMargin;
         self.didSelectCellBlock = didselectBlock ;
@@ -116,7 +113,7 @@
     [UICollectionViewCell registerCollect:collectionView nibIdentifier:self.cellIdentifier];
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier forIndexPath:indexPath];
     
-    self.configureCellBlock(indexPath,item,cell) ;
+    [cell configure:cell customObj:item indexPath:indexPath];
     return cell ;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -17,8 +17,7 @@
 @interface XTableDataDelegate ()
 
 @property (nonatomic, copy) NSString *cellIdentifier ;
-@property (nonatomic, copy) TableViewCellConfigureBlock configureCellBlock ;
-@property (nonatomic, copy) CellHeightBlock             heightConfigureBlock ;
+
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, strong) BQBaseViewModel *viewModel;
 
@@ -28,16 +27,12 @@
 
 -(id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
     cellIdentifier:(NSString *)aCellIdentifier
-    configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
-    cellHeightBlock:(CellHeightBlock)aHeightBlock
     didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
     self = [super init] ;
     if (self) {
         self.viewModel = viewModel;
         self.cellIdentifier = aCellIdentifier ;
-        self.configureCellBlock = aConfigureCellBlock ;
-        self.heightConfigureBlock = aHeightBlock ;
         self.didSelectCellBlock = didselectBlock ;
     }
     
@@ -98,8 +93,8 @@
         [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifier] ;
         cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
     }
-    
-    self.configureCellBlock(indexPath,item,cell) ;
+    [cell configure:cell customObj:item indexPath:indexPath];
+  //  self.configureCellBlock(indexPath,item,cell) ;
     return cell ;
 }
 
@@ -111,7 +106,8 @@
     id item = [self itemAtIndexPath:indexPath] ;
     __weak typeof(self) weakSelf = self;
     return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifier configuration:^(UITableViewCell *cell) {
-         weakSelf.configureCellBlock(indexPath,item,cell) ;
+            [cell configure:cell customObj:item indexPath:indexPath];
+       //  weakSelf.configureCellBlock(indexPath,item,cell) ;
     }];
 }
 

@@ -10,10 +10,6 @@
 #import <UIKit/UIKit.h>
 
 /**
- *  配置UICollectionViewCell的内容Block
- */
-typedef void (^CollectionViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UICollectionViewCell *cell) ;
-/**
  *  选中UICollectionViewCell的Block
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
@@ -38,7 +34,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
