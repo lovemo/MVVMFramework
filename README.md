@@ -186,14 +186,13 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init]
-                                               cellIdentifier:MyCellIdentifier
-                                               didSelectBlock:^(NSIndexPath *indexPath, id item)
-                                                {
-                                                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                                    BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
-                                                    [weakSelf presentViewController:vc animated:YES completion:nil];
-                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
-                                                }];
+                                                               cellIdentifier:MyCellIdentifier
+                                                               didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                    BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
+                                                                    [weakSelf presentViewController:vc animated:YES completion:nil];
+                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
+                                                                }];
     
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
 }
@@ -211,18 +210,15 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
     self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init]
-                                        cellIdentifier:MyCellIdentifier
-                                        collectionViewLayout:nil cellItemSizeBlock:^CGSize
-                                        {
-                                            return CGSizeMake(110, 120);
-                                        } cellItemMarginBlock:^UIEdgeInsets
-                                        {
-                                            return UIEdgeInsetsMake(0, 20, 0, 20);
-                                        } didSelectBlock:^(NSIndexPath *indexPath, id item)
-                                        {
-                                            NSLog(@"click row : %@",@(indexPath.row)) ;
-                                            [self dismissViewControllerAnimated:YES completion:nil];
-                                        }];
+                                                                                cellIdentifier:MyCellIdentifier
+                                                                                collectionViewLayout:nil cellItemSizeBlock:^CGSize {
+                                                                                    return CGSizeMake(110, 120);
+                                                                                } cellItemMarginBlock:^UIEdgeInsets {
+                                                                                    return UIEdgeInsetsMake(0, 20, 0, 20);
+                                                                                } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
+                                                                                    [self dismissViewControllerAnimated:YES completion:nil];
+                                                                                }];
 //    // 设置UICollectionViewCell大小
 //    [self.collectionHander ItemSize:^CGSize{
 //        return CGSizeMake(100, 100);
