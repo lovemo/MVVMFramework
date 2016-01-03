@@ -210,7 +210,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] 			cellIdentifier:MyCellIdentifier
+    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] 
+    cellIdentifier:MyCellIdentifier
                                         collectionViewLayout:nil cellItemSizeBlock:^CGSize{
         return CGSizeMake(110, 120);
     } cellItemMarginBlock:^UIEdgeInsets{
