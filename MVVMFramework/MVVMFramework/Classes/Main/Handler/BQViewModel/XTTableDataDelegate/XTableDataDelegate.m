@@ -25,7 +25,7 @@
 
 @implementation XTableDataDelegate
 
--(id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(BQBaseViewModel *)viewModel
     cellIdentifier:(NSString *)aCellIdentifier
     didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
@@ -37,6 +37,12 @@
     }
     
     return self ;
+}
+
++ (id)tableWithViewModel:(BQBaseViewModel *)viewModel cellIdentifier:(NSString *)aCellIdentifier didSelectBlock:(DidSelectCellBlock)didselectBlock {
+    
+    return [[XTableDataDelegate alloc]initWithViewModel:viewModel cellIdentifier:aCellIdentifier didSelectBlock:didselectBlock];
+
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
@@ -113,6 +119,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     id item = [self itemAtIndexPath:indexPath] ;
     self.didSelectCellBlock(indexPath,item) ;
 }

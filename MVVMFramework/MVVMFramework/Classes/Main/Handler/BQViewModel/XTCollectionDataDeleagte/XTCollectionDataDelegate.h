@@ -18,7 +18,7 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  */
 typedef CGSize (^CellItemSize)() ;
 /**
- *  获取UICollectionViewCell间隔Margin的Block
+ *  设置UICollectionViewCell间隔Margin的Block
  */
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
@@ -29,14 +29,31 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 @interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
+ *  设置UICollectionViewCell大小
+ */
+- (void)ItemSize:(CellItemSize)cellItemSize;
+
+/**
+ *  设置UICollectionViewCell间隔Margin
+ */
+- (void)itemInset:(CellItemMargin)cellItemMargin;
+
+/**
  *  初始化方法
  */
-- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+
++ (id)collectionWithViewModel:(BQBaseViewModel *)viewModel
+                 cellIdentifier:(NSString *)aCellIdentifier
+           collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+              cellItemSizeBlock:(CellItemSize)cellItemSize
+            cellItemMarginBlock:(CellItemMargin)cellItemMargin
+                 didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置CollectionView的Datasource和Delegate为self
  */

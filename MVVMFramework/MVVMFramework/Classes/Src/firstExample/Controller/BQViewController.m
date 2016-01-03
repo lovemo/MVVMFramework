@@ -35,22 +35,16 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-    // 设置点击tableView的每个cell做的一些工作
-    DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
-        [weakSelf.table deselectRowAtIndexPath:indexPath animated:YES];
+    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init] cellIdentifier:MyCellIdentifier
+                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                    
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
         [weakSelf presentViewController:vc animated:YES completion:nil];
         NSLog(@"click row : %@",@(indexPath.row)) ;
-    } ;
-    // 将上述block设置给tableHander
-    self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
-                                                   cellIdentifier:MyCellIdentifier
-                                                   didSelectBlock:selectedBlock] ;
-    // 设置UITableView的delegate和dataSourse为collectionHander
+    }];
+    
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
-
 }
 
 @end

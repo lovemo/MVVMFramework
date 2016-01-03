@@ -39,43 +39,34 @@
 
 + (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
 {
-  
-    if ([AFNetworkReachabilityManager manager].isReachable) {
-        // 2.发送请求
-        [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if (success) {
-                success(responseObject);
-            }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (failure) {
-                failure(error);
-            }
-        }];
-        
-    } else {
-        [BQHttpTool showExceptionDialog];
-    }
-    
+
+    // 2.发送请求
+    [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+
 }
 
 + (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
 {
 
-    if ([AFNetworkReachabilityManager manager].isReachable) {
-        // 2.发送请求
-        [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if (success) {
-                success(responseObject);
-            }
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (failure) {
-                failure(error);
-            }
-        }];
-    } else {
-        [BQHttpTool showExceptionDialog];
-    }
-    
+    // 2.发送请求
+    [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+
 }
 //弹出网络错误提示框
 + (void)showExceptionDialog

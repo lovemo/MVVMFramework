@@ -33,26 +33,21 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
  */
 - (void)setupCollectionView
 {
-    // 设置点击collectionView的每个item做的一些工作
-    DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
+
+    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
+    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] cellIdentifier:MyCellIdentifier
+                                        collectionViewLayout:nil cellItemSizeBlock:^CGSize{
+        return CGSizeMake(110, 120);
+    } cellItemMarginBlock:^UIEdgeInsets{
+        return UIEdgeInsetsMake(0, 20, 0, 20);
+    } didSelectBlock:^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
         [self dismissViewControllerAnimated:YES completion:nil];
-    } ;
-    // 配置collectionView的每个item的size
-    CellItemSize cellItemSizeBlock = ^ {
-        return CGSizeMake(110, 120);
-    };
-    // 配置collectionView的每个item的margin
-    CellItemMargin cellItemMarginBlock = ^ {
-        return UIEdgeInsetsMake(0, 20, 0, 20);
-    };
-    // 将上述block设置给collectionHander
-    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
-                                                        cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout: nil // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-                                                        cellItemSizeBlock:cellItemSizeBlock
-                                                        cellItemMarginBlock:cellItemMarginBlock
-                                                        didSelectBlock:selectedBlock] ;
+    }];
+//    // 设置UICollectionViewCell大小
+//    [self.collectionHander ItemSize:^CGSize{
+//        return CGSizeMake(100, 100);
+//    }];
     // 设置UICollectionView的delegate和dataSourse为collectionHander
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
 
