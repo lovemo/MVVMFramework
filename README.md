@@ -81,20 +81,12 @@
          
 ```objc
 /**
- *  配置UITableViewCell的内容Block
- */
-typedef void (^TableViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UITableViewCell *cell) ;
-/**
  *  选中UITableViewCell的Block
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UITableViewCell高度的Block (已集成UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度)
- */
-typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 
 
-// - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
+ // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;
 @interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
@@ -104,8 +96,6 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
  */
 - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
-     configureCellBlock:(TableViewCellConfigureBlock)aConfigureCellBlock
-     cellHeightBlock:(CellHeightBlock)aHeightBlock
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self
@@ -123,10 +113,6 @@ typedef CGFloat (^CellHeightBlock)(NSIndexPath *indexPath, id item) ;
 
 ```objc
 /**
- *  配置UICollectionViewCell的内容Block
- */
-typedef void (^CollectionViewCellConfigureBlock)(NSIndexPath *indexPath, id item, UICollectionViewCell *cell) ;
-/**
  *  选中UICollectionViewCell的Block
  */
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
@@ -140,10 +126,10 @@ typedef CGSize (^CellItemSize)() ;
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
-// - - - - - -- - - - - - - - 创建类 - - - - - -- - - - - - - -//
+// - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
 @class BQBaseViewModel;
-@interface XTXTCollectionDataDelegate : NSObjXTect <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
  *  初始化方法
@@ -151,7 +137,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 - (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     configureCellBlock:(CollectionViewCellConfigureBlock)aConfigureCellBlock
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
@@ -180,10 +165,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    // 配置tableView的每个cell
-    TableViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQModel *obj, UITableViewCell *cell) {
-        [cell configure:cell customObj:obj indexPath:indexPath] ;
-    } ;
     // 设置点击tableView的每个cell做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         [weakSelf.table deselectRowAtIndexPath:indexPath animated:YES];
@@ -195,8 +176,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     // 将上述block设置给tableHander
     self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
                                                    cellIdentifier:MyCellIdentifier
-                                                   configureCellBlock:configureCell
-                                                   cellHeightBlock:nil
                                                    didSelectBlock:selectedBlock] ;
     // 设置UITableView的delegate和dataSourse为collectionHander
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
@@ -209,14 +188,10 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ```objc
 /**
- *  collectionView的一些初始化工作..
+ *  collectionView的一些初始化工作
  */
 - (void)setupCollectionView
 {
-    // 配置collectionView的每个item
-    CollectionViewCellConfigureBlock configureCell = ^(NSIndexPath *indexPath, BQTestModel *obj, UICollectionViewCell *cell) {
-        [cell configure:cell customObj:obj indexPath:indexPath] ;
-    } ;
     // 设置点击collectionView的每个item做的一些工作
     DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
@@ -233,8 +208,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     // 将上述block设置给collectionHander
     self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
                                                         cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout: [[UICollectionViewFlowLayout alloc] init] // 可以使用自定义的UICollectionViewLayout
-                                                        configureCellBlock:configureCell
+                                                        collectionViewLayout: nil // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
                                                         cellItemSizeBlock:cellItemSizeBlock
                                                         cellItemMarginBlock:cellItemMarginBlock
                                                         didSelectBlock:selectedBlock] ;
