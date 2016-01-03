@@ -149,17 +149,17 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
  *  初始化方法
  */
 - (id)initWithViewModel:(BQBaseViewModel *)viewModel
-     cellIdentifier:(NSString *)aCellIdentifier
-     collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     cellItemSizeBlock:(CellItemSize)cellItemSize
-     cellItemMarginBlock:(CellItemMargin)cellItemMargin
-     didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+		  cellIdentifier:(NSString *)aCellIdentifier
+		  collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+		  cellItemSizeBlock:(CellItemSize)cellItemSize
+		  cellItemMarginBlock:(CellItemMargin)cellItemMargin
+		  didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 + (id)collectionWithViewModel:(BQBaseViewModel *)viewModel
                  cellIdentifier:(NSString *)aCellIdentifier
-           collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-              cellItemSizeBlock:(CellItemSize)cellItemSize
-            cellItemMarginBlock:(CellItemMargin)cellItemMargin
+        	 collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+	         cellItemSizeBlock:(CellItemSize)cellItemSize
+                 cellItemMarginBlock:(CellItemMargin)cellItemMargin
                  didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置CollectionView的Datasource和Delegate为self
@@ -185,8 +185,9 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init] cellIdentifier:MyCellIdentifier
-                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
+    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init] 
+    				       	   cellIdentifier:MyCellIdentifier
+                        		   didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                     
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
@@ -209,7 +210,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] cellIdentifier:MyCellIdentifier
+    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] 			cellIdentifier:MyCellIdentifier
                                         collectionViewLayout:nil cellItemSizeBlock:^CGSize{
         return CGSizeMake(110, 120);
     } cellItemMarginBlock:^UIEdgeInsets{
