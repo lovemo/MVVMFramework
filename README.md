@@ -86,7 +86,7 @@
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 
 
- // - - - - - -- - - - - - 创建类 - - - - - -- - - - - -//
+ // - - - - - -- - - - - -  创建类 - - - - - -- - - - - -//
 
 @class BQBaseViewModel;
 @interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
@@ -94,9 +94,13 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 /**
  *  初始化方法
  */
-- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+
++ (id)tableWithViewModel:(BQBaseViewModel *)viewModel
+                   cellIdentifier:(NSString *)aCellIdentifier
+                   didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self
  */
@@ -121,7 +125,7 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  */
 typedef CGSize (^CellItemSize)() ;
 /**
- *  获取UICollectionViewCell间隔Margin的Block
+ *  设置UICollectionViewCell间隔Margin的Block
  */
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
@@ -132,14 +136,31 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 @interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
+ *  设置UICollectionViewCell大小
+ */
+- (void)ItemSize:(CellItemSize)cellItemSize;
+
+/**
+ *  设置UICollectionViewCell间隔Margin
+ */
+- (void)itemInset:(CellItemMargin)cellItemMargin;
+
+/**
  *  初始化方法
  */
-- (id)initWithSelfFriendsDelegate:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(BQBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      cellItemSizeBlock:(CellItemSize)cellItemSize
      cellItemMarginBlock:(CellItemMargin)cellItemMargin
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+
++ (id)collectionWithViewModel:(BQBaseViewModel *)viewModel
+                 cellIdentifier:(NSString *)aCellIdentifier
+           collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+              cellItemSizeBlock:(CellItemSize)cellItemSize
+            cellItemMarginBlock:(CellItemMargin)cellItemMargin
+                 didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置CollectionView的Datasource和Delegate为self
  */
@@ -164,22 +185,16 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-    // 设置点击tableView的每个cell做的一些工作
-    DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
-        [weakSelf.table deselectRowAtIndexPath:indexPath animated:YES];
+    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init] cellIdentifier:MyCellIdentifier
+                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                    
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
         [weakSelf presentViewController:vc animated:YES completion:nil];
         NSLog(@"click row : %@",@(indexPath.row)) ;
-    } ;
-    // 将上述block设置给tableHander
-    self.tableHander = [[XTableDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel alloc]init]
-                                                   cellIdentifier:MyCellIdentifier
-                                                   didSelectBlock:selectedBlock] ;
-    // 设置UITableView的delegate和dataSourse为collectionHander
+    }];
+    
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
-
 }
 
 ```
@@ -192,26 +207,21 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
  */
 - (void)setupCollectionView
 {
-    // 设置点击collectionView的每个item做的一些工作
-    DidSelectCellBlock selectedBlock = ^(NSIndexPath *indexPath, id item) {
+
+    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
+    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init] cellIdentifier:MyCellIdentifier
+                                        collectionViewLayout:nil cellItemSizeBlock:^CGSize{
+        return CGSizeMake(110, 120);
+    } cellItemMarginBlock:^UIEdgeInsets{
+        return UIEdgeInsetsMake(0, 20, 0, 20);
+    } didSelectBlock:^(NSIndexPath *indexPath, id item) {
         NSLog(@"click row : %@",@(indexPath.row)) ;
         [self dismissViewControllerAnimated:YES completion:nil];
-    } ;
-    // 配置collectionView的每个item的size
-    CellItemSize cellItemSizeBlock = ^ {
-        return CGSizeMake(110, 120);
-    };
-    // 配置collectionView的每个item的margin
-    CellItemMargin cellItemMarginBlock = ^ {
-        return UIEdgeInsetsMake(0, 20, 0, 20);
-    };
-    // 将上述block设置给collectionHander
-    self.collectionHander = [[XTCollectionDataDelegate alloc] initWithSelfFriendsDelegate:[[BQViewModel2 alloc]init]
-                                                        cellIdentifier:MyCellIdentifier
-                                                        collectionViewLayout: nil // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-                                                        cellItemSizeBlock:cellItemSizeBlock
-                                                        cellItemMarginBlock:cellItemMarginBlock
-                                                        didSelectBlock:selectedBlock] ;
+    }];
+//    // 设置UICollectionViewCell大小
+//    [self.collectionHander ItemSize:^CGSize{
+//        return CGSizeMake(100, 100);
+//    }];
     // 设置UICollectionView的delegate和dataSourse为collectionHander
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
 
