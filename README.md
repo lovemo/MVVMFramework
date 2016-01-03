@@ -98,9 +98,6 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
         cellIdentifier:(NSString *)aCellIdentifier
         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
-+ (id)tableWithViewModel:(BQBaseViewModel *)viewModel
-        cellIdentifier:(NSString *)aCellIdentifier
-        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self
  */
@@ -155,12 +152,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
          cellItemMarginBlock:(CellItemMargin)cellItemMargin
          didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
-+ (id)collectionWithViewModel:(BQBaseViewModel *)viewModel
-        cellIdentifier:(NSString *)aCellIdentifier
-        collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-        cellItemSizeBlock:(CellItemSize)cellItemSize
-        cellItemMarginBlock:(CellItemMargin)cellItemMargin
-        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置CollectionView的Datasource和Delegate为self
  */
@@ -185,7 +176,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init]
+  
+    self.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
                                                                cellIdentifier:MyCellIdentifier
                                                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -209,7 +201,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-    self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init]
+
+    self.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                 cellIdentifier:MyCellIdentifier
                                                                                 collectionViewLayout:nil cellItemSizeBlock:^CGSize {
                                                                                     return CGSizeMake(110, 120);
