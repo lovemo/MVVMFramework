@@ -86,7 +86,7 @@
 typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 
 
- // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+ // - - - - - -- - - - - - 创建类 - - - - - -- - - - - -//
 
 @class BQBaseViewModel;
 @interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
@@ -126,7 +126,7 @@ typedef CGSize (^CellItemSize)() ;
 typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
-// - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+// - - - - - -- - - - - - 创建类 - - - - - -- - - - - -//
 
 @class BQBaseViewModel;
 @interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
