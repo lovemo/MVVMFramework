@@ -212,11 +212,14 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
     self.collectionHander = [XTCollectionDataDelegate collectionWithViewModel:[[BQViewModel2 alloc]init]
                                                                                 cellIdentifier:MyCellIdentifier
-                                                                                collectionViewLayout:nil cellItemSizeBlock:^CGSize{
+                                                                                collectionViewLayout:nil cellItemSizeBlock:^CGSize
+                                                                                {
                                                                                     return CGSizeMake(110, 120);
-                                                                                } cellItemMarginBlock:^UIEdgeInsets{
+                                                                                } cellItemMarginBlock:^UIEdgeInsets
+                                                                                {
                                                                                     return UIEdgeInsetsMake(0, 20, 0, 20);
-                                                                                } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                                } didSelectBlock:^(NSIndexPath *indexPath, id item)
+                                                                                {
                                                                                     NSLog(@"click row : %@",@(indexPath.row)) ;
                                                                                     [self dismissViewControllerAnimated:YES completion:nil];
                                                                                 }];
