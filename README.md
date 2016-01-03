@@ -95,12 +95,12 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  *  初始化方法
  */
 - (id)initWithViewModel:(BQBaseViewModel *)viewModel
-      cellIdentifier:(NSString *)aCellIdentifier
-      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+        cellIdentifier:(NSString *)aCellIdentifier
+        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 + (id)tableWithViewModel:(BQBaseViewModel *)viewModel
-      cellIdentifier:(NSString *)aCellIdentifier
-      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+        cellIdentifier:(NSString *)aCellIdentifier
+        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self
  */
@@ -149,18 +149,18 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
  *  初始化方法
  */
 - (id)initWithViewModel:(BQBaseViewModel *)viewModel
-		  cellIdentifier:(NSString *)aCellIdentifier
-		  collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-		  cellItemSizeBlock:(CellItemSize)cellItemSize
-		  cellItemMarginBlock:(CellItemMargin)cellItemMargin
-		  didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+         cellIdentifier:(NSString *)aCellIdentifier
+         collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+         cellItemSizeBlock:(CellItemSize)cellItemSize
+         cellItemMarginBlock:(CellItemMargin)cellItemMargin
+         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 + (id)collectionWithViewModel:(BQBaseViewModel *)viewModel
-                 cellIdentifier:(NSString *)aCellIdentifier
-        	 collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-	         cellItemSizeBlock:(CellItemSize)cellItemSize
-                 cellItemMarginBlock:(CellItemMargin)cellItemMargin
-                 didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+        cellIdentifier:(NSString *)aCellIdentifier
+        collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
+        cellItemSizeBlock:(CellItemSize)cellItemSize
+        cellItemMarginBlock:(CellItemMargin)cellItemMargin
+        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置CollectionView的Datasource和Delegate为self
  */
