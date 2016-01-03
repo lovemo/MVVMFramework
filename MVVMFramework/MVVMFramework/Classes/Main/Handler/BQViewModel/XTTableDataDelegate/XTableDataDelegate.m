@@ -39,12 +39,6 @@
     return self ;
 }
 
-+ (id)tableWithViewModel:(BQBaseViewModel *)viewModel cellIdentifier:(NSString *)aCellIdentifier didSelectBlock:(DidSelectCellBlock)didselectBlock {
-    
-    return [[XTableDataDelegate alloc]initWithViewModel:viewModel cellIdentifier:aCellIdentifier didSelectBlock:didselectBlock];
-
-}
-
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.viewModel.dataArrayList[indexPath.row];

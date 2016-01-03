@@ -44,10 +44,6 @@
     return self ;
 }
 
-+ (id)collectionWithViewModel:(BQBaseViewModel *)viewModel cellIdentifier:(NSString *)aCellIdentifier collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout cellItemSizeBlock:(CellItemSize)cellItemSize cellItemMarginBlock:(CellItemMargin)cellItemMargin didSelectBlock:(DidSelectCellBlock)didselectBlock {
-    return [[XTCollectionDataDelegate alloc ]initWithViewModel:viewModel cellIdentifier:aCellIdentifier collectionViewLayout:collectionViewLayout cellItemSizeBlock:cellItemSize cellItemMarginBlock:cellItemMargin didSelectBlock:didselectBlock];
-}
-
 - (void)ItemSize:(CellItemSize)cellItemSize {
     self.cellItemSize = cellItemSize;
 }
