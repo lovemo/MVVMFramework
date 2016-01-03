@@ -99,8 +99,8 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 + (id)tableWithViewModel:(BQBaseViewModel *)viewModel
-                   cellIdentifier:(NSString *)aCellIdentifier
-                   didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+      cellIdentifier:(NSString *)aCellIdentifier
+      didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 /**
  *  设置UITableView的Datasource和Delegate为self
  */
