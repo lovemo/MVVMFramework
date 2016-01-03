@@ -35,14 +35,14 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init] cellIdentifier:MyCellIdentifier
-                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                    
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
-        [weakSelf presentViewController:vc animated:YES completion:nil];
-        NSLog(@"click row : %@",@(indexPath.row)) ;
-    }];
+    self.tableHander = [XTableDataDelegate tableWithViewModel:[[BQViewModel alloc]init]
+                                                               cellIdentifier:MyCellIdentifier
+                                                               didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                    BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
+                                                                    [weakSelf presentViewController:vc animated:YES completion:nil];
+                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
+                                                                }];
     
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
 }
