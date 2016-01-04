@@ -5,7 +5,7 @@
 
 终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
 
-代码加入了cell自适应高度代码，配合MJExtension，MJExtension，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+代码加入了cell自适应高度代码，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
 
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/MVVMFrameWork-Thinking.jpeg)
