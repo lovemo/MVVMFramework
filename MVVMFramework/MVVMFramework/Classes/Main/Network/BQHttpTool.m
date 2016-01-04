@@ -73,7 +73,7 @@
         [BQHttpTool showExceptionDialog];
     }
 }
-//弹出网络错误提示框
+// 弹出网络错误提示框
 + (void)showExceptionDialog
 {
     [[[UIAlertView alloc] initWithTitle:@"提示"
@@ -82,7 +82,7 @@
                       cancelButtonTitle:@"好的"
                       otherButtonTitles:nil, nil] show];
 }
-
+// 查看网络状态是否给力
 + (BOOL)isConnectionAvailable
 {
     // 创建零地址，0.0.0.0的地址表示查询本机的网络连接状态
