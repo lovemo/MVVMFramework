@@ -16,7 +16,7 @@
 
 @interface XTableDataDelegate ()
 
-@property (nonatomic, copy) NSString *cellIdentifier ;
+@property (nonatomic, strong) NSArray *cellIdentifierArray ;
 
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, strong) BQBaseViewModel *viewModel;
@@ -25,14 +25,21 @@
 
 @implementation XTableDataDelegate
 
+- (NSArray *)cellIdentifierArray {
+    if (_cellIdentifierArray == nil) {
+        _cellIdentifierArray = [NSArray array];
+    }
+    return _cellIdentifierArray;
+}
+
 - (id)initWithViewModel:(BQBaseViewModel *)viewModel
-    cellIdentifier:(NSString *)aCellIdentifier
+    cellIdentifiersArray:(NSArray *)cellIdentifiersArray
     didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
     self = [super init] ;
     if (self) {
         self.viewModel = viewModel;
-        self.cellIdentifier = aCellIdentifier ;
+        self.cellIdentifierArray = cellIdentifiersArray ;
         self.didSelectCellBlock = didselectBlock ;
     }
     
@@ -88,27 +95,50 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id item = [self itemAtIndexPath:indexPath] ;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier] ;
-    if (!cell) {
-        [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifier] ;
-        cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    if (indexPath.row % 3 != 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[0]] ;
+        if (!cell) {
+            [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[0]] ;
+            cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[0]];
+        }
+        [cell configure:cell customObj:item indexPath:indexPath];
+        //  self.configureCellBlock(indexPath,item,cell) ;
+        return cell ;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[1]] ;
+        if (!cell) {
+            [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[1]] ;
+            cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[1]];
+        }
+        [cell configure:cell customObj:item indexPath:indexPath];
+        //  self.configureCellBlock(indexPath,item,cell) ;
+        return cell ;
     }
-    [cell configure:cell customObj:item indexPath:indexPath];
-  //  self.configureCellBlock(indexPath,item,cell) ;
-    return cell ;
+
 }
 
 #pragma mark --
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifier] ;
     id item = [self itemAtIndexPath:indexPath] ;
     __weak typeof(self) weakSelf = self;
-    return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifier configuration:^(UITableViewCell *cell) {
+    if (indexPath.row % 3 != 0) {
+        [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[0]] ;
+    
+        return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[0] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
             [cell configure:cell customObj:item indexPath:indexPath];
-       //  weakSelf.configureCellBlock(indexPath,item,cell) ;
-    }];
+            //  weakSelf.configureCellBlock(indexPath,item,cell) ;
+        }];
+    } else {
+        [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[1]] ;
+        
+        return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[1] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
+            [cell configure:cell customObj:item indexPath:indexPath];
+            //  weakSelf.configureCellBlock(indexPath,item,cell) ;
+        }];
+    }
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

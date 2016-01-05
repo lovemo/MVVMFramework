@@ -15,6 +15,7 @@
 #import "BQViewModel.h"
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
+static NSString *const MyCellIdentifier2 = @"BQCell2" ;
 
 @interface BQViewController ()
 @property (nonatomic, strong) XTableDataDelegate *tableHander ;
@@ -37,8 +38,8 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
   
     self.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                               cellIdentifier:MyCellIdentifier
-                                                               didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+                                                                didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                                                     BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
                                                                     [weakSelf presentViewController:vc animated:YES completion:nil];

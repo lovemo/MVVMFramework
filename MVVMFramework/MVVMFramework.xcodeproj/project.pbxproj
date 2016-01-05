@@ -23,6 +23,8 @@
 		3415E6581C3B652E005E6E4C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64B1C3B652E005E6E4C /* NSObject+MJKeyValue.m */; };
 		3415E6591C3B652E005E6E4C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64D1C3B652E005E6E4C /* NSObject+MJProperty.m */; };
 		3415E65A1C3B652E005E6E4C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64F1C3B652E005E6E4C /* NSString+MJExtension.m */; };
+		3415E6631C3BB85C005E6E4C /* BQCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6611C3BB85C005E6E4C /* BQCell2.m */; };
+		3415E6641C3BB85C005E6E4C /* BQCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3415E6621C3BB85C005E6E4C /* BQCell2.xib */; };
 		345E63711C2E1CE400F55F22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E63701C2E1CE400F55F22 /* main.m */; };
 		345E637C1C2E1CE400F55F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345E637B1C2E1CE400F55F22 /* Assets.xcassets */; };
 		345E64361C2E1CFF00F55F22 /* BQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E63F31C2E1CFF00F55F22 /* BQViewController.m */; };
@@ -114,6 +116,9 @@
 		3415E64D1C3B652E005E6E4C /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		3415E64E1C3B652E005E6E4C /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		3415E64F1C3B652E005E6E4C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		3415E6601C3BB85C005E6E4C /* BQCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell2.h; sourceTree = "<group>"; };
+		3415E6611C3BB85C005E6E4C /* BQCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell2.m; sourceTree = "<group>"; };
+		3415E6621C3BB85C005E6E4C /* BQCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell2.xib; sourceTree = "<group>"; };
 		345E636C1C2E1CE400F55F22 /* MVVMFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345E63701C2E1CE400F55F22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		345E637B1C2E1CE400F55F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -380,6 +385,9 @@
 				345E63F81C2E1CFF00F55F22 /* BQCell.h */,
 				345E63F91C2E1CFF00F55F22 /* BQCell.m */,
 				345E63FA1C2E1CFF00F55F22 /* BQCell.xib */,
+				3415E6601C3BB85C005E6E4C /* BQCell2.h */,
+				3415E6611C3BB85C005E6E4C /* BQCell2.m */,
+				3415E6621C3BB85C005E6E4C /* BQCell2.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				346F10081C2FE8C20020463F /* SVProgressHUD.bundle in Resources */,
+				3415E6641C3BB85C005E6E4C /* BQCell2.xib in Resources */,
 				345E64411C2E1D2C00F55F22 /* Main.storyboard in Resources */,
 				345E637C1C2E1CE400F55F22 /* Assets.xcassets in Resources */,
 				346F10021C2FE8C20020463F /* MJRefresh.bundle in Resources */,
@@ -841,6 +850,7 @@
 				3415E6501C3B652E005E6E4C /* MJDictionaryCache.m in Sources */,
 				346F0FF11C2FE8C20020463F /* AFURLRequestSerialization.m in Sources */,
 				346F0FFF1C2FE8C20020463F /* MJRefreshGifHeader.m in Sources */,
+				3415E6631C3BB85C005E6E4C /* BQCell2.m in Sources */,
 				3415E6321C3B59E1005E6E4C /* YYDiskCache.m in Sources */,
 				346F0FFB1C2FE8C20020463F /* MJRefreshAutoStateFooter.m in Sources */,
 				346F0FEF1C2FE8C20020463F /* AFNetworkReachabilityManager.m in Sources */,
