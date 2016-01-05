@@ -11,7 +11,6 @@
 
 @interface BQModel : NSObject
 
-@property (nonatomic, copy)     NSString *name ;
-@property (nonatomic, assign)   CGFloat  height ;
+@property (nonatomic, copy)     NSString *title ;
 
 @end

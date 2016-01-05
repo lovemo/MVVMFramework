@@ -17,7 +17,7 @@
 {
      BQModel *model = (BQModel *)obj ;
    //  BQCell *mycell = (BQCell *)cell ;
-    self.lbTitle.text = model.name ;
+    self.lbTitle.text = model.title ;
     
     NSString *lengthStr = @"Swift is a powerful and intuitive programming language for iOS, OS X, tvOS, and watchOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and apps run lightning-fast. Swift is ready for your next project — or addition into your current app — because Swift code works side-by-side with Objective-C.";
     NSString *shortStr = @"Swift. A modern programming language that is safe, fast, and interactive.";

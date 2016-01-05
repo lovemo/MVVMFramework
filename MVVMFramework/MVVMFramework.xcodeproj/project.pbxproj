@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3415E6311C3B59E1005E6E4C /* YYCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E62A1C3B59E1005E6E4C /* YYCache.m */; };
+		3415E6321C3B59E1005E6E4C /* YYDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E62C1C3B59E1005E6E4C /* YYDiskCache.m */; };
+		3415E6331C3B59E1005E6E4C /* YYKVStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E62E1C3B59E1005E6E4C /* YYKVStorage.m */; };
+		3415E6341C3B59E1005E6E4C /* YYMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6301C3B59E1005E6E4C /* YYMemoryCache.m */; };
+		3415E6371C3B5A59005E6E4C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */; };
+		3415E6501C3B652E005E6E4C /* MJDictionaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E63A1C3B652E005E6E4C /* MJDictionaryCache.m */; };
+		3415E6511C3B652E005E6E4C /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E63D1C3B652E005E6E4C /* MJExtensionConst.m */; };
+		3415E6521C3B652E005E6E4C /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E63F1C3B652E005E6E4C /* MJFoundation.m */; };
+		3415E6531C3B652E005E6E4C /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6411C3B652E005E6E4C /* MJProperty.m */; };
+		3415E6541C3B652E005E6E4C /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6431C3B652E005E6E4C /* MJPropertyKey.m */; };
+		3415E6551C3B652E005E6E4C /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6451C3B652E005E6E4C /* MJPropertyType.m */; };
+		3415E6561C3B652E005E6E4C /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6471C3B652E005E6E4C /* NSObject+MJClass.m */; };
+		3415E6571C3B652E005E6E4C /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6491C3B652E005E6E4C /* NSObject+MJCoding.m */; };
+		3415E6581C3B652E005E6E4C /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64B1C3B652E005E6E4C /* NSObject+MJKeyValue.m */; };
+		3415E6591C3B652E005E6E4C /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64D1C3B652E005E6E4C /* NSObject+MJProperty.m */; };
+		3415E65A1C3B652E005E6E4C /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E64F1C3B652E005E6E4C /* NSString+MJExtension.m */; };
 		345E63711C2E1CE400F55F22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E63701C2E1CE400F55F22 /* main.m */; };
 		345E637C1C2E1CE400F55F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345E637B1C2E1CE400F55F22 /* Assets.xcassets */; };
 		345E64361C2E1CFF00F55F22 /* BQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E63F31C2E1CFF00F55F22 /* BQViewController.m */; };
@@ -66,6 +82,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3415E6291C3B59E1005E6E4C /* YYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCache.h; sourceTree = "<group>"; };
+		3415E62A1C3B59E1005E6E4C /* YYCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCache.m; sourceTree = "<group>"; };
+		3415E62B1C3B59E1005E6E4C /* YYDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDiskCache.h; sourceTree = "<group>"; };
+		3415E62C1C3B59E1005E6E4C /* YYDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDiskCache.m; sourceTree = "<group>"; };
+		3415E62D1C3B59E1005E6E4C /* YYKVStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYKVStorage.h; sourceTree = "<group>"; };
+		3415E62E1C3B59E1005E6E4C /* YYKVStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYKVStorage.m; sourceTree = "<group>"; };
+		3415E62F1C3B59E1005E6E4C /* YYMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMemoryCache.h; sourceTree = "<group>"; };
+		3415E6301C3B59E1005E6E4C /* YYMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYMemoryCache.m; sourceTree = "<group>"; };
+		3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3415E6391C3B652E005E6E4C /* MJDictionaryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDictionaryCache.h; sourceTree = "<group>"; };
+		3415E63A1C3B652E005E6E4C /* MJDictionaryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDictionaryCache.m; sourceTree = "<group>"; };
+		3415E63B1C3B652E005E6E4C /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		3415E63C1C3B652E005E6E4C /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		3415E63D1C3B652E005E6E4C /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		3415E63E1C3B652E005E6E4C /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		3415E63F1C3B652E005E6E4C /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		3415E6401C3B652E005E6E4C /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		3415E6411C3B652E005E6E4C /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		3415E6421C3B652E005E6E4C /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		3415E6431C3B652E005E6E4C /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		3415E6441C3B652E005E6E4C /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		3415E6451C3B652E005E6E4C /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		3415E6461C3B652E005E6E4C /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		3415E6471C3B652E005E6E4C /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		3415E6481C3B652E005E6E4C /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		3415E6491C3B652E005E6E4C /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		3415E64A1C3B652E005E6E4C /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		3415E64B1C3B652E005E6E4C /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		3415E64C1C3B652E005E6E4C /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		3415E64D1C3B652E005E6E4C /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		3415E64E1C3B652E005E6E4C /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		3415E64F1C3B652E005E6E4C /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
 		345E636C1C2E1CE400F55F22 /* MVVMFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345E63701C2E1CE400F55F22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		345E637B1C2E1CE400F55F22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,12 +229,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3415E6371C3B5A59005E6E4C /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3415E6281C3B59E1005E6E4C /* YYCache */ = {
+			isa = PBXGroup;
+			children = (
+				3415E6291C3B59E1005E6E4C /* YYCache.h */,
+				3415E62A1C3B59E1005E6E4C /* YYCache.m */,
+				3415E62B1C3B59E1005E6E4C /* YYDiskCache.h */,
+				3415E62C1C3B59E1005E6E4C /* YYDiskCache.m */,
+				3415E62D1C3B59E1005E6E4C /* YYKVStorage.h */,
+				3415E62E1C3B59E1005E6E4C /* YYKVStorage.m */,
+				3415E62F1C3B59E1005E6E4C /* YYMemoryCache.h */,
+				3415E6301C3B59E1005E6E4C /* YYMemoryCache.m */,
+			);
+			path = YYCache;
+			sourceTree = "<group>";
+		};
+		3415E6351C3B59FE005E6E4C /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */,
+			);
+			name = FrameWorks;
+			sourceTree = "<group>";
+		};
+		3415E6381C3B652E005E6E4C /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3415E6391C3B652E005E6E4C /* MJDictionaryCache.h */,
+				3415E63A1C3B652E005E6E4C /* MJDictionaryCache.m */,
+				3415E63B1C3B652E005E6E4C /* MJExtension.h */,
+				3415E63C1C3B652E005E6E4C /* MJExtensionConst.h */,
+				3415E63D1C3B652E005E6E4C /* MJExtensionConst.m */,
+				3415E63E1C3B652E005E6E4C /* MJFoundation.h */,
+				3415E63F1C3B652E005E6E4C /* MJFoundation.m */,
+				3415E6401C3B652E005E6E4C /* MJProperty.h */,
+				3415E6411C3B652E005E6E4C /* MJProperty.m */,
+				3415E6421C3B652E005E6E4C /* MJPropertyKey.h */,
+				3415E6431C3B652E005E6E4C /* MJPropertyKey.m */,
+				3415E6441C3B652E005E6E4C /* MJPropertyType.h */,
+				3415E6451C3B652E005E6E4C /* MJPropertyType.m */,
+				3415E6461C3B652E005E6E4C /* NSObject+MJClass.h */,
+				3415E6471C3B652E005E6E4C /* NSObject+MJClass.m */,
+				3415E6481C3B652E005E6E4C /* NSObject+MJCoding.h */,
+				3415E6491C3B652E005E6E4C /* NSObject+MJCoding.m */,
+				3415E64A1C3B652E005E6E4C /* NSObject+MJKeyValue.h */,
+				3415E64B1C3B652E005E6E4C /* NSObject+MJKeyValue.m */,
+				3415E64C1C3B652E005E6E4C /* NSObject+MJProperty.h */,
+				3415E64D1C3B652E005E6E4C /* NSObject+MJProperty.m */,
+				3415E64E1C3B652E005E6E4C /* NSString+MJExtension.h */,
+				3415E64F1C3B652E005E6E4C /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
 		345E63631C2E1CE400F55F22 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +308,7 @@
 		345E636E1C2E1CE400F55F22 /* MVVMFramework */ = {
 			isa = PBXGroup;
 			children = (
+				3415E6351C3B59FE005E6E4C /* FrameWorks */,
 				345E63861C2E1CFF00F55F22 /* Classes */,
 				345E636F1C2E1CE400F55F22 /* Supporting Files */,
 			);
@@ -430,6 +533,8 @@
 		346F0F911C2FE8C20020463F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				3415E6381C3B652E005E6E4C /* MJExtension */,
+				3415E6281C3B59E1005E6E4C /* YYCache */,
 				346F0F921C2FE8C20020463F /* AFNetworking */,
 				346F0FA01C2FE8C20020463F /* MJRefresh */,
 				346F0FCD1C2FE8C20020463F /* SVProgressHUD */,
@@ -689,19 +794,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				346F0FEA1C2FE8C20020463F /* UICollectionViewCell+Extension.m in Sources */,
+				3415E6531C3B652E005E6E4C /* MJProperty.m in Sources */,
 				346F10041C2FE8C20020463F /* UIScrollView+MJExtension.m in Sources */,
 				346F0FF91C2FE8C20020463F /* MJRefreshAutoGifFooter.m in Sources */,
 				346F100F1C2FE8C20020463F /* BQHttpTool.m in Sources */,
 				346F0FE81C2FE8C20020463F /* UIView+Extension.m in Sources */,
 				346F0FEB1C2FE8C20020463F /* XTCollectionDataDelegate.m in Sources */,
 				346F0FF31C2FE8C20020463F /* AFURLSessionManager.m in Sources */,
+				3415E65A1C3B652E005E6E4C /* NSString+MJExtension.m in Sources */,
 				346F0FFA1C2FE8C20020463F /* MJRefreshAutoNormalFooter.m in Sources */,
 				346F100A1C2FE8C20020463F /* SVRadialGradientLayer.m in Sources */,
 				345E64371C2E1CFF00F55F22 /* BQModel.m in Sources */,
 				346F100D1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				3415E6511C3B652E005E6E4C /* MJExtensionConst.m in Sources */,
+				3415E6541C3B652E005E6E4C /* MJPropertyKey.m in Sources */,
 				345E64361C2E1CFF00F55F22 /* BQViewController.m in Sources */,
 				345E643D1C2E1CFF00F55F22 /* BQCollectionCell.m in Sources */,
 				346F100B1C2FE8C20020463F /* UITableView+FDIndexPathHeightCache.m in Sources */,
+				3415E6521C3B652E005E6E4C /* MJFoundation.m in Sources */,
 				346F10051C2FE8C20020463F /* UIScrollView+MJRefresh.m in Sources */,
 				346F10111C2FE8C20020463F /* Foundation+Log.m in Sources */,
 				346F0FFD1C2FE8C20020463F /* MJRefreshBackNormalFooter.m in Sources */,
@@ -709,20 +819,29 @@
 				346F0FF61C2FE8C20020463F /* MJRefreshComponent.m in Sources */,
 				346F10001C2FE8C20020463F /* MJRefreshNormalHeader.m in Sources */,
 				346F0FEE1C2FE8C20020463F /* AFHTTPSessionManager.m in Sources */,
+				3415E6571C3B652E005E6E4C /* NSObject+MJCoding.m in Sources */,
 				346F10101C2FE8C20020463F /* AppDelegate.m in Sources */,
 				346F100E1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				345E643C1C2E1CFF00F55F22 /* BQTestModel.m in Sources */,
+				3415E6331C3B59E1005E6E4C /* YYKVStorage.m in Sources */,
+				3415E6311C3B59E1005E6E4C /* YYCache.m in Sources */,
 				346F0FFC1C2FE8C20020463F /* MJRefreshBackGifFooter.m in Sources */,
+				3415E6551C3B652E005E6E4C /* MJPropertyType.m in Sources */,
 				346F0FF41C2FE8C20020463F /* MJRefreshAutoFooter.m in Sources */,
+				3415E6561C3B652E005E6E4C /* NSObject+MJClass.m in Sources */,
 				345E643B1C2E1CFF00F55F22 /* BQViewController2.m in Sources */,
 				346F0FF51C2FE8C20020463F /* MJRefreshBackFooter.m in Sources */,
+				3415E6591C3B652E005E6E4C /* NSObject+MJProperty.m in Sources */,
 				346F0FF01C2FE8C20020463F /* AFSecurityPolicy.m in Sources */,
 				346F100C1C2FE8C20020463F /* UITableView+FDKeyedHeightCache.m in Sources */,
 				346F10061C2FE8C20020463F /* UIView+MJExtension.m in Sources */,
 				346F10091C2FE8C20020463F /* SVProgressHUD.m in Sources */,
 				345E64381C2E1CFF00F55F22 /* BQCell.m in Sources */,
+				3415E6581C3B652E005E6E4C /* NSObject+MJKeyValue.m in Sources */,
+				3415E6501C3B652E005E6E4C /* MJDictionaryCache.m in Sources */,
 				346F0FF11C2FE8C20020463F /* AFURLRequestSerialization.m in Sources */,
 				346F0FFF1C2FE8C20020463F /* MJRefreshGifHeader.m in Sources */,
+				3415E6321C3B59E1005E6E4C /* YYDiskCache.m in Sources */,
 				346F0FFB1C2FE8C20020463F /* MJRefreshAutoStateFooter.m in Sources */,
 				346F0FEF1C2FE8C20020463F /* AFNetworkReachabilityManager.m in Sources */,
 				346F0FF21C2FE8C20020463F /* AFURLResponseSerialization.m in Sources */,
@@ -737,6 +856,7 @@
 				345E63711C2E1CE400F55F22 /* main.m in Sources */,
 				345E643F1C2E1CFF00F55F22 /* BQViewModel2.m in Sources */,
 				346F0FF71C2FE8C20020463F /* MJRefreshFooter.m in Sources */,
+				3415E6341C3B59E1005E6E4C /* YYMemoryCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
