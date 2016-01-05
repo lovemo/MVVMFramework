@@ -33,11 +33,26 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
 /**
  *  默认 BQHttpToolReturnCacheDataThenLoad 的缓存方式
  */
-+ (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure;
-+ (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure;
++ (void)get:(NSString *)url
+                params:(NSDictionary *)params
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure;
 
++ (void)post:(NSString *)url
+                params:(NSDictionary *)params
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure;
 
-+ (void)get:(NSString *)url params:(NSDictionary *)params cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy success:(void (^)(id json))success failure:(void (^)(NSError *error))failure;
-+ (void)post:(NSString *)url params:(NSDictionary *)params cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy success:(void (^)(id json))success failure:(void (^)(NSError *error))failure;
++ (void)get:(NSString *)url
+                params:(NSDictionary *)params
+                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure;
+
++ (void)post:(NSString *)url
+                params:(NSDictionary *)params
+                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure;
 
 @end

@@ -57,27 +57,48 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
     [[BQHttpTool defaultHttpTool].cache removeObjectForKey:key];
 }
 
-+ (void)get:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
++ (void)get:(NSString *)url
+                params:(NSDictionary *)params
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
 }
 
-+ (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
++ (void)post:(NSString *)url
+                params:(NSDictionary *)params
+                success:(void (^)(id json))success
+                failure:(void (^)(NSError *error))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
 }
 
-+ (void)get:(NSString *)url params:(NSDictionary *)params cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy success:(void (^)(id))success failure:(void (^)(NSError *))failure {
++ (void)get:(NSString *)url
+                params:(NSDictionary *)params
+                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+                success:(void (^)(id))success
+                failure:(void (^)(NSError *))failure
+{
     [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:cachePolicy success:success failure:failure];
 }
 
-+ (void)post:(NSString *)url params:(NSDictionary *)params cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy success:(void (^)(id))success failure:(void (^)(NSError *))failure {
++ (void)post:(NSString *)url
+                params:(NSDictionary *)params
+                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+                success:(void (^)(id))success
+                failure:(void (^)(NSError *))failure
+{
     [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:cachePolicy success:success failure:failure];
 }
 
 #pragma mark -------------------- private --------------------
 
-+ (void)requestMethod:(BQHttpToolRequestType)requestType url:(NSString *)url params:(NSDictionary *)params  cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
++ (void)requestMethod:(BQHttpToolRequestType)requestType
+                  url:(NSString *)url
+               params:(NSDictionary *)params
+          cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+              success:(void (^)(id json))success
+              failure:(void (^)(NSError *error))failure
 {
     NSString *cacheKey = url;
     if (params) {
@@ -124,8 +145,13 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
     [BQHttpTool requestMethod:requestType url:url params:params cache:cache cacheKey:cacheKey success:success failure:failure];
 }
 
-+ (void)requestMethod:(BQHttpToolRequestType)requestType url:(NSString *)url params:(NSDictionary *)params cache:(YYCache *)cache
-             cacheKey:(NSString *)cacheKey success:(void (^)(id json))success failure:(void (^)(NSError *error))failure
++ (void)requestMethod:(BQHttpToolRequestType)requestType
+                  url:(NSString *)url
+               params:(NSDictionary *)params
+                cache:(YYCache *)cache
+             cacheKey:(NSString *)cacheKey
+              success:(void (^)(id json))success
+              failure:(void (^)(NSError *error))failure
 {
     switch (requestType) {
         case BQHttpToolRequestTypeGET: {
