@@ -10,7 +10,7 @@
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking.jpeg)
 ##现在的工程代码结构
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/directory_tree.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/directory_tree.png)
 
 ### <a id="模块构建"></a> 模块构建
   
