@@ -226,7 +226,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 ### <a id="demo效果"></a> demo效果
 - 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
 
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/MVVMFramework/screenshots/demo.gif)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/demo.gif)
 
 ### <a id="使用方法"></a> 使用方法
 - 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
