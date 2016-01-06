@@ -239,6 +239,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 ## 推荐-几篇不错的MVVM学习文章
 * http://www.ios122.com/tag/mvvm/
+* http://ios.jobbole.com/83657/
 * http://www.cocoachina.com/ios/20150525/11919.html
 * http://www.cocoachina.com/ios/20140716/9152.html
 * http://www.cocoachina.com/ios/20150122/10987.html
