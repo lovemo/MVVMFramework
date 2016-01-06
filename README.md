@@ -238,7 +238,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
-
+* http://www.ios122.com/tag/mvvm/
 * http://www.cocoachina.com/ios/20150525/11919.html
 * http://www.cocoachina.com/ios/20140716/9152.html
 * http://www.cocoachina.com/ios/20150122/10987.html
