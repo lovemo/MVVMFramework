@@ -21,6 +21,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 @interface BQHttpTool ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, strong) YYCache *cache;
+@property (nonatomic, strong) UIAlertView *alert;
 @end
 
 @implementation BQHttpTool
@@ -33,7 +34,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         // 设置请求ContentType
         // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-     //   self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     }
     return self;
 }
@@ -58,35 +59,35 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 }
 
 + (void)get:(NSString *)url
-                params:(NSDictionary *)params
-                success:(void (^)(id json))success
-                failure:(void (^)(NSError *error))failure
+     params:(NSDictionary *)params
+    success:(void (^)(id json))success
+    failure:(void (^)(NSError *error))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
 }
 
 + (void)post:(NSString *)url
-                params:(NSDictionary *)params
-                success:(void (^)(id json))success
-                failure:(void (^)(NSError *error))failure
+      params:(NSDictionary *)params
+     success:(void (^)(id json))success
+     failure:(void (^)(NSError *error))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
 }
 
 + (void)get:(NSString *)url
-                params:(NSDictionary *)params
-                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
-                success:(void (^)(id))success
-                failure:(void (^)(NSError *))failure
+     params:(NSDictionary *)params
+cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+    success:(void (^)(id))success
+    failure:(void (^)(NSError *))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:cachePolicy success:success failure:failure];
 }
 
 + (void)post:(NSString *)url
-                params:(NSDictionary *)params
-                cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
-                success:(void (^)(id))success
-                failure:(void (^)(NSError *))failure
+      params:(NSDictionary *)params
+ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+     success:(void (^)(id))success
+     failure:(void (^)(NSError *))failure
 {
     [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:cachePolicy success:success failure:failure];
 }
@@ -155,41 +156,41 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 {
     switch (requestType) {
         case BQHttpToolRequestTypeGET: {
-                if ([BQHttpTool isConnectionAvailable]) {
-                    // 2.发送请求
-                    [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                        
-                        if (success) {
-                            [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
-                            success(responseObject);
-                        }
-                    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                        if (failure) {
-                            failure(error);
-                        }
-                    }];
-                } else {
-                    [BQHttpTool showExceptionDialog];
-                }
+            if ([BQHttpTool isConnectionAvailable]) {
+                // 2.发送请求
+                [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    
+                    if (success) {
+                        [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
+                        success(responseObject);
+                    }
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    if (failure) {
+                        failure(error);
+                    }
+                }];
+            } else {
+                [BQHttpTool showExceptionDialog];
+            }
             break;
         }
         case BQHttpToolRequestTypePOST: {
-                if ([BQHttpTool isConnectionAvailable]) {
-                    // 2.发送请求
-                    [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                        if (success) {
-                            [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
-                            success(responseObject);
-                        }
-                    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                        if (failure) {
-                            failure(error);
-                        }
-                    }];
-                } else {
-                    [BQHttpTool showExceptionDialog];
-                }
-   
+            if ([BQHttpTool isConnectionAvailable]) {
+                // 2.发送请求
+                [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    if (success) {
+                        [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
+                        success(responseObject);
+                    }
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    if (failure) {
+                        failure(error);
+                    }
+                }];
+            } else {
+                [BQHttpTool showExceptionDialog];
+            }
+            
             break;
         }
         default:
@@ -200,11 +201,15 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 // 弹出网络错误提示框
 + (void)showExceptionDialog
 {
-    [[[UIAlertView alloc] initWithTitle:@"提示"
-                                message:@"网络异常，请检查网络连接"
-                               delegate:self
-                      cancelButtonTitle:@"好的"
-                      otherButtonTitles:nil, nil] show];
+    if ([BQHttpTool defaultHttpTool].alert) {
+        return;
+    }
+    [BQHttpTool defaultHttpTool].alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                                    message:@"网络异常，请检查网络连接"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"好的"
+                                                          otherButtonTitles:nil, nil];
+    [[BQHttpTool defaultHttpTool].alert show];
 }
 // 查看网络状态是否给力
 + (BOOL)isConnectionAvailable
