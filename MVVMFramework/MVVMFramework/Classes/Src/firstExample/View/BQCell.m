@@ -7,7 +7,7 @@
 //
 
 #import "BQCell.h"
-#import "BQModel.h"
+#import "FirstModel.h"
 
 @implementation BQCell
 
@@ -15,7 +15,7 @@
         customObj:(id)obj
         indexPath:(NSIndexPath *)indexPath
 {
-     BQModel *model = (BQModel *)obj ;
+     FirstModel *model = (FirstModel *)obj ;
    //  BQCell *mycell = (BQCell *)cell ;
     self.lbTitle.text = model.title ;
     

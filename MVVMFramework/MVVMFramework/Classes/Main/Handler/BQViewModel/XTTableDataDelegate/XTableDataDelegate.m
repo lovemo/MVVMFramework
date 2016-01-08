@@ -21,6 +21,7 @@
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, strong) BQBaseViewModel *viewModel;
 
+
 @end
 
 @implementation XTableDataDelegate
@@ -53,13 +54,14 @@
 
 - (void)handleTableViewDatasourceAndDelegate:(UITableView *)table
 {
+    
     table.dataSource = self ;
     table.delegate   = self ;
     
     __weak typeof(self) weakSelf = self;
     __weak typeof(table) weakTable = table;
  
-    // 第一次刷新数据
+    //  第一次刷新数据
     [self.viewModel getDataListSuccess:^{
         [weakTable reloadData];
     } failure:^{
@@ -72,13 +74,18 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.viewModel getDataListSuccess:^{
                 [weakTable reloadData];
+
             } failure:^{
             }];
-            // 结束刷新
-            [weakTable.mj_header endRefreshing];
+           
         });
+        // 结束刷新
+        [weakTable.mj_header endRefreshing];
     }];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    table.mj_header.automaticallyChangeAlpha = YES;
     
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -117,7 +124,7 @@
 
 }
 
-#pragma mark --
+#pragma mark --c
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

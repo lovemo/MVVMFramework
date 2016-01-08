@@ -1,32 +1,34 @@
 //
-//  ViewController.m
+//  FirstVC.m
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "BQViewController.h"
+#import "FirstVC.h"
 #import "XTableDataDelegate.h"
 #import "BQCell.h"
-#import "BQModel.h"
+#import "FirstModel.h"
 #import "UITableViewCell+Extension.h"
-#import "BQViewController2.h"
+#import "SecondVC.h"
 #import "BQViewModel.h"
+
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 static NSString *const MyCellIdentifier2 = @"BQCell2" ;
 
-@interface BQViewController ()
+@interface FirstVC ()
 @property (nonatomic, strong) XTableDataDelegate *tableHander ;
 @end
 
-@implementation BQViewController
+@implementation FirstVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
     [self setupTableView] ;
+
 }
 
 /**
@@ -36,13 +38,13 @@ static NSString *const MyCellIdentifier2 = @"BQCell2" ;
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-  
+
     self.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
                                                                 cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
                                                                 didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                                                    BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
-                                                                    [weakSelf presentViewController:vc animated:YES completion:nil];
+                                                    
+                                                                    SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+                                                                    [weakSelf.navigationController pushViewController:vc animated:YES];
                                                                     NSLog(@"click row : %@",@(indexPath.row)) ;
                                                                 }];
     

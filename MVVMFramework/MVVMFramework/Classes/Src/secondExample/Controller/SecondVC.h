@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondVC.h
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BQViewController2 : UIViewController
+@interface SecondVC : UIViewController
 
 @end
 

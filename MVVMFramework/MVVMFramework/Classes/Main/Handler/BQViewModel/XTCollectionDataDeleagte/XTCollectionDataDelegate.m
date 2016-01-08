@@ -84,7 +84,7 @@
             [weakCollection.mj_header endRefreshing];
         });
     }];
-    
+    collection.mj_header.automaticallyChangeAlpha = YES;
 }
 
 #pragma mark --UICollectionViewDelegateFlowLayout

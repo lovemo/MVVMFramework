@@ -7,20 +7,15 @@
 //
 
 #import "BQViewModel.h"
-#import "BQModel.h"
+#import "FirstModel.h"
 #import "BQTestModel.h"
-#import "SVProgressHUD.h"
-#import "BQHttpTool.h"
-#import "MJExtension.h"
 
-#define PATH_OF_CACHES    [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 @interface BQViewModel ()
 
 @end
 
 @implementation BQViewModel
-
 
 - (NSUInteger)numberOfRowsInSection:(NSUInteger)section {
   
@@ -37,6 +32,7 @@
     // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
+
     
     [self getDataList:url params:nil success:^(NSArray *array) {
         if (success) {
@@ -55,7 +51,15 @@
      */
     [BQHttpTool get:url params:nil cachePolicy:BQHttpToolReturnCacheDataElseLoad success:^(id json) {
         NSArray *array = json[@"stories"];
-        self.dataArrayList = [BQModel mj_objectArrayWithKeyValuesArray:array];
+    
+        self.dataArrayList = [FirstModel mj_objectArrayWithKeyValuesArray:array];
+        for (FirstModel *m in self.dataArrayList) {
+            [PMKVObserver observeObject:m keyPath:@"title" options:0 block:^(id  _Nonnull object, NSDictionary<NSString *,id> * _Nullable change, PMKVObserver * _Nonnull kvo) {
+                NSString *old = change[NSKeyValueChangeOldKey];
+                NSString *new = change[NSKeyValueChangeNewKey];
+                NSLog(@"%@------%@",old,new);
+            }];
+        }
         success(self.dataArrayList);
         NSLog(@"%@",PATH_OF_CACHES);
 

@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="302" height="147"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Auc-Zo-QSp">
-                        <rect key="frame" x="8" y="20" width="110" height="116"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Auc-Zo-QSp">
+                        <rect key="frame" x="8" y="20" width="110" height="61"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="95" id="GGg-nu-xOw"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="J58-DC-qql"/>
@@ -24,6 +24,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="GGg-nu-xOw"/>
+                                <exclude reference="SSS-58-0hl"/>
                             </mask>
                         </variation>
                     </imageView>
@@ -35,7 +36,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6k-LQ-JDZ">
-                        <rect key="frame" x="150" y="32" width="137" height="21"/>
+                        <rect key="frame" x="8" y="110" width="137" height="21"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="XrK-XQ-hQH"/>
@@ -43,7 +44,7 @@
                             <constraint firstAttribute="width" constant="42" id="nl9-ob-UTY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.25899226651733775" green="1" blue="0.68040655838073727" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
@@ -55,28 +56,30 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="h6k-LQ-JDZ" secondAttribute="trailing" constant="2" id="4fI-gq-Mnx"/>
+                    <constraint firstItem="h6k-LQ-JDZ" firstAttribute="top" secondItem="Auc-Zo-QSp" secondAttribute="bottom" constant="3" id="BGk-14-OzM"/>
                     <constraint firstItem="k4V-kW-BWX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BhT-bh-f89"/>
                     <constraint firstAttribute="bottom" secondItem="k4V-kW-BWX" secondAttribute="bottom" id="Cf8-9h-hBG"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="h6k-LQ-JDZ" secondAttribute="trailing" constant="2" id="Fce-Fv-VlU"/>
                     <constraint firstItem="k4V-kW-BWX" firstAttribute="top" secondItem="Auc-Zo-QSp" secondAttribute="bottom" constant="3" id="Hho-4p-R5K"/>
                     <constraint firstItem="Auc-Zo-QSp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="IxI-nb-xhY"/>
-                    <constraint firstItem="h6k-LQ-JDZ" firstAttribute="leading" secondItem="Auc-Zo-QSp" secondAttribute="trailing" constant="5" id="Mc4-73-jZz"/>
+                    <constraint firstAttribute="trailing" secondItem="h6k-LQ-JDZ" secondAttribute="trailing" id="Rf0-Oe-Wj8"/>
                     <constraint firstAttribute="bottom" secondItem="Auc-Zo-QSp" secondAttribute="bottom" constant="3" id="WK3-M1-Pzg"/>
+                    <constraint firstItem="k4V-kW-BWX" firstAttribute="top" secondItem="h6k-LQ-JDZ" secondAttribute="bottom" constant="3" id="eKm-Sm-ILi"/>
                     <constraint firstItem="Auc-Zo-QSp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="i4z-iw-KJJ"/>
                     <constraint firstAttribute="trailing" secondItem="k4V-kW-BWX" secondAttribute="trailing" id="kKZ-cI-Fde"/>
+                    <constraint firstItem="h6k-LQ-JDZ" firstAttribute="leading" secondItem="Auc-Zo-QSp" secondAttribute="leading" id="lSR-0Z-9Mq"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h6k-LQ-JDZ" secondAttribute="trailing" constant="5" id="lkA-ds-ceh"/>
                     <constraint firstAttribute="trailing" secondItem="h6k-LQ-JDZ" secondAttribute="trailing" constant="3" id="uNS-KX-Gsb"/>
                     <constraint firstItem="k4V-kW-BWX" firstAttribute="top" secondItem="Auc-Zo-QSp" secondAttribute="bottom" constant="2" id="wri-ag-cgf"/>
-                    <constraint firstItem="h6k-LQ-JDZ" firstAttribute="top" secondItem="Auc-Zo-QSp" secondAttribute="top" id="yVL-OW-zYo"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="WK3-M1-Pzg"/>
-                        <exclude reference="wri-ag-cgf"/>
                         <exclude reference="Fce-Fv-VlU"/>
                         <exclude reference="lkA-ds-ceh"/>
                         <exclude reference="uNS-KX-Gsb"/>
+                        <exclude reference="Hho-4p-R5K"/>
+                        <exclude reference="wri-ag-cgf"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

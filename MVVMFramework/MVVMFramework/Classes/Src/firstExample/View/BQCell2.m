@@ -7,14 +7,14 @@
 //
 
 #import "BQCell2.h"
-#import "BQModel.h"
+#import "FirstModel.h"
 @implementation BQCell2
 
 - (void)configure:(UITableViewCell *)cell
         customObj:(id)obj
         indexPath:(NSIndexPath *)indexPath
 {
-    BQModel *model = (BQModel *)obj ;
+    FirstModel *model = (FirstModel *)obj ;
     self.testLabel1.text = model.title;
 
 //    NSString *lengthStr = @"Swift is a powerful and intuitive programming language for iOS, OS X, tvOS, and watchOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and apps run lightning-fast. Swift is ready for your next project — or addition into your current app — because Swift code works side-by-side with Objective-C.";

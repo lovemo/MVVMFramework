@@ -1,5 +1,5 @@
 //
-//  MyObj.h
+//  FirstModel.h
 //  XTMultipleTables
 //
 //  Created by momo on 15/12/5.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface BQModel : NSObject
+@interface FirstModel : NSObject
 
 @property (nonatomic, copy)     NSString *title ;
 

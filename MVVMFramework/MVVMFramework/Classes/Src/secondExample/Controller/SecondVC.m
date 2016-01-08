@@ -1,12 +1,12 @@
 //
-//  ViewController.m
+//  SecondVC.m
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "BQViewController2.h"
+#import "SecondVC.h"
 #import "XTCollectionDataDelegate.h"
 #import "BQCollectionCell.h"
 #import "UICollectionViewCell+Extension.h"
@@ -14,14 +14,14 @@
 
 static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
-@interface BQViewController2 ()
+@interface SecondVC ()
 
 @property (nonatomic,strong) XTCollectionDataDelegate *collectionHander ;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
-@implementation BQViewController2
+@implementation SecondVC
 
 - (void)viewDidLoad
 {
@@ -35,7 +35,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 {
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-
+    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     self.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                 cellIdentifier:MyCellIdentifier
                                                                                 collectionViewLayout:nil cellItemSizeBlock:^CGSize {
@@ -43,8 +43,12 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
                                                                                 } cellItemMarginBlock:^UIEdgeInsets {
                                                                                     return UIEdgeInsetsMake(0, 20, 0, 20);
                                                                                 } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
-                                                                                    [self dismissViewControllerAnimated:YES completion:nil];
+                                                                                    NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+                                                                                    [[[UIAlertView alloc] initWithTitle:@"提示"
+                                                                                                               message:strMsg
+                                                                                                              delegate:self
+                                                                                                     cancelButtonTitle:@"好的"
+                                                                                                      otherButtonTitles:nil, nil] show];
                                                                                 }];
 //    // 设置UICollectionViewCell大小
 //    [self.collectionHander ItemSize:^CGSize{
