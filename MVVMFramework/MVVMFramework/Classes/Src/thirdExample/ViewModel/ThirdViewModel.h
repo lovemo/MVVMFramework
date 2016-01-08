@@ -8,8 +8,11 @@
 
 #import "BQBaseViewModel.h"
 #import "ThirdModel.h"
+
 @interface ThirdViewModel : BQBaseViewModel
 
 @property (nonatomic, strong) ThirdModel *model;
+
+- (ThirdModel *)getRandomData;
 
 @end

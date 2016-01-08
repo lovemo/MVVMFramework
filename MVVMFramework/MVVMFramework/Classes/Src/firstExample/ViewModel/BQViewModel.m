@@ -53,13 +53,6 @@
         NSArray *array = json[@"stories"];
     
         self.dataArrayList = [FirstModel mj_objectArrayWithKeyValuesArray:array];
-        for (FirstModel *m in self.dataArrayList) {
-            [PMKVObserver observeObject:m keyPath:@"title" options:0 block:^(id  _Nonnull object, NSDictionary<NSString *,id> * _Nullable change, PMKVObserver * _Nonnull kvo) {
-                NSString *old = change[NSKeyValueChangeOldKey];
-                NSString *new = change[NSKeyValueChangeNewKey];
-                NSLog(@"%@------%@",old,new);
-            }];
-        }
         success(self.dataArrayList);
         NSLog(@"%@",PATH_OF_CACHES);
 

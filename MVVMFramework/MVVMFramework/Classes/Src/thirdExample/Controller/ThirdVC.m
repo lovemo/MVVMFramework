@@ -51,9 +51,12 @@
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-
-    self.viewModel.model.name = [self.viewModel.model.name isEqualToString:@"再见"] ? @"我来了" : @"再见";
-    self.thirdViewManger.viewModel = self.viewModel;
+    [self.viewModel getDataListSuccess:^{
+        self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
+    } failure:^{
+        
+    }];
+    
 }
 
 

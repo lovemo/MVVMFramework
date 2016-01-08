@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BQBaseViewModel.h"
 
-
 @interface BQViewModel : BQBaseViewModel
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ThirdViewManger.h"
-#import "ThirdViewModel.h"
+#import "ThirdModel.h"
 
 @implementation ThirdViewManger
 
@@ -17,18 +17,12 @@
         thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
         __weak typeof(thirdView) weakSelf =  thirdView;
         thirdView.btnClickBlock = ^() {
-            weakSelf.testLabel.text = self.viewModel.model.name == nil ? @"我来了" : self.viewModel.model.name;
-            NSLog(@"点我干嘛");
+            weakSelf.testLabel.text = self.thirdModel.title;
+            NSLog(@"点我干嘛----");
         };
         _thirdView = thirdView;
     }
     return self;
-}
-
-+ (instancetype)thirdViewMangerWithViewModel:(ThirdViewModel *)viewModel {
-    ThirdViewManger *thirdViewManger = [[ThirdViewManger alloc]init];
-    thirdViewManger.viewModel = viewModel;
-    return thirdViewManger;
 }
 
 @end

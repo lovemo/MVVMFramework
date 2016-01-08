@@ -12,17 +12,6 @@
             <rect key="frame" x="0.0" y="0.0" width="502" height="237"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-um-ZgX">
-                    <rect key="frame" x="151" y="147" width="200" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.32425309520000001" blue="0.4804775107" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="VVy-bg-XZw"/>
-                        <constraint firstAttribute="width" constant="200" id="tlt-Xm-Qva"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZH-1w-gPJ">
                     <rect key="frame" x="281" y="24" width="201" height="71"/>
                     <color key="backgroundColor" red="0.4941176471" green="0.80392156859999997" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,16 +30,34 @@
                         <action selector="testBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="y1L-A3-Buv"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-um-ZgX">
+                    <rect key="frame" x="5" y="135" width="492" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.32425309520000001" blue="0.4804775107" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ljq-po-CS9"/>
+                        <constraint firstAttribute="height" constant="40" id="VVy-bg-XZw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="VVy-bg-XZw"/>
+                        </mask>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="sCf-XP-Kv9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.4" id="1LN-QM-W1i"/>
+                <constraint firstAttribute="trailing" secondItem="Z2F-um-ZgX" secondAttribute="trailing" constant="5" id="3n2-Bg-Sxv"/>
                 <constraint firstItem="Z2F-um-ZgX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6lC-o7-xfP"/>
                 <constraint firstItem="6ZH-1w-gPJ" firstAttribute="top" secondItem="sCf-XP-Kv9" secondAttribute="top" id="FaQ-fC-fBA"/>
                 <constraint firstAttribute="trailing" secondItem="6ZH-1w-gPJ" secondAttribute="trailing" constant="20" id="Ikq-t3-D7P"/>
                 <constraint firstItem="sCf-XP-Kv9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="QfV-9J-pSW"/>
                 <constraint firstItem="6ZH-1w-gPJ" firstAttribute="height" secondItem="sCf-XP-Kv9" secondAttribute="height" id="SEH-rf-qyS"/>
-                <constraint firstAttribute="bottom" secondItem="Z2F-um-ZgX" secondAttribute="bottom" constant="50" id="nL2-8i-FYI"/>
+                <constraint firstItem="Z2F-um-ZgX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="jz4-VW-PWz"/>
+                <constraint firstItem="Z2F-um-ZgX" firstAttribute="top" secondItem="sCf-XP-Kv9" secondAttribute="bottom" constant="40" id="ouf-Wt-hh1"/>
                 <constraint firstItem="sCf-XP-Kv9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="owb-Tt-kxd"/>
                 <constraint firstItem="6ZH-1w-gPJ" firstAttribute="width" secondItem="sCf-XP-Kv9" secondAttribute="width" id="uO3-rJ-GEZ"/>
                 <constraint firstItem="Z2F-um-ZgX" firstAttribute="top" secondItem="sCf-XP-Kv9" secondAttribute="bottom" constant="20" id="vGf-Jt-Jbm"/>
@@ -60,6 +67,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="6lC-o7-xfP"/>
                     <exclude reference="vGf-Jt-Jbm"/>
                 </mask>
             </variation>

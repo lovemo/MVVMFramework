@@ -9,13 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "ThirdView.h"
 
-@class ThirdViewModel;
+@class ThirdModel;
 
 @interface ThirdViewManger : NSObject
 
 @property (nonatomic, weak) ThirdView *thirdView;
-@property (nonatomic, strong) ThirdViewModel *viewModel;
+@property (nonatomic, strong) ThirdModel *thirdModel;
 
-+ (instancetype)thirdViewMangerWithViewModel:(ThirdViewModel *)viewModel;
 
 @end

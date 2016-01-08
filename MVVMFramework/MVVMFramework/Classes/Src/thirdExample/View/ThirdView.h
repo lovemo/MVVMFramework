@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^btnClickBlock)();
-typedef void(^btnJumpBlock)();
+typedef void (^btnClickBlock)();
+typedef void (^btnJumpBlock)();
 
 @interface ThirdView : UIView
 
