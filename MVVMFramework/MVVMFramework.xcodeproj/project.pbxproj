@@ -93,6 +93,8 @@
 		346F100F1C2FE8C20020463F /* BQHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE11C2FE8C20020463F /* BQHttpTool.m */; };
 		346F10101C2FE8C20020463F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE41C2FE8C20020463F /* AppDelegate.m */; };
 		346F10111C2FE8C20020463F /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE71C2FE8C20020463F /* Foundation+Log.m */; };
+		6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -264,6 +266,10 @@
 		346F0FE31C2FE8C20020463F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		346F0FE41C2FE8C20020463F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		346F0FE71C2FE8C20020463F /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		6D9ED0B71C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TableDataDelegateAdditions.h"; sourceTree = "<group>"; };
+		6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TableDataDelegateAdditions.m"; sourceTree = "<group>"; };
+		6D9ED0BA1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CollectionDataDelegateAdditions.h"; sourceTree = "<group>"; };
+		6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CollectionDataDelegateAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +751,8 @@
 				346F0F891C2FE8C20020463F /* UICollectionViewCell+Extension.m */,
 				346F0F8A1C2FE8C20020463F /* XTCollectionDataDelegate.h */,
 				346F0F8B1C2FE8C20020463F /* XTCollectionDataDelegate.m */,
+				6D9ED0BA1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.h */,
+				6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */,
 			);
 			path = XTCollectionDataDeleagte;
 			sourceTree = "<group>";
@@ -756,6 +764,8 @@
 				346F0F8E1C2FE8C20020463F /* UITableViewCell+Extension.m */,
 				346F0F8F1C2FE8C20020463F /* XTableDataDelegate.h */,
 				346F0F901C2FE8C20020463F /* XTableDataDelegate.m */,
+				6D9ED0B71C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.h */,
+				6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */,
 			);
 			name = XTableDataDelegate;
 			path = XTTableDataDelegate;
@@ -954,6 +964,7 @@
 				346F0FF31C2FE8C20020463F /* AFURLSessionManager.m in Sources */,
 				3415E65A1C3B652E005E6E4C /* NSString+MJExtension.m in Sources */,
 				346F100A1C2FE8C20020463F /* SVRadialGradientLayer.m in Sources */,
+				6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
 				345E64371C2E1CFF00F55F22 /* FirstModel.m in Sources */,
 				346F100D1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				345DCD431C3E6B62000740A6 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1008,6 +1019,7 @@
 				345DCD3F1C3E6B62000740A6 /* MJRefreshAutoGifFooter.m in Sources */,
 				345E643A1C2E1CFF00F55F22 /* BQViewModel.m in Sources */,
 				346F10071C2FE8C20020463F /* SVIndefiniteAnimatedView.m in Sources */,
+				6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */,
 				345E63711C2E1CE400F55F22 /* main.m in Sources */,
 				345DCD441C3E6B62000740A6 /* MJRefreshBackStateFooter.m in Sources */,
 				345E643F1C2E1CFF00F55F22 /* BQViewModel2.m in Sources */,
