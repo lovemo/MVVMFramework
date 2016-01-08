@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UICollectionView+CollectionDataDelegateAdditions.h"
 
 /**
  *  选中UICollectionViewCell的Block

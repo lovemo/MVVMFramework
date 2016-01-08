@@ -36,6 +36,8 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
     self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    
+    /**
     self.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                 cellIdentifier:MyCellIdentifier
                                                                                 collectionViewLayout:nil cellItemSizeBlock:^CGSize {
@@ -56,7 +58,22 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 //    }];
     // 设置UICollectionView的delegate和dataSourse为collectionHander
     [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
-
+     */
+    
+    self.collectionView.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
+                                                                               cellIdentifier:MyCellIdentifier
+                                                                         collectionViewLayout:nil cellItemSizeBlock:^CGSize {
+                                                                             return CGSizeMake(110, 120);
+                                                                         } cellItemMarginBlock:^UIEdgeInsets {
+                                                                             return UIEdgeInsetsMake(0, 20, 0, 20);
+                                                                         } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+                                                                             [[[UIAlertView alloc] initWithTitle:@"提示"
+                                                                                                         message:strMsg
+                                                                                                        delegate:self
+                                                                                               cancelButtonTitle:@"好的"
+                                                                                               otherButtonTitles:nil, nil] show];
+                                                                         }];
 }
 
 @end
