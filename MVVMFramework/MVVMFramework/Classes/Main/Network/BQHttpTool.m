@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         // 设置请求ContentType
         // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    //    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     }
     return self;
 }

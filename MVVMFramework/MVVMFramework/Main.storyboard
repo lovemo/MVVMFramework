@@ -51,14 +51,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOp-E7-hbB">
-                                <rect key="frame" x="230" y="360" width="140" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOp-E7-hbB">
+                                <rect key="frame" x="208" y="360" width="185" height="60"/>
                                 <color key="backgroundColor" red="0.86678733011416154" green="1" blue="0.20285798745614059" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lXd-Lh-nce"/>
                                     <constraint firstAttribute="width" constant="140" id="oe3-Jc-Ml1"/>
                                 </constraints>
-                                <state key="normal" title="点我改变模型中的数据"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="点我加载/监听模型数据变化"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="oe3-Jc-Ml1"/>

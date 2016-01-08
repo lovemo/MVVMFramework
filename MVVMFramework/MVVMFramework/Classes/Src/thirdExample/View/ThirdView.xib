@@ -31,10 +31,10 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-um-ZgX">
-                    <rect key="frame" x="5" y="135" width="492" height="40"/>
+                    <rect key="frame" x="5" y="135" width="492" height="50"/>
                     <color key="backgroundColor" red="1" green="0.32425309520000001" blue="0.4804775107" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Ljq-po-CS9"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Ljq-po-CS9"/>
                         <constraint firstAttribute="height" constant="40" id="VVy-bg-XZw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
