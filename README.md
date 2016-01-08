@@ -248,3 +248,4 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 * http://www.cocoachina.com/ios/20150122/10987.html
 * http://bifidy.net/index.php/407
 * http://www.jianshu.com/p/1e53f09d0f21
+* http://www.cocoachina.com/ios/20160108/14911.html
