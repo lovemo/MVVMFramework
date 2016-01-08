@@ -39,6 +39,7 @@ static NSString *const MyCellIdentifier2 = @"BQCell2" ;
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
 
+    /**
     self.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
                                                                 cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
                                                                 didSelectBlock:^(NSIndexPath *indexPath, id item) {
@@ -49,6 +50,16 @@ static NSString *const MyCellIdentifier2 = @"BQCell2" ;
                                                                 }];
     
     [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+     */
+    
+    self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+                                                     cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+                                                           didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                               
+                                                               SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+                                                               [weakSelf.navigationController pushViewController:vc animated:YES];
+                                                               NSLog(@"click row : %@",@(indexPath.row)) ;
+                                                           }];
 }
 
 @end

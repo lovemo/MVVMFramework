@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UITableView+TableDataDelegateAdditions.h"
 
 /**
  *  选中UITableViewCell的Block
