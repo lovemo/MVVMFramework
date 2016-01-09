@@ -33,7 +33,6 @@
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
 
-    
     [self getDataList:url params:nil success:^(NSArray *array) {
         if (success) {
             success();
