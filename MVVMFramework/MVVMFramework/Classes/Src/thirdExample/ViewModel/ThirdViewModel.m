@@ -43,8 +43,8 @@
      */
     [BQHttpTool get:url params:nil cachePolicy:BQHttpToolReturnCacheDataElseLoad success:^(id json) {
         NSArray *array = json[@"stories"];
-        
-        [[self mutableArrayValueForKey:@"dataArrayList"] addObjectsFromArray:[ThirdModel mj_objectArrayWithKeyValuesArray:array]];
+     
+        self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         success(self.dataArrayList);
         
     } failure:^(NSError *error) {

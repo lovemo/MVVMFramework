@@ -179,17 +179,15 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 {
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-  
-    self.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                               cellIdentifier:MyCellIdentifier
-                                                               didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                                                    BQViewController2 *vc = [sb instantiateViewControllerWithIdentifier:@"ViewController2ID"];
-                                                                    [weakSelf presentViewController:vc animated:YES completion:nil];
-                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
-                                                                }];
     
-    [self.tableHander handleTableViewDatasourceAndDelegate:self.table] ;
+    self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+                                                     cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+                                                           didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                               
+                                                               SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+                                                               [weakSelf.navigationController pushViewController:vc animated:YES];
+                                                               NSLog(@"click row : %@",@(indexPath.row)) ;
+                                                           }];
 }
 
 ```
@@ -202,26 +200,23 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
  */
 - (void)setupCollectionView
 {
-
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-
-    self.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                                                                cellIdentifier:MyCellIdentifier
-                                                                                collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                                                    return CGSizeMake(110, 120);
-                                                                                } cellItemMarginBlock:^UIEdgeInsets {
-                                                                                    return UIEdgeInsetsMake(0, 20, 0, 20);
-                                                                                } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                                    NSLog(@"click row : %@",@(indexPath.row)) ;
-                                                                                    [self dismissViewControllerAnimated:YES completion:nil];
-                                                                                }];
-//    // 设置UICollectionViewCell大小
-//    [self.collectionHander ItemSize:^CGSize{
-//        return CGSizeMake(100, 100);
-//    }];
-    // 设置UICollectionView的delegate和dataSourse为collectionHander
-    [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
-
+    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    
+    self.collectionView.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
+                                                                               cellIdentifier:MyCellIdentifier
+                                                                         collectionViewLayout:nil cellItemSizeBlock:^CGSize {
+                                                                             return CGSizeMake(110, 120);
+                                                                         } cellItemMarginBlock:^UIEdgeInsets {
+                                                                             return UIEdgeInsetsMake(0, 20, 0, 20);
+                                                                         } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+                                                                             [[[UIAlertView alloc] initWithTitle:@"提示"
+                                                                                                         message:strMsg
+                                                                                                        delegate:self
+                                                                                               cancelButtonTitle:@"好的"
+                                                                                               otherButtonTitles:nil, nil] show];
+                                                                         }];
 }
 
 ```

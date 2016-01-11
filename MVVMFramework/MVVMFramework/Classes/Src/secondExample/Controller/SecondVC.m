@@ -16,7 +16,6 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 
 @interface SecondVC ()
 
-@property (nonatomic,strong) XTCollectionDataDelegate *collectionHander ;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
@@ -36,29 +35,6 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
     self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
-    
-    /**
-    self.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                                                                cellIdentifier:MyCellIdentifier
-                                                                                collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                                                    return CGSizeMake(110, 120);
-                                                                                } cellItemMarginBlock:^UIEdgeInsets {
-                                                                                    return UIEdgeInsetsMake(0, 20, 0, 20);
-                                                                                } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                                    NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-                                                                                    [[[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                                               message:strMsg
-                                                                                                              delegate:self
-                                                                                                     cancelButtonTitle:@"好的"
-                                                                                                      otherButtonTitles:nil, nil] show];
-                                                                                }];
-//    // 设置UICollectionViewCell大小
-//    [self.collectionHander ItemSize:^CGSize{
-//        return CGSizeMake(100, 100);
-//    }];
-    // 设置UICollectionView的delegate和dataSourse为collectionHander
-    [self.collectionHander handleCollectionViewDatasourceAndDelegate:self.collectionView] ;
-     */
     
     self.collectionView.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                cellIdentifier:MyCellIdentifier
