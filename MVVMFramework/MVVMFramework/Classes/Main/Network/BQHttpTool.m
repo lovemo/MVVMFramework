@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         // 设置请求ContentType
         // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
-    //    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain",nil];
     }
     return self;
 }
@@ -154,6 +154,11 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
               success:(void (^)(id json))success
               failure:(void (^)(NSError *error))failure
 {
+    
+    [[BQHttpTool defaultHttpTool].manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    [BQHttpTool defaultHttpTool].manager.requestSerializer.timeoutInterval = [BQHttpTool defaultHttpTool].timeoutInterval;
+    [[BQHttpTool defaultHttpTool].manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    
     switch (requestType) {
         case BQHttpToolRequestTypeGET: {
             if ([BQHttpTool isConnectionAvailable]) {

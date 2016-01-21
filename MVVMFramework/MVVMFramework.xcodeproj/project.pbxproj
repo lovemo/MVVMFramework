@@ -30,6 +30,7 @@
 		343196331C3F4C0200A68A91 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 343196321C3F4C0200A68A91 /* ThirdViewManger.m */; };
 		3431963B1C3F61EF00A68A91 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3431963A1C3F61EF00A68A91 /* BHNavViewController.m */; };
 		3431963F1C3F661600A68A91 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3431963E1C3F661600A68A91 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		344579F51C50D71A00200CD0 /* BQHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 344579F41C50D71A00200CD0 /* BQHttpTool.m */; };
 		345DCC8C1C3E3C9D000740A6 /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCC881C3E3C9D000740A6 /* KVObserver.m */; };
 		345DCC9B1C3E522A000740A6 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCC9A1C3E522A000740A6 /* ThirdView.m */; };
 		345DCC9D1C3E5240000740A6 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345DCC9C1C3E5240000740A6 /* ThirdView.xib */; };
@@ -90,11 +91,10 @@
 		346F100C1C2FE8C20020463F /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FDA1C2FE8C20020463F /* UITableView+FDKeyedHeightCache.m */; };
 		346F100D1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FDC1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m */; };
 		346F100E1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FDE1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.m */; };
-		346F100F1C2FE8C20020463F /* BQHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE11C2FE8C20020463F /* BQHttpTool.m */; };
 		346F10101C2FE8C20020463F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE41C2FE8C20020463F /* AppDelegate.m */; };
 		346F10111C2FE8C20020463F /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE71C2FE8C20020463F /* Foundation+Log.m */; };
-		6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */; };
+		6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +144,9 @@
 		3431963A1C3F61EF00A68A91 /* BHNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavViewController.m; sourceTree = "<group>"; };
 		3431963D1C3F661600A68A91 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		3431963E1C3F661600A68A91 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		344579EE1C50C8C100200CD0 /* BQMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQMVVM.h; sourceTree = "<group>"; };
+		344579F31C50D71A00200CD0 /* BQHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQHttpTool.h; sourceTree = "<group>"; };
+		344579F41C50D71A00200CD0 /* BQHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQHttpTool.m; sourceTree = "<group>"; };
 		345DCC871C3E3C9D000740A6 /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
 		345DCC881C3E3C9D000740A6 /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
 		345DCC8A1C3E3C9D000740A6 /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
@@ -261,8 +264,6 @@
 		346F0FDC1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		346F0FDD1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		346F0FDE1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
-		346F0FE01C2FE8C20020463F /* BQHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQHttpTool.h; sourceTree = "<group>"; };
-		346F0FE11C2FE8C20020463F /* BQHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQHttpTool.m; sourceTree = "<group>"; };
 		346F0FE31C2FE8C20020463F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		346F0FE41C2FE8C20020463F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		346F0FE71C2FE8C20020463F /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -371,6 +372,15 @@
 				3431963E1C3F661600A68A91 /* UINavigationController+FDFullscreenPopGesture.m */,
 			);
 			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		344579F21C50D71A00200CD0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				344579F31C50D71A00200CD0 /* BQHttpTool.h */,
+				344579F41C50D71A00200CD0 /* BQHttpTool.m */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		345DCC851C3E3C9D000740A6 /* PMKVObserver */ = {
@@ -685,12 +695,12 @@
 		346F0F7C1C2FE8C20020463F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				344579F21C50D71A00200CD0 /* Network */,
 				343196381C3F61EF00A68A91 /* Base */,
 				343196281C3F447300A68A91 /* Constant */,
 				346F0F7E1C2FE8C20020463F /* Category */,
 				346F0F821C2FE8C20020463F /* Handler */,
 				346F0F911C2FE8C20020463F /* Lib */,
-				346F0FDF1C2FE8C20020463F /* Network */,
 				346F0FE21C2FE8C20020463F /* Other */,
 				346F0FE51C2FE8C20020463F /* Resource */,
 				346F0FE61C2FE8C20020463F /* Utils */,
@@ -731,6 +741,7 @@
 				346F0F841C2FE8C20020463F /* BaseViewModel */,
 				346F0F871C2FE8C20020463F /* XTCollectionDataDeleagte */,
 				346F0F8C1C2FE8C20020463F /* XTableDataDelegate */,
+				344579EE1C50C8C100200CD0 /* BQMVVM.h */,
 			);
 			path = BQViewModel;
 			sourceTree = "<group>";
@@ -834,15 +845,6 @@
 				346F0FDE1C2FE8C20020463F /* UITableView+FDTemplateLayoutCellDebug.m */,
 			);
 			path = "UITableView+FDIndexPathHeightCache";
-			sourceTree = "<group>";
-		};
-		346F0FDF1C2FE8C20020463F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				346F0FE01C2FE8C20020463F /* BQHttpTool.h */,
-				346F0FE11C2FE8C20020463F /* BQHttpTool.m */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		346F0FE21C2FE8C20020463F /* Other */ = {
@@ -949,7 +951,6 @@
 			files = (
 				346F0FEA1C2FE8C20020463F /* UICollectionViewCell+Extension.m in Sources */,
 				3415E6531C3B652E005E6E4C /* MJProperty.m in Sources */,
-				346F100F1C2FE8C20020463F /* BQHttpTool.m in Sources */,
 				345DCD3B1C3E6B62000740A6 /* MJRefreshBackFooter.m in Sources */,
 				345DCD491C3E6B62000740A6 /* MJRefreshConst.m in Sources */,
 				3431962B1C3F447300A68A91 /* BHConst.m in Sources */,
@@ -966,6 +967,7 @@
 				346F100A1C2FE8C20020463F /* SVRadialGradientLayer.m in Sources */,
 				6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
 				345E64371C2E1CFF00F55F22 /* FirstModel.m in Sources */,
+				344579F51C50D71A00200CD0 /* BQHttpTool.m in Sources */,
 				346F100D1C2FE8C20020463F /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				345DCD431C3E6B62000740A6 /* MJRefreshBackNormalFooter.m in Sources */,
 				3415E6511C3B652E005E6E4C /* MJExtensionConst.m in Sources */,

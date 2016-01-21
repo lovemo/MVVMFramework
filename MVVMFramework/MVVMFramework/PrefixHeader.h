@@ -17,6 +17,7 @@
 #import "BQHttpTool.h"
 #import "MJExtension.h"
 #import "BHConst.h"
+#import "UIView+Extension.h"
 
 #define PATH_OF_CACHES    [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 

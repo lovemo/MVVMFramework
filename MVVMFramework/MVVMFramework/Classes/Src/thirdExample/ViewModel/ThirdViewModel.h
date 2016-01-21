@@ -6,7 +6,7 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import "BQBaseViewModel.h"
+#import "BQMVVM.h"
 #import "ThirdModel.h"
 
 @interface ThirdViewModel : BQBaseViewModel

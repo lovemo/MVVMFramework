@@ -7,10 +7,9 @@
 //
 
 #import "FirstVC.h"
-#import "XTableDataDelegate.h"
 #import "BQCell.h"
 #import "FirstModel.h"
-#import "UITableViewCell+Extension.h"
+#import "BQMVVM.h"
 #import "SecondVC.h"
 #import "BQViewModel.h"
 

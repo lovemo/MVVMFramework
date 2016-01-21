@@ -10,6 +10,6 @@
 
 @interface UIViewController (GetVC2StoryBoard)
 
-+ (instancetype)viewControllerWithStoryBoardName:(NSString *)storyboardName identifier:(NSString *)identifier;
++ (id)viewControllerWithStoryBoardName:(NSString *)storyboardName identifier:(NSString *)identifier;
 
 @end

@@ -104,4 +104,46 @@
 {
     return self.frame.origin;
 }
+
+#pragma mark - Relationship
+
+- (UIViewController *)currentVC
+{
+    Class aClass = NSClassFromString(@"UIViewController");
+    for (UIView *next = [self superview]; next; next = next.superview)
+    {
+        UIResponder *nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:aClass])
+        {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
+
+- (UIView *)firstSubviewOfClass:(Class)aClass
+{
+    for (UIView *subView in self.subviews)
+    {
+        if ([subView isKindOfClass:aClass])
+        {
+            return subView;
+        }
+    }
+    return nil;
+}
+
+- (UIView *)firstSupviewOfClass:(Class)aClass;
+{
+    for (UIView *next = [self superview]; next; next = next.superview)
+    {
+        UIView *curView = [next superview];
+        if ([curView isKindOfClass:aClass])
+        {
+            return curView;
+        }
+    }
+    return nil;
+}
+
 @end

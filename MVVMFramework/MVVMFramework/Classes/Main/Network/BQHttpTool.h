@@ -18,6 +18,10 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
 @interface BQHttpTool : NSObject
 
 /**
+ *  请求超时时间
+ */
+@property (nonatomic, assign) NSTimeInterval timeoutInterval;
+/**
  *  创建单例对象
  */
 + (BQHttpTool *)defaultHttpTool;

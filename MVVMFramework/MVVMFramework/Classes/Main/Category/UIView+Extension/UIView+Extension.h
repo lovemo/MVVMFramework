@@ -17,4 +17,11 @@
 @property (nonatomic, assign) CGFloat height;
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGPoint origin;
+
+@property (readonly,copy) __kindof UIViewController *currentVC;
+
+- (UIView *)firstSubviewOfClass:(Class)aClass;
+
+- (UIView *)firstSupviewOfClass:(Class)aClass;
+
 @end

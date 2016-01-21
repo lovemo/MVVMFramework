@@ -7,10 +7,9 @@
 //
 
 #import "SecondVC.h"
-#import "XTCollectionDataDelegate.h"
 #import "BQCollectionCell.h"
-#import "UICollectionViewCell+Extension.h"
 #import "BQViewModel2.h"
+#import "BQMVVM.h"
 
 static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 

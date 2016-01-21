@@ -9,7 +9,7 @@
 #import "UIViewController+GetVC2StoryBoard.h"
 
 @implementation UIViewController (GetVC2StoryBoard)
-+ (instancetype)viewControllerWithStoryBoardName:(NSString *)storyboardName identifier:(NSString *)identifier {
++ (id)viewControllerWithStoryBoardName:(NSString *)storyboardName identifier:(NSString *)identifier {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     return [sb instantiateViewControllerWithIdentifier:identifier];
 }

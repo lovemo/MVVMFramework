@@ -7,7 +7,6 @@
 //
 
 #import "ThirdVC.h"
-#import "FirstVC.h"
 #import "ThirdViewModel.h"
 #import "ThirdViewManger.h"
 
@@ -34,19 +33,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"MVVM Example";
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc]init];
-    returnButtonItem.title = @"返回";
-    self.navigationItem.backBarButtonItem = returnButtonItem;
-    
-    
-    FirstVC *vc = (FirstVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
-    __weak typeof(self) weakSelf = self;
-    self.thirdViewManger.thirdView.btnJumpBlock = ^() {
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    
+
     [self.view addSubview:self.thirdViewManger.thirdView];
 }
 
