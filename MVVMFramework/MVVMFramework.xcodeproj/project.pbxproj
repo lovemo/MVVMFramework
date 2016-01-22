@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048FE63A1C52515C00A1BC01 /* BQDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FE6391C52515C00A1BC01 /* BQDataService.m */; };
+		048FE63D1C52529400A1BC01 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FE63C1C52529400A1BC01 /* BQGetDataList.m */; };
+		048FE6401C52570400A1BC01 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FE63F1C52570400A1BC01 /* BQGetDataList2.m */; };
 		3415E6371C3B5A59005E6E4C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */; };
-		3415E6631C3BB85C005E6E4C /* BQCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3415E6611C3BB85C005E6E4C /* BQCell2.m */; };
-		3415E6641C3BB85C005E6E4C /* BQCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3415E6621C3BB85C005E6E4C /* BQCell2.xib */; };
 		3431962B1C3F447300A68A91 /* BHConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3431962A1C3F447300A68A91 /* BHConst.m */; };
-		3431962F1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3431962E1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.m */; };
 		343196331C3F4C0200A68A91 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 343196321C3F4C0200A68A91 /* ThirdViewManger.m */; };
 		3431963B1C3F61EF00A68A91 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3431963A1C3F61EF00A68A91 /* BHNavViewController.m */; };
 		344579F51C50D71A00200CD0 /* BQHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 344579F41C50D71A00200CD0 /* BQHttpTool.m */; };
 		345DCC9B1C3E522A000740A6 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCC9A1C3E522A000740A6 /* ThirdView.m */; };
 		345DCC9D1C3E5240000740A6 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345DCC9C1C3E5240000740A6 /* ThirdView.xib */; };
-		345DCCA01C3E5372000740A6 /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCC9F1C3E5372000740A6 /* UIView+Nib.m */; };
 		345DCCA31C3E542B000740A6 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCCA21C3E542B000740A6 /* ThirdVC.m */; };
 		345DCCA61C3E553A000740A6 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCCA51C3E553A000740A6 /* ThirdViewModel.m */; };
 		345DCCA91C3E568F000740A6 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCCA81C3E568F000740A6 /* ThirdModel.m */; };
@@ -35,7 +34,6 @@
 		345E643F1C2E1CFF00F55F22 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E640B1C2E1CFF00F55F22 /* BQViewModel2.m */; };
 		345E64411C2E1D2C00F55F22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345E64401C2E1D2C00F55F22 /* Main.storyboard */; };
 		345E64571C2E1E4F00F55F22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345E64561C2E1E4F00F55F22 /* LaunchScreen.xib */; };
-		346F0FE81C2FE8C20020463F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F811C2FE8C20020463F /* UIView+Extension.m */; };
 		346F0FE91C2FE8C20020463F /* BQBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F861C2FE8C20020463F /* BQBaseViewModel.m */; };
 		346F0FEA1C2FE8C20020463F /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F891C2FE8C20020463F /* UICollectionViewCell+Extension.m */; };
 		346F0FEB1C2FE8C20020463F /* XTCollectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0F8B1C2FE8C20020463F /* XTCollectionDataDelegate.m */; };
@@ -44,20 +42,24 @@
 		346F10101C2FE8C20020463F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE41C2FE8C20020463F /* AppDelegate.m */; };
 		346F10111C2FE8C20020463F /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F0FE71C2FE8C20020463F /* Foundation+Log.m */; };
 		3493F5ED1C51D231009F1E1E /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493F5EB1C51D231009F1E1E /* KVObserver.m */; };
+		3493F5F91C51F635009F1E1E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493F5F31C51F635009F1E1E /* UIView+Extension.m */; };
+		3493F5FA1C51F635009F1E1E /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493F5F51C51F635009F1E1E /* UIView+Nib.m */; };
+		3493F5FB1C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493F5F81C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.m */; };
 		51BB142E0AA2047559116344 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39790A2C94697266B4B5B448 /* libPods.a */; };
 		6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */; };
 		6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0BB1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048FE6381C52515C00A1BC01 /* BQDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQDataService.h; sourceTree = "<group>"; };
+		048FE6391C52515C00A1BC01 /* BQDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQDataService.m; sourceTree = "<group>"; };
+		048FE63B1C52529400A1BC01 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
+		048FE63C1C52529400A1BC01 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
+		048FE63E1C52570400A1BC01 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
+		048FE63F1C52570400A1BC01 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
 		3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		3415E6601C3BB85C005E6E4C /* BQCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell2.h; sourceTree = "<group>"; };
-		3415E6611C3BB85C005E6E4C /* BQCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell2.m; sourceTree = "<group>"; };
-		3415E6621C3BB85C005E6E4C /* BQCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell2.xib; sourceTree = "<group>"; };
 		343196291C3F447300A68A91 /* BHConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHConst.h; sourceTree = "<group>"; };
 		3431962A1C3F447300A68A91 /* BHConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHConst.m; sourceTree = "<group>"; };
-		3431962D1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GetVC2StoryBoard.h"; sourceTree = "<group>"; };
-		3431962E1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GetVC2StoryBoard.m"; sourceTree = "<group>"; };
 		343196311C3F4C0200A68A91 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
 		343196321C3F4C0200A68A91 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
 		343196341C3F5EF200A68A91 /* PrefixHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
@@ -69,8 +71,6 @@
 		345DCC991C3E522A000740A6 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
 		345DCC9A1C3E522A000740A6 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
 		345DCC9C1C3E5240000740A6 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
-		345DCC9E1C3E5372000740A6 /* UIView+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Nib.h"; sourceTree = "<group>"; };
-		345DCC9F1C3E5372000740A6 /* UIView+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Nib.m"; sourceTree = "<group>"; };
 		345DCCA11C3E542B000740A6 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
 		345DCCA21C3E542B000740A6 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 		345DCCA41C3E553A000740A6 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
@@ -101,8 +101,6 @@
 		345E640B1C2E1CFF00F55F22 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
 		345E64401C2E1D2C00F55F22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		345E64561C2E1E4F00F55F22 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		346F0F801C2FE8C20020463F /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		346F0F811C2FE8C20020463F /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		346F0F851C2FE8C20020463F /* BQBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQBaseViewModel.h; sourceTree = "<group>"; };
 		346F0F861C2FE8C20020463F /* BQBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQBaseViewModel.m; sourceTree = "<group>"; };
 		346F0F881C2FE8C20020463F /* UICollectionViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Extension.h"; sourceTree = "<group>"; };
@@ -119,6 +117,12 @@
 		3493F5EA1C51D231009F1E1E /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
 		3493F5EB1C51D231009F1E1E /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
 		3493F5EC1C51D231009F1E1E /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
+		3493F5F21C51F635009F1E1E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		3493F5F31C51F635009F1E1E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		3493F5F41C51F635009F1E1E /* UIView+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Nib.h"; sourceTree = "<group>"; };
+		3493F5F51C51F635009F1E1E /* UIView+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Nib.m"; sourceTree = "<group>"; };
+		3493F5F71C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GetVC2StoryBoard.h"; sourceTree = "<group>"; };
+		3493F5F81C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GetVC2StoryBoard.m"; sourceTree = "<group>"; };
 		39790A2C94697266B4B5B448 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9ED0B71C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TableDataDelegateAdditions.h"; sourceTree = "<group>"; };
 		6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TableDataDelegateAdditions.m"; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			children = (
 				344579F31C50D71A00200CD0 /* BQHttpTool.h */,
 				344579F41C50D71A00200CD0 /* BQHttpTool.m */,
+				048FE6381C52515C00A1BC01 /* BQDataService.h */,
+				048FE6391C52515C00A1BC01 /* BQDataService.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -329,9 +335,6 @@
 				345E63F81C2E1CFF00F55F22 /* BQCell.h */,
 				345E63F91C2E1CFF00F55F22 /* BQCell.m */,
 				345E63FA1C2E1CFF00F55F22 /* BQCell.xib */,
-				3415E6601C3BB85C005E6E4C /* BQCell2.h */,
-				3415E6611C3BB85C005E6E4C /* BQCell2.m */,
-				3415E6621C3BB85C005E6E4C /* BQCell2.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,8 @@
 			children = (
 				345E63FC1C2E1CFF00F55F22 /* BQViewModel.h */,
 				345E63FD1C2E1CFF00F55F22 /* BQViewModel.m */,
+				048FE63B1C52529400A1BC01 /* BQGetDataList.h */,
+				048FE63C1C52529400A1BC01 /* BQGetDataList.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -389,6 +394,8 @@
 			children = (
 				345E640A1C2E1CFF00F55F22 /* BQViewModel2.h */,
 				345E640B1C2E1CFF00F55F22 /* BQViewModel2.m */,
+				048FE63E1C52570400A1BC01 /* BQGetDataList2.h */,
+				048FE63F1C52570400A1BC01 /* BQGetDataList2.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -412,20 +419,10 @@
 		346F0F7E1C2FE8C20020463F /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				345DCC9E1C3E5372000740A6 /* UIView+Nib.h */,
-				345DCC9F1C3E5372000740A6 /* UIView+Nib.m */,
-				346F0F7F1C2FE8C20020463F /* UIView+Extension */,
+				3493F5F11C51F635009F1E1E /* UIView */,
+				3493F5F61C51F635009F1E1E /* UIViewController */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		346F0F7F1C2FE8C20020463F /* UIView+Extension */ = {
-			isa = PBXGroup;
-			children = (
-				346F0F801C2FE8C20020463F /* UIView+Extension.h */,
-				346F0F811C2FE8C20020463F /* UIView+Extension.m */,
-			);
-			path = "UIView+Extension";
 			sourceTree = "<group>";
 		};
 		346F0F821C2FE8C20020463F /* Handler */ = {
@@ -511,8 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				346F0FE71C2FE8C20020463F /* Foundation+Log.m */,
-				3431962D1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.h */,
-				3431962E1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -525,6 +520,26 @@
 				3493F5EC1C51D231009F1E1E /* PMKVObserver.h */,
 			);
 			path = PMKVObserver;
+			sourceTree = "<group>";
+		};
+		3493F5F11C51F635009F1E1E /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				3493F5F21C51F635009F1E1E /* UIView+Extension.h */,
+				3493F5F31C51F635009F1E1E /* UIView+Extension.m */,
+				3493F5F41C51F635009F1E1E /* UIView+Nib.h */,
+				3493F5F51C51F635009F1E1E /* UIView+Nib.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		3493F5F61C51F635009F1E1E /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3493F5F71C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.h */,
+				3493F5F81C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		9EC0EC4841EB34FC729FF137 /* Frameworks */ = {
@@ -605,7 +620,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				345DCC9D1C3E5240000740A6 /* ThirdView.xib in Resources */,
-				3415E6641C3BB85C005E6E4C /* BQCell2.xib in Resources */,
 				345E64411C2E1D2C00F55F22 /* Main.storyboard in Resources */,
 				345E637C1C2E1CE400F55F22 /* Assets.xcassets in Resources */,
 				345E64391C2E1CFF00F55F22 /* BQCell.xib in Resources */,
@@ -671,15 +685,16 @@
 			files = (
 				346F0FEA1C2FE8C20020463F /* UICollectionViewCell+Extension.m in Sources */,
 				3431962B1C3F447300A68A91 /* BHConst.m in Sources */,
-				345DCCA01C3E5372000740A6 /* UIView+Nib.m in Sources */,
-				346F0FE81C2FE8C20020463F /* UIView+Extension.m in Sources */,
+				3493F5FA1C51F635009F1E1E /* UIView+Nib.m in Sources */,
 				3493F5ED1C51D231009F1E1E /* KVObserver.m in Sources */,
 				3431963B1C3F61EF00A68A91 /* BHNavViewController.m in Sources */,
 				346F0FEB1C2FE8C20020463F /* XTCollectionDataDelegate.m in Sources */,
 				345DCCA91C3E568F000740A6 /* ThirdModel.m in Sources */,
 				6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
+				048FE6401C52570400A1BC01 /* BQGetDataList2.m in Sources */,
 				345E64371C2E1CFF00F55F22 /* FirstModel.m in Sources */,
 				344579F51C50D71A00200CD0 /* BQHttpTool.m in Sources */,
+				3493F5F91C51F635009F1E1E /* UIView+Extension.m in Sources */,
 				345E64361C2E1CFF00F55F22 /* FirstVC.m in Sources */,
 				345DCC9B1C3E522A000740A6 /* ThirdView.m in Sources */,
 				345E643D1C2E1CFF00F55F22 /* BQCollectionCell.m in Sources */,
@@ -687,12 +702,13 @@
 				346F0FED1C2FE8C20020463F /* XTableDataDelegate.m in Sources */,
 				346F10101C2FE8C20020463F /* AppDelegate.m in Sources */,
 				345E643C1C2E1CFF00F55F22 /* BQTestModel.m in Sources */,
+				048FE63A1C52515C00A1BC01 /* BQDataService.m in Sources */,
+				048FE63D1C52529400A1BC01 /* BQGetDataList.m in Sources */,
 				345E643B1C2E1CFF00F55F22 /* SecondVC.m in Sources */,
+				3493F5FB1C51F635009F1E1E /* UIViewController+GetVC2StoryBoard.m in Sources */,
 				345DCCA31C3E542B000740A6 /* ThirdVC.m in Sources */,
-				3431962F1C3F470200A68A91 /* UIViewController+GetVC2StoryBoard.m in Sources */,
 				345E64381C2E1CFF00F55F22 /* BQCell.m in Sources */,
 				343196331C3F4C0200A68A91 /* ThirdViewManger.m in Sources */,
-				3415E6631C3BB85C005E6E4C /* BQCell2.m in Sources */,
 				345DCCA61C3E553A000740A6 /* ThirdViewModel.m in Sources */,
 				346F0FEC1C2FE8C20020463F /* UITableViewCell+Extension.m in Sources */,
 				346F0FE91C2FE8C20020463F /* BQBaseViewModel.m in Sources */,

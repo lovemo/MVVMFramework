@@ -11,12 +11,20 @@
 #include "netdb.h"
 #import "YYCache.h"
 
+
+#ifdef DEBUG
+#define BQLog(...) NSLog(__VA_ARGS__)
+#else
+#define BQLog(...)
+#endif
+
 static NSString * const BQHttpToolRequestCache = @"BQHttpToolRequestCache";
 
 typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
     BQHttpToolRequestTypeGET = 0,
     BQHttpToolRequestTypePOST
 };
+
 
 @interface BQHttpTool ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -32,6 +40,8 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
         self.manager = [AFHTTPSessionManager manager];
         // 请求参数序列化类型
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        // 请求超时设定
+        self.manager.requestSerializer.timeoutInterval = 10;
         // 设置请求ContentType
         // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain",nil];
@@ -60,37 +70,179 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 
 + (void)get:(NSString *)url
      params:(NSDictionary *)params
-    success:(void (^)(id json))success
-    failure:(void (^)(NSError *error))failure
+    success:(requestSuccessBlock)successHandler
+    failure:(requestFailureBlock)failureHandler
 {
-    [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
+    [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:successHandler failure:failureHandler];
 }
 
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
-     success:(void (^)(id json))success
-     failure:(void (^)(NSError *error))failure
+     success:(requestSuccessBlock)successHandler
+     failure:(requestFailureBlock)failureHandler
 {
-    [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:success failure:failure];
+    [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:BQHttpToolReturnCacheDataThenLoad success:successHandler failure:failureHandler];
 }
 
 + (void)get:(NSString *)url
      params:(NSDictionary *)params
 cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
-    success:(void (^)(id))success
-    failure:(void (^)(NSError *))failure
+    success:(requestSuccessBlock)successHandler
+    failure:(requestFailureBlock)failureHandler
 {
-    [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:cachePolicy success:success failure:failure];
+    [BQHttpTool requestMethod:BQHttpToolRequestTypeGET url:url params:params cachePolicy:cachePolicy success:successHandler failure:failureHandler];
 }
 
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
  cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
-     success:(void (^)(id))success
-     failure:(void (^)(NSError *))failure
+     success:(requestSuccessBlock)successHandler
+     failure:(requestFailureBlock)failureHandler
 {
-    [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:cachePolicy success:success failure:failure];
+    [BQHttpTool requestMethod:BQHttpToolRequestTypePOST url:url params:params cachePolicy:cachePolicy success:successHandler failure:failureHandler];
 }
+
++ (void)put:(NSString *)url params:(NSDictionary *)params success:(requestSuccessBlock)successHandler failure:(requestFailureBlock)failureHandler {
+    
+    if (![self isConnectionAvailable]) {
+        successHandler(nil);
+        failureHandler(nil);
+        return;
+    }
+    
+    [[BQHttpTool defaultHttpTool].manager PUT:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        successHandler(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failureHandler(error);
+    }];
+    
+}
+
++ (void)delete:(NSString *)url params:(NSDictionary *)params success:(requestSuccessBlock)successHandler failure:(requestFailureBlock)failureHandler {
+    
+    if (![self isConnectionAvailable]) {
+        successHandler(nil);
+        failureHandler(nil);
+        return;
+    }
+    
+    [[BQHttpTool defaultHttpTool].manager DELETE:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        successHandler(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failureHandler(error);
+    }];
+    
+}
+
+/**
+ 下载文件，监听下载进度
+ */
++ (void)download:(NSString *)url successAndProgress:(progressBlock)progressHandler complete:(responseBlock)completionHandler {
+    
+    if (![self isConnectionAvailable]) {
+        progressHandler(nil);
+        completionHandler(nil, nil);
+        return;
+    }
+    
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguration];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        progressHandler(downloadProgress);
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        NSURL *documentUrl = [[NSFileManager defaultManager] URLForDirectory :NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        
+        return [documentUrl URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (error) {
+            BQLog(@"------下载失败-------%@",error);
+        }
+        completionHandler(response, error);
+    }];
+    
+    [downloadTask resume];
+    
+}
+
+
+
+/**
+ *  发送一个POST请求
+ *  @param fileConfig 文件相关参数模型
+ *  @param success 请求成功后的回调
+ *  @param failure 请求失败后的回调
+ *  无上传进度监听
+ */
++ (void)upload:(NSString *)url params:(NSDictionary *)params fileConfig:(BQFileConfig *)fileConfig success:(requestSuccessBlock)successHandler failure:(requestFailureBlock)failureHandler {
+    
+    if (![self isConnectionAvailable]) {
+        successHandler(nil);
+        failureHandler(nil);
+        return;
+    }
+    
+    [[BQHttpTool defaultHttpTool].manager POST:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        [formData appendPartWithFileData:fileConfig.fileData name:fileConfig.name fileName:fileConfig.fileName mimeType:fileConfig.mimeType];
+    } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        successHandler(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        BQLog(@"------上传失败-------%@",error);
+        failureHandler(error);
+    }];
+    
+}
+
+
+/**
+ 上传文件，监听上传进度
+ */
++ (void)upload:(NSString *)url params:(NSDictionary *)params fileConfig:(BQFileConfig *)fileConfig successAndProgress:(progressBlock)progressHandler complete:(responseBlock)completionHandler {
+    
+    if (![self isConnectionAvailable]) {
+        progressHandler(nil);
+        completionHandler(nil, nil);
+        return;
+    }
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+        [formData appendPartWithFileData:fileConfig.fileData name:fileConfig.name fileName:fileConfig.fileName mimeType:fileConfig.mimeType];
+        
+    } error:nil];
+    
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    NSURLSessionUploadTask *uploadTask;
+    uploadTask = [manager
+                  uploadTaskWithStreamedRequest:request
+                  progress:^(NSProgress * _Nonnull uploadProgress) {
+                      // This is not called back on the main queue.
+                      // You are responsible for dispatching to the main queue for UI updates
+                      
+                      progressHandler(uploadProgress);
+                  }
+                  completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                      if (error) {
+                          completionHandler(nil, error);
+                          
+                          BQLog(@"------上传失败-------%@",error);
+                      } else {
+                          completionHandler(responseObject, nil);
+                          BQLog(@"%@ %@", response, responseObject);
+                      }
+                  }];
+    
+    [uploadTask resume];
+    
+}
+
 
 #pragma mark -------------------- private --------------------
 
@@ -98,8 +250,8 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
                   url:(NSString *)url
                params:(NSDictionary *)params
           cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
-              success:(void (^)(id json))success
-              failure:(void (^)(NSError *error))failure
+              success:(requestSuccessBlock)successHandler
+              failure:(requestFailureBlock)failureHandler
 {
     NSString *cacheKey = url;
     if (params) {
@@ -118,7 +270,7 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
     switch (cachePolicy) {
         case BQHttpToolReturnCacheDataThenLoad: { // 先返回缓存，同时请求
             if (object) {
-                success(object);
+                successHandler(object);
             }
             break;
         }
@@ -128,14 +280,14 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
         }
         case BQHttpToolReturnCacheDataElseLoad: { // 有缓存就返回缓存，没有就请求
             if (object) { // 有缓存
-                success(object);
+                successHandler(object);
                 return ;
             }
             break;
         }
         case BQHttpToolReturnCacheDataDontLoad: { // 有缓存就返回缓存,从不请求（用于没有网络）
             if (object) { // 有缓存
-                success(object);
+                successHandler(object);
             }
             return ; // 退出从不请求
         }
@@ -143,7 +295,7 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
             break;
         }
     }
-    [BQHttpTool requestMethod:requestType url:url params:params cache:cache cacheKey:cacheKey success:success failure:failure];
+    [BQHttpTool requestMethod:requestType url:url params:params cache:cache cacheKey:cacheKey success:successHandler failure:failureHandler];
 }
 
 + (void)requestMethod:(BQHttpToolRequestType)requestType
@@ -151,48 +303,52 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
                params:(NSDictionary *)params
                 cache:(YYCache *)cache
              cacheKey:(NSString *)cacheKey
-              success:(void (^)(id json))success
-              failure:(void (^)(NSError *error))failure
+              success:(requestSuccessBlock)successHandler
+              failure:(requestFailureBlock)failureHandler
 {
-    
+
     [[BQHttpTool defaultHttpTool].manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     [BQHttpTool defaultHttpTool].manager.requestSerializer.timeoutInterval = [BQHttpTool defaultHttpTool].timeoutInterval;
     [[BQHttpTool defaultHttpTool].manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     switch (requestType) {
         case BQHttpToolRequestTypeGET: {
-            if ([BQHttpTool isConnectionAvailable]) {
+            if ([self isConnectionAvailable]) {
                 // 2.发送请求
                 [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     
-                    if (success) {
+                    if (successHandler) {
                         [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
-                        success(responseObject);
+                        successHandler(responseObject);
                     }
                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    if (failure) {
-                        failure(error);
+                    if (failureHandler) {
+                        failureHandler(error);
                     }
                 }];
             } else {
+                successHandler(nil);
+                failureHandler(nil);
                 [BQHttpTool showExceptionDialog];
             }
             break;
         }
         case BQHttpToolRequestTypePOST: {
-            if ([BQHttpTool isConnectionAvailable]) {
+            if ([self isConnectionAvailable]) {
                 // 2.发送请求
                 [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                    if (success) {
+                    if (successHandler) {
                         [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
-                        success(responseObject);
+                        successHandler(responseObject);
                     }
                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    if (failure) {
-                        failure(error);
+                    if (failureHandler) {
+                        failureHandler(error);
                     }
                 }];
             } else {
+                successHandler(nil);
+                failureHandler(nil);
                 [BQHttpTool showExceptionDialog];
             }
             
@@ -264,4 +420,6 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
     BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
     return (isReachable && !needsConnection) ? YES : NO;
 }
+
 @end
+

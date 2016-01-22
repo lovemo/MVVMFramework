@@ -50,7 +50,7 @@
     
 }
 
-- (void)getDataListSuccess:(void (^)())success failure:(void (^)())failure {
+- (void)getDataListSuccess:(void (^)())success {
 
 }
 

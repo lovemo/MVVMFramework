@@ -15,7 +15,6 @@
 
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
-static NSString *const MyCellIdentifier2 = @"BQCell2" ;
 
 @interface FirstVC ()
 
@@ -39,7 +38,7 @@ static NSString *const MyCellIdentifier2 = @"BQCell2" ;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
     self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                     cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+                                                     cellIdentifiersArray:@[MyCellIdentifier]
                                                            didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                
                                                                SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];

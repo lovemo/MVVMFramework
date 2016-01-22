@@ -6,3 +6,4 @@ pod 'UITableView+FDTemplateLayoutCell'
 pod 'FDFullscreenPopGesture'
 pod "YYCache"
 pod 'MJExtension'
+pod 'SDWebImage'

@@ -9,7 +9,7 @@
 #import "BQViewModel.h"
 #import "FirstModel.h"
 #import "BQTestModel.h"
-
+#import "BQGetDataList.h"
 
 @interface BQViewModel ()
 
@@ -28,7 +28,7 @@
 //    return model;
 //}
 
-- (void)getDataListSuccess:(void (^)())success failure:(void (^)())failure {
+- (void)getDataListSuccess:(void (^)())success {
     // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
@@ -37,26 +37,21 @@
         if (success) {
             success();
         }
-    } failure:^(NSError *error) {
-        if (failure) {
-            failure();
-        }
-    }];
+    } failure:nil];
 }
 
 - (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
-    /**
-     *  在这里进行首页控制器的网络请求加载和利用(MJExtension)转换模型
-     */
-    [BQHttpTool get:url params:nil cachePolicy:BQHttpToolReturnCacheDataElseLoad success:^(id json) {
-        NSArray *array = json[@"stories"];
     
-        self.dataArrayList = [FirstModel mj_objectArrayWithKeyValuesArray:array];
+    [BQGetDataList getWithUrl:url param:nil modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+        
+        if (error) {
+            failure(error);
+            success(nil);
+            return ;
+        }
+        self.dataArrayList = dataObj;
         success(self.dataArrayList);
-        NSLog(@"%@",PATH_OF_CACHES);
-
-    } failure:^(NSError *error) {
-        failure(error);
+        
     }];
 
 }

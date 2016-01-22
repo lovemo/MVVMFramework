@@ -67,23 +67,20 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(collection) weakCollection = collection;
     
-    [self.viewModel getDataListSuccess:^{
-         [weakCollection reloadData];
-    } failure:^{
-    }];
-    
+    [SVProgressHUD show];
     // 下拉刷新
     collection.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.viewModel getDataListSuccess:^{
+                [SVProgressHUD dismiss];
                 [weakCollection reloadData];
-            } failure:^{
             }];
             // 结束刷新
             [weakCollection.mj_header endRefreshing];
         });
     }];
+    [collection.mj_header beginRefreshing];
     collection.mj_header.automaticallyChangeAlpha = YES;
 }
 

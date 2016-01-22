@@ -43,6 +43,6 @@
 /**
  *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
  */
-- (void)getDataListSuccess:(void (^)( ))success failure:(void (^)( ))failure;
+- (void)getDataListSuccess:(void (^)( ))success;
 
 @end

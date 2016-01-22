@@ -11,7 +11,7 @@
 
 @interface BQTestModel : NSObject
 
-@property (nonatomic, copy)     NSString *name ;
-@property (nonatomic, assign)   CGFloat  height ;
+@property (nonatomic, copy)   NSString *title ;
+@property (nonatomic, copy)   NSString *ID ;
 
 @end

@@ -18,6 +18,7 @@
 #import "MJExtension.h"
 #import "BHConst.h"
 #import "UIView+Extension.h"
+#import "UIImageView+WebCache.h"
 
 #define PATH_OF_CACHES    [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 

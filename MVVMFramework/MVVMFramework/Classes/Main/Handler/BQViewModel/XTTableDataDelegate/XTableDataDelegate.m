@@ -58,33 +58,29 @@
     table.dataSource = self ;
     table.delegate   = self ;
     
+    [UITableViewCell registerTable:table nibIdentifier:self.cellIdentifierArray[0]] ;
+    table.tableFooterView = [UIView new];
     __weak typeof(self) weakSelf = self;
     __weak typeof(table) weakTable = table;
  
-    //  第一次刷新数据
-    [self.viewModel getDataListSuccess:^{
-        [weakTable reloadData];
-    } failure:^{
-    }];
-
+    [SVProgressHUD show];
     // 下拉刷新
     table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.viewModel getDataListSuccess:^{
+                [SVProgressHUD dismiss];
                 [weakTable reloadData];
-
-            } failure:^{
             }];
-           
         });
         // 结束刷新
         [weakTable.mj_header endRefreshing];
     }];
+
+    [table.mj_header beginRefreshing];
     // 设置自动切换透明度(在导航栏下面自动隐藏)
     table.mj_header.automaticallyChangeAlpha = YES;
-    
 
 }
 
@@ -102,26 +98,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id item = [self itemAtIndexPath:indexPath] ;
-    if (indexPath.row % 3 != 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[0]] ;
-        if (!cell) {
-            [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[0]] ;
-            cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[0]];
-        }
-        [cell configure:cell customObj:item indexPath:indexPath];
-        //  self.configureCellBlock(indexPath,item,cell) ;
-        return cell ;
-    } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[1]] ;
-        if (!cell) {
-            [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[1]] ;
-            cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[1]];
-        }
-        [cell configure:cell customObj:item indexPath:indexPath];
-        //  self.configureCellBlock(indexPath,item,cell) ;
-        return cell ;
-    }
 
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifierArray[0] forIndexPath:indexPath] ;
+    
+    [cell configure:cell customObj:item indexPath:indexPath];
+    //  self.configureCellBlock(indexPath,item,cell) ;
+    return cell ;
+ 
 }
 
 #pragma mark --c
@@ -130,21 +113,10 @@
 {
     id item = [self itemAtIndexPath:indexPath] ;
     __weak typeof(self) weakSelf = self;
-    if (indexPath.row % 3 != 0) {
-        [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[0]] ;
-    
-        return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[0] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
-            [cell configure:cell customObj:item indexPath:indexPath];
-            //  weakSelf.configureCellBlock(indexPath,item,cell) ;
-        }];
-    } else {
-        [UITableViewCell registerTable:tableView nibIdentifier:self.cellIdentifierArray[1]] ;
-        
-        return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[1] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
-            [cell configure:cell customObj:item indexPath:indexPath];
-            //  weakSelf.configureCellBlock(indexPath,item,cell) ;
-        }];
-    }
+   
+    return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[0] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
+        [cell configure:cell customObj:item indexPath:indexPath];
+    }];
 
 }
 

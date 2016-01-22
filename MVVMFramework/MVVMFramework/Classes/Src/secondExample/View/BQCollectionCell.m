@@ -14,10 +14,10 @@
         customObj:(id)obj
         indexPath:(NSIndexPath *)indexPath
 {
- //   BQTestModel *myObj = (BQTestModel *)obj ;
+    BQTestModel *myObj = (BQTestModel *)obj ;
     BQCollectionCell *mycell = (BQCollectionCell *)cell ;
-    mycell.lbTitle.text = @"CollectionCell" ;
-    mycell.lbHeight.text = @"Swift is a powerful and intuitive programming language for iOS, OS X, tvOS, and watchOS. " ;
+    mycell.lbTitle.text = [NSString stringWithFormat:@"ID: %@",myObj.ID];
+    mycell.lbHeight.text = myObj.title;
 }
 
 - (void)awakeFromNib {
