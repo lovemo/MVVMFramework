@@ -8,3 +8,4 @@ pod "YYCache"
 pod 'MJExtension'
 pod 'SDWebImage'
 pod 'FMDB'
+pod 'LxDBAnything'

@@ -167,8 +167,6 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
     
 }
 
-
-
 /**
  *  发送一个POST请求
  *  @param fileConfig 文件相关参数模型
@@ -197,7 +195,6 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
     }];
     
 }
-
 
 /**
  上传文件，监听上传进度
