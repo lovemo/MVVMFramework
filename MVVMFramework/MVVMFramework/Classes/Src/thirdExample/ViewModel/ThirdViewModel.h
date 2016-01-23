@@ -11,8 +11,6 @@
 
 @interface ThirdViewModel : BQBaseViewModel
 
-@property (nonatomic, strong) ThirdModel *model;
-
 - (ThirdModel *)getRandomData;
 
 @end

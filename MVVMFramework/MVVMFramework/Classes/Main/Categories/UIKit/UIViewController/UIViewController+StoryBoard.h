@@ -1,5 +1,5 @@
 //
-//  UIViewController+GetVC2StoryBoard.h
+//  UIViewController+StoryBoard.h
 //  MVVMFramework
 //
 //  Created by yuantao on 16/1/8.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (GetVC2StoryBoard)
+@interface UIViewController (StoryBoard)
 
 + (id)viewControllerWithStoryBoardName:(NSString *)storyboardName identifier:(NSString *)identifier;
 

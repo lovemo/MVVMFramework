@@ -1,13 +1,13 @@
 //
-//  UIView+Extension.m
+//  UIView+Frame.m
 //
 //  Created by apple on 14-10-7.
-//  Copyright (c) 2014年 heima. All rights reserved.
+//  Copyright (c) 2014年 momo. All rights reserved.
 //
 
-#import "UIView+Extension.h"
+#import "UIView+Frame.h"
 
-@implementation UIView (Extension)
+@implementation UIView (Frame)
 
 - (void)setX:(CGFloat)x
 {
@@ -103,47 +103,6 @@
 - (CGPoint)origin
 {
     return self.frame.origin;
-}
-
-#pragma mark - Relationship
-
-- (UIViewController *)currentVC
-{
-    Class aClass = NSClassFromString(@"UIViewController");
-    for (UIView *next = [self superview]; next; next = next.superview)
-    {
-        UIResponder *nextResponder = [next nextResponder];
-        if ([nextResponder isKindOfClass:aClass])
-        {
-            return (UIViewController *)nextResponder;
-        }
-    }
-    return nil;
-}
-
-- (UIView *)firstSubviewOfClass:(Class)aClass
-{
-    for (UIView *subView in self.subviews)
-    {
-        if ([subView isKindOfClass:aClass])
-        {
-            return subView;
-        }
-    }
-    return nil;
-}
-
-- (UIView *)firstSupviewOfClass:(Class)aClass;
-{
-    for (UIView *next = [self superview]; next; next = next.superview)
-    {
-        UIView *curView = [next superview];
-        if ([curView isKindOfClass:aClass])
-        {
-            return curView;
-        }
-    }
-    return nil;
 }
 
 @end

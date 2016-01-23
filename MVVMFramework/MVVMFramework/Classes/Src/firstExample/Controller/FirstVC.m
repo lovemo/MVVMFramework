@@ -45,6 +45,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
                                                                [weakSelf.navigationController pushViewController:vc animated:YES];
                                                                NSLog(@"click row : %@",@(indexPath.row)) ;
                                                            }];
+    NSLog(@"%@",kPathOfCaches);
 }
 
 @end

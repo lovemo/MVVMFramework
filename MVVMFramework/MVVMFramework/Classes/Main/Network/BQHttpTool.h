@@ -140,7 +140,6 @@ successAndProgress:(progressBlock)progressHandler
 @end
 
 
-
 /**
  *  用来封装上文件数据的模型类
  */

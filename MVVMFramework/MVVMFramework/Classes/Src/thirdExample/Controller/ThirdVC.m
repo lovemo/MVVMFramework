@@ -36,11 +36,10 @@
     self.title = @"MVVM Example";
 
     [self.view addSubview:self.thirdViewManger.thirdView];
-
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-
+    
     [self.viewModel getDataListSuccess:^{
         self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
     }];
