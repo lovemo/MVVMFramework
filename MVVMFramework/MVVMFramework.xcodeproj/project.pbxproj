@@ -48,6 +48,7 @@
 		34769D9E1C5355610089F278 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D941C5355610089F278 /* UIView+ViewController.m */; };
 		34769D9F1C5355610089F278 /* UIViewController+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D971C5355610089F278 /* UIViewController+Identifier.m */; };
 		34769DA01C5355610089F278 /* UIViewController+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D991C5355610089F278 /* UIViewController+StoryBoard.m */; };
+		34769DCA1C536F490089F278 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769DC91C536F490089F278 /* YTKKeyValueStore.m */; };
 		3493F5ED1C51D231009F1E1E /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493F5EB1C51D231009F1E1E /* KVObserver.m */; };
 		51BB142E0AA2047559116344 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39790A2C94697266B4B5B448 /* libPods.a */; };
 		6D9ED0B91C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9ED0B81C3FA5C100AF5470 /* UITableView+TableDataDelegateAdditions.m */; };
@@ -134,6 +135,8 @@
 		34769D971C5355610089F278 /* UIViewController+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Identifier.m"; sourceTree = "<group>"; };
 		34769D981C5355610089F278 /* UIViewController+StoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+StoryBoard.h"; sourceTree = "<group>"; };
 		34769D991C5355610089F278 /* UIViewController+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+StoryBoard.m"; sourceTree = "<group>"; };
+		34769DC81C536F490089F278 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		34769DC91C536F490089F278 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
 		3493F5EA1C51D231009F1E1E /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
 		3493F5EB1C51D231009F1E1E /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
 		3493F5EC1C51D231009F1E1E /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
@@ -488,6 +491,7 @@
 		346F0F911C2FE8C20020463F /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				34769DC71C536F490089F278 /* YTKKeyValueStore */,
 				3493F5E91C51D231009F1E1E /* PMKVObserver */,
 			);
 			path = Lib;
@@ -586,6 +590,15 @@
 				34769D991C5355610089F278 /* UIViewController+StoryBoard.m */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		34769DC71C536F490089F278 /* YTKKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				34769DC81C536F490089F278 /* YTKKeyValueStore.h */,
+				34769DC91C536F490089F278 /* YTKKeyValueStore.m */,
+			);
+			path = YTKKeyValueStore;
 			sourceTree = "<group>";
 		};
 		3493F5E91C51D231009F1E1E /* PMKVObserver */ = {
@@ -745,6 +758,7 @@
 				3431963B1C3F61EF00A68A91 /* BHNavViewController.m in Sources */,
 				346F0FEB1C2FE8C20020463F /* XTCollectionDataDelegate.m in Sources */,
 				345DCCA91C3E568F000740A6 /* ThirdModel.m in Sources */,
+				34769DCA1C536F490089F278 /* YTKKeyValueStore.m in Sources */,
 				6D9ED0BC1C3FAA3A00AF5470 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
 				048FE6401C52570400A1BC01 /* BQGetDataList2.m in Sources */,
 				34769D9E1C5355610089F278 /* UIView+ViewController.m in Sources */,

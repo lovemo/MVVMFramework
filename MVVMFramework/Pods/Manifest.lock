@@ -15,6 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - FDFullscreenPopGesture (1.1)
+  - FMDB (2.6):
+    - FMDB/standard (= 2.6)
+  - FMDB/standard (2.6)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.5):
@@ -27,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
   - FDFullscreenPopGesture
+  - FMDB
   - MJExtension
   - MJRefresh (> 3.0.0)
   - SDWebImage
@@ -37,6 +41,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461

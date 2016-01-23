@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) ThirdViewManger *thirdViewManger;
 @property (nonatomic, strong) ThirdViewModel *viewModel;
+
 @end
 
 @implementation ThirdVC
@@ -39,7 +40,7 @@
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-    
+
     [self.viewModel getDataListSuccess:^{
         self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
     }];

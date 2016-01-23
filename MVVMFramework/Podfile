@@ -7,3 +7,4 @@ pod 'FDFullscreenPopGesture'
 pod "YYCache"
 pod 'MJExtension'
 pod 'SDWebImage'
+pod 'FMDB'
