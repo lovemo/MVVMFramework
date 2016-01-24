@@ -13,8 +13,8 @@ static id dataObj;
 
 @implementation BQDataService
 
-+ (void)getWithUrl:(NSString *)url param:(id)param modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
-    [BQHttpTool get:url params:param success:^(id responseObj) {
++ (void)getWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
+    [BQHttpTool get:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
         //数组、字典转化为模型数组
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
@@ -26,9 +26,9 @@ static id dataObj;
     }];
 }
 
-+ (void)postWithUrl:(NSString *)url param:(id)param modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
++ (void)postWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
     
-    [BQHttpTool post:url params:param success:^(id responseObj) {
+    [BQHttpTool post:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
         responseDataBlock(dataObj, nil);

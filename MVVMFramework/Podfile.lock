@@ -26,7 +26,6 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - SVProgressHUD (1.1.3)
   - UITableView+FDTemplateLayoutCell (1.4)
-  - YYCache (0.9.5)
 
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
@@ -38,7 +37,6 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - UITableView+FDTemplateLayoutCell
-  - YYCache
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -50,6 +48,5 @@ SPEC CHECKSUMS:
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
-  YYCache: 3ddcc49c387655f077c4e1b3708ed5ed71c79be2
 
 COCOAPODS: 0.39.0

@@ -42,7 +42,7 @@
 
 - (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
     
-    [BQGetDataList getWithUrl:url param:nil modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+    [BQGetDataList getWithUrl:url param:nil cachePolicy:BQHttpToolReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
             failure(error);

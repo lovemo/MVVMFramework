@@ -31,10 +31,14 @@ typedef void (^progressBlock)(NSProgress * progress);
 
 
 typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
-    BQHttpToolReturnCacheDataThenLoad = 0,  /** 有缓存就先返回缓存，同步请求数据 */
-    BQHttpToolReloadIgnoringLocalCacheData,  /** 忽略缓存，重新请求 */
-    BQHttpToolReturnCacheDataElseLoad,        /** 有缓存就用缓存，没有缓存就重新请求(用于数据不变时) */
-    BQHttpToolReturnCacheDataDontLoad       /** 有缓存就用缓存，没有缓存就不发请求，当做请求出错处理（用于离线模式）*/
+    /** 有缓存就先返回缓存，同步请求数据 */
+    BQHttpToolReturnCacheDataThenLoad = 0,
+     /** 忽略缓存，重新请求 */
+    BQHttpToolReloadIgnoringLocalCacheData,
+    /** 有缓存就用缓存，没有缓存就重新请求(用于数据不变时) */
+    BQHttpToolReturnCacheDataElseLoad,
+    /** 有缓存就用缓存，没有缓存就不发请求，当做请求出错处理（用于离线模式）*/
+    BQHttpToolReturnCacheDataDontLoad
 };
 
 #pragma mark - 定义请求工具类
@@ -57,11 +61,6 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
  *  移除所有缓存
  */
 + (void)removeAllCaches;
-
-/**
- *  根据指定key移除缓存
- */
-+ (void)removeCachesForKey:(NSString *)key;
 
 /**
  *  GET请求 - 默认 BQHttpToolReturnCacheDataThenLoad 的缓存方式

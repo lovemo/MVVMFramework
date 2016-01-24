@@ -4,7 +4,6 @@ pod 'AFNetworking', '>= 3.0'
 pod 'SVProgressHUD'
 pod 'UITableView+FDTemplateLayoutCell'
 pod 'FDFullscreenPopGesture'
-pod "YYCache"
 pod 'MJExtension'
 pod 'SDWebImage'
 pod 'FMDB'

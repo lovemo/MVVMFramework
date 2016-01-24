@@ -9,8 +9,7 @@
 #import "BQHttpTool.h"
 #import "AFNetworking.h"
 #include "netdb.h"
-#import "YYCache.h"
-
+#import "YTKKeyValueStore.h"
 
 #ifdef DEBUG
 #define BQLog(...) NSLog(__VA_ARGS__)
@@ -18,7 +17,7 @@
 #define BQLog(...)
 #endif
 
-static NSString * const BQHttpToolRequestCache = @"BQHttpToolRequestCache";
+static NSString * const BQHttpToolRequestCache = @"BQHttpToolRequestCache.db";
 
 typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
     BQHttpToolRequestTypeGET = 0,
@@ -28,11 +27,18 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 
 @interface BQHttpTool ()
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
-@property (nonatomic, strong) YYCache *cache;
 @property (nonatomic, strong) UIAlertView *alert;
+@property (nonatomic, strong) YTKKeyValueStore *stroe;
 @end
 
 @implementation BQHttpTool
+
+- (YTKKeyValueStore *)stroe {
+    if (_stroe == nil) {
+        _stroe = [[YTKKeyValueStore alloc]initDBWithName:BQHttpToolRequestCache];
+    }
+    return _stroe;
+}
 
 - (id)init{
     if (self = [super init]){
@@ -43,7 +49,6 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
         // 请求超时设定
         self.manager.requestSerializer.timeoutInterval = 10;
         // 设置请求ContentType
-        // self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain",nil];
     }
     return self;
@@ -61,11 +66,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestType) {
 }
 
 + (void)removeAllCaches {
-    [[BQHttpTool defaultHttpTool].cache removeAllObjects];
-}
-
-+ (void)removeCachesForKey:(NSString *)key {
-    [[BQHttpTool defaultHttpTool].cache removeObjectForKey:key];
+    [[BQHttpTool defaultHttpTool].stroe clearTable:BQHttpToolRequestCache];
 }
 
 + (void)get:(NSString *)url
@@ -228,7 +229,6 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
                   completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                       if (error) {
                           completionHandler(nil, error);
-                          
                           BQLog(@"------上传失败-------%@",error);
                       } else {
                           completionHandler(responseObject, nil);
@@ -258,11 +258,11 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
         cacheKey = [url stringByAppendingString:paramStr];
     }
     
-    YYCache *cache = [[YYCache alloc] initWithName:BQHttpToolRequestCache];
-    cache.memoryCache.shouldRemoveAllObjectsOnMemoryWarning = YES;
-    cache.memoryCache.shouldRemoveAllObjectsWhenEnteringBackground = YES;
-    id object = [cache objectForKey:cacheKey];
-    [BQHttpTool defaultHttpTool].cache = cache;
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+ "];
+    NSString *cacheKeyUrl = [[cacheKey componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
+    
+    [[BQHttpTool defaultHttpTool].stroe createTableWithName:cacheKeyUrl];
+    id object = [[BQHttpTool defaultHttpTool].stroe getObjectById:cacheKey fromTable:cacheKeyUrl];
     
     switch (cachePolicy) {
         case BQHttpToolReturnCacheDataThenLoad: { // 先返回缓存，同时请求
@@ -292,13 +292,13 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
             break;
         }
     }
-    [BQHttpTool requestMethod:requestType url:url params:params cache:cache cacheKey:cacheKey success:successHandler failure:failureHandler];
+    [BQHttpTool requestMethod:requestType url:url params:params tableName:cacheKeyUrl cacheKey:cacheKey success:successHandler failure:failureHandler];
 }
 
 + (void)requestMethod:(BQHttpToolRequestType)requestType
                   url:(NSString *)url
                params:(NSDictionary *)params
-                cache:(YYCache *)cache
+            tableName:(NSString *)tableName
              cacheKey:(NSString *)cacheKey
               success:(requestSuccessBlock)successHandler
               failure:(requestFailureBlock)failureHandler
@@ -315,7 +315,9 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
                 [[BQHttpTool defaultHttpTool].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     
                     if (successHandler) {
-                        [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
+                        if (responseObject) {
+                            [[BQHttpTool defaultHttpTool].stroe putObject:responseObject withId:cacheKey intoTable:tableName];
+                        }
                         successHandler(responseObject);
                     }
                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -335,7 +337,9 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
                 // 2.发送请求
                 [[BQHttpTool defaultHttpTool].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     if (successHandler) {
-                        [cache setObject:responseObject forKey:cacheKey];   // YYCache 已经做了responseObject为空处理
+                        if (responseObject) {
+                            [[BQHttpTool defaultHttpTool].stroe putObject:responseObject withId:cacheKey intoTable:tableName];
+                        }
                         successHandler(responseObject);
                     }
                 } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
