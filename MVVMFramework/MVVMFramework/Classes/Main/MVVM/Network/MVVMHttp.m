@@ -37,7 +37,7 @@ typedef NS_ENUM(NSUInteger, MVVMHttpRequestType) {
     if (_store == nil) {
         _store = [[MVVMStore alloc] init];
         NSString *cachesPath = [kPathOfCaches stringByAppendingPathComponent:MVVMRequestCache];
-        [_store db_initWithDBWithPath:cachesPath];
+        [_store db_initDBWithPath:cachesPath];
     }
     return _store;
 }

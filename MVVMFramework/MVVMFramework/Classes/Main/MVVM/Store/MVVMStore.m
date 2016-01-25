@@ -34,12 +34,24 @@
     return [self.ytk_store initDBWithName:dbName] == nil ? NO : YES;
 }
 
-- (BOOL)db_initWithDBWithPath:(NSString *)dbPath {
+- (BOOL)db_initDBWithPath:(NSString *)dbPath {
     return [self.ytk_store initWithDBWithPath:dbPath] == nil ? NO : YES;
 }
 
 - (void)db_createTableWithName:(NSString *)tableName {
     [self.ytk_store createTableWithName:tableName];
+}
+
+- (void)db_initWithDBName:(NSString *)dbName tableName:(NSString *)tableName {
+    if ([self.ytk_store initDBWithName:dbName]) {
+        [self.ytk_store createTableWithName:tableName];
+    }
+}
+
+- (void)db_initWithDBPath:(NSString *)dbPath tableName:(NSString *)tableName {
+    if ([self.ytk_store initWithDBWithPath:dbPath]) {
+        [self.ytk_store createTableWithName:tableName];
+    }
 }
 
 - (void)db_clearTable:(NSString *)tableName {

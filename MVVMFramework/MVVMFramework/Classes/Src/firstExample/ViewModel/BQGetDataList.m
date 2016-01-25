@@ -17,10 +17,8 @@
     NSArray *array = responseObj[@"stories"];
     
     MVVMStore *store = [[MVVMStore alloc]init];
-    [store db_initDBWithName:@"demo.sqlite"];
-    [store db_createTableWithName:@"arrarList"];
+    [store db_initWithDBName:@"demo.sqlite" tableName:@"arrarList"];
     [store db_putObject:array withId:@"arrayID" intoTable:@"arrarList"];
-    
     
     return [modelClass mj_objectArrayWithKeyValuesArray:array];
     

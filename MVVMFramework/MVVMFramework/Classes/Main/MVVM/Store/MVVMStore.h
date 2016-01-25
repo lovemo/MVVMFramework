@@ -27,12 +27,22 @@
 /**
  *  根据dbPath初始化数据库
  */
-- (BOOL)db_initWithDBWithPath:(NSString *)dbPath;
+- (BOOL)db_initDBWithPath:(NSString *)dbPath;
 
 /**
  *  根据tableName初始化数据表
  */
 - (void)db_createTableWithName:(NSString *)tableName;
+
+/**
+ *  初始化dbName并根据tableName创建表
+ */
+- (void)db_initWithDBName:(NSString *)dbName tableName:(NSString *)tableName;
+
+/**
+ *  初始化dbPath并根据tableName创建表
+ */
+- (void)db_initWithDBPath:(NSString *)dbPath tableName:(NSString *)tableName;
 
 /**
  *  清空数据表
