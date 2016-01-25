@@ -28,10 +28,12 @@
 ---
 
 ### <a id="结构分析"></a> 结构分析
-* [Handler中BQViewModel抽象出的类集合](#Handler)
-	* [BaseViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#BaseViewModel)
-	* [XTableDataDelegate 遵守并实现了部分tableView的delegate和dataSource中的一些协议方法](#XTableDataDelegate)
-	* [XTCollectionDataDeleagte 遵守并实现了部分collectionView的delegate和dataSource中的一些协议方法](#XTCollectionDataDeleagte)
+* [MVVM中模块的集合](#MVVM)
+	* [Handler 负责处理实现tableView和collectionView的delegate和dataSource中的一些协议方法](#Handler)
+	* [Network 实现常用的网络请求代码](#Network)
+	* [Store 实现常用的数据存储方法](#Store)
+	* [ViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#ViewModel)
+	* [Vender 一些依赖库](#Vender)
 
 ---
 
