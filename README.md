@@ -18,8 +18,9 @@
 ### <a id="模块构建"></a> 模块构建
   
 * [功能模块中的类集合](#Examples)
-	* [Controller - 负责View和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
+	* [Controller - 负责ViewManger和ViewModel之间的绑定，另一方面也负责常规的UI逻辑处理。](#JSON_Model)
 	* [View - 用来呈现用户界面](#JSONString_Model)
+	* [ViewManger - 用来处理View的常规事件](#Model_contains_model_array)
 	* [Model - 用来呈现数据](#Model_contains_model)
 	* [ViewModel - 存放各种业务逻辑和网络请求](#Model_contains_model_array)
 
