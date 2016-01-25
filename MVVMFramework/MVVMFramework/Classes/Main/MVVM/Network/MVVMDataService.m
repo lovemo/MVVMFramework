@@ -7,7 +7,6 @@
 //
 
 #import "MVVMDataService.h"
-#import "MVVMHttp.h"
 
 static id dataObj;
 

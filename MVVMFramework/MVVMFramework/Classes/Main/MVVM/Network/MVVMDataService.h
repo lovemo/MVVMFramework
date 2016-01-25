@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MVVMHttp.h"
 
-@class MVVMHttp;
 @interface MVVMDataService : NSObject
 
 /**
