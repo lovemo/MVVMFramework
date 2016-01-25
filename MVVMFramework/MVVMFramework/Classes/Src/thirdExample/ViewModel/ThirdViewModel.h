@@ -6,12 +6,10 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import "BQBaseViewModel.h"
+#import "BQMVVM.h"
 #import "ThirdModel.h"
 
-@interface ThirdViewModel : BQBaseViewModel
-
-@property (nonatomic, strong) ThirdModel *model;
+@interface ThirdViewModel : MVVMBaseViewModel
 
 - (ThirdModel *)getRandomData;
 

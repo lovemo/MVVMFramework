@@ -42,7 +42,7 @@
         <!--ThirdVC-->
         <scene sceneID="vvF-CE-vbv">
             <objects>
-                <viewController id="ioN-vt-A8h" customClass="ThirdVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdVCID" id="ioN-vt-A8h" customClass="ThirdVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IqP-hp-ZdT"/>
                         <viewControllerLayoutGuide type="bottom" id="qLi-bz-7N7"/>
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyl-di-aZr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="899"/>
+            <point key="canvasLocation" x="606" y="835"/>
         </scene>
         <!--Nav View Controller-->
         <scene sceneID="e2B-Q5-xKG">
@@ -162,7 +162,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmN-Hw-oL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="346"/>
+            <point key="canvasLocation" x="198" y="-132"/>
         </scene>
     </scenes>
 </document>

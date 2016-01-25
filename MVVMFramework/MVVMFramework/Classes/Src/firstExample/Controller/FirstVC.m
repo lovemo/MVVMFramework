@@ -7,16 +7,14 @@
 //
 
 #import "FirstVC.h"
-#import "XTableDataDelegate.h"
 #import "BQCell.h"
 #import "FirstModel.h"
-#import "UITableViewCell+Extension.h"
+#import "BQMVVM.h"
 #import "SecondVC.h"
 #import "BQViewModel.h"
 
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
-static NSString *const MyCellIdentifier2 = @"BQCell2" ;
 
 @interface FirstVC ()
 
@@ -39,8 +37,8 @@ static NSString *const MyCellIdentifier2 = @"BQCell2" ;
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                     cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+    self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+                                                     cellIdentifiersArray:@[MyCellIdentifier]
                                                            didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                
                                                                SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];

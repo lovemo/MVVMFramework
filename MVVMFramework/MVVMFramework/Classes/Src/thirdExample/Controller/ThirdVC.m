@@ -7,15 +7,15 @@
 //
 
 #import "ThirdVC.h"
-#import "FirstVC.h"
 #import "ThirdViewModel.h"
 #import "ThirdViewManger.h"
-
+#import "FirstVC.h"
 
 @interface ThirdVC ()
 
 @property (nonatomic, strong) ThirdViewManger *thirdViewManger;
 @property (nonatomic, strong) ThirdViewModel *viewModel;
+
 @end
 
 @implementation ThirdVC
@@ -34,29 +34,14 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"MVVM Example";
-    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc]init];
-    returnButtonItem.title = @"返回";
-    self.navigationItem.backBarButtonItem = returnButtonItem;
-    
-    
-    FirstVC *vc = (FirstVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
-    __weak typeof(self) weakSelf = self;
-    self.thirdViewManger.thirdView.btnJumpBlock = ^() {
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    
+
     [self.view addSubview:self.thirdViewManger.thirdView];
+    [self.viewModel vm_getDataListSuccess:nil];
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-    [self.viewModel getDataListSuccess:^{
-        self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
-    } failure:^{
-        
-    }];
-    
+    self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
 }
 
 

@@ -9,15 +9,15 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
-#import "UIView+Nib.h"
-#import "UIViewController+GetVC2StoryBoard.h"
+#import "BQCategories.h"
 #import "PMKVObserver.h"
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
-#import "BQHttpTool.h"
+#import "BQMVVM.h"
 #import "MJExtension.h"
 #import "BHConst.h"
-
-#define PATH_OF_CACHES    [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#import "UIImageView+WebCache.h"
+#import "BQMacros.h"
+#import <LxDBAnything.h>
 
 #endif /* PrefixHeader_h */
