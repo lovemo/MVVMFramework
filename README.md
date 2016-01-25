@@ -37,176 +37,25 @@
 
 ---
 
-## <a id="代码分析"></a> 代码分析
-### <a id="BaseViewModel"></a> BaseViewModel中代码实现
+## <a id="代码示例"></a> 代码示例
+### <a id="一句代码集成展示tableView,cell自适应高度，下拉刷新"></a> 一句代码集成展示tableView
 
 ```objc
-// ViewModel基类
-@interface BQBaseViewModel : NSObject
-
-@property (nonatomic, weak) UIViewController *viewController;
-@property (nonatomic, strong) NSMutableArray *dataArrayList;
-
-+ (instancetype)modelWithViewController:(UIViewController *)viewController;
-
-/**
- *  返回指定indexPath的item
- */
-- (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath;
-
-/**
- *  显示多少组 (当tableView为Group类型时设置可用)
- */
-- (NSUInteger)numberOfSections;
-
-/**
- *  每组中显示多少行 (用于tableView)
- */
-- (NSUInteger)numberOfRowsInSection:(NSUInteger)section;
-
-/**
- *  每组中显示多少个 (用于collectionView)
- */
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)section;
-
-/**
- *  分离加载首页控制器内容 (内部使用)
- */
-- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
-
-/**
- *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
- */
-- (void)getDataListSuccess:(void (^)( ))success failure:(void (^)( ))failure;
-
-@end
-
-```
-       
-### <a id="XTableDataDelegate"></a> XTableDataDelegate中代码实现
-         
-```objc
-/**
- *  选中UITableViewCell的Block
- */
-typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-
-
- // - - - - - -- - - - - -  创建类 - - - - - -- - - - - -//
-
-@class BQBaseViewModel;
-@interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
-
-/**
- *  初始化方法
- */
-- (id)initWithViewModel:(BQBaseViewModel *)viewModel
-        cellIdentifier:(NSString *)aCellIdentifier
-        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
-
-/**
- *  设置UITableView的Datasource和Delegate为self
- */
-- (void)handleTableViewDatasourceAndDelegate:(UITableView *)table ;
-/**
- *  获取UITableView中Item所在的indexPath
- */
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
-
-@end
-```
-
-### <a id="XTCollectionDataDeleagte"></a> XTCollectionDataDeleagte中代码实现
-
-```objc
-/**
- *  选中UICollectionViewCell的Block
- */
-typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
-/**
- *  设置UICollectionViewCell大小的Block
- */
-typedef CGSize (^CellItemSize)() ;
-/**
- *  设置UICollectionViewCell间隔Margin的Block
- */
-typedef UIEdgeInsets (^CellItemMargin)() ;
-
-
-// - - - - - -- - - - - - 创建类 - - - - - -- - - - - -//
-
-@class BQBaseViewModel;
-@interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
-
-/**
- *  设置UICollectionViewCell大小
- */
-- (void)ItemSize:(CellItemSize)cellItemSize;
-
-/**
- *  设置UICollectionViewCell间隔Margin
- */
-- (void)itemInset:(CellItemMargin)cellItemMargin;
-
-/**
- *  初始化方法
- */
-- (id)initWithViewModel:(BQBaseViewModel *)viewModel
-         cellIdentifier:(NSString *)aCellIdentifier
-         collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-         cellItemSizeBlock:(CellItemSize)cellItemSize
-         cellItemMarginBlock:(CellItemMargin)cellItemMargin
-         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
-
-/**
- *  设置CollectionView的Datasource和Delegate为self
- */
-- (void)handleCollectionViewDatasourceAndDelegate:(UICollectionView *)collection ;
-/**
- *  获取CollectionView中Item所在的indexPath
- */
-- (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
-
-@end
-
-```
-
-## <a id="现在的创建tableView代码"></a>现在的创建tableView代码
-由于用到了UITableView+FDTemplateLayoutCell，现在创建的cell自动计算高度，满足日常开发需求。
-
-```objc
-/**
- *  tableView的一些初始化工作
- */
-- (void)setupTableView
-{
-    __weak typeof(self) weakSelf = self;
-    self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-    self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                     cellIdentifiersArray:@[MyCellIdentifier,MyCellIdentifier2]
+  self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+                                                     cellIdentifiersArray:@[MyCellIdentifier]
                                                            didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                
                                                                SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
                                                                [weakSelf.navigationController pushViewController:vc animated:YES];
                                                                NSLog(@"click row : %@",@(indexPath.row)) ;
                                                            }];
-}
 
 ```
-
-## <a id="现在的创建collectionView代码"></a>现在的创建collectionView代码
-
+       
+### <a id="一句代码集成展示collectionView"></a> 一句代码集成展示collectionView
+         
 ```objc
-/**
- *  collectionView的一些初始化工作
- */
-- (void)setupCollectionView
-{
-    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
-    
-    self.collectionView.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
+ self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                cellIdentifier:MyCellIdentifier
                                                                          collectionViewLayout:nil cellItemSizeBlock:^CGSize {
                                                                              return CGSizeMake(110, 120);
@@ -220,8 +69,36 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
                                                                                                cancelButtonTitle:@"好的"
                                                                                                otherButtonTitles:nil, nil] show];
                                                                          }];
+
+```
+
+### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
+
+```objc
+- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
+    
+    [BQGetDataList getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+        
+        if (error) {
+            failure(error);
+            success(nil);
+            return ;
+        }
+        self.dataArrayList = dataObj;
+        success(self.dataArrayList);
+        
+    }];
+
 }
 
+```
+
+## <a id="几行代码实现数据存储"></a>几行代码实现数据存储
+
+```objc
+    MVVMStore *store = [[MVVMStore alloc]init];
+    [store db_initDBWithName:@"demo.sqlite"];
+    [store db_putObject:array withId:@"arrayID" intoTable:@"arrarList"];
 ```
 
 ### <a id="demo效果"></a> demo效果
@@ -230,8 +107,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/demo.gif)
 
 ### <a id="使用方法"></a> 使用方法
-- 导入BQViewModel文件，然后在模块代码中新建ViewModel子类，继承BQBaseViewModel类型，实现加载数据等方法。
-- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，利用XTableDataDelegate或者XTCollectionDataDelegate的初始化方法将block代码和自己实现的ViewModel类型传递到内部，将会自动根据传入的内容去展现数据。
+- 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
+- 在ViewController中，初始化tableView或者collectionView，根据需要实现block代码，将会自动根据传入的内容去展现数据。
 - 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 
 ## 期待
