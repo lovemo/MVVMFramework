@@ -1,14 +1,14 @@
 //
-//  BQBaseViewModel.m
+//  MVVMBaseViewModel.m
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "BQBaseViewModel.h"
+#import "MVVMBaseViewModel.h"
 
-@implementation BQBaseViewModel
+@implementation MVVMBaseViewModel
 
 /**
  *  懒加载存放请求到的数据数组
@@ -20,37 +20,37 @@
     return _dataArrayList;
 }
 
-+ (instancetype)modelWithViewController:(UIViewController *)viewController{
-    BQBaseViewModel *model = self.new;
++ (instancetype)vm_modelWithViewController:(UIViewController *)viewController{
+    MVVMBaseViewModel *model = self.new;
     if (model) {
         model.viewController = viewController;
     }
     return model;
 }
 
-- (NSUInteger)numberOfSections {
+- (NSUInteger)vm_numberOfSections {
     return 1;
 }
-- (NSUInteger)numberOfRowsInSection:(NSUInteger)section {
+- (NSUInteger)vm_numberOfRowsInSection:(NSUInteger)section {
     return 0;
 }
 
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)section {
+- (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section {
     return 0;
 }
 
-- (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath {
+- (instancetype)vm_modelAtIndexPath:(NSIndexPath *)indexPath {
     return nil;
 }
 
 /**
  *  分离加载首页控制器内容
  */
-- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure {
+- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure {
     
 }
 
-- (void)getDataListSuccess:(void (^)())success {
+- (void)vm_getDataListSuccess:(void (^)())success {
 
 }
 

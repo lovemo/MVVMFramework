@@ -9,7 +9,7 @@
 #import "BQMVVM.h"
 #import "ThirdModel.h"
 
-@interface ThirdViewModel : BQBaseViewModel
+@interface ThirdViewModel : MVVMBaseViewModel
 
 - (ThirdModel *)getRandomData;
 

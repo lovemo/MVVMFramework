@@ -11,22 +11,22 @@
 
 @implementation ThirdViewModel
 
-- (void)getDataListSuccess:(void (^)())success {
+- (void)vm_getDataListSuccess:(void (^)())success {
     // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    [self getDataList:url params:nil success:^(NSArray *array) {
+    [self vm_getDataList:url params:nil success:^(NSArray *array) {
         if (success) {
             success();
         }
     } failure:nil];
 }
 
-- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
+- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
     /**
      *  在这里进行首页控制器的网络请求加载和利用(MJExtension)转换模型
      */
-    [BQHttpTool get:url params:nil cachePolicy:BQHttpToolReturnCacheDataThenLoad success:^(id responseObj) {
+    [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
         NSArray *array = responseObj[@"stories"];
         self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         success(self.dataArrayList);

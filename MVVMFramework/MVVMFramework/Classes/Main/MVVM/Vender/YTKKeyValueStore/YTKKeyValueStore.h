@@ -53,6 +53,6 @@
 
 - (void)deleteObjectsByIdPrefix:(NSString *)objectIdPrefix fromTable:(NSString *)tableName;
 
-- (NSArray *)getItemsFromTable:(NSString *)tableName WithRange:(NSRange)range;
+- (NSArray *)getItemsFromTable:(NSString *)tableName withRange:(NSRange)range;
 
 @end

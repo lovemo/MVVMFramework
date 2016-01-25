@@ -6,15 +6,15 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import "BQDataService.h"
-#import "BQHttpTool.h"
+#import "MVVMDataService.h"
+#import "MVVMHttp.h"
 
 static id dataObj;
 
-@implementation BQDataService
+@implementation MVVMDataService
 
-+ (void)getWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
-    [BQHttpTool get:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
++ (void)getWithUrl:(NSString *)url param:(id)param cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
+    [MVVMHttp get:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
         //数组、字典转化为模型数组
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
@@ -26,9 +26,9 @@ static id dataObj;
     }];
 }
 
-+ (void)postWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
++ (void)postWithUrl:(NSString *)url param:(id)param cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
     
-    [BQHttpTool post:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
+    [MVVMHttp post:url params:param cachePolicy:cachePolicy success:^(id responseObj) {
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
         responseDataBlock(dataObj, nil);
@@ -40,7 +40,7 @@ static id dataObj;
 
 + (void)putWithUrl:(NSString *)url param:(id)param modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
     
-    [BQHttpTool put:url params:param success:^(id responseObj) {
+    [MVVMHttp put:url params:param success:^(id responseObj) {
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
         responseDataBlock(dataObj, nil);
@@ -52,7 +52,7 @@ static id dataObj;
 
 + (void)deleteWithUrl:(NSString *)url param:(id)param modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock {
     
-    [BQHttpTool delete:url params:param success:^(id responseObj) {
+    [MVVMHttp delete:url params:param success:^(id responseObj) {
         
         dataObj = [self modelTransformationWithResponseObj:responseObj modelClass:modelClass];
         responseDataBlock(dataObj, nil);

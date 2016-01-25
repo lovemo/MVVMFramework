@@ -7,17 +7,17 @@
 //
 
 #import "UICollectionView+CollectionDataDelegateAdditions.h"
-#import "XTCollectionDataDelegate.h"
+#import "MVVMCollectionDataDelegate.H"
 #import <objc/runtime.h>
 
 @implementation UICollectionView (CollectionDataDelegateAdditions)
 
 
-- (XTCollectionDataDelegate *)collectionHander
+- (MVVMCollectionDataDelegate *)collectionHander
 {
     return objc_getAssociatedObject(self, _cmd);
 }
-- (void)setCollectionHander:(XTCollectionDataDelegate *)collectionHander
+- (void)setCollectionHander:(MVVMCollectionDataDelegate *)collectionHander
 {
     if (collectionHander) {
         [collectionHander handleCollectionViewDatasourceAndDelegate:self];

@@ -37,7 +37,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    self.table.tableHander = [[XTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+    self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
                                                      cellIdentifiersArray:@[MyCellIdentifier]
                                                            didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                
@@ -45,7 +45,6 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
                                                                [weakSelf.navigationController pushViewController:vc animated:YES];
                                                                NSLog(@"click row : %@",@(indexPath.row)) ;
                                                            }];
-    NSLog(@"%@",kPathOfCaches);
 }
 
 @end

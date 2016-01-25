@@ -17,7 +17,7 @@
 
 @implementation BQViewModel
 
-- (NSUInteger)numberOfRowsInSection:(NSUInteger)section {
+- (NSUInteger)vm_numberOfRowsInSection:(NSUInteger)section {
   
     return self.dataArrayList.count;
 }
@@ -28,21 +28,21 @@
 //    return model;
 //}
 
-- (void)getDataListSuccess:(void (^)())success {
+- (void)vm_getDataListSuccess:(void (^)())success {
     // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
 
-    [self getDataList:url params:nil success:^(NSArray *array) {
+    [self vm_getDataList:url params:nil success:^(NSArray *array) {
         if (success) {
             success();
         }
     } failure:nil];
 }
 
-- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
+- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
     
-    [BQGetDataList getWithUrl:url param:nil cachePolicy:BQHttpToolReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+    [BQGetDataList getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
             failure(error);

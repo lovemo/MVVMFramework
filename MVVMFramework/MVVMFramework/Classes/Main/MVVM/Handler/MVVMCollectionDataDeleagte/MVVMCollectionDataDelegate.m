@@ -1,30 +1,30 @@
 //
-//  XTTableDataDelegate.m
+//  MVVMCollectionDataDelegate.m
 //  DevelopFramework
 //
 //  Created by momo on 15/12/16.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "XTCollectionDataDelegate.h"
+#import "MVVMCollectionDataDelegate.h"
 #import "UICollectionViewCell+Extension.h"
-#import "BQBaseViewModel.h"
+#import "MVVMBaseViewModel.h"
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
 
-@interface XTCollectionDataDelegate ()<UICollectionViewDelegateFlowLayout>
+@interface MVVMCollectionDataDelegate ()<UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, copy) NSString *cellIdentifier ;
 @property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
 @property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
 @property (nonatomic, copy) CellItemSize cellItemSize;
 @property (nonatomic, copy) CellItemMargin cellItemMargin;
-@property (nonatomic, strong) BQBaseViewModel *viewModel;
+@property (nonatomic, strong) MVVMBaseViewModel *viewModel;
 @end
 
-@implementation XTCollectionDataDelegate
+@implementation MVVMCollectionDataDelegate
 
-- (id)initWithViewModel:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(MVVMBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
      cellItemSizeBlock:(CellItemSize)cellItemSize
@@ -72,7 +72,7 @@
     collection.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.viewModel getDataListSuccess:^{
+            [weakSelf.viewModel vm_getDataListSuccess:^{
                 [SVProgressHUD dismiss];
                 [weakCollection reloadData];
             }];
@@ -105,7 +105,7 @@
 
 #pragma mark --UICollectionViewDelegate && UICollectionViewDataSourse
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.viewModel numberOfItemsInSection:section];
+    return [self.viewModel vm_numberOfItemsInSection:section];
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     

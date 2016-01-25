@@ -35,7 +35,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
     // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
     self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
     
-    self.collectionView.collectionHander = [[XTCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
+    self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                                                                cellIdentifier:MyCellIdentifier
                                                                          collectionViewLayout:nil cellItemSizeBlock:^CGSize {
                                                                              return CGSizeMake(110, 120);

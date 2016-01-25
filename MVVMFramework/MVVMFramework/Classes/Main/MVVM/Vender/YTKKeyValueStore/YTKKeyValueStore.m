@@ -70,9 +70,9 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     return YES;
 }
 
-- (id)init {
-    return [self initDBWithName:DEFAULT_DB_NAME];
-}
+//- (id)init {
+//    return [self initDBWithName:DEFAULT_DB_NAME];
+//}
 
 - (id)initDBWithName:(NSString *)dbName {
     self = [super init];
@@ -313,7 +313,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     _dbQueue = nil;
 }
 
-- (NSArray *)getItemsFromTable:(NSString *)tableName WithRange:(NSRange)range {
+- (NSArray *)getItemsFromTable:(NSString *)tableName withRange:(NSRange)range {
     
     if ([YTKKeyValueStore checkTableName:tableName] == NO) {
         return nil;

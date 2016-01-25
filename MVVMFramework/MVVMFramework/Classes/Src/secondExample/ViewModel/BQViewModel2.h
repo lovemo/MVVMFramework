@@ -6,8 +6,8 @@
 //  Copyright © 2015年 momo. All rights reserved.
 //
 
-#import "BQBaseViewModel.h"
+#import "MVVMBaseViewModel.h"
 
-@interface BQViewModel2 : BQBaseViewModel
+@interface BQViewModel2 : MVVMBaseViewModel
 
 @end

@@ -9,9 +9,11 @@
 #ifndef BQMVVM_h
 #define BQMVVM_h
 
-#import "BQBaseViewModel.h"
+#import "MVVMBaseViewModel.h"
 #import "UITableViewCell+Extension.h"
-#import "XTableDataDelegate.h"
-#import "XTCollectionDataDelegate.h"
+#import "MVVMTableDataDelegate.h"
+#import "MVVMCollectionDataDelegate.H"
+#import "MVVMStore.h"
+#import "MVVMDataService.h"
 
 #endif /* BQMVVM_h */

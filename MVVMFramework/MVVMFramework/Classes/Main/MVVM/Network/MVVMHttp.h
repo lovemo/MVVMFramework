@@ -30,22 +30,22 @@ typedef void (^responseBlock)(id dataObj, NSError *error);
 typedef void (^progressBlock)(NSProgress * progress);
 
 
-typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
+typedef NS_ENUM(NSUInteger, MVVMHttpRequestCachePolicy){
     /** 有缓存就先返回缓存，同步请求数据 */
-    BQHttpToolReturnCacheDataThenLoad = 0,
+    MVVMHttpReturnCacheDataThenLoad = 0,
      /** 忽略缓存，重新请求 */
-    BQHttpToolReloadIgnoringLocalCacheData,
+    MVVMHttpReloadIgnoringLocalCacheData,
     /** 有缓存就用缓存，没有缓存就重新请求(用于数据不变时) */
-    BQHttpToolReturnCacheDataElseLoad,
+    MVVMHttpReturnCacheDataElseLoad,
     /** 有缓存就用缓存，没有缓存就不发请求，当做请求出错处理（用于离线模式）*/
-    BQHttpToolReturnCacheDataDontLoad
+    MVVMHttpReturnCacheDataDontLoad
 };
 
 #pragma mark - 定义请求工具类
 
-@class BQFileConfig;
+@class MVVMHttpFileConfig;
 
-@interface BQHttpTool : NSObject
+@interface MVVMHttp : NSObject
 
 /**
  *  请求超时时间
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
 /**
  *  创建单例对象
  */
-+ (BQHttpTool *)defaultHttpTool;
++ (MVVMHttp *)defaultMVVMHttp;
 
 /**
  *  移除所有缓存
@@ -63,7 +63,12 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
 + (void)removeAllCaches;
 
 /**
- *  GET请求 - 默认 BQHttpToolReturnCacheDataThenLoad 的缓存方式
+ *  取消所有网络请求 
+ */
++ (void)cancelAllOperations;
+
+/**
+ *  GET请求 - 默认 MVVMHttpReturnCacheDataThenLoad 的缓存方式
  */
 + (void)get:(NSString *)url
      params:(NSDictionary *)params
@@ -71,7 +76,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
     failure:(requestFailureBlock)failureHandler;
 
 /**
- *  POST请求 - 默认 BQHttpToolReturnCacheDataThenLoad 的缓存方式
+ *  POST请求 - 默认 MVVMHttpReturnCacheDataThenLoad 的缓存方式
  */
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
@@ -83,7 +88,7 @@ typedef NS_ENUM(NSUInteger, BQHttpToolRequestCachePolicy){
  */
 + (void)get:(NSString *)url
      params:(NSDictionary *)params
-cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
     success:(requestSuccessBlock)successHandler
     failure:(requestFailureBlock)failureHandler;
 
@@ -92,7 +97,7 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
  */
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
-cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
+cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
      success:(requestSuccessBlock)successHandler
      failure:(requestFailureBlock)failureHandler;
 
@@ -123,7 +128,7 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
  *  文件上传
  */
 + (void)upload:(NSString *)url
-    params:(NSDictionary *)params fileConfig:(BQFileConfig *)fileConfig
+    params:(NSDictionary *)params fileConfig:(MVVMHttpFileConfig *)fileConfig
     success:(requestSuccessBlock)successHandler
     failure:(requestFailureBlock)failureHandler;
 
@@ -132,7 +137,7 @@ cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy
  */
 + (void)upload:(NSString *)url
         params:(NSDictionary *)params
-    fileConfig:(BQFileConfig *)fileConfig
+    fileConfig:(MVVMHttpFileConfig *)fileConfig
 successAndProgress:(progressBlock)progressHandler
       complete:(responseBlock)completionHandler;
 
@@ -142,7 +147,7 @@ successAndProgress:(progressBlock)progressHandler
 /**
  *  用来封装上文件数据的模型类
  */
-@interface BQFileConfig : NSObject
+@interface MVVMHttpFileConfig : NSObject
 
 /**
  *  文件数据

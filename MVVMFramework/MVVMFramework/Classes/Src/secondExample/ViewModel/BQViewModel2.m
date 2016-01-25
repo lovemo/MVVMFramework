@@ -6,7 +6,7 @@
 //  Copyright © 2015年 momo. All rights reserved.
 //
 
-#import "BQBaseViewModel.h"
+#import "MVVMBaseViewModel.h"
 #import "BQViewModel2.h"
 #import "BQTestModel.h"
 #import "SVProgressHUD.h"
@@ -15,7 +15,7 @@
 @implementation BQViewModel2
 
 
-- (NSUInteger)numberOfItemsInSection:(NSUInteger)section {
+- (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section {
     
     return self.dataArrayList.count;
 }
@@ -26,21 +26,21 @@
 //    return model;
 //}
 
-- (void)getDataListSuccess:(void (^)())success {
+- (void)vm_getDataListSuccess:(void (^)())success {
     // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     
-    [self getDataList:url params:nil success:^(NSArray *array) {
+    [self vm_getDataList:url params:nil success:^(NSArray *array) {
         if (success) {
             success();
         }
     } failure:nil];
 }
 
-- (void)getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
+- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
     
-    [BQGetDataList2 getWithUrl:url param:nil cachePolicy:BQHttpToolReturnCacheDataDontLoad modelClass:[BQTestModel class] responseBlock:^(id dataObj, NSError *error) {
+    [BQGetDataList2 getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataDontLoad modelClass:[BQTestModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
             failure(error);

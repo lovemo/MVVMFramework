@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@class BQHttpTool;
-@interface BQDataService : NSObject
+@class MVVMHttp;
+@interface MVVMDataService : NSObject
 
 /**
  GET请求转模型
  */
-+ (void)getWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock;
++ (void)getWithUrl:(NSString *)url param:(id)param cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock;
 
 /**
  POST请求转模型
  */
-+ (void)postWithUrl:(NSString *)url param:(id)param cachePolicy:(BQHttpToolRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock;
++ (void)postWithUrl:(NSString *)url param:(id)param cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock;
 
 
 + (void)putWithUrl:(NSString *)url param:(id)param modelClass:(Class)modelClass responseBlock:(responseBlock)responseDataBlock;

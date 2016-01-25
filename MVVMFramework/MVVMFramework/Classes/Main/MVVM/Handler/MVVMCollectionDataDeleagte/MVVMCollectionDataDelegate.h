@@ -1,5 +1,5 @@
 //
-//  XTTableDataDelegate.h
+//  MVVMCollectionDataDelegate.h
 //  DevelopFramework
 //
 //  Created by momo on 15/12/16.
@@ -26,8 +26,8 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
 // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
-@class BQBaseViewModel;
-@interface XTCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
+@class MVVMBaseViewModel;
+@interface MVVMCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
 
 /**
  *  设置UICollectionViewCell大小
@@ -42,7 +42,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 /**
  *  初始化方法
  */
-- (id)initWithViewModel:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(MVVMBaseViewModel *)viewModel
          cellIdentifier:(NSString *)aCellIdentifier
          collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
          cellItemSizeBlock:(CellItemSize)cellItemSize

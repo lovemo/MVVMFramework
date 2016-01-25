@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class XTableDataDelegate;
+@class MVVMTableDataDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (TableDataDelegateAdditions)
 
 
-@property (nullable,nonatomic,strong) XTableDataDelegate *tableHander;
+@property (nullable,nonatomic,strong) MVVMTableDataDelegate *tableHander;
 
 
 @end

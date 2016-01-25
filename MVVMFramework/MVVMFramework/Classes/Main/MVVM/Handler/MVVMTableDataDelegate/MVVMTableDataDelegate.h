@@ -1,5 +1,5 @@
 //
-//  XTableDataDelegate.h
+//  MVVMCollectionDataDelegate.h
 //  DevelopFramework
 //
 //  Created by momo on 15/12/5.
@@ -18,13 +18,13 @@ typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 
  // - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
 
-@class BQBaseViewModel;
-@interface XTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
+@class MVVMBaseViewModel;
+@interface MVVMTableDataDelegate : NSObject <UITableViewDelegate,UITableViewDataSource>
 
 /**
  *  初始化方法
  */
-- (id)initWithViewModel:(BQBaseViewModel *)viewModel
+- (id)initWithViewModel:(MVVMBaseViewModel *)viewModel
         cellIdentifiersArray:(NSArray *)cellIdentifiersArray
         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
