@@ -74,22 +74,18 @@
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
 
 ```objc
-- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
-    
-    [BQGetDataList getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
+    [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
-        if (error) {
-            failure(error);
-            success(nil);
-            return ;
+        NSArray *array = responseObj[@"stories"];
+        self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
+        if (successHandler) {
+            successHandler();
         }
-        self.dataArrayList = dataObj;
-        success(self.dataArrayList);
+        
+    } failure:^(NSError *error) {
         
     }];
-
-}
-
 ```
 
 ## <a id="几行代码实现数据存储"></a>几行代码实现数据存储
