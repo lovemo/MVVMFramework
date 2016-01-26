@@ -6,8 +6,39 @@
 //
 
 #import "UIView+Frame.h"
+#import "UILabel+Size.h"
+#import <objc/runtime.h>
 
 @implementation UIView (Frame)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        NSArray *selStringsArray = @[@"layoutSubviews"];
+        
+        [selStringsArray enumerateObjectsUsingBlock:^(NSString *selString, NSUInteger idx, BOOL *stop) {
+            NSString *mySelString = [@"mvvm_" stringByAppendingString:selString];
+            
+            Method originalMethod = class_getInstanceMethod(self, NSSelectorFromString(selString));
+            Method myMethod = class_getInstanceMethod(self, NSSelectorFromString(mySelString));
+            method_exchangeImplementations(originalMethod, myMethod);
+        }];
+    });
+}
+
+- (void)mvvm_layoutSubviews {
+    [self mvvm_layoutSubviews];
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[UILabel class]]) {
+            UILabel *label = (UILabel *)obj;
+            label.size = [label contentSizeWithSize:CGSizeMake(label.width, MAXFLOAT)];
+        }
+        
+    }];
+    
+}
 
 - (void)setX:(CGFloat)x
 {
