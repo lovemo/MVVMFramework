@@ -43,15 +43,8 @@
     return nil;
 }
 
-/**
- *  分离加载首页控制器内容
- */
-- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure {
+- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
     
-}
-
-- (void)vm_getDataListSuccess:(void (^)())success {
-
 }
 
 - (NSString *)description{

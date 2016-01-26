@@ -36,13 +36,8 @@
 - (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section;
 
 /**
- *  分离加载首页控制器内容 (内部使用)
- */
-- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
-
-/**
  *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
  */
-- (void)vm_getDataListSuccess:(void (^)( ))success;
+- (void)vm_getDataSuccessHandler:(void (^)( ))successHandler;
 
 @end
