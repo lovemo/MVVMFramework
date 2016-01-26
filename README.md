@@ -74,7 +74,7 @@
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
 
 ```objc
-NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
+    NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
         NSArray *array = responseObj[@"stories"];
