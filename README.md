@@ -7,7 +7,7 @@
 
 终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
 
-代码加入了cell自适应高度代码，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，运行时自动布局UILabel，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
 
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking.png)
@@ -74,25 +74,21 @@
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
 
 ```objc
-- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
-    
-    [BQGetDataList getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+    NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
+    [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
-        if (error) {
-            failure(error);
-            success(nil);
-            return ;
+        NSArray *array = responseObj[@"stories"];
+        self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
+        if (successHandler) {
+            successHandler();
         }
-        self.dataArrayList = dataObj;
-        success(self.dataArrayList);
+        
+    } failure:^(NSError *error) {
         
     }];
-
-}
-
 ```
 
-## <a id="几行代码实现数据存储"></a>几行代码实现数据存储
+### <a id="几行代码实现数据存储"></a>几行代码实现数据存储
 
 ```objc
     MVVMStore *store = [[MVVMStore alloc]init];
@@ -107,6 +103,7 @@
 
 ### <a id="使用方法"></a> 使用方法
 - 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
+- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法
 - 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
 - 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 

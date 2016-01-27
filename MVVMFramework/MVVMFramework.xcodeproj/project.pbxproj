@@ -53,6 +53,8 @@
 		34769D9E1C5355610089F278 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D941C5355610089F278 /* UIView+ViewController.m */; };
 		34769D9F1C5355610089F278 /* UIViewController+Identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D971C5355610089F278 /* UIViewController+Identifier.m */; };
 		34769DA01C5355610089F278 /* UIViewController+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 34769D991C5355610089F278 /* UIViewController+StoryBoard.m */; };
+		34AC95B61C57526200152F0A /* UILabel+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AC95B51C57526200152F0A /* UILabel+Size.m */; };
+		34E7F1891C585C0800F1DDBE /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F1881C585C0800F1DDBE /* UIView+Shake.m */; };
 		51BB142E0AA2047559116344 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39790A2C94697266B4B5B448 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +150,10 @@
 		34769D971C5355610089F278 /* UIViewController+Identifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Identifier.m"; sourceTree = "<group>"; };
 		34769D981C5355610089F278 /* UIViewController+StoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+StoryBoard.h"; sourceTree = "<group>"; };
 		34769D991C5355610089F278 /* UIViewController+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+StoryBoard.m"; sourceTree = "<group>"; };
+		34AC95B41C57526200152F0A /* UILabel+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Size.h"; sourceTree = "<group>"; };
+		34AC95B51C57526200152F0A /* UILabel+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Size.m"; sourceTree = "<group>"; };
+		34E7F1871C585C0800F1DDBE /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
+		34E7F1881C585C0800F1DDBE /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
 		39790A2C94697266B4B5B448 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E78D5BA4ACF917174A79E1D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEDDC371C6D8F001D5C40D1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -627,6 +633,7 @@
 		34769D8D1C5355610089F278 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				34AC95B31C57526200152F0A /* UILabel */,
 				34769D8E1C5355610089F278 /* UIView */,
 				34769D951C5355610089F278 /* UIViewController */,
 			);
@@ -636,6 +643,8 @@
 		34769D8E1C5355610089F278 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				34E7F1871C585C0800F1DDBE /* UIView+Shake.h */,
+				34E7F1881C585C0800F1DDBE /* UIView+Shake.m */,
 				34769D8F1C5355610089F278 /* UIView+Frame.h */,
 				34769D901C5355610089F278 /* UIView+Frame.m */,
 				34769D911C5355610089F278 /* UIView+Nib.h */,
@@ -655,6 +664,15 @@
 				34769D991C5355610089F278 /* UIViewController+StoryBoard.m */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		34AC95B31C57526200152F0A /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				34AC95B41C57526200152F0A /* UILabel+Size.h */,
+				34AC95B51C57526200152F0A /* UILabel+Size.m */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		9EC0EC4841EB34FC729FF137 /* Frameworks */ = {
@@ -832,9 +850,11 @@
 				34769DA01C5355610089F278 /* UIViewController+StoryBoard.m in Sources */,
 				342FFC411C55B55D0047C813 /* MVVMStore.m in Sources */,
 				345DCCA61C3E553A000740A6 /* ThirdViewModel.m in Sources */,
+				34E7F1891C585C0800F1DDBE /* UIView+Shake.m in Sources */,
 				345E643A1C2E1CFF00F55F22 /* BQViewModel.m in Sources */,
 				34769D9D1C5355610089F278 /* UIView+Nib.m in Sources */,
 				345E63711C2E1CE400F55F22 /* main.m in Sources */,
+				34AC95B61C57526200152F0A /* UILabel+Size.m in Sources */,
 				342FFC391C55B55D0047C813 /* MVVMCollectionDataDelegate.m in Sources */,
 				345E643F1C2E1CFF00F55F22 /* BQViewModel2.m in Sources */,
 			);

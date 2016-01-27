@@ -26,29 +26,19 @@
 //    return model;
 //}
 
-- (void)vm_getDataListSuccess:(void (^)())success {
-    // 实际开发中，将url 和 params 换为自己的值，demo测试时为nil即可
+- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    
-    [self vm_getDataList:url params:nil success:^(NSArray *array) {
-        if (success) {
-            success();
-        }
-    } failure:nil];
-}
-
-- (void)vm_getDataList:(NSString *)url params:(NSDictionary *)params success:(void (^)(NSArray *))success failure:(void (^)(NSError *))failure {
     
     [BQGetDataList2 getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataDontLoad modelClass:[BQTestModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
-            failure(error);
-            success(nil);
             return ;
         }
         self.dataArrayList = dataObj;
-        success(self.dataArrayList);
+        if (successHandler) {
+            successHandler();
+        }
         
     }];
     
