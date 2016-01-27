@@ -264,8 +264,8 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
         cacheKey = [url stringByAppendingString:paramStr];
     }
     
-    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+ "];
-    NSString *cacheKeyUrl = [[cacheKey componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+ , "];
+    NSString *cacheKeyUrl = [[url componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
     
     [[MVVMHttp defaultMVVMHttp].store db_createTableWithName:cacheKeyUrl];
     id object = [[MVVMHttp defaultMVVMHttp].store db_getObjectById:cacheKey fromTable:cacheKeyUrl];
