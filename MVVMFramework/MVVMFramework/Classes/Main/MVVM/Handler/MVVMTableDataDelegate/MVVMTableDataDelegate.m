@@ -9,7 +9,6 @@
 #import "MVVMTableDataDelegate.h"
 #import "UITableViewCell+Extension.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "BQViewModel.h"
 #import "MVVMBaseViewModel.h"
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
