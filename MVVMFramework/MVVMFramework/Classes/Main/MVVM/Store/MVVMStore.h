@@ -77,12 +77,13 @@
 
 - (NSArray *)db_getAllItemsFromTable:(NSString *)tableName;
 
+- (NSArray *)db_getItemsFromTable:(NSString *)tableName withRange:(NSRange)range;
+
 - (void)db_deleteObjectById:(NSString *)objectId fromTable:(NSString *)tableName;
 
 - (void)db_deleteObjectsByIdArray:(NSArray *)objectIdArray fromTable:(NSString *)tableName;
 
 - (void)db_deleteObjectsByIdPrefix:(NSString *)objectIdPrefix fromTable:(NSString *)tableName;
 
-- (NSArray *)db_getItemsFromTable:(NSString *)tableName withRange:(NSRange)range;
 
 @end
