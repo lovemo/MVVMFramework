@@ -31,9 +31,11 @@ typedef void (^progressBlock)(NSProgress * progress);
 
 
 typedef NS_ENUM(NSUInteger, MVVMHttpRequestCachePolicy){
+    /** 不作任何处理，只请求数据 */
+    MVVMHttpReturnDefault = 0,
     /** 有缓存就先返回缓存，同步请求数据 */
-    MVVMHttpReturnCacheDataThenLoad = 0,
-     /** 忽略缓存，重新请求 */
+    MVVMHttpReturnCacheDataThenLoad,
+    /** 忽略缓存，重新请求 */
     MVVMHttpReloadIgnoringLocalCacheData,
     /** 有缓存就用缓存，没有缓存就重新请求(用于数据不变时) */
     MVVMHttpReturnCacheDataElseLoad,
@@ -63,12 +65,12 @@ typedef NS_ENUM(NSUInteger, MVVMHttpRequestCachePolicy){
 + (void)removeAllCaches;
 
 /**
- *  取消所有网络请求 
+ *  取消所有网络请求
  */
 + (void)cancelAllOperations;
 
 /**
- *  GET请求 - 默认 MVVMHttpReturnCacheDataThenLoad 的缓存方式
+ *  GET请求 - 默认 MVVMHttpReloadIgnoringLocalCacheData 的缓存方式
  */
 + (void)get:(NSString *)url
      params:(NSDictionary *)params
@@ -76,7 +78,7 @@ typedef NS_ENUM(NSUInteger, MVVMHttpRequestCachePolicy){
     failure:(requestFailureBlock)failureHandler;
 
 /**
- *  POST请求 - 默认 MVVMHttpReturnCacheDataThenLoad 的缓存方式
+ *  POST请求 - 默认 MVVMHttpReloadIgnoringLocalCacheData 的缓存方式
  */
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
@@ -97,7 +99,7 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
  */
 + (void)post:(NSString *)url
       params:(NSDictionary *)params
-cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
+ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
      success:(requestSuccessBlock)successHandler
      failure:(requestFailureBlock)failureHandler;
 
@@ -105,7 +107,7 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
  *  PUT请求
  */
 + (void)put:(NSString *)url
-    params:(NSDictionary *)params
+     params:(NSDictionary *)params
     success:(requestSuccessBlock)successHandler
     failure:(requestFailureBlock)failureHandler;
 
@@ -113,24 +115,24 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
  *  DELETE请求
  */
 + (void)delete:(NSString *)url
-    params:(NSDictionary *)params
-    success:(requestSuccessBlock)successHandler
-    failure:(requestFailureBlock)failureHandler;
+params:(NSDictionary *)params
+success:(requestSuccessBlock)successHandler
+failure:(requestFailureBlock)failureHandler;
 
 /**
  *  下载文件，监听下载进度
  */
 + (void)download:(NSString *)url
-    successAndProgress:(progressBlock)progressHandler
-    complete:(responseBlock)completionHandler;
+successAndProgress:(progressBlock)progressHandler
+        complete:(responseBlock)completionHandler;
 
 /**
  *  文件上传
  */
 + (void)upload:(NSString *)url
-    params:(NSDictionary *)params fileConfig:(MVVMHttpFileConfig *)fileConfig
-    success:(requestSuccessBlock)successHandler
-    failure:(requestFailureBlock)failureHandler;
+        params:(NSDictionary *)params fileConfig:(MVVMHttpFileConfig *)fileConfig
+       success:(requestSuccessBlock)successHandler
+       failure:(requestFailureBlock)failureHandler;
 
 /**
  *   文件上传，监听上传进度

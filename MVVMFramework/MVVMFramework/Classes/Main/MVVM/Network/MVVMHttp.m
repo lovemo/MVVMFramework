@@ -80,7 +80,7 @@ typedef NS_ENUM(NSUInteger, MVVMHttpRequestType) {
     success:(requestSuccessBlock)successHandler
     failure:(requestFailureBlock)failureHandler
 {
-    [MVVMHttp requestMethod:MVVMHttpRequestTypeGET url:url params:params cachePolicy:MVVMHttpReturnCacheDataThenLoad success:successHandler failure:failureHandler];
+    [MVVMHttp requestMethod:MVVMHttpRequestTypeGET url:url params:params cachePolicy:MVVMHttpReloadIgnoringLocalCacheData success:successHandler failure:failureHandler];
 }
 
 + (void)post:(NSString *)url
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSUInteger, MVVMHttpRequestType) {
      success:(requestSuccessBlock)successHandler
      failure:(requestFailureBlock)failureHandler
 {
-    [MVVMHttp requestMethod:MVVMHttpRequestTypePOST url:url params:params cachePolicy:MVVMHttpReturnCacheDataThenLoad success:successHandler failure:failureHandler];
+    [MVVMHttp requestMethod:MVVMHttpRequestTypePOST url:url params:params cachePolicy:MVVMHttpReloadIgnoringLocalCacheData success:successHandler failure:failureHandler];
 }
 
 + (void)get:(NSString *)url
@@ -256,6 +256,10 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
               success:(requestSuccessBlock)successHandler
               failure:(requestFailureBlock)failureHandler
 {
+    if (cachePolicy == MVVMHttpReturnDefault) {
+        [MVVMHttp requestMethod:requestType url:url params:params cachePolicy:MVVMHttpReturnDefault tableName:nil cacheKey:nil success:successHandler failure:failureHandler];
+        return;
+    }
     NSString *cacheKey = url;
     if (params) {
         if (![NSJSONSerialization isValidJSONObject:params]) return ; //参数不是json类型
@@ -263,9 +267,9 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
         NSString *paramStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         cacheKey = [url stringByAppendingString:paramStr];
     }
-    
-    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+ , "];
-    NSString *cacheKeyUrl = [[url componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
+    LxDBAnyVar(cacheKey);
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+  { } " " : , “” " " \r \n  \" \"  "];
+    NSString *cacheKeyUrl = [[cacheKey componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
     
     [[MVVMHttp defaultMVVMHttp].store db_createTableWithName:cacheKeyUrl];
     id object = [[MVVMHttp defaultMVVMHttp].store db_getObjectById:cacheKey fromTable:cacheKeyUrl];
@@ -298,18 +302,19 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
             break;
         }
     }
-    [MVVMHttp requestMethod:requestType url:url params:params tableName:cacheKeyUrl cacheKey:cacheKey success:successHandler failure:failureHandler];
+    [MVVMHttp requestMethod:requestType url:url params:params cachePolicy:MVVMHttpReloadIgnoringLocalCacheData tableName:cacheKeyUrl cacheKey:cacheKey success:successHandler failure:failureHandler];
 }
 
 + (void)requestMethod:(MVVMHttpRequestType)requestType
                   url:(NSString *)url
                params:(NSDictionary *)params
+          cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
             tableName:(NSString *)tableName
              cacheKey:(NSString *)cacheKey
               success:(requestSuccessBlock)successHandler
               failure:(requestFailureBlock)failureHandler
 {
-
+    
     [[MVVMHttp defaultMVVMHttp].manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     [MVVMHttp defaultMVVMHttp].manager.requestSerializer.timeoutInterval = [MVVMHttp defaultMVVMHttp].timeoutInterval;
     [[MVVMHttp defaultMVVMHttp].manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
@@ -319,10 +324,11 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
             if ([self isConnectionAvailable]) {
                 // 2.发送请求
                 [[MVVMHttp defaultMVVMHttp].manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                    
                     if (successHandler) {
-                        if (responseObject) {
-                            [[MVVMHttp defaultMVVMHttp].store db_putObject:responseObject withId:cacheKey intoTable:tableName];
+                        if (cachePolicy != MVVMHttpReturnDefault) {
+                            if (responseObject) {
+                                [[MVVMHttp defaultMVVMHttp].store db_putObject:responseObject withId:cacheKey intoTable:tableName];
+                            }
                         }
                         successHandler(responseObject);
                     }
@@ -343,8 +349,10 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
                 // 2.发送请求
                 [[MVVMHttp defaultMVVMHttp].manager POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     if (successHandler) {
-                        if (responseObject) {
-                            [[MVVMHttp defaultMVVMHttp].store db_putObject:responseObject withId:cacheKey intoTable:tableName];
+                        if (cachePolicy != MVVMHttpReturnDefault) {
+                            if (responseObject) {
+                                [[MVVMHttp defaultMVVMHttp].store db_putObject:responseObject withId:cacheKey intoTable:tableName];
+                            }
                         }
                         successHandler(responseObject);
                     }
@@ -373,10 +381,10 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
         return;
     }
     [MVVMHttp defaultMVVMHttp].alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                                    message:@"网络异常，请检查网络连接"
-                                                                   delegate:self
-                                                          cancelButtonTitle:@"好的"
-                                                          otherButtonTitles:nil, nil];
+                                                                  message:@"网络异常，请检查网络连接"
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"好的"
+                                                        otherButtonTitles:nil, nil];
     [[MVVMHttp defaultMVVMHttp].alert show];
 }
 // 查看网络状态是否给力
