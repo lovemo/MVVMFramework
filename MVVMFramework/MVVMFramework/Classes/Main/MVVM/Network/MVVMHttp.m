@@ -267,7 +267,7 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
         NSString *paramStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         cacheKey = [url stringByAppendingString:paramStr];
     }
-    LxDBAnyVar(cacheKey);
+
     NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+  { } " " : , “” " " \r \n  \" \"  "];
     NSString *cacheKeyUrl = [[cacheKey componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
     
