@@ -256,6 +256,7 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
               success:(requestSuccessBlock)successHandler
               failure:(requestFailureBlock)failureHandler
 {
+    // 执行默认请求操作，不进行网络缓存
     if (cachePolicy == MVVMHttpReturnDefault) {
         [MVVMHttp requestMethod:requestType url:url params:params cachePolicy:MVVMHttpReturnDefault tableName:nil cacheKey:nil success:successHandler failure:failureHandler];
         return;
