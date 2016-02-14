@@ -11,6 +11,7 @@
 		048FE6401C52570400A1BC01 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FE63F1C52570400A1BC01 /* BQGetDataList2.m */; };
 		3415E6371C3B5A59005E6E4C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3415E6361C3B5A59005E6E4C /* libsqlite3.tbd */; };
 		343196331C3F4C0200A68A91 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 343196321C3F4C0200A68A91 /* ThirdViewManger.m */; };
+		344B3CB51C7047C500B0B559 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B3CB41C7047C500B0B559 /* TestViewDelegate.m */; };
 		345DCC9B1C3E522A000740A6 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCC9A1C3E522A000740A6 /* ThirdView.m */; };
 		345DCC9D1C3E5240000740A6 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345DCC9C1C3E5240000740A6 /* ThirdView.xib */; };
 		345DCCA31C3E542B000740A6 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 345DCCA21C3E542B000740A6 /* ThirdVC.m */; };
@@ -68,6 +69,8 @@
 		343196311C3F4C0200A68A91 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
 		343196321C3F4C0200A68A91 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
 		343196341C3F5EF200A68A91 /* PrefixHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		344B3CB31C7047C500B0B559 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
+		344B3CB41C7047C500B0B559 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
 		345DCC991C3E522A000740A6 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
 		345DCC9A1C3E522A000740A6 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
 		345DCC9C1C3E5240000740A6 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 			children = (
 				345E63F21C2E1CFF00F55F22 /* FirstVC.h */,
 				345E63F31C2E1CFF00F55F22 /* FirstVC.m */,
+				344B3CB31C7047C500B0B559 /* TestViewDelegate.h */,
+				344B3CB41C7047C500B0B559 /* TestViewDelegate.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -953,6 +958,7 @@
 				343196331C3F4C0200A68A91 /* ThirdViewManger.m in Sources */,
 				3484CFCA1C62DDF700941C8C /* MVVMHttp.m in Sources */,
 				345DCCA61C3E553A000740A6 /* ThirdViewModel.m in Sources */,
+				344B3CB51C7047C500B0B559 /* TestViewDelegate.m in Sources */,
 				345E643A1C2E1CFF00F55F22 /* BQViewModel.m in Sources */,
 				3484CFCB1C62DDF700941C8C /* MVVMStore.m in Sources */,
 				3484CFBB1C62DDF700941C8C /* UILabel+Size.m in Sources */,

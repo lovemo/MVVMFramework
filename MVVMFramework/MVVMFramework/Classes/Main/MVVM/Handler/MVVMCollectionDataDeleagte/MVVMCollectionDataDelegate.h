@@ -13,31 +13,50 @@
 /**
  *  选中UICollectionViewCell的Block
  */
-typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+typedef void (^didSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 /**
  *  设置UICollectionViewCell大小的Block
  */
-typedef CGSize (^CellItemSize)() ;
+typedef CGSize (^cellItemSize)() ;
 /**
  *  设置UICollectionViewCell间隔Margin的Block
  */
-typedef UIEdgeInsets (^CellItemMargin)() ;
+typedef UIEdgeInsets (^cellItemMargin)() ;
 
 
-// - - - - - -- - - - - - - - -- - - - - -- -- - - - - -- 创建类 - -- - - - - -- -- - - - - -- - - - - - - - -- - - - - -- -//
+ // - - - - - -- - - - - - - - - - -- 创建类 - -- - -  - - - - - -- - - - - -- -//
 
 @class MVVMBaseViewModel;
-@interface MVVMCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MVVMCollectionDataDelegate : NSObject <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+/** collectionViewCell 重用标识符 */
+@property (nonatomic, copy) NSString *cellIdentifier ;
+
+/** collectionView布局方式 */
+@property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
+
+/** 选中cell */
+@property (nonatomic, copy) didSelectCellBlock didSelectCellBlock ;
+
+/** cell的Size */
+@property (nonatomic, copy) cellItemSize cellItemSize;
+
+/** cell的Margin */
+@property (nonatomic, copy) cellItemMargin cellItemMargin;
+
+/** collectionView的ViewModel */
+@property (nonatomic, strong) MVVMBaseViewModel *viewModel;
+
 
 /**
  *  设置UICollectionViewCell大小
  */
-- (void)ItemSize:(CellItemSize)cellItemSize;
+- (void)ItemSize:(cellItemSize)cellItemSize;
 
 /**
  *  设置UICollectionViewCell间隔Margin
  */
-- (void)itemInset:(CellItemMargin)cellItemMargin;
+- (void)itemInset:(cellItemMargin)cellItemMargin;
 
 /**
  *  初始化方法
@@ -45,14 +64,15 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 - (id)initWithViewModel:(MVVMBaseViewModel *)viewModel
          cellIdentifier:(NSString *)aCellIdentifier
          collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-         cellItemSizeBlock:(CellItemSize)cellItemSize
-         cellItemMarginBlock:(CellItemMargin)cellItemMargin
-         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
+         cellItemSizeBlock:(cellItemSize)cellItemSize
+         cellItemMarginBlock:(cellItemMargin)cellItemMargin
+         didSelectBlock:(didSelectCellBlock)didselectBlock ;
 
 /**
  *  设置CollectionView的Datasource和Delegate为self
  */
 - (void)handleCollectionViewDatasourceAndDelegate:(UICollectionView *)collection ;
+
 /**
  *  获取CollectionView中Item所在的indexPath
  */

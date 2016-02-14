@@ -256,7 +256,6 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
               success:(requestSuccessBlock)successHandler
               failure:(requestFailureBlock)failureHandler
 {
-    // 执行默认请求操作，不进行网络缓存
     if (cachePolicy == MVVMHttpReturnDefault) {
         [MVVMHttp requestMethod:requestType url:url params:params cachePolicy:MVVMHttpReturnDefault tableName:nil cacheKey:nil success:successHandler failure:failureHandler];
         return;
@@ -268,7 +267,7 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
         NSString *paramStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         cacheKey = [url stringByAppendingString:paramStr];
     }
-
+    
     NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"[]{} // / : . @（#%-*+=_）\\|~(＜＞$%^&*)_+  { } " " : , “” " " \r \n  \" \"  "];
     NSString *cacheKeyUrl = [[cacheKey componentsSeparatedByCharactersInSet: set]componentsJoinedByString:@""];
     
@@ -438,4 +437,3 @@ cachePolicy:(MVVMHttpRequestCachePolicy)cachePolicy
 }
 
 @end
-
