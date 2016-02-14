@@ -103,7 +103,7 @@
 
 ### <a id="使用方法"></a> 使用方法
 - 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
-- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法
+- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
 - 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
 - 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 
