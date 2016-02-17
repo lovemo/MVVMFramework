@@ -1,6 +1,6 @@
 {
     "plugins": [
-        "-splitter"
+        "splitter"
     ],
     "pluginsConfig": {}
 }
