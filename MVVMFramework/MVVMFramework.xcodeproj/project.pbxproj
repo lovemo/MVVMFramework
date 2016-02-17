@@ -57,6 +57,9 @@
 		345E643F1C2E1CFF00F55F22 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E640B1C2E1CFF00F55F22 /* BQViewModel2.m */; };
 		345E64411C2E1D2C00F55F22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345E64401C2E1D2C00F55F22 /* Main.storyboard */; };
 		345E64571C2E1E4F00F55F22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345E64561C2E1E4F00F55F22 /* LaunchScreen.xib */; };
+		346FDAE81C740B4200376E02 /* UIView+MBIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 346FDAE71C740B4200376E02 /* UIView+MBIBnspectable.m */; };
+		346FDAEB1C740B5100376E02 /* UILabel+MBIBnsepectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 346FDAEA1C740B5100376E02 /* UILabel+MBIBnsepectable.m */; };
+		346FDAEE1C740B5800376E02 /* UIButton+MBIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 346FDAED1C740B5800376E02 /* UIButton+MBIBnspectable.m */; };
 		51BB142E0AA2047559116344 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39790A2C94697266B4B5B448 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +164,12 @@
 		345E640B1C2E1CFF00F55F22 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
 		345E64401C2E1D2C00F55F22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		345E64561C2E1E4F00F55F22 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		346FDAE61C740B4200376E02 /* UIView+MBIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MBIBnspectable.h"; sourceTree = "<group>"; };
+		346FDAE71C740B4200376E02 /* UIView+MBIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MBIBnspectable.m"; sourceTree = "<group>"; };
+		346FDAE91C740B5100376E02 /* UILabel+MBIBnsepectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MBIBnsepectable.h"; sourceTree = "<group>"; };
+		346FDAEA1C740B5100376E02 /* UILabel+MBIBnsepectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MBIBnsepectable.m"; sourceTree = "<group>"; };
+		346FDAEC1C740B5800376E02 /* UIButton+MBIBnspectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MBIBnspectable.h"; sourceTree = "<group>"; };
+		346FDAED1C740B5800376E02 /* UIButton+MBIBnspectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MBIBnspectable.m"; sourceTree = "<group>"; };
 		39790A2C94697266B4B5B448 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E78D5BA4ACF917174A79E1D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEDDC371C6D8F001D5C40D1D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +272,7 @@
 		344D1D1F1C72C908001216AD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				346FDAE51C740B3300376E02 /* UIButton */,
 				344D1D201C72C908001216AD /* UILabel */,
 				344D1D251C72C908001216AD /* UIView */,
 				344D1D2E1C72C908001216AD /* UIViewController */,
@@ -273,6 +283,8 @@
 		344D1D201C72C908001216AD /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
+				346FDAE91C740B5100376E02 /* UILabel+MBIBnsepectable.h */,
+				346FDAEA1C740B5100376E02 /* UILabel+MBIBnsepectable.m */,
 				344D1D211C72C908001216AD /* UILabel+AddHorizontalLine.h */,
 				344D1D221C72C908001216AD /* UILabel+AddHorizontalLine.m */,
 				344D1D231C72C908001216AD /* UILabel+Size.h */,
@@ -284,6 +296,8 @@
 		344D1D251C72C908001216AD /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				346FDAE61C740B4200376E02 /* UIView+MBIBnspectable.h */,
+				346FDAE71C740B4200376E02 /* UIView+MBIBnspectable.m */,
 				344D1D261C72C908001216AD /* UIView+Frame.h */,
 				344D1D271C72C908001216AD /* UIView+Frame.m */,
 				344D1D281C72C908001216AD /* UIView+Nib.h */,
@@ -783,6 +797,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		346FDAE51C740B3300376E02 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				346FDAEC1C740B5800376E02 /* UIButton+MBIBnspectable.h */,
+				346FDAED1C740B5800376E02 /* UIButton+MBIBnspectable.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		9EC0EC4841EB34FC729FF137 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,6 +948,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				345DCCA91C3E568F000740A6 /* ThirdModel.m in Sources */,
+				346FDAE81C740B4200376E02 /* UIView+MBIBnspectable.m in Sources */,
+				346FDAEE1C740B5800376E02 /* UIButton+MBIBnspectable.m in Sources */,
 				344D1D7D1C72C909001216AD /* UIViewController+Identifier.m in Sources */,
 				048FE6401C52570400A1BC01 /* BQGetDataList2.m in Sources */,
 				344D1D7E1C72C909001216AD /* UIViewController+StoryBoard.m in Sources */,
@@ -934,6 +959,7 @@
 				345E64371C2E1CFF00F55F22 /* FirstModel.m in Sources */,
 				344D1D8B1C72C909001216AD /* YTKKeyValueStore.m in Sources */,
 				344D1D7A1C72C909001216AD /* UIView+Nib.m in Sources */,
+				346FDAEB1C740B5100376E02 /* UILabel+MBIBnsepectable.m in Sources */,
 				344D1D871C72C909001216AD /* MVVMDataService.m in Sources */,
 				345E64361C2E1CFF00F55F22 /* FirstVC.m in Sources */,
 				344D1D881C72C909001216AD /* MVVMHttp.m in Sources */,
