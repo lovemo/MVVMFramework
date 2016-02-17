@@ -56,19 +56,19 @@
          
 ```objc
      self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                                            cellIdentifier:MyCellIdentifier
-                                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                                return CGSizeMake(110, 120);
-                                                            } cellItemMarginBlock:^UIEdgeInsets {
-                                                                return UIEdgeInsetsMake(0, 20, 0, 20);
-                                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-                                                                [[[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                    message:strMsg
-                                                                                    delegate:self
-                                                                                    cancelButtonTitle:@"好的"
-                                                                                    otherButtonTitles:nil, nil] show];
-                                                            }];
+                                            cellIdentifier:MyCellIdentifier
+                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
+                                                return CGSizeMake(110, 120);
+                                            } cellItemMarginBlock:^UIEdgeInsets {
+                                                return UIEdgeInsetsMake(0, 20, 0, 20);
+                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+                                             [[[UIAlertView alloc] initWithTitle:@"提示"
+                                                                   message:strMsg
+                                                                   delegate:self
+                                                                   cancelButtonTitle:@"好的"
+                                                                   otherButtonTitles:nil, nil] show];
+                                              }];
 ```
 
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
