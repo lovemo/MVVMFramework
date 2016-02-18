@@ -6,8 +6,6 @@
 //
 
 #import "UIView+Frame.h"
-#import "UILabel+Size.h"
-#import <objc/runtime.h>
 
 @implementation UIView (Frame)
 
