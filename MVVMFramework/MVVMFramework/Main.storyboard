@@ -69,26 +69,9 @@
                                     <action selector="clickBtnAction:" destination="ioN-vt-A8h" eventType="touchUpInside" id="Gbm-nj-3Q9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是一只小Label,我是一只小Label,我是一只小Label,我是一只小Label,我是一只小Label,我是一只小Label,我是一只小Label,我是一只小Label..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-XK-WKz">
-                                <rect key="frame" x="150" y="430" width="300" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="oty-mL-493"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="oty-mL-493"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oNl-XK-WKz" firstAttribute="centerX" secondItem="uRI-Bt-ygi" secondAttribute="centerX" id="8YG-aZ-Yzp"/>
-                            <constraint firstItem="oNl-XK-WKz" firstAttribute="top" secondItem="jOp-E7-hbB" secondAttribute="bottom" constant="40" id="PgZ-8d-6UY"/>
-                            <constraint firstItem="oNl-XK-WKz" firstAttribute="width" secondItem="uRI-Bt-ygi" secondAttribute="width" multiplier="0.5" id="SlH-Fb-hQJ"/>
                             <constraint firstItem="jOp-E7-hbB" firstAttribute="centerX" secondItem="uRI-Bt-ygi" secondAttribute="centerX" id="eBe-yB-iEi"/>
                             <constraint firstItem="jOp-E7-hbB" firstAttribute="centerY" secondItem="uRI-Bt-ygi" secondAttribute="centerY" multiplier="1.2" id="ruP-Nh-95r"/>
                         </constraints>
