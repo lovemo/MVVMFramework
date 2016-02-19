@@ -1,7 +1,9 @@
-<font> <h1 style="text-align:center">浅谈MVVM<h1> </font>
+#浅谈MVVM
+
 &emsp;&emsp;做iOS开发也有一段时间了，最近闲暇之余学习研究了下MVVM，每个人对架构和设计模式都有不同的理解，在此记录下我对MVVM的一些小见解，仅供参考，欢迎批评指正。
 
 ##概述
+[引用iOS应用架构谈](http://www.cocoachina.com/ios/20150525/11919.html)
 
 &emsp;&emsp;MVVM的出现主要是为了解决在开发过程中Controller越来越庞大的问题，变得难以维护，所以MVVM把数据加工的任务从Controller中解放了出来，使得Controller只需要专注于数据调配的工作，ViewModel则去负责数据加工并通过通知机制让View响应ViewModel的改变。
 
@@ -18,11 +20,14 @@
 - Controller - 负责ViewManger和ViewModel之间的绑定，负责控制器本身的生命周期。
 - ViewModel - 存放各种业务逻辑和网络请求
 - Model - 用来呈现数据
-
-&emsp;&emsp;这种设计的目的是保持View和Model的高度纯洁，提高可扩展性和复用度。在日常开发中，ViewModel是为了拆分Controller业务逻辑而存在的，所以ViewModel需要提供公共的服务接口，以便为Controller提供数据。而ViewManger的作用相当于一个小管家，帮助Controller来分别管理每个subView，ViewManger负责接管来自View的事件，也负责接收来自Controller的模型数据。Controller则是最后的大家长，负责将ViewModel和ViewManger进行绑定，进行数据转发工作。把合适的数据模型分发给合适的视图管理者。
+![image](https://github.com/lovemo/MVVMFramework/raw/master/tree.jpeg)
+---
+&emsp;&emsp;这种设计的目的是保持View和Model的高度纯洁，提高可扩展性和复用度。在日常开发中，ViewModel是为了拆分Controller业务逻辑而存在的，所以ViewModel需要提供公共的服务接口，以便为Controller提供数据。而ViewManger的作用相当于一个小管家，帮助Controller来分别管理每个subView，ViewManger负责接管来自View的事件，也负责接收来自Controller的模型数据，进行数据绑定工作。Controller则是最后的大家长，负责将ViewModel和ViewManger进行绑定，进行数据转发工作。把合适的数据模型分发给合适的视图管理者。
 
 &emsp;&emsp;日常开发中，往往一个页面交由一个控制器进行管理，而一个页面上又有N个页面，这就要求我们来对这些视图进行合适的分层处理，拆分视图，将这些视图进行封装，不必暴露出具体的实现细节。具体的内部事件，可通过代理模式或者Block交由ViewManger处理，因为视图是可以复用的，而其中的事件响应代码往往是根据不同的业务是有差异的。所以：
 - View很纯洁，需要复用View，若业务逻辑变化则切换ViewManger。
 - ViewManger也比较纯洁，若业务逻辑不变，而View需要大变，则切换View即可，保证protocol或者block一致即可。
 
-这样就实现了互相的封装，只通过protocol或者block进行交流通信，降低了代码的耦合度。
+&emsp;&emsp;这样就实现了互相的封装，两者之间只通过protocol或者block进行交流通信，降低了代码的耦合度。
+
+&emsp;&emsp;尽量使用protocol和category来制定对象之间的通信规范，来降低代码侵入性。
