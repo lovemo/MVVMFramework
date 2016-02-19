@@ -21,7 +21,7 @@
 - ViewModel - 存放各种业务逻辑和网络请求
 - Model - 用来呈现数据
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/tree.jpeg)
----
+--
 &emsp;&emsp;这种设计的目的是保持View和Model的高度纯洁，提高可扩展性和复用度。在日常开发中，ViewModel是为了拆分Controller业务逻辑而存在的，所以ViewModel需要提供公共的服务接口，以便为Controller提供数据。而ViewManger的作用相当于一个小管家，帮助Controller来分别管理每个subView，ViewManger负责接管来自View的事件，也负责接收来自Controller的模型数据，进行数据绑定工作。Controller则是最后的大家长，负责将ViewModel和ViewManger进行绑定，进行数据转发工作。把合适的数据模型分发给合适的视图管理者。
 
 &emsp;&emsp;日常开发中，往往一个页面交由一个控制器进行管理，而一个页面上又有N个页面，这就要求我们来对这些视图进行合适的分层处理，拆分视图，将这些视图进行封装，不必暴露出具体的实现细节。具体的内部事件，可通过代理模式或者Block交由ViewManger处理，因为视图是可以复用的，而其中的事件响应代码往往是根据不同的业务是有差异的。所以：
