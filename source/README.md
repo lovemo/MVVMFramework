@@ -40,7 +40,7 @@ View <-> C <-> ViewModel <->Model
 
 &emsp;&emsp;这样就实现了互相的封装，两者之间只通过protocol或者block进行交流通信，降低了代码的耦合度。尽量使用protocol和category来制定对象之间的通信规范，来降低代码侵入性。
 
-&emsp;&emsp;本文的相关Demo见github，实现的功能并不复杂，仅供参考。
+&emsp;&emsp;本文的相关Demo见github，实现的功能并不复杂，仅供参考，欢迎补充。
 
 ###未完待续。。。
 #####好吧，老实说，其实是思路暂时断了，等我改天再战。
