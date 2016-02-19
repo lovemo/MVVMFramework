@@ -36,7 +36,7 @@ View <-> C <-> ViewModel <->Model
 
 &emsp;&emsp;日常开发中，往往一个页面交由一个控制器进行管理，而一个页面上又有N个页面，这就要求我们来对这些视图进行合适的分层处理，拆分视图，将这些视图进行封装，将复杂View抽象成独立的类，不必暴露出具体的实现细节。具体的内部事件，可通过代理模式或者Block交由ViewManger处理，因为视图是可以复用的，而其中的事件响应代码往往是根据不同的业务是有差异的。所以：
 - [View很纯洁，需要复用View，若业务逻辑变化则切换ViewManger。](#)
-- [ViewManger也比较纯洁，若业务逻辑不变，而View需要大变，则切换View即可，保证protocol或者block一致即可。](#)
+- [ViewManger也比较纯洁，若业务逻辑不变，而View需要大变，则切换View即可，保证View中的protocol或者block一致即可<最好是通过协议规范好>。](#)
 
 &emsp;&emsp;这样就实现了互相的封装，两者之间只通过protocol或者block进行交流通信，降低了代码的耦合度。尽量使用protocol和category来制定对象之间的通信规范，来降低代码侵入性。
 
