@@ -13,6 +13,15 @@
 
 @implementation ThirdViewManger
 
+- (ThirdView *)thirdView {
+    if (_thirdView == nil) {
+        ThirdView *thirdView = [ThirdView loadInstanceFromNib];
+        thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
+        _thirdView = thirdView;
+    }
+    return _thirdView;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         
@@ -25,23 +34,17 @@
             }
         }];
 
-        
-        ThirdView *thirdView = [ThirdView loadInstanceFromNib];
-        thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
-        
-        __weak typeof(thirdView) weakSelf =  thirdView;
+        __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
         // btnClickBlock
-        thirdView.btnClickBlock = ^() {
-            weakSelf.testLabel.text = self.thirdModel.title;
+        weakThirdView.btnClickBlock = ^() {
+            weakThirdView.testLabel.text = self.thirdModel.title;
             NSLog(@"点我干嘛----");
         };
         // btnJumpBlock
-        FirstVC *firstVC = [UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
-        thirdView.btnJumpBlock = ^() {
-            [weakSelf.viewController.navigationController pushViewController:firstVC animated:YES];
+        weakThirdView.btnJumpBlock = ^() {
+            FirstVC *firstVC = [UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+            [weakThirdView.viewController.navigationController pushViewController:firstVC animated:YES];
         };
-        
-        _thirdView = thirdView;
 
     }
     return self;

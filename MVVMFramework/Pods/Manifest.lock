@@ -19,6 +19,7 @@ PODS:
     - FMDB/standard (= 2.6)
   - FMDB/standard (2.6)
   - LxDBAnything (1.1.0)
+  - Masonry (0.6.4)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.5):
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - FMDB
   - LxDBAnything
+  - Masonry
   - MJExtension
   - MJRefresh (> 3.0.0)
   - SDWebImage
@@ -43,6 +45,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461

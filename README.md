@@ -3,6 +3,9 @@
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
 ====
+####博客：浅谈MVVM 
+####地址：[点击链接进入](https://github.com/lovemo/MVVMFramework/tree/master/source)
+====
 再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，分离控制器代码，降低代码耦合
 
 终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
@@ -56,19 +59,19 @@
          
 ```objc
      self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                                            cellIdentifier:MyCellIdentifier
-                                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                                return CGSizeMake(110, 120);
-                                                            } cellItemMarginBlock:^UIEdgeInsets {
-                                                                return UIEdgeInsetsMake(0, 20, 0, 20);
-                                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                                NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-                                                                [[[UIAlertView alloc] initWithTitle:@"提示"
-                                                                                    message:strMsg
-                                                                                    delegate:self
-                                                                                    cancelButtonTitle:@"好的"
-                                                                                    otherButtonTitles:nil, nil] show];
-                                                            }];
+                                            cellIdentifier:MyCellIdentifier
+                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
+                                                return CGSizeMake(110, 120);
+                                            } cellItemMarginBlock:^UIEdgeInsets {
+                                                return UIEdgeInsetsMake(0, 20, 0, 20);
+                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+                                             [[[UIAlertView alloc] initWithTitle:@"提示"
+                                                                   message:strMsg
+                                                                   delegate:self
+                                                                   cancelButtonTitle:@"好的"
+                                                                   otherButtonTitles:nil, nil] show];
+                                              }];
 ```
 
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
@@ -103,7 +106,7 @@
 
 ### <a id="使用方法"></a> 使用方法
 - 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
-- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法
+- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
 - 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
 - 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 

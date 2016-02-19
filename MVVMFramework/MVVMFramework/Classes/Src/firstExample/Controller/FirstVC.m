@@ -12,7 +12,7 @@
 #import "BQMVVM.h"
 #import "SecondVC.h"
 #import "BQViewModel.h"
-
+#import "TestViewDelegate.h"
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
@@ -37,7 +37,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     __weak typeof(self) weakSelf = self;
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
     
-    self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+    self.table.tableHander = [[TestViewDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
                                                      cellIdentifiersArray:@[MyCellIdentifier]
                                                            didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                

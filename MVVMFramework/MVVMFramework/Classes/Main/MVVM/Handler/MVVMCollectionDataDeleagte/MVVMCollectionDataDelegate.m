@@ -12,14 +12,8 @@
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
 
-@interface MVVMCollectionDataDelegate ()<UICollectionViewDelegateFlowLayout>
+@interface MVVMCollectionDataDelegate ()
 
-@property (nonatomic, copy) NSString *cellIdentifier ;
-@property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
-@property (nonatomic, copy) DidSelectCellBlock          didSelectCellBlock ;
-@property (nonatomic, copy) CellItemSize cellItemSize;
-@property (nonatomic, copy) CellItemMargin cellItemMargin;
-@property (nonatomic, strong) MVVMBaseViewModel *viewModel;
 @end
 
 @implementation MVVMCollectionDataDelegate
@@ -27,9 +21,9 @@
 - (id)initWithViewModel:(MVVMBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     cellItemSizeBlock:(CellItemSize)cellItemSize
-     cellItemMarginBlock:(CellItemMargin)cellItemMargin
-     didSelectBlock:(DidSelectCellBlock)didselectBlock
+     cellItemSizeBlock:(cellItemSize)cellItemSize
+     cellItemMarginBlock:(cellItemMargin)cellItemMargin
+     didSelectBlock:(didSelectCellBlock)didselectBlock
 {
     self = [super init] ;
     if (self) {
@@ -44,11 +38,11 @@
     return self ;
 }
 
-- (void)ItemSize:(CellItemSize)cellItemSize {
+- (void)ItemSize:(cellItemSize)cellItemSize {
     self.cellItemSize = cellItemSize;
 }
 
-- (void)itemInset:(CellItemMargin)cellItemMargin {
+- (void)itemInset:(cellItemMargin)cellItemMargin {
     self.cellItemMargin = cellItemMargin;
 }
 
@@ -70,15 +64,12 @@
     [SVProgressHUD show];
     // 下拉刷新
     collection.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.viewModel vm_getDataSuccessHandler:^{
-                [SVProgressHUD dismiss];
-                [weakCollection reloadData];
-            }];
-            // 结束刷新
-            [weakCollection.mj_header endRefreshing];
-        });
+        [weakSelf.viewModel vm_getDataSuccessHandler:^{
+            [SVProgressHUD dismiss];
+            [weakCollection reloadData];
+        }];
+        // 结束刷新
+        [weakCollection.mj_header endRefreshing];
     }];
     [collection.mj_header beginRefreshing];
     collection.mj_header.automaticallyChangeAlpha = YES;
@@ -121,6 +112,7 @@
     [cell configure:cell customObj:item indexPath:indexPath];
     return cell ;
 }
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     id item = [self itemAtIndexPath:indexPath] ;
     self.didSelectCellBlock(indexPath,item) ;
