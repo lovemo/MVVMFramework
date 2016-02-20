@@ -15,7 +15,7 @@
 
 - (ThirdView *)thirdView {
     if (_thirdView == nil) {
-        ThirdView *thirdView = [ThirdView loadInstanceFromNib];
+        ThirdView *thirdView = [ThirdView svv_loadInstanceFromNib];
         thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
         _thirdView = thirdView;
     }
@@ -42,8 +42,8 @@
         };
         // btnJumpBlock
         weakThirdView.btnJumpBlock = ^() {
-            FirstVC *firstVC = [UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
-            [weakThirdView.viewController.navigationController pushViewController:firstVC animated:YES];
+            FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+            [weakThirdView.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
         };
 
     }

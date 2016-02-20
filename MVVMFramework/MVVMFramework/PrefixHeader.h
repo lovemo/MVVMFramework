@@ -9,15 +9,14 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
-#import "BQCategories.h"
+#import "SUIUtils.h"
+
 #import "PMKVObserver.h"
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
 #import "BQMVVM.h"
 #import "MJExtension.h"
-#import "BHConst.h"
 #import "UIImageView+WebCache.h"
-#import "BQMacros.h"
 #import <LxDBAnything.h>
 
 #endif /* PrefixHeader_h */
