@@ -3,7 +3,7 @@
 &emsp;&emsp;做iOS开发也有一段时间了，最近闲暇之余学习研究了下MVVM，每个人对架构和设计模式都有不同的理解，在此记录下我对MVVM的一些小见解，仅供参考，欢迎批评指正。
 
 ##概述
-[引用iOS应用架构谈](http://www.cocoachina.com/ios/20150525/11919.html)
+[部分引用自iOS应用架构谈](http://www.cocoachina.com/ios/20150525/11919.html)
 
 &emsp;&emsp;MVVM的出现主要是为了解决在开发过程中Controller越来越庞大的问题，变得难以维护，所以MVVM把数据加工的任务从Controller中解放了出来，使得Controller只需要专注于数据调配的工作，ViewModel则去负责数据加工并通过通知机制让View响应ViewModel的改变。
 
@@ -22,13 +22,13 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;前面扯了那么多，其实归根结底就是一句话：在MVC的基础上，把C拆出一个ViewModel专门负责数据处理的事情，就是MVVM。然后，为了让View和ViewModel之间能够有比较松散的绑定关系，于是我们使用ReactiveCocoa，KVO，Notification，block，delegate和target-action都可以用来做数据通信，从而来实现绑定，但都不如ReactiveCocoa提供的RACSignal来的优雅，如果不用ReactiveCocoa，绑定关系可能就做不到那么松散那么好，但并不影响它还是MVVM。
 
 ##MVVM(View-ViewManger-C-ViewModel-Model)
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
 - [View - 用来呈现用户界面](#1)
 - [ViewManger - 用来处理View的常规事件，负责管理View](#2)
 - [Controller - 负责ViewManger和ViewModel之间的绑定，负责控制器本身的生命周期。](#3)
 - [ViewModel - 存放各种业务逻辑和网络请求](#4)
 - [Model - 用来呈现数据](#5)
-![image](https://github.com/lovemo/MVVMFramework/raw/master/tree.jpeg)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/tree.jpeg)
 
 ====
 
