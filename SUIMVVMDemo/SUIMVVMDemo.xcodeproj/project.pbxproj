@@ -7,31 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344112F31C7AD668001FEAE6 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112B41C7AD668001FEAE6 /* FirstVC.m */; };
+		344112F41C7AD668001FEAE6 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112B61C7AD668001FEAE6 /* TestViewDelegate.m */; };
+		344112F51C7AD668001FEAE6 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112B91C7AD668001FEAE6 /* FirstModel.m */; };
+		344112F61C7AD668001FEAE6 /* BQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112BC1C7AD668001FEAE6 /* BQCell.m */; };
+		344112F71C7AD668001FEAE6 /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344112BD1C7AD668001FEAE6 /* BQCell.xib */; };
+		344112F81C7AD668001FEAE6 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112C01C7AD668001FEAE6 /* BQGetDataList.m */; };
+		344112F91C7AD668001FEAE6 /* BQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112C21C7AD668001FEAE6 /* BQViewModel.m */; };
+		344112FA1C7AD668001FEAE6 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112C61C7AD668001FEAE6 /* SecondVC.m */; };
+		344112FB1C7AD668001FEAE6 /* BQTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112C91C7AD668001FEAE6 /* BQTestModel.m */; };
+		344112FC1C7AD668001FEAE6 /* BQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112CC1C7AD668001FEAE6 /* BQCollectionCell.m */; };
+		344112FD1C7AD668001FEAE6 /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344112CD1C7AD668001FEAE6 /* BQCollectionCell.xib */; };
+		344112FE1C7AD668001FEAE6 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112D01C7AD668001FEAE6 /* BQGetDataList2.m */; };
+		344112FF1C7AD668001FEAE6 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112D21C7AD668001FEAE6 /* BQViewModel2.m */; };
+		344113001C7AD668001FEAE6 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112D61C7AD668001FEAE6 /* ThirdVC.m */; };
+		344113011C7AD668001FEAE6 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112D91C7AD668001FEAE6 /* ThirdModel.m */; };
+		344113021C7AD668001FEAE6 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112DC1C7AD668001FEAE6 /* ThirdView.m */; };
+		344113031C7AD668001FEAE6 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344112DD1C7AD668001FEAE6 /* ThirdView.xib */; };
+		344113041C7AD668001FEAE6 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112E01C7AD668001FEAE6 /* ThirdViewManger.m */; };
+		344113051C7AD668001FEAE6 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 344112E31C7AD668001FEAE6 /* ThirdViewModel.m */; };
+		344113211C7AD76A001FEAE6 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441131A1C7AD76A001FEAE6 /* Foundation+Log.m */; };
+		344113261C7AD7D8001FEAE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113241C7AD7D8001FEAE6 /* AppDelegate.m */; };
+		344113271C7AD7D8001FEAE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113251C7AD7D8001FEAE6 /* main.m */; };
+		3441132F1C7AD872001FEAE6 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441132D1C7AD872001FEAE6 /* BHNavViewController.m */; };
 		3F5068AA9D3A497EF0300DF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB3BD65C3660279BC80592 /* libPods.a */; };
-		6DB118461C7800BD00678885 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118451C7800BD00678885 /* main.m */; };
 		6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1184D1C7800BD00678885 /* Main.storyboard */; };
 		6DB118511C7800BD00678885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB118501C7800BD00678885 /* Assets.xcassets */; };
 		6DB118541C7800BD00678885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB118521C7800BD00678885 /* LaunchScreen.storyboard */; };
-		6DB118601C780AEE00678885 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1185E1C780AEE00678885 /* AppDelegate.m */; };
-		6DB118941C780B3400678885 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118641C780B3400678885 /* FirstVC.m */; };
-		6DB118951C780B3400678885 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118661C780B3400678885 /* TestViewDelegate.m */; };
-		6DB118961C780B3400678885 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118691C780B3400678885 /* FirstModel.m */; };
-		6DB118971C780B3400678885 /* BQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1186C1C780B3400678885 /* BQCell.m */; };
-		6DB118981C780B3400678885 /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1186D1C780B3400678885 /* BQCell.xib */; };
-		6DB118991C780B3400678885 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118701C780B3400678885 /* BQGetDataList.m */; };
-		6DB1189A1C780B3400678885 /* BQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118721C780B3400678885 /* BQViewModel.m */; };
-		6DB1189B1C780B3400678885 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118761C780B3400678885 /* SecondVC.m */; };
-		6DB1189C1C780B3400678885 /* BQTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118791C780B3400678885 /* BQTestModel.m */; };
-		6DB1189D1C780B3400678885 /* BQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1187C1C780B3400678885 /* BQCollectionCell.m */; };
-		6DB1189E1C780B3400678885 /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1187D1C780B3400678885 /* BQCollectionCell.xib */; };
-		6DB1189F1C780B3400678885 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118801C780B3400678885 /* BQGetDataList2.m */; };
-		6DB118A01C780B3400678885 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118821C780B3400678885 /* BQViewModel2.m */; };
-		6DB118A11C780B3400678885 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118861C780B3400678885 /* ThirdVC.m */; };
-		6DB118A21C780B3400678885 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118891C780B3400678885 /* ThirdModel.m */; };
-		6DB118A31C780B3400678885 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB1188C1C780B3400678885 /* ThirdView.m */; };
-		6DB118A41C780B3400678885 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1188D1C780B3400678885 /* ThirdView.xib */; };
-		6DB118A51C780B3400678885 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118901C780B3400678885 /* ThirdViewManger.m */; };
-		6DB118A61C780B3400678885 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118931C780B3400678885 /* ThirdViewModel.m */; };
 		6DB118CC1C780B4400678885 /* MVVMCollectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118AC1C780B4400678885 /* MVVMCollectionDataDelegate.m */; };
 		6DB118CD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118AE1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
 		6DB118CE1C780B4400678885 /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118B01C780B4400678885 /* UICollectionViewCell+Extension.m */; };
@@ -44,55 +46,58 @@
 		6DB118D51C780B4400678885 /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118C31C780B4400678885 /* KVObserver.m */; };
 		6DB118D61C780B4400678885 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118C71C780B4400678885 /* YTKKeyValueStore.m */; };
 		6DB118D71C780B4400678885 /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118CB1C780B4400678885 /* MVVMBaseViewModel.m */; };
-		6DB118DA1C780D8800678885 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118D91C780D8800678885 /* BHNavViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344112B31C7AD668001FEAE6 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		344112B41C7AD668001FEAE6 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		344112B51C7AD668001FEAE6 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
+		344112B61C7AD668001FEAE6 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
+		344112B81C7AD668001FEAE6 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
+		344112B91C7AD668001FEAE6 /* FirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstModel.m; sourceTree = "<group>"; };
+		344112BB1C7AD668001FEAE6 /* BQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell.h; sourceTree = "<group>"; };
+		344112BC1C7AD668001FEAE6 /* BQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell.m; sourceTree = "<group>"; };
+		344112BD1C7AD668001FEAE6 /* BQCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell.xib; sourceTree = "<group>"; };
+		344112BF1C7AD668001FEAE6 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
+		344112C01C7AD668001FEAE6 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
+		344112C11C7AD668001FEAE6 /* BQViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel.h; sourceTree = "<group>"; };
+		344112C21C7AD668001FEAE6 /* BQViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel.m; sourceTree = "<group>"; };
+		344112C51C7AD668001FEAE6 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		344112C61C7AD668001FEAE6 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		344112C81C7AD668001FEAE6 /* BQTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQTestModel.h; sourceTree = "<group>"; };
+		344112C91C7AD668001FEAE6 /* BQTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQTestModel.m; sourceTree = "<group>"; };
+		344112CB1C7AD668001FEAE6 /* BQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCollectionCell.h; sourceTree = "<group>"; };
+		344112CC1C7AD668001FEAE6 /* BQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCollectionCell.m; sourceTree = "<group>"; };
+		344112CD1C7AD668001FEAE6 /* BQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCollectionCell.xib; sourceTree = "<group>"; };
+		344112CF1C7AD668001FEAE6 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
+		344112D01C7AD668001FEAE6 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
+		344112D11C7AD668001FEAE6 /* BQViewModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel2.h; sourceTree = "<group>"; };
+		344112D21C7AD668001FEAE6 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
+		344112D51C7AD668001FEAE6 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		344112D61C7AD668001FEAE6 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		344112D81C7AD668001FEAE6 /* ThirdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdModel.h; sourceTree = "<group>"; };
+		344112D91C7AD668001FEAE6 /* ThirdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdModel.m; sourceTree = "<group>"; };
+		344112DB1C7AD668001FEAE6 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
+		344112DC1C7AD668001FEAE6 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
+		344112DD1C7AD668001FEAE6 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
+		344112DF1C7AD668001FEAE6 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
+		344112E01C7AD668001FEAE6 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
+		344112E21C7AD668001FEAE6 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
+		344112E31C7AD668001FEAE6 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
+		3441131A1C7AD76A001FEAE6 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		3441131B1C7AD76A001FEAE6 /* HMSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSingleton.h; sourceTree = "<group>"; };
+		344113231C7AD7D8001FEAE6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		344113241C7AD7D8001FEAE6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		344113251C7AD7D8001FEAE6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3441132C1C7AD872001FEAE6 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
+		3441132D1C7AD872001FEAE6 /* BHNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavViewController.m; sourceTree = "<group>"; };
 		676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6DB118411C7800BD00678885 /* SUIMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUIMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DB118451C7800BD00678885 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DB1184E1C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB118501C7800BD00678885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DB118531C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DB118551C7800BD00678885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DB1185D1C780AEE00678885 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6DB1185E1C780AEE00678885 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6DB1185F1C780AEE00678885 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		6DB118631C780B3400678885 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
-		6DB118641C780B3400678885 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		6DB118651C780B3400678885 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
-		6DB118661C780B3400678885 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
-		6DB118681C780B3400678885 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
-		6DB118691C780B3400678885 /* FirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstModel.m; sourceTree = "<group>"; };
-		6DB1186B1C780B3400678885 /* BQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell.h; sourceTree = "<group>"; };
-		6DB1186C1C780B3400678885 /* BQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell.m; sourceTree = "<group>"; };
-		6DB1186D1C780B3400678885 /* BQCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell.xib; sourceTree = "<group>"; };
-		6DB1186F1C780B3400678885 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
-		6DB118701C780B3400678885 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
-		6DB118711C780B3400678885 /* BQViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel.h; sourceTree = "<group>"; };
-		6DB118721C780B3400678885 /* BQViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel.m; sourceTree = "<group>"; };
-		6DB118751C780B3400678885 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
-		6DB118761C780B3400678885 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
-		6DB118781C780B3400678885 /* BQTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQTestModel.h; sourceTree = "<group>"; };
-		6DB118791C780B3400678885 /* BQTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQTestModel.m; sourceTree = "<group>"; };
-		6DB1187B1C780B3400678885 /* BQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCollectionCell.h; sourceTree = "<group>"; };
-		6DB1187C1C780B3400678885 /* BQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCollectionCell.m; sourceTree = "<group>"; };
-		6DB1187D1C780B3400678885 /* BQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCollectionCell.xib; sourceTree = "<group>"; };
-		6DB1187F1C780B3400678885 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
-		6DB118801C780B3400678885 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
-		6DB118811C780B3400678885 /* BQViewModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel2.h; sourceTree = "<group>"; };
-		6DB118821C780B3400678885 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
-		6DB118851C780B3400678885 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
-		6DB118861C780B3400678885 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
-		6DB118881C780B3400678885 /* ThirdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdModel.h; sourceTree = "<group>"; };
-		6DB118891C780B3400678885 /* ThirdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdModel.m; sourceTree = "<group>"; };
-		6DB1188B1C780B3400678885 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
-		6DB1188C1C780B3400678885 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
-		6DB1188D1C780B3400678885 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
-		6DB1188F1C780B3400678885 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
-		6DB118901C780B3400678885 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
-		6DB118921C780B3400678885 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
-		6DB118931C780B3400678885 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
 		6DB118A81C780B4400678885 /* BQMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQMVVM.h; sourceTree = "<group>"; };
 		6DB118AB1C780B4400678885 /* MVVMCollectionDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMCollectionDataDelegate.h; sourceTree = "<group>"; };
 		6DB118AC1C780B4400678885 /* MVVMCollectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMCollectionDataDelegate.m; sourceTree = "<group>"; };
@@ -119,8 +124,6 @@
 		6DB118C71C780B4400678885 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
 		6DB118CA1C780B4400678885 /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
 		6DB118CB1C780B4400678885 /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
-		6DB118D81C780D8800678885 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
-		6DB118D91C780D8800678885 /* BHNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavViewController.m; sourceTree = "<group>"; };
 		91766331ED5D251CC999F343 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AFCB3BD65C3660279BC80592 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,6 +140,351 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344112721C7AD667001FEAE6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				344112B01C7AD668001FEAE6 /* Src */,
+				344113061C7AD76A001FEAE6 /* Main */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		344112B01C7AD668001FEAE6 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				344112B11C7AD668001FEAE6 /* firstExample */,
+				344112C31C7AD668001FEAE6 /* secondExample */,
+				344112D31C7AD668001FEAE6 /* thirdExample */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		344112B11C7AD668001FEAE6 /* firstExample */ = {
+			isa = PBXGroup;
+			children = (
+				344112B21C7AD668001FEAE6 /* Controller */,
+				344112B71C7AD668001FEAE6 /* Model */,
+				344112BA1C7AD668001FEAE6 /* View */,
+				344112BE1C7AD668001FEAE6 /* ViewModel */,
+			);
+			path = firstExample;
+			sourceTree = "<group>";
+		};
+		344112B21C7AD668001FEAE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				344112B31C7AD668001FEAE6 /* FirstVC.h */,
+				344112B41C7AD668001FEAE6 /* FirstVC.m */,
+				344112B51C7AD668001FEAE6 /* TestViewDelegate.h */,
+				344112B61C7AD668001FEAE6 /* TestViewDelegate.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		344112B71C7AD668001FEAE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				344112B81C7AD668001FEAE6 /* FirstModel.h */,
+				344112B91C7AD668001FEAE6 /* FirstModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		344112BA1C7AD668001FEAE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				344112BB1C7AD668001FEAE6 /* BQCell.h */,
+				344112BC1C7AD668001FEAE6 /* BQCell.m */,
+				344112BD1C7AD668001FEAE6 /* BQCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		344112BE1C7AD668001FEAE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				344112BF1C7AD668001FEAE6 /* BQGetDataList.h */,
+				344112C01C7AD668001FEAE6 /* BQGetDataList.m */,
+				344112C11C7AD668001FEAE6 /* BQViewModel.h */,
+				344112C21C7AD668001FEAE6 /* BQViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		344112C31C7AD668001FEAE6 /* secondExample */ = {
+			isa = PBXGroup;
+			children = (
+				344112C41C7AD668001FEAE6 /* Controller */,
+				344112C71C7AD668001FEAE6 /* Model */,
+				344112CA1C7AD668001FEAE6 /* View */,
+				344112CE1C7AD668001FEAE6 /* ViewModel */,
+			);
+			path = secondExample;
+			sourceTree = "<group>";
+		};
+		344112C41C7AD668001FEAE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				344112C51C7AD668001FEAE6 /* SecondVC.h */,
+				344112C61C7AD668001FEAE6 /* SecondVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		344112C71C7AD668001FEAE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				344112C81C7AD668001FEAE6 /* BQTestModel.h */,
+				344112C91C7AD668001FEAE6 /* BQTestModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		344112CA1C7AD668001FEAE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				344112CB1C7AD668001FEAE6 /* BQCollectionCell.h */,
+				344112CC1C7AD668001FEAE6 /* BQCollectionCell.m */,
+				344112CD1C7AD668001FEAE6 /* BQCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		344112CE1C7AD668001FEAE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				344112CF1C7AD668001FEAE6 /* BQGetDataList2.h */,
+				344112D01C7AD668001FEAE6 /* BQGetDataList2.m */,
+				344112D11C7AD668001FEAE6 /* BQViewModel2.h */,
+				344112D21C7AD668001FEAE6 /* BQViewModel2.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		344112D31C7AD668001FEAE6 /* thirdExample */ = {
+			isa = PBXGroup;
+			children = (
+				344112D41C7AD668001FEAE6 /* Controller */,
+				344112D71C7AD668001FEAE6 /* Model */,
+				344112DA1C7AD668001FEAE6 /* View */,
+				344112DE1C7AD668001FEAE6 /* ViewManger */,
+				344112E11C7AD668001FEAE6 /* ViewModel */,
+			);
+			path = thirdExample;
+			sourceTree = "<group>";
+		};
+		344112D41C7AD668001FEAE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				344112D51C7AD668001FEAE6 /* ThirdVC.h */,
+				344112D61C7AD668001FEAE6 /* ThirdVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		344112D71C7AD668001FEAE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				344112D81C7AD668001FEAE6 /* ThirdModel.h */,
+				344112D91C7AD668001FEAE6 /* ThirdModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		344112DA1C7AD668001FEAE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				344112DB1C7AD668001FEAE6 /* ThirdView.h */,
+				344112DC1C7AD668001FEAE6 /* ThirdView.m */,
+				344112DD1C7AD668001FEAE6 /* ThirdView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		344112DE1C7AD668001FEAE6 /* ViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				344112DF1C7AD668001FEAE6 /* ThirdViewManger.h */,
+				344112E01C7AD668001FEAE6 /* ThirdViewManger.m */,
+			);
+			path = ViewManger;
+			sourceTree = "<group>";
+		};
+		344112E11C7AD668001FEAE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				344112E21C7AD668001FEAE6 /* ThirdViewModel.h */,
+				344112E31C7AD668001FEAE6 /* ThirdViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		344113061C7AD76A001FEAE6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				344113221C7AD7D8001FEAE6 /* Other */,
+				344113071C7AD76A001FEAE6 /* Expand */,
+				344113151C7AD76A001FEAE6 /* Resource */,
+				344113191C7AD76A001FEAE6 /* Utils */,
+				3441131C1C7AD76A001FEAE6 /* Vender */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		344113071C7AD76A001FEAE6 /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				344113291C7AD872001FEAE6 /* Custom */,
+				344113081C7AD76A001FEAE6 /* Category */,
+				344113091C7AD76A001FEAE6 /* Constant */,
+				3441130E1C7AD76A001FEAE6 /* DataBase */,
+				3441130F1C7AD76A001FEAE6 /* Netwotk */,
+				344113101C7AD76A001FEAE6 /* Tool */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		344113081C7AD76A001FEAE6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		344113091C7AD76A001FEAE6 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3441130E1C7AD76A001FEAE6 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		3441130F1C7AD76A001FEAE6 /* Netwotk */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Netwotk;
+			sourceTree = "<group>";
+		};
+		344113101C7AD76A001FEAE6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		344113151C7AD76A001FEAE6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				344113161C7AD76A001FEAE6 /* Global */,
+				344113171C7AD76A001FEAE6 /* Image */,
+				344113181C7AD76A001FEAE6 /* Plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		344113161C7AD76A001FEAE6 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		344113171C7AD76A001FEAE6 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		344113181C7AD76A001FEAE6 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		344113191C7AD76A001FEAE6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3441131A1C7AD76A001FEAE6 /* Foundation+Log.m */,
+				3441131B1C7AD76A001FEAE6 /* HMSingleton.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3441131C1C7AD76A001FEAE6 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				3441131D1C7AD76A001FEAE6 /* Lib */,
+				3441131E1C7AD76A001FEAE6 /* SDKFile */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		3441131D1C7AD76A001FEAE6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		3441131E1C7AD76A001FEAE6 /* SDKFile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SDKFile;
+			sourceTree = "<group>";
+		};
+		344113221C7AD7D8001FEAE6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				344113231C7AD7D8001FEAE6 /* AppDelegate.h */,
+				344113241C7AD7D8001FEAE6 /* AppDelegate.m */,
+				344113251C7AD7D8001FEAE6 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		344113291C7AD872001FEAE6 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				3441132A1C7AD872001FEAE6 /* Base */,
+				3441132B1C7AD872001FEAE6 /* Controller */,
+				3441132E1C7AD872001FEAE6 /* View */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		3441132A1C7AD872001FEAE6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3441132B1C7AD872001FEAE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3441132C1C7AD872001FEAE6 /* BHNavViewController.h */,
+				3441132D1C7AD872001FEAE6 /* BHNavViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3441132E1C7AD872001FEAE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6DB118381C7800BD00678885 = {
 			isa = PBXGroup;
 			children = (
@@ -159,14 +507,7 @@
 		6DB118431C7800BD00678885 /* SUIMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6DB118D81C780D8800678885 /* BHNavViewController.h */,
-				6DB118D91C780D8800678885 /* BHNavViewController.m */,
-				6DB118611C780B3400678885 /* firstExample */,
-				6DB118731C780B3400678885 /* secondExample */,
-				6DB118831C780B3400678885 /* thirdExample */,
-				6DB1184D1C7800BD00678885 /* Main.storyboard */,
-				6DB118501C7800BD00678885 /* Assets.xcassets */,
-				6DB1185C1C780AEE00678885 /* Others */,
+				344112721C7AD667001FEAE6 /* Classes */,
 				6DB118441C7800BD00678885 /* Supporting Files */,
 			);
 			path = SUIMVVMDemo;
@@ -175,181 +516,13 @@
 		6DB118441C7800BD00678885 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */,
+				6DB118521C7800BD00678885 /* LaunchScreen.storyboard */,
+				6DB1184D1C7800BD00678885 /* Main.storyboard */,
+				6DB118501C7800BD00678885 /* Assets.xcassets */,
 				6DB118551C7800BD00678885 /* Info.plist */,
-				6DB118451C7800BD00678885 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6DB1185C1C780AEE00678885 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1185D1C780AEE00678885 /* AppDelegate.h */,
-				6DB1185E1C780AEE00678885 /* AppDelegate.m */,
-				6DB118521C7800BD00678885 /* LaunchScreen.storyboard */,
-				6DB1185F1C780AEE00678885 /* PrefixHeader.pch */,
-			);
-			path = Others;
-			sourceTree = "<group>";
-		};
-		6DB118611C780B3400678885 /* firstExample */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118621C780B3400678885 /* Controller */,
-				6DB118671C780B3400678885 /* Model */,
-				6DB1186A1C780B3400678885 /* View */,
-				6DB1186E1C780B3400678885 /* ViewModel */,
-			);
-			path = firstExample;
-			sourceTree = "<group>";
-		};
-		6DB118621C780B3400678885 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118631C780B3400678885 /* FirstVC.h */,
-				6DB118641C780B3400678885 /* FirstVC.m */,
-				6DB118651C780B3400678885 /* TestViewDelegate.h */,
-				6DB118661C780B3400678885 /* TestViewDelegate.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6DB118671C780B3400678885 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118681C780B3400678885 /* FirstModel.h */,
-				6DB118691C780B3400678885 /* FirstModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6DB1186A1C780B3400678885 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1186B1C780B3400678885 /* BQCell.h */,
-				6DB1186C1C780B3400678885 /* BQCell.m */,
-				6DB1186D1C780B3400678885 /* BQCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6DB1186E1C780B3400678885 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1186F1C780B3400678885 /* BQGetDataList.h */,
-				6DB118701C780B3400678885 /* BQGetDataList.m */,
-				6DB118711C780B3400678885 /* BQViewModel.h */,
-				6DB118721C780B3400678885 /* BQViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		6DB118731C780B3400678885 /* secondExample */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118741C780B3400678885 /* Controller */,
-				6DB118771C780B3400678885 /* Model */,
-				6DB1187A1C780B3400678885 /* View */,
-				6DB1187E1C780B3400678885 /* ViewModel */,
-			);
-			path = secondExample;
-			sourceTree = "<group>";
-		};
-		6DB118741C780B3400678885 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118751C780B3400678885 /* SecondVC.h */,
-				6DB118761C780B3400678885 /* SecondVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6DB118771C780B3400678885 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118781C780B3400678885 /* BQTestModel.h */,
-				6DB118791C780B3400678885 /* BQTestModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6DB1187A1C780B3400678885 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1187B1C780B3400678885 /* BQCollectionCell.h */,
-				6DB1187C1C780B3400678885 /* BQCollectionCell.m */,
-				6DB1187D1C780B3400678885 /* BQCollectionCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6DB1187E1C780B3400678885 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1187F1C780B3400678885 /* BQGetDataList2.h */,
-				6DB118801C780B3400678885 /* BQGetDataList2.m */,
-				6DB118811C780B3400678885 /* BQViewModel2.h */,
-				6DB118821C780B3400678885 /* BQViewModel2.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		6DB118831C780B3400678885 /* thirdExample */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118841C780B3400678885 /* Controller */,
-				6DB118871C780B3400678885 /* Model */,
-				6DB1188A1C780B3400678885 /* View */,
-				6DB1188E1C780B3400678885 /* ViewManger */,
-				6DB118911C780B3400678885 /* ViewModel */,
-			);
-			path = thirdExample;
-			sourceTree = "<group>";
-		};
-		6DB118841C780B3400678885 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118851C780B3400678885 /* ThirdVC.h */,
-				6DB118861C780B3400678885 /* ThirdVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		6DB118871C780B3400678885 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118881C780B3400678885 /* ThirdModel.h */,
-				6DB118891C780B3400678885 /* ThirdModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6DB1188A1C780B3400678885 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1188B1C780B3400678885 /* ThirdView.h */,
-				6DB1188C1C780B3400678885 /* ThirdView.m */,
-				6DB1188D1C780B3400678885 /* ThirdView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6DB1188E1C780B3400678885 /* ViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				6DB1188F1C780B3400678885 /* ThirdViewManger.h */,
-				6DB118901C780B3400678885 /* ThirdViewManger.m */,
-			);
-			path = ViewManger;
-			sourceTree = "<group>";
-		};
-		6DB118911C780B3400678885 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118921C780B3400678885 /* ThirdViewModel.h */,
-				6DB118931C780B3400678885 /* ThirdViewModel.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6DB118A71C780B4400678885 /* SUIMVVM */ = {
@@ -543,12 +716,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DB118A41C780B3400678885 /* ThirdView.xib in Resources */,
+				344113031C7AD668001FEAE6 /* ThirdView.xib in Resources */,
 				6DB118541C7800BD00678885 /* LaunchScreen.storyboard in Resources */,
 				6DB118511C7800BD00678885 /* Assets.xcassets in Resources */,
-				6DB118981C780B3400678885 /* BQCell.xib in Resources */,
+				344112F71C7AD668001FEAE6 /* BQCell.xib in Resources */,
 				6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */,
-				6DB1189E1C780B3400678885 /* BQCollectionCell.xib in Resources */,
+				344112FD1C7AD668001FEAE6 /* BQCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,37 +780,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344113041C7AD668001FEAE6 /* ThirdViewManger.m in Sources */,
+				344112F51C7AD668001FEAE6 /* FirstModel.m in Sources */,
 				6DB118D51C780B4400678885 /* KVObserver.m in Sources */,
+				344112FC1C7AD668001FEAE6 /* BQCollectionCell.m in Sources */,
+				344113261C7AD7D8001FEAE6 /* AppDelegate.m in Sources */,
 				6DB118D71C780B4400678885 /* MVVMBaseViewModel.m in Sources */,
+				344113021C7AD668001FEAE6 /* ThirdView.m in Sources */,
 				6DB118D21C780B4400678885 /* MVVMDataService.m in Sources */,
-				6DB118A11C780B3400678885 /* ThirdVC.m in Sources */,
-				6DB1189D1C780B3400678885 /* BQCollectionCell.m in Sources */,
-				6DB118461C7800BD00678885 /* main.m in Sources */,
-				6DB118DA1C780D8800678885 /* BHNavViewController.m in Sources */,
-				6DB118A01C780B3400678885 /* BQViewModel2.m in Sources */,
+				344113011C7AD668001FEAE6 /* ThirdModel.m in Sources */,
 				6DB118CC1C780B4400678885 /* MVVMCollectionDataDelegate.m in Sources */,
-				6DB1189F1C780B3400678885 /* BQGetDataList2.m in Sources */,
-				6DB118961C780B3400678885 /* FirstModel.m in Sources */,
 				6DB118D11C780B4400678885 /* UITableViewCell+Extension.m in Sources */,
-				6DB118971C780B3400678885 /* BQCell.m in Sources */,
 				6DB118D61C780B4400678885 /* YTKKeyValueStore.m in Sources */,
-				6DB118941C780B3400678885 /* FirstVC.m in Sources */,
 				6DB118CE1C780B4400678885 /* UICollectionViewCell+Extension.m in Sources */,
 				6DB118CD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
-				6DB118601C780AEE00678885 /* AppDelegate.m in Sources */,
+				344112F91C7AD668001FEAE6 /* BQViewModel.m in Sources */,
+				344113211C7AD76A001FEAE6 /* Foundation+Log.m in Sources */,
+				344112FE1C7AD668001FEAE6 /* BQGetDataList2.m in Sources */,
 				6DB118D01C780B4400678885 /* UITableView+TableDataDelegateAdditions.m in Sources */,
-				6DB118A51C780B3400678885 /* ThirdViewManger.m in Sources */,
-				6DB118991C780B3400678885 /* BQGetDataList.m in Sources */,
-				6DB118951C780B3400678885 /* TestViewDelegate.m in Sources */,
+				344112FB1C7AD668001FEAE6 /* BQTestModel.m in Sources */,
+				344112F41C7AD668001FEAE6 /* TestViewDelegate.m in Sources */,
+				344112FF1C7AD668001FEAE6 /* BQViewModel2.m in Sources */,
+				344113051C7AD668001FEAE6 /* ThirdViewModel.m in Sources */,
+				344112F61C7AD668001FEAE6 /* BQCell.m in Sources */,
+				344112F81C7AD668001FEAE6 /* BQGetDataList.m in Sources */,
+				344112F31C7AD668001FEAE6 /* FirstVC.m in Sources */,
+				344113001C7AD668001FEAE6 /* ThirdVC.m in Sources */,
 				6DB118CF1C780B4400678885 /* MVVMTableDataDelegate.m in Sources */,
-				6DB118A21C780B3400678885 /* ThirdModel.m in Sources */,
 				6DB118D41C780B4400678885 /* MVVMStore.m in Sources */,
-				6DB118A31C780B3400678885 /* ThirdView.m in Sources */,
+				344112FA1C7AD668001FEAE6 /* SecondVC.m in Sources */,
+				344113271C7AD7D8001FEAE6 /* main.m in Sources */,
+				3441132F1C7AD872001FEAE6 /* BHNavViewController.m in Sources */,
 				6DB118D31C780B4400678885 /* MVVMHttp.m in Sources */,
-				6DB1189B1C780B3400678885 /* SecondVC.m in Sources */,
-				6DB1189C1C780B3400678885 /* BQTestModel.m in Sources */,
-				6DB118A61C780B3400678885 /* ThirdViewModel.m in Sources */,
-				6DB1189A1C780B3400678885 /* BQViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +832,6 @@
 				6DB118531C7800BD00678885 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -749,7 +922,7 @@
 			baseConfigurationReference = 91766331ED5D251CC999F343 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Others/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = SUIMVVMDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lovemo.SUIMVVMDemo;
@@ -762,7 +935,7 @@
 			baseConfigurationReference = 676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Others/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = SUIMVVMDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lovemo.SUIMVVMDemo;
