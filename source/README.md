@@ -3,7 +3,7 @@
 &emsp;&emsp;做iOS开发也有一段时间了，最近闲暇之余学习研究了下MVVM，每个人对架构和设计模式都有不同的理解，在此记录下我对MVVM的一些小见解，仅供参考，欢迎批评指正。
 
 ##概述
-[部分引用自iOS应用架构谈](http://www.cocoachina.com/ios/20150525/11919.html)
+[引用自iOS应用架构谈](http://www.cocoachina.com/ios/20150525/11919.html)
 
 &emsp;&emsp;MVVM的出现主要是为了解决在开发过程中Controller越来越庞大的问题，变得难以维护，所以MVVM把数据加工的任务从Controller中解放了出来，使得Controller只需要专注于数据调配的工作，ViewModel则去负责数据加工并通过通知机制让View响应ViewModel的改变。
 
