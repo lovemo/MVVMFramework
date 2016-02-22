@@ -13,10 +13,10 @@
 代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，运行时自动布局UILabel，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
 
 ##思维流程图示
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking.png)
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking2.jpeg)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resourses/MVVMFrameWork-Thinking.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resourses/MVVMFrameWork-Thinking2.jpeg)
 ##现在的工程代码结构
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/directory_tree.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resourses/directory_tree.png)
 
 ### <a id="模块构建"></a> 模块构建
   
@@ -102,7 +102,7 @@
 ### <a id="demo效果"></a> demo效果
 - 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
 
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/demo.gif)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resourses/demo.gif)
 
 ### <a id="使用方法"></a> 使用方法
 - 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
