@@ -10,7 +10,7 @@
 
 @interface MVVMBaseViewManger : NSObject
 
-/** 基模型 */
+/** 用于传递数据的基模型 */
 @property (nonatomic, strong) NSObject *sui_model;
 
 /**
