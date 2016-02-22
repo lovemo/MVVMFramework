@@ -34,6 +34,8 @@
 * [MVVM中模块的集合](#MVVM)
 	* [Handler 负责处理实现tableView和collectionView的delegate和dataSource中的一些协议方法](#Handler)
 	* [Network 实现常用的网络请求代码](#Network)
+	* [Base 一些基础模块](#Base)
+	* [Extend 扩展系统功能模块](#Extend)
 	* [Store 实现常用的数据存储方法](#Store)
 	* [ViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#ViewModel)
 	* [Vender 一些依赖库](#Vender)
