@@ -12,7 +12,6 @@
 
 @implementation UITableView (TableDataDelegateAdditions)
 
-
 - (MVVMTableDataDelegate *)tableHander
 {
     return objc_getAssociatedObject(self, _cmd);
@@ -24,7 +23,6 @@
     }
     objc_setAssociatedObject(self, @selector(tableHander), tableHander, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 
 @end
 

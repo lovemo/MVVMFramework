@@ -10,6 +10,9 @@
 
 @interface UIView (Configure)
 
+/**
+ *  根据obj配置UIView，设置UIView内容
+ */
 - (void)configureViewWithCustomObj:(id)obj;
 
 @end
