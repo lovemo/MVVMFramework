@@ -7,7 +7,7 @@
 //
 
 #import "UICollectionView+CollectionDataDelegateAdditions.h"
-#import "MVVMCollectionDataDelegate.H"
+#import "MVVMCollectionDataDelegate.h"
 #import <objc/runtime.h>
 
 @implementation UICollectionView (CollectionDataDelegateAdditions)

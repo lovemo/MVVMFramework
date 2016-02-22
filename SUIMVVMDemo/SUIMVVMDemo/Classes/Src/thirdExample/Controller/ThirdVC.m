@@ -36,12 +36,12 @@
     [super viewDidLoad];
     self.title = @"MVVM Example";
 
-    [self.view addSubview:self.thirdViewManger.thirdView];
+    [self.thirdViewManger handleViewMangerWithSuperView:self.view];
     [self.viewModel vm_getDataSuccessHandler:nil];
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-    self.thirdViewManger.thirdModel = [self.viewModel getRandomData];
+    self.thirdViewManger.sui_model = [self.viewModel getRandomData];
 }
 
 

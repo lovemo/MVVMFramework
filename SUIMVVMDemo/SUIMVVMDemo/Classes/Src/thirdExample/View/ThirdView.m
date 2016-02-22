@@ -7,10 +7,10 @@
 //
 
 #import "ThirdView.h"
+#import "ThirdModel.h"
 
 @interface ThirdView()
-
-
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @end
 
 @implementation ThirdView
@@ -31,5 +31,9 @@
     }
 }
 
+- (void)configureViewWithCustomObj:(id)obj {
+    ThirdModel *thirdModel = (ThirdModel *)obj;
+    self.testLabel.text = thirdModel.title;
+}
 
 @end

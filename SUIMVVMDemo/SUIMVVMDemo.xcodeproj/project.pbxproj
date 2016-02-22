@@ -30,22 +30,24 @@
 		344113261C7AD7D8001FEAE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113241C7AD7D8001FEAE6 /* AppDelegate.m */; };
 		344113271C7AD7D8001FEAE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113251C7AD7D8001FEAE6 /* main.m */; };
 		3441132F1C7AD872001FEAE6 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441132D1C7AD872001FEAE6 /* BHNavViewController.m */; };
+		344113721C7AEB9B001FEAE6 /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441134D1C7AEB9B001FEAE6 /* MVVMBaseViewModel.m */; };
+		344113731C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113521C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
+		344113741C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113541C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.m */; };
+		344113751C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113561C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.m */; };
+		344113761C7AEB9B001FEAE6 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113581C7AEB9B001FEAE6 /* UITableViewCell+Extension.m */; };
+		344113771C7AEB9B001FEAE6 /* UIView+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441135A1C7AEB9B001FEAE6 /* UIView+Configure.m */; };
+		344113781C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441135E1C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.m */; };
+		344113791C7AEB9B001FEAE6 /* MVVMTableDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113611C7AEB9B001FEAE6 /* MVVMTableDataDelegate.m */; };
+		3441137A1C7AEB9B001FEAE6 /* MVVMDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113641C7AEB9B001FEAE6 /* MVVMDataService.m */; };
+		3441137B1C7AEB9B001FEAE6 /* MVVMHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113661C7AEB9B001FEAE6 /* MVVMHttp.m */; };
+		3441137C1C7AEB9B001FEAE6 /* MVVMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113691C7AEB9B001FEAE6 /* MVVMStore.m */; };
+		3441137D1C7AEB9B001FEAE6 /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3441136D1C7AEB9B001FEAE6 /* KVObserver.m */; };
+		3441137E1C7AEB9B001FEAE6 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113711C7AEB9B001FEAE6 /* YTKKeyValueStore.m */; };
+		344113811C7AEBC0001FEAE6 /* MVVMBaseViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 344113801C7AEBC0001FEAE6 /* MVVMBaseViewManger.m */; };
 		3F5068AA9D3A497EF0300DF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB3BD65C3660279BC80592 /* libPods.a */; };
 		6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1184D1C7800BD00678885 /* Main.storyboard */; };
 		6DB118511C7800BD00678885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB118501C7800BD00678885 /* Assets.xcassets */; };
 		6DB118541C7800BD00678885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB118521C7800BD00678885 /* LaunchScreen.storyboard */; };
-		6DB118CC1C780B4400678885 /* MVVMCollectionDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118AC1C780B4400678885 /* MVVMCollectionDataDelegate.m */; };
-		6DB118CD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118AE1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
-		6DB118CE1C780B4400678885 /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118B01C780B4400678885 /* UICollectionViewCell+Extension.m */; };
-		6DB118CF1C780B4400678885 /* MVVMTableDataDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118B31C780B4400678885 /* MVVMTableDataDelegate.m */; };
-		6DB118D01C780B4400678885 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118B51C780B4400678885 /* UITableView+TableDataDelegateAdditions.m */; };
-		6DB118D11C780B4400678885 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118B71C780B4400678885 /* UITableViewCell+Extension.m */; };
-		6DB118D21C780B4400678885 /* MVVMDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118BA1C780B4400678885 /* MVVMDataService.m */; };
-		6DB118D31C780B4400678885 /* MVVMHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118BC1C780B4400678885 /* MVVMHttp.m */; };
-		6DB118D41C780B4400678885 /* MVVMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118BF1C780B4400678885 /* MVVMStore.m */; };
-		6DB118D51C780B4400678885 /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118C31C780B4400678885 /* KVObserver.m */; };
-		6DB118D61C780B4400678885 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118C71C780B4400678885 /* YTKKeyValueStore.m */; };
-		6DB118D71C780B4400678885 /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB118CB1C780B4400678885 /* MVVMBaseViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,38 +94,43 @@
 		344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3441132C1C7AD872001FEAE6 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
 		3441132D1C7AD872001FEAE6 /* BHNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHNavViewController.m; sourceTree = "<group>"; };
+		3441134C1C7AEB9B001FEAE6 /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
+		3441134D1C7AEB9B001FEAE6 /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
+		3441134E1C7AEB9B001FEAE6 /* BQMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQMVVM.h; sourceTree = "<group>"; };
+		344113501C7AEB9B001FEAE6 /* MVVMExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMExtend.h; sourceTree = "<group>"; };
+		344113511C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CollectionDataDelegateAdditions.h"; sourceTree = "<group>"; };
+		344113521C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CollectionDataDelegateAdditions.m"; sourceTree = "<group>"; };
+		344113531C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Extension.h"; sourceTree = "<group>"; };
+		344113541C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Extension.m"; sourceTree = "<group>"; };
+		344113551C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TableDataDelegateAdditions.h"; sourceTree = "<group>"; };
+		344113561C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TableDataDelegateAdditions.m"; sourceTree = "<group>"; };
+		344113571C7AEB9B001FEAE6 /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
+		344113581C7AEB9B001FEAE6 /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
+		344113591C7AEB9B001FEAE6 /* UIView+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Configure.h"; sourceTree = "<group>"; };
+		3441135A1C7AEB9B001FEAE6 /* UIView+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Configure.m"; sourceTree = "<group>"; };
+		3441135D1C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMCollectionDataDelegate.h; sourceTree = "<group>"; };
+		3441135E1C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMCollectionDataDelegate.m; sourceTree = "<group>"; };
+		344113601C7AEB9B001FEAE6 /* MVVMTableDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableDataDelegate.h; sourceTree = "<group>"; };
+		344113611C7AEB9B001FEAE6 /* MVVMTableDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableDataDelegate.m; sourceTree = "<group>"; };
+		344113631C7AEB9B001FEAE6 /* MVVMDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMDataService.h; sourceTree = "<group>"; };
+		344113641C7AEB9B001FEAE6 /* MVVMDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMDataService.m; sourceTree = "<group>"; };
+		344113651C7AEB9B001FEAE6 /* MVVMHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMHttp.h; sourceTree = "<group>"; };
+		344113661C7AEB9B001FEAE6 /* MVVMHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMHttp.m; sourceTree = "<group>"; };
+		344113681C7AEB9B001FEAE6 /* MVVMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMStore.h; sourceTree = "<group>"; };
+		344113691C7AEB9B001FEAE6 /* MVVMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMStore.m; sourceTree = "<group>"; };
+		3441136C1C7AEB9B001FEAE6 /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
+		3441136D1C7AEB9B001FEAE6 /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
+		3441136E1C7AEB9B001FEAE6 /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
+		344113701C7AEB9B001FEAE6 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		344113711C7AEB9B001FEAE6 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		3441137F1C7AEBC0001FEAE6 /* MVVMBaseViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewManger.h; sourceTree = "<group>"; };
+		344113801C7AEBC0001FEAE6 /* MVVMBaseViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewManger.m; sourceTree = "<group>"; };
 		676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6DB118411C7800BD00678885 /* SUIMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUIMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB1184E1C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DB118501C7800BD00678885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DB118531C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DB118551C7800BD00678885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6DB118A81C780B4400678885 /* BQMVVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQMVVM.h; sourceTree = "<group>"; };
-		6DB118AB1C780B4400678885 /* MVVMCollectionDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMCollectionDataDelegate.h; sourceTree = "<group>"; };
-		6DB118AC1C780B4400678885 /* MVVMCollectionDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMCollectionDataDelegate.m; sourceTree = "<group>"; };
-		6DB118AD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CollectionDataDelegateAdditions.h"; sourceTree = "<group>"; };
-		6DB118AE1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CollectionDataDelegateAdditions.m"; sourceTree = "<group>"; };
-		6DB118AF1C780B4400678885 /* UICollectionViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Extension.h"; sourceTree = "<group>"; };
-		6DB118B01C780B4400678885 /* UICollectionViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Extension.m"; sourceTree = "<group>"; };
-		6DB118B21C780B4400678885 /* MVVMTableDataDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableDataDelegate.h; sourceTree = "<group>"; };
-		6DB118B31C780B4400678885 /* MVVMTableDataDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableDataDelegate.m; sourceTree = "<group>"; };
-		6DB118B41C780B4400678885 /* UITableView+TableDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TableDataDelegateAdditions.h"; sourceTree = "<group>"; };
-		6DB118B51C780B4400678885 /* UITableView+TableDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TableDataDelegateAdditions.m"; sourceTree = "<group>"; };
-		6DB118B61C780B4400678885 /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
-		6DB118B71C780B4400678885 /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
-		6DB118B91C780B4400678885 /* MVVMDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMDataService.h; sourceTree = "<group>"; };
-		6DB118BA1C780B4400678885 /* MVVMDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMDataService.m; sourceTree = "<group>"; };
-		6DB118BB1C780B4400678885 /* MVVMHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMHttp.h; sourceTree = "<group>"; };
-		6DB118BC1C780B4400678885 /* MVVMHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMHttp.m; sourceTree = "<group>"; };
-		6DB118BE1C780B4400678885 /* MVVMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMStore.h; sourceTree = "<group>"; };
-		6DB118BF1C780B4400678885 /* MVVMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMStore.m; sourceTree = "<group>"; };
-		6DB118C21C780B4400678885 /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
-		6DB118C31C780B4400678885 /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
-		6DB118C41C780B4400678885 /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
-		6DB118C61C780B4400678885 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
-		6DB118C71C780B4400678885 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
-		6DB118CA1C780B4400678885 /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
-		6DB118CB1C780B4400678885 /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
 		91766331ED5D251CC999F343 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AFCB3BD65C3660279BC80592 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -485,10 +492,143 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		344113481C7AEB9B001FEAE6 /* SUIMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				344113491C7AEB9B001FEAE6 /* Base */,
+				3441134E1C7AEB9B001FEAE6 /* BQMVVM.h */,
+				3441134F1C7AEB9B001FEAE6 /* Extend */,
+				3441135B1C7AEB9B001FEAE6 /* Handler */,
+				344113621C7AEB9B001FEAE6 /* Network */,
+				344113671C7AEB9B001FEAE6 /* Store */,
+				3441136A1C7AEB9B001FEAE6 /* Vender */,
+			);
+			path = SUIMVVM;
+			sourceTree = "<group>";
+		};
+		344113491C7AEB9B001FEAE6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3441134A1C7AEB9B001FEAE6 /* ViewManger */,
+				3441134B1C7AEB9B001FEAE6 /* ViewModel */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3441134A1C7AEB9B001FEAE6 /* ViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				3441137F1C7AEBC0001FEAE6 /* MVVMBaseViewManger.h */,
+				344113801C7AEBC0001FEAE6 /* MVVMBaseViewManger.m */,
+			);
+			path = ViewManger;
+			sourceTree = "<group>";
+		};
+		3441134B1C7AEB9B001FEAE6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3441134C1C7AEB9B001FEAE6 /* MVVMBaseViewModel.h */,
+				3441134D1C7AEB9B001FEAE6 /* MVVMBaseViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3441134F1C7AEB9B001FEAE6 /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				344113501C7AEB9B001FEAE6 /* MVVMExtend.h */,
+				344113511C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.h */,
+				344113521C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.m */,
+				344113531C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.h */,
+				344113541C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.m */,
+				344113551C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.h */,
+				344113561C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.m */,
+				344113571C7AEB9B001FEAE6 /* UITableViewCell+Extension.h */,
+				344113581C7AEB9B001FEAE6 /* UITableViewCell+Extension.m */,
+				344113591C7AEB9B001FEAE6 /* UIView+Configure.h */,
+				3441135A1C7AEB9B001FEAE6 /* UIView+Configure.m */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		3441135B1C7AEB9B001FEAE6 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				3441135C1C7AEB9B001FEAE6 /* MVVMCollectionDataDeleagte */,
+				3441135F1C7AEB9B001FEAE6 /* MVVMTableDataDelegate */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		3441135C1C7AEB9B001FEAE6 /* MVVMCollectionDataDeleagte */ = {
+			isa = PBXGroup;
+			children = (
+				3441135D1C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.h */,
+				3441135E1C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.m */,
+			);
+			path = MVVMCollectionDataDeleagte;
+			sourceTree = "<group>";
+		};
+		3441135F1C7AEB9B001FEAE6 /* MVVMTableDataDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				344113601C7AEB9B001FEAE6 /* MVVMTableDataDelegate.h */,
+				344113611C7AEB9B001FEAE6 /* MVVMTableDataDelegate.m */,
+			);
+			path = MVVMTableDataDelegate;
+			sourceTree = "<group>";
+		};
+		344113621C7AEB9B001FEAE6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				344113631C7AEB9B001FEAE6 /* MVVMDataService.h */,
+				344113641C7AEB9B001FEAE6 /* MVVMDataService.m */,
+				344113651C7AEB9B001FEAE6 /* MVVMHttp.h */,
+				344113661C7AEB9B001FEAE6 /* MVVMHttp.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		344113671C7AEB9B001FEAE6 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				344113681C7AEB9B001FEAE6 /* MVVMStore.h */,
+				344113691C7AEB9B001FEAE6 /* MVVMStore.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		3441136A1C7AEB9B001FEAE6 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				3441136B1C7AEB9B001FEAE6 /* PMKVObserver */,
+				3441136F1C7AEB9B001FEAE6 /* YTKKeyValueStore */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		3441136B1C7AEB9B001FEAE6 /* PMKVObserver */ = {
+			isa = PBXGroup;
+			children = (
+				3441136C1C7AEB9B001FEAE6 /* KVObserver.h */,
+				3441136D1C7AEB9B001FEAE6 /* KVObserver.m */,
+				3441136E1C7AEB9B001FEAE6 /* PMKVObserver.h */,
+			);
+			path = PMKVObserver;
+			sourceTree = "<group>";
+		};
+		3441136F1C7AEB9B001FEAE6 /* YTKKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				344113701C7AEB9B001FEAE6 /* YTKKeyValueStore.h */,
+				344113711C7AEB9B001FEAE6 /* YTKKeyValueStore.m */,
+			);
+			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
 		6DB118381C7800BD00678885 = {
 			isa = PBXGroup;
 			children = (
-				6DB118A71C780B4400678885 /* SUIMVVM */,
 				6DB118431C7800BD00678885 /* SUIMVVMDemo */,
 				6DB118421C7800BD00678885 /* Products */,
 				93F964C7E7695ED5A662CB90 /* Pods */,
@@ -507,6 +647,7 @@
 		6DB118431C7800BD00678885 /* SUIMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
+				344113481C7AEB9B001FEAE6 /* SUIMVVM */,
 				344112721C7AD667001FEAE6 /* Classes */,
 				6DB118441C7800BD00678885 /* Supporting Files */,
 			);
@@ -523,120 +664,6 @@
 				6DB118551C7800BD00678885 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6DB118A71C780B4400678885 /* SUIMVVM */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118A81C780B4400678885 /* BQMVVM.h */,
-				6DB118A91C780B4400678885 /* Handler */,
-				6DB118B81C780B4400678885 /* Network */,
-				6DB118BD1C780B4400678885 /* Store */,
-				6DB118C01C780B4400678885 /* Vender */,
-				6DB118C81C780B4400678885 /* ViewModel */,
-			);
-			name = SUIMVVM;
-			path = ../SUIMVVM;
-			sourceTree = "<group>";
-		};
-		6DB118A91C780B4400678885 /* Handler */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118AA1C780B4400678885 /* MVVMCollectionDataDeleagte */,
-				6DB118B11C780B4400678885 /* MVVMTableDataDelegate */,
-			);
-			path = Handler;
-			sourceTree = "<group>";
-		};
-		6DB118AA1C780B4400678885 /* MVVMCollectionDataDeleagte */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118AB1C780B4400678885 /* MVVMCollectionDataDelegate.h */,
-				6DB118AC1C780B4400678885 /* MVVMCollectionDataDelegate.m */,
-				6DB118AD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.h */,
-				6DB118AE1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m */,
-				6DB118AF1C780B4400678885 /* UICollectionViewCell+Extension.h */,
-				6DB118B01C780B4400678885 /* UICollectionViewCell+Extension.m */,
-			);
-			path = MVVMCollectionDataDeleagte;
-			sourceTree = "<group>";
-		};
-		6DB118B11C780B4400678885 /* MVVMTableDataDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118B21C780B4400678885 /* MVVMTableDataDelegate.h */,
-				6DB118B31C780B4400678885 /* MVVMTableDataDelegate.m */,
-				6DB118B41C780B4400678885 /* UITableView+TableDataDelegateAdditions.h */,
-				6DB118B51C780B4400678885 /* UITableView+TableDataDelegateAdditions.m */,
-				6DB118B61C780B4400678885 /* UITableViewCell+Extension.h */,
-				6DB118B71C780B4400678885 /* UITableViewCell+Extension.m */,
-			);
-			path = MVVMTableDataDelegate;
-			sourceTree = "<group>";
-		};
-		6DB118B81C780B4400678885 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118B91C780B4400678885 /* MVVMDataService.h */,
-				6DB118BA1C780B4400678885 /* MVVMDataService.m */,
-				6DB118BB1C780B4400678885 /* MVVMHttp.h */,
-				6DB118BC1C780B4400678885 /* MVVMHttp.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		6DB118BD1C780B4400678885 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118BE1C780B4400678885 /* MVVMStore.h */,
-				6DB118BF1C780B4400678885 /* MVVMStore.m */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		6DB118C01C780B4400678885 /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118C11C780B4400678885 /* PMKVObserver */,
-				6DB118C51C780B4400678885 /* YTKKeyValueStore */,
-			);
-			path = Vender;
-			sourceTree = "<group>";
-		};
-		6DB118C11C780B4400678885 /* PMKVObserver */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118C21C780B4400678885 /* KVObserver.h */,
-				6DB118C31C780B4400678885 /* KVObserver.m */,
-				6DB118C41C780B4400678885 /* PMKVObserver.h */,
-			);
-			path = PMKVObserver;
-			sourceTree = "<group>";
-		};
-		6DB118C51C780B4400678885 /* YTKKeyValueStore */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118C61C780B4400678885 /* YTKKeyValueStore.h */,
-				6DB118C71C780B4400678885 /* YTKKeyValueStore.m */,
-			);
-			path = YTKKeyValueStore;
-			sourceTree = "<group>";
-		};
-		6DB118C81C780B4400678885 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118C91C780B4400678885 /* BaseViewModel */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		6DB118C91C780B4400678885 /* BaseViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6DB118CA1C780B4400678885 /* MVVMBaseViewModel.h */,
-				6DB118CB1C780B4400678885 /* MVVMBaseViewModel.m */,
-			);
-			path = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		7D2B83965AA43795881FEE01 /* Frameworks */ = {
@@ -780,38 +807,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3441137C1C7AEB9B001FEAE6 /* MVVMStore.m in Sources */,
 				344113041C7AD668001FEAE6 /* ThirdViewManger.m in Sources */,
+				3441137A1C7AEB9B001FEAE6 /* MVVMDataService.m in Sources */,
+				344113811C7AEBC0001FEAE6 /* MVVMBaseViewManger.m in Sources */,
 				344112F51C7AD668001FEAE6 /* FirstModel.m in Sources */,
-				6DB118D51C780B4400678885 /* KVObserver.m in Sources */,
 				344112FC1C7AD668001FEAE6 /* BQCollectionCell.m in Sources */,
 				344113261C7AD7D8001FEAE6 /* AppDelegate.m in Sources */,
-				6DB118D71C780B4400678885 /* MVVMBaseViewModel.m in Sources */,
 				344113021C7AD668001FEAE6 /* ThirdView.m in Sources */,
-				6DB118D21C780B4400678885 /* MVVMDataService.m in Sources */,
+				344113791C7AEB9B001FEAE6 /* MVVMTableDataDelegate.m in Sources */,
+				344113741C7AEB9B001FEAE6 /* UICollectionViewCell+Extension.m in Sources */,
 				344113011C7AD668001FEAE6 /* ThirdModel.m in Sources */,
-				6DB118CC1C780B4400678885 /* MVVMCollectionDataDelegate.m in Sources */,
-				6DB118D11C780B4400678885 /* UITableViewCell+Extension.m in Sources */,
-				6DB118D61C780B4400678885 /* YTKKeyValueStore.m in Sources */,
-				6DB118CE1C780B4400678885 /* UICollectionViewCell+Extension.m in Sources */,
-				6DB118CD1C780B4400678885 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
 				344112F91C7AD668001FEAE6 /* BQViewModel.m in Sources */,
 				344113211C7AD76A001FEAE6 /* Foundation+Log.m in Sources */,
 				344112FE1C7AD668001FEAE6 /* BQGetDataList2.m in Sources */,
-				6DB118D01C780B4400678885 /* UITableView+TableDataDelegateAdditions.m in Sources */,
 				344112FB1C7AD668001FEAE6 /* BQTestModel.m in Sources */,
 				344112F41C7AD668001FEAE6 /* TestViewDelegate.m in Sources */,
 				344112FF1C7AD668001FEAE6 /* BQViewModel2.m in Sources */,
+				3441137D1C7AEB9B001FEAE6 /* KVObserver.m in Sources */,
 				344113051C7AD668001FEAE6 /* ThirdViewModel.m in Sources */,
 				344112F61C7AD668001FEAE6 /* BQCell.m in Sources */,
+				344113771C7AEB9B001FEAE6 /* UIView+Configure.m in Sources */,
+				344113781C7AEB9B001FEAE6 /* MVVMCollectionDataDelegate.m in Sources */,
 				344112F81C7AD668001FEAE6 /* BQGetDataList.m in Sources */,
+				344113731C7AEB9B001FEAE6 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
+				3441137B1C7AEB9B001FEAE6 /* MVVMHttp.m in Sources */,
 				344112F31C7AD668001FEAE6 /* FirstVC.m in Sources */,
+				3441137E1C7AEB9B001FEAE6 /* YTKKeyValueStore.m in Sources */,
+				344113721C7AEB9B001FEAE6 /* MVVMBaseViewModel.m in Sources */,
+				344113751C7AEB9B001FEAE6 /* UITableView+TableDataDelegateAdditions.m in Sources */,
 				344113001C7AD668001FEAE6 /* ThirdVC.m in Sources */,
-				6DB118CF1C780B4400678885 /* MVVMTableDataDelegate.m in Sources */,
-				6DB118D41C780B4400678885 /* MVVMStore.m in Sources */,
 				344112FA1C7AD668001FEAE6 /* SecondVC.m in Sources */,
 				344113271C7AD7D8001FEAE6 /* main.m in Sources */,
+				344113761C7AEB9B001FEAE6 /* UITableViewCell+Extension.m in Sources */,
 				3441132F1C7AD872001FEAE6 /* BHNavViewController.m in Sources */,
-				6DB118D31C780B4400678885 /* MVVMHttp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,6 @@ typedef void (^btnJumpBlock)();
 
 @interface ThirdView : UIView
 
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (nonatomic, copy) btnClickBlock btnClickBlock;
 @property (nonatomic, copy) btnJumpBlock btnJumpBlock;
 

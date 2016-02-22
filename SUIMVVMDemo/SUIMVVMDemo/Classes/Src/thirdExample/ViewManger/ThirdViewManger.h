@@ -7,14 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ThirdView.h"
+#import "MVVMBaseViewManger.h"
 
-@class ThirdModel;
-
-@interface ThirdViewManger : NSObject
-
-@property (nonatomic, weak) ThirdView *thirdView;
-@property (nonatomic, strong) ThirdModel *thirdModel;
-
+@interface ThirdViewManger : MVVMBaseViewManger
 
 @end
