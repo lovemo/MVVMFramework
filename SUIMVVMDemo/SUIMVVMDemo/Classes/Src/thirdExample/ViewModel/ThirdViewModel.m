@@ -7,7 +7,7 @@
 //
 
 #import "ThirdViewModel.h"
-#import "FirstModel.h"
+#import "ThirdModel.h"
 
 @implementation ThirdViewModel
 
@@ -28,7 +28,7 @@
     
 }
 
-- (ThirdModel *)getRandomData {
+- (instancetype)getRandomData {
     if (self.dataArrayList.count > 0) {
         u_int32_t index = arc4random_uniform((u_int32_t)self.dataArrayList.count);
         return self.dataArrayList[index];
