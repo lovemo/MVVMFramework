@@ -5,9 +5,11 @@
 //  Created by Kevin Ballard on 11/18/15.
 //  Copyright © 2015 Postmates. All rights reserved.
 //
-//  Licensed under the MIT license <LICENSE or
-//  http://opensource.org/licenses/MIT>. This file may not be copied, modified,
-//  or distributed except according to those terms.
+//  Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+//  http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
+//  <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
+//  option. This file may not be copied, modified, or distributed
+//  except according to those terms.
 //
 
 #import "KVObserver.h"
@@ -119,6 +121,10 @@ static void setup(PMKVObserver *self, id _Nullable NS_VALID_UNTIL_END_OF_SCOPE o
     if (__builtin_expect(retval, 0) != 0) {
         NSLog(@"PMKVObserver: pthread_mutex_destroy: %s", strerror(retval));
     }
+}
+
+- (BOOL)isCancelled {
+    return (atomic_load_explicit(&_state, memory_order_relaxed) & PMKVObserverStateActive) == 0;
 }
 
 - (void)cancel {

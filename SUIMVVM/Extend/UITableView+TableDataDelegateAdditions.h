@@ -13,9 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITableView (TableDataDelegateAdditions)
 
-
 @property (nullable,nonatomic,strong) MVVMTableDataDelegate *tableHander;
-
 
 @end
 
