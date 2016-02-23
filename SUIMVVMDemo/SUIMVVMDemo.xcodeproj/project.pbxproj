@@ -125,6 +125,8 @@
 		344113711C7AEB9B001FEAE6 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
 		3441137F1C7AEBC0001FEAE6 /* MVVMBaseViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewManger.h; sourceTree = "<group>"; };
 		344113801C7AEBC0001FEAE6 /* MVVMBaseViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewManger.m; sourceTree = "<group>"; };
+		34A8487C1C7BF1BA00C07A0C /* MVVMViewMangerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMViewMangerProtocol.h; sourceTree = "<group>"; };
+		34A8487E1C7BF21A00C07A0C /* MVVMViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMViewModelProtocol.h; sourceTree = "<group>"; };
 		676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6DB118411C7800BD00678885 /* SUIMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUIMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB1184E1C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				3441134E1C7AEB9B001FEAE6 /* BQMVVM.h */,
+				34A8487B1C7BF18100C07A0C /* Protocol */,
 				344113491C7AEB9B001FEAE6 /* Base */,
 				3441134F1C7AEB9B001FEAE6 /* Extend */,
 				3441135B1C7AEB9B001FEAE6 /* Handler */,
@@ -624,6 +627,15 @@
 				344113711C7AEB9B001FEAE6 /* YTKKeyValueStore.m */,
 			);
 			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
+		34A8487B1C7BF18100C07A0C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				34A8487C1C7BF1BA00C07A0C /* MVVMViewMangerProtocol.h */,
+				34A8487E1C7BF21A00C07A0C /* MVVMViewModelProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		6DB118381C7800BD00678885 = {
