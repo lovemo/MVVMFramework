@@ -44,7 +44,7 @@ View <-> C <-> ViewModel <->Model
 
 ##架构讲解
 
-<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="500">
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png"height="500">
 
 &emsp;&emsp;以上图做为讲解demo，最然很简单，但是也能够很好的阐述了，理解思想才是最重要的。
 首先我们来拆分这个页面，第一个为控制器。暂且命名为MyController，上面有两个直接子视图，按钮MyBtn和页面比较复杂的子视图MyView，MyView中有MyViewBtn1和MyViewBtn2还有一个MyViewLabel视图。
@@ -57,10 +57,7 @@ View <-> C <-> ViewModel <->Model
         - MyViewLabel
 
 &emsp;&emsp;界面分析完了，现在可以进行代码的架构工作了。
-首先需要建立一个ViewModel，使它能够源源不断的进行数据的生产，并提供数据给MyController；然后建立一个ViewManger负责管理MyView，当然，Model模型数据必不可少。
-
-&emsp;&emsp;这些工作完成之后，结构变为：
-
+首先需要建立一个ViewModel，使它能够源源不断的进行数据的生产，并提供数据给MyController；然后建立一个ViewManger负责管理MyView，当然，Model模型数据必不可少。这些工作完成之后，代码结构变为：
 - Controller  - - 存放MyController
 - ViewModel - - 存放MyViewModel
 - View  - - 存放MyView
@@ -69,7 +66,8 @@ View <-> C <-> ViewModel <->Model
 
 &emsp;&emsp;控制器中的结构如下图：
 
-<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg "height="460">
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg
+"height="460">
 
 &emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的sui_model属性接收。
 ```objc
