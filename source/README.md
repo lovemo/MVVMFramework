@@ -70,7 +70,7 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;控制器中的结构如下图：
 
 <img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg
-" height="460">
+"height="460">
 
 &emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的sui_model属性接收。
 ```objc
