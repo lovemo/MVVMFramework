@@ -44,7 +44,7 @@ View <-> C <-> ViewModel <->Model
 
 ##架构讲解
 
-<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png"height="500">
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="500">
 
 &emsp;&emsp;以上图做为讲解demo，最然很简单，但是也能够很好的阐述了，理解思想才是最重要的。
 首先我们来拆分这个页面，第一个为控制器。暂且命名为MyController，上面有两个直接子视图，按钮MyBtn和页面比较复杂的子视图MyView，MyView中有MyViewBtn1和MyViewBtn2还有一个MyViewLabel视图。
