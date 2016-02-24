@@ -64,7 +64,7 @@ View <-> C <-> ViewModel <->Model
 - ViewManger - - 存放MyViewManger
 - Model - - 存放MyModel
 
-&emsp;&emsp;控制器中的结构如下图：
+&emsp;&emsp;控制器中的代码结构如下图：
 
 <img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg "height="460">
 
