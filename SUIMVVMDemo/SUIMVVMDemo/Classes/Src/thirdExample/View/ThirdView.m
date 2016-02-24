@@ -25,6 +25,7 @@
         self.btnClickBlock();
     }
 }
+
 - (IBAction)jumpOtherVC:(UIButton *)sender {
     if (self.btnJumpBlock) {
         self.btnJumpBlock();
