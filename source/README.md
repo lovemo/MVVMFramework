@@ -42,6 +42,11 @@ View <-> C <-> ViewModel <->Model
 
 &emsp;&emsp;这样的架构设计，就像一条生产线，ViewModel进行数据的采集和加工，Controller则进行数据的装配和转发工作，ViewManger进行接收转发分配来的数据，从而进行负责View的展示工作和管理View的事件。这样，不管哪个环节，都是可以更换的，同时也提高了复用性。
 
+##架构讲解
+
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="600">
+
+
 &emsp;&emsp;至于是否采用更轻量级的ViewController做法，即 `通过将各个 protocol 的实现挪到 ViewController 之外，来为 ViewController 瘦身` ，众口不一。以UITableView为例，我的做法是：
 - 如果只是在页面上进行简单的展示，并不设计负责的业务逻辑时，会将UITableViewDelegate与UITableViewDataSource单独放到一个Handler钟进行处理，抽象出tableHander，由MVVMTableDataDelegate进行负责管理；
 - 当然，事实上，实际开发中，每个tableView页面都很复杂，有很多逻辑要处理，这时候只能考虑将protocol重新请回Controller中了，因为View层与ViewController层本身是持有与被持有的依赖关系，所以任何类作为ViewController的类内实例来实现协议回调，实际上都是在跨层调用，所以，随着时间和业务逻辑的愈来愈复杂，就注定要以额外的接口为代价，换言之，ViewController 的内聚性变差了。
