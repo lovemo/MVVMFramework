@@ -44,7 +44,7 @@ View <-> C <-> ViewModel <->Model
 
 ##架构讲解
 
-<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="1%">
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="200">
 
 
 &emsp;&emsp;至于是否采用更轻量级的ViewController做法，即 `通过将各个 protocol 的实现挪到 ViewController 之外，来为 ViewController 瘦身` ，众口不一。以UITableView为例，我的做法是：
