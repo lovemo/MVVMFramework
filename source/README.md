@@ -148,7 +148,7 @@ View <-> C <-> ViewModel <->Model
     self.testLabel.text = thirdModel.title;
 }
 ```
-&emsp;&emsp;这样把各个部分区分开来，是不是感觉代码结构十分清晰了呢，当然可以根据个人习惯来进行修改，代码实现因人而异，但是思想确是互通的。把合适的业务逻辑交给最合适的对象去实现，只需要遵守这么一个基本原则就可以了。
+&emsp;&emsp;这样把各个部分区分开来，是不是感觉代码结构十分清晰了呢，当然可以根据个人习惯来进行修改，代码实现因人而异，但是思想确是互通的。把合适的业务逻辑交给最合适的对象去处理实现，只需要遵守这么一个基本原则就可以了。
 
 &emsp;&emsp;至于是否采用更轻量级的ViewController做法，即 `通过将各个 protocol 的实现挪到 ViewController 之外，来为 ViewController 瘦身` ，众口不一。以UITableView为例，我的做法是：
 - 如果只是在页面上进行简单的展示，并不设计负责的业务逻辑时，会将UITableViewDelegate与UITableViewDataSource单独放到一个Handler钟进行处理，抽象出tableHander，由MVVMTableDataDelegate进行负责管理；
