@@ -32,6 +32,7 @@
 }
 
 - (void)configureViewWithCustomObj:(id)obj {
+    if (!obj) return;
     ThirdModel *thirdModel = (ThirdModel *)obj;
     self.testLabel.text = thirdModel.title;
 }

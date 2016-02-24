@@ -49,7 +49,7 @@
 - (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
     if ([info isEqualToString:@"click"]) {
         [view configureViewWithCustomObj:self.sui_model];
-        NSLog(@"点我干嘛----");
+        
     } else {
         FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
         [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];

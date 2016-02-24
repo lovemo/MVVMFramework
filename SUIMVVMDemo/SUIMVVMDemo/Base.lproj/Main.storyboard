@@ -34,14 +34,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1l-b9-T7p">
-                                <rect key="frame" x="208" y="270" width="185" height="60"/>
+                                <rect key="frame" x="223" y="270" width="155" height="60"/>
                                 <color key="backgroundColor" red="0.86678733009999998" green="1" blue="0.2028579875" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="ILz-WS-Epl"/>
                                     <constraint firstAttribute="height" constant="60" id="mjJ-0Z-iMF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="点我加载/监听模型数据变化"/>
+                                <state key="normal" title="点我加载/改变模型数据"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ILz-WS-Epl"/>
@@ -121,17 +121,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8bG-0y-JoU">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="pN2-aT-ZGk" id="wEv-f8-1HG"/>
                                     <outlet property="delegate" destination="pN2-aT-ZGk" id="JCj-IF-hcI"/>
