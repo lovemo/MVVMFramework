@@ -49,20 +49,20 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;以上图做为讲解demo，最然很简单，但是也能够很好的阐述了，理解思想才是最重要的。
 首先我们来拆分这个页面，第一个为控制器。暂且命名为MyController，上面有两个直接子视图，按钮MyBtn和页面比较复杂的子视图MyView，MyView中有MyViewBtn1和MyViewBtn2还有一个MyViewLabel视图。
 具体结构如下：
-- MyController
-    - MyBtn
-    - MyView
-        - MyViewBtn1
-        - MyViewBtn2
-        - MyViewLabel
+- [MyController](#11)
+    - [MyBtn](#12)
+    - [MyView](#13)
+        - [MyViewBtn1](#14)
+        - [MyViewBtn2](#15)
+        - [MyViewLabel](#16)
 
 &emsp;&emsp;界面分析完了，现在可以进行代码的架构工作了。
 首先需要建立一个ViewModel，使它能够源源不断的进行数据的生产，并提供数据给MyController；然后建立一个ViewManger负责管理MyView，当然，Model模型数据必不可少。这些工作完成之后，代码结构变为：
-- Controller  - - 存放MyController
-- ViewModel - - 存放MyViewModel
-- View  - - 存放MyView
-- ViewManger - - 存放MyViewManger
-- Model - - 存放MyModel
+- [Controller  - - 存放MyController](#21)
+- [ViewModel - - 存放MyViewModel](#22)
+- [View  - - 存放MyView](23)
+- [ViewManger - - 存放MyViewManger](#24)
+- [Model - - 存放MyModel](#25)
 
 &emsp;&emsp;控制器中的代码结构如下图：
 
@@ -157,5 +157,5 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;总之，具体情况具体分析，采用最合适的方式来处理应对不同的问题。兵来将挡，水来土掩。本文的相关Demo见github，实现的功能并不复杂，仅供参考，欢迎补充。
 
 ####如果想学习更多关于MVVM的文章，请参考本项目demo中下方的推荐文章。
-####项目传送门[点击进入](https://github.com/lovemo/MVVMFramework)
+####项目传送门：[点击进入](https://github.com/lovemo/MVVMFramework)
 ###未完待续。。。
