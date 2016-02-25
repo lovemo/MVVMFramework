@@ -44,8 +44,111 @@ View <-> C <-> ViewModel <->Model
 
 ##架构讲解
 
-<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="600">
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/screenshot.png" height="500">
 
+&emsp;&emsp;以上图做为讲解demo，最然很简单，但是也能够很好的阐述了，理解思想才是最重要的。
+首先我们来拆分这个页面，第一个为控制器。暂且命名为MyController，上面有两个直接子视图，按钮MyBtn和页面比较复杂的子视图MyView，MyView中有MyViewBtn1和MyViewBtn2还有一个MyViewLabel视图。
+具体结构如下：
+- [MyController](#11)
+    - [MyBtn](#12)
+    - [MyView](#13)
+        - [MyViewBtn1](#14)
+        - [MyViewBtn2](#15)
+        - [MyViewLabel](#16)
+
+&emsp;&emsp;界面分析完了，现在可以进行代码的架构工作了。
+首先需要建立一个ViewModel，使它能够源源不断的进行数据的生产，并提供数据给MyController；然后建立一个ViewManger负责管理MyView，当然，Model模型数据必不可少。这些工作完成之后，代码结构变为：
+- [Controller  - - 存放MyController](#21)
+- [ViewModel - - 存放MyViewModel](#22)
+- [View  - - 存放MyView](23)
+- [ViewManger - - 存放MyViewManger](#24)
+- [Model - - 存放MyModel](#25)
+
+&emsp;&emsp;控制器中的代码结构如下图：
+
+<img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg "height="460">
+
+&emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的sui_model属性接收。
+```objc
+- (IBAction)clickBtnAction:(UIButton *)sender {
+    self.thirdViewManger.sui_model = [self.viewModel getRandomData];
+}
+```
+&emsp;&emsp;其中，MyViewModel中的加载代码如下，如上所述，它的工作就是分解以前控制器做的一些事情。
+```objc
+- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
+   // 博客中省略，查看详细请参考demo
+}
+
+- (instancetype)getRandomData {
+    if (self.dataArrayList.count > 0) {
+        u_int32_t index = arc4random_uniform((u_int32_t)self.dataArrayList.count);
+        return self.dataArrayList[index];
+    }
+    return nil;
+}
+```
+&emsp;&emsp;MyViewManger中的代码如下，它继承了基类的三个方法：
+```objc
+// 此方法用来接收处理来自所管理View的一些事件。
+- (void)handleViewMangerWithSubView:(UIView *)subView
+// 此方法将view的父视图传递过来，用来布局当前View
+- (void)handleViewMangerWithSuperView:(UIView *)superView
+// 根据所传入的view和info信息分别实现具体的方法
+- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info
+```
+```objc
+- (void)handleViewMangerWithSubView:(UIView *)subView {
+    __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
+    __weak typeof(self) weakSelf = self;
+    
+    // btnClickBlock
+    weakThirdView.btnClickBlock = ^() {
+        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"click"];
+    };
+    
+    // btnJumpBlock
+    weakThirdView.btnJumpBlock = ^() {
+        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"jump"];
+    };
+}
+
+- (void)handleViewMangerWithSuperView:(UIView *)superView {
+    self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
+    [superView addSubview:self.thirdView];
+}
+
+- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
+    if ([info isEqualToString:@"click"]) {
+        [view configureViewWithCustomObj:self.sui_model];
+    } else {
+        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
+    }
+}
+```
+&emsp;&emsp;MyView中的代码如下，主要是负责管理自身的内部控件视图，并根据业务逻辑需要定义了一些基本事件，通过交给ViewManger来实现：
+```objc
+- (IBAction)testBtnClick:(UIButton *)sender {
+    if (self.btnClickBlock) {
+        self.btnClickBlock();
+    }
+}
+
+- (IBAction)jumpOtherVC:(UIButton *)sender {
+    if (self.btnJumpBlock) {
+        self.btnJumpBlock();
+    }
+}
+
+// 根据传入的model配置需要显示的内容
+- (void)configureViewWithCustomObj:(id)obj {
+    if (!obj) return;
+    ThirdModel *thirdModel = (ThirdModel *)obj;
+    self.testLabel.text = thirdModel.title;
+}
+```
+&emsp;&emsp;这样把各个部分区分开来，是不是感觉代码结构十分清晰了呢，当然可以根据个人习惯来进行修改，代码实现因人而异，但是思想确是互通的。把合适的业务逻辑交给最合适的对象去处理实现，只需要遵守这么一个基本原则就可以了。
 
 &emsp;&emsp;至于是否采用更轻量级的ViewController做法，即 `通过将各个 protocol 的实现挪到 ViewController 之外，来为 ViewController 瘦身` ，众口不一。以UITableView为例，我的做法是：
 - 如果只是在页面上进行简单的展示，并不设计负责的业务逻辑时，会将UITableViewDelegate与UITableViewDataSource单独放到一个Handler钟进行处理，抽象出tableHander，由MVVMTableDataDelegate进行负责管理；
@@ -54,5 +157,5 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;总之，具体情况具体分析，采用最合适的方式来处理应对不同的问题。兵来将挡，水来土掩。本文的相关Demo见github，实现的功能并不复杂，仅供参考，欢迎补充。
 
 ####如果想学习更多关于MVVM的文章，请参考本项目demo中下方的推荐文章。
-
+####项目传送门：[点击进入](https://github.com/lovemo/MVVMFramework)
 ###未完待续。。。
