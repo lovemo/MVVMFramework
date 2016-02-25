@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "HMSingleton.h"
 
 @interface MVVMStoreItem : NSObject
 
@@ -18,6 +18,8 @@
 @end
 
 @interface MVVMStore : NSObject
+
+HMSingletonH(Store)
 
 /**
  *  根据dbName初始化数据库
@@ -30,7 +32,7 @@
 - (BOOL)db_initDBWithPath:(NSString *)dbPath;
 
 /**
- *  根据tableName初始化数据表
+ *  根据tableName创建数据表
  */
 - (void)db_createTableWithName:(NSString *)tableName;
 
@@ -50,9 +52,24 @@
 - (void)db_clearTable:(NSString *)tableName;
 
 /**
+ *  删除表
+ */
+- (BOOL)db_deleteTable:(NSString *)tableName;
+
+/**
+ *  删除数据库
+ */
+- (void)db_deleteDatabseWithDBName:(NSString *)DBName;
+
+/**
  *  关闭数据库
  */
 - (void)db_close;
+
+/**
+ *  获得数据库存储路径
+ */
+- (NSString *)db_getDBPath;
 
 /**
  *  tableName是否存在
