@@ -34,6 +34,8 @@
 
 @property (strong, nonatomic) FMDatabaseQueue * dbQueue;
 
+@property (nonatomic, copy) NSString *dbPath;
+
 @end
 
 @implementation YTKKeyValueStore
@@ -78,7 +80,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     self = [super init];
     if (self) {
         NSString * dbPath = [PATH_OF_DOCUMENT stringByAppendingPathComponent:dbName];
-        debugLog(@"dbPath = %@", dbPath);
+        _dbPath = dbPath;
         if (_dbQueue) {
             [self close];
         }
@@ -90,7 +92,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
 - (id)initWithDBWithPath:(NSString *)dbPath {
     self = [super init];
     if (self) {
-        debugLog(@"dbPath = %@", dbPath);
+        _dbPath = dbPath;
         if (_dbQueue) {
             [self close];
         }
@@ -349,4 +351,68 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
     
 }
 
+- (BOOL)isExistTableWithName:(NSString *)tableName
+{
+    __block BOOL result;
+
+    [_dbQueue inDatabase:^(FMDatabase *db) {
+        FMResultSet * rs = [db executeQuery:@"select count(*) as 'count' from sqlite_master where type ='table' and name = ?", tableName];
+        while ([rs next])
+        {
+            // just print out what we've got in a number of formats.
+            NSInteger count = [rs intForColumn:@"count"];
+            if (0 == count)
+            {
+                result = NO;
+            }
+            else
+            {
+                result = YES;
+            }
+        }
+
+    }];
+    return result;
+}
+
+// 删除表
+- (BOOL)deleteTable:(NSString *)tableName
+{
+    __block BOOL result;
+    [_dbQueue inDatabase:^(FMDatabase *db) {
+        NSString *sqlstr = [NSString stringWithFormat:@"DROP TABLE %@", tableName];
+        if (![db executeUpdate:sqlstr])
+        {
+            debugLog(@"Delete table error!");
+            result = NO;
+        }
+        result = YES;
+    }];
+    return result;
+}
+
+// 删除数据库
+- (void)deleteDatabseWithDBName:(NSString *)DBName
+{
+    __block BOOL success;
+    __block NSError *error;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    // delete the old db.
+    if ([fileManager fileExistsAtPath:DBName])
+    {
+        [_dbQueue inDatabase:^(FMDatabase *db) {
+            [db close];
+            success = [fileManager removeItemAtPath:DBName error:&error];
+            if (!success) {
+                NSAssert1(0, @"Failed to delete old database file with message '%@'.", [error localizedDescription]);
+            }
+        }];
+    }
+}
+
+- (NSString *)getDBPath {
+    return _dbPath;
+}
 @end

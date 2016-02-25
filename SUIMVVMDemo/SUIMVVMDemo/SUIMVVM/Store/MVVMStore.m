@@ -23,6 +23,8 @@
 
 @implementation MVVMStore
 
+HMSingletonM(Store)
+
 - (YTKKeyValueStore *)ytk_store {
     if (_ytk_store == nil) {
         _ytk_store = [[YTKKeyValueStore alloc]init];
@@ -43,13 +45,13 @@
 }
 
 - (void)db_initWithDBName:(NSString *)dbName tableName:(NSString *)tableName {
-    if ([self.ytk_store initDBWithName:dbName]) {
+    if ([self db_initDBWithName:dbName]) {
         [self.ytk_store createTableWithName:tableName];
     }
 }
 
 - (void)db_initWithDBPath:(NSString *)dbPath tableName:(NSString *)tableName {
-    if ([self.ytk_store initWithDBWithPath:dbPath]) {
+    if ([self db_initDBWithPath:dbPath]) {
         [self.ytk_store createTableWithName:tableName];
     }
 }
@@ -58,12 +60,24 @@
     [self.ytk_store clearTable:tableName];
 }
 
+- (BOOL)db_deleteTable:(NSString *)tableName {
+    return [self.ytk_store deleteTable:tableName];
+}
+
+- (void)db_deleteDatabseWithDBName:(NSString *)DBName {
+    [self.ytk_store deleteDatabseWithDBName:DBName];
+}
+
 - (void)db_close {
     [self.ytk_store close];
 }
 
+- (NSString *)db_getDBPath {
+    return [self.ytk_store getDBPath];
+}
+
 - (BOOL)db_isExistTableWithName:(NSString *)tableName {
-    return [self db_getAllItemsFromTable:tableName].count > 0 ? YES : NO;
+    return [self.ytk_store isExistTableWithName:tableName];
 }
 ///************************ Put&Get methods *****************************************
 

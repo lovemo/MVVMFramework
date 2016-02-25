@@ -13,6 +13,20 @@
 
 @optional
 
+/**
+ *  返回指定indexPath的item
+ */
+- (instancetype)vm_modelAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ *  每组中显示多少行 (用于tableView)
+ */
+- (NSUInteger)vm_numberOfRowsInSection:(NSUInteger)section;
+
+/**
+ *  每组中显示多少个 (用于collectionView)
+ */
+- (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section;
 
 @end
 

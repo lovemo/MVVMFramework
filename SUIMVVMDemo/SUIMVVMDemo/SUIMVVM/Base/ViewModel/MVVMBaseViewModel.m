@@ -28,21 +28,6 @@
     return model;
 }
 
-- (NSUInteger)vm_numberOfSections {
-    return 1;
-}
-- (NSUInteger)vm_numberOfRowsInSection:(NSUInteger)section {
-    return 0;
-}
-
-- (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section {
-    return 0;
-}
-
-- (instancetype)vm_modelAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
-
 - (void)vm_getDataSuccessHandler:(void (^)())successHandler {
     
 }

@@ -27,6 +27,14 @@
 
 - (void)clearTable:(NSString *)tableName;
 
+- (BOOL)isExistTableWithName:(NSString *)tableName;
+
+- (BOOL)deleteTable:(NSString *)tableName;
+
+- (void)deleteDatabseWithDBName:(NSString *)DBName;
+
+- (NSString *)getDBPath;
+
 - (void)close;
 
 ///************************ Put&Get methods *****************************************
