@@ -70,6 +70,7 @@
         }];
         // 结束刷新
         [weakCollection.mj_header endRefreshing];
+        [SVProgressHUD dismiss];
     }];
     [collection.mj_header beginRefreshing];
     collection.mj_header.automaticallyChangeAlpha = YES;

@@ -66,6 +66,7 @@
         }];
         // 结束刷新
         [weakTable.mj_header endRefreshing];
+        [SVProgressHUD dismiss];
     }];
 
     [table.mj_header beginRefreshing];

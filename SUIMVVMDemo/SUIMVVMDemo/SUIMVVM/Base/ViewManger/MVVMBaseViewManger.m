@@ -17,16 +17,4 @@
     return self;
 }
 
-- (void)handleViewMangerWithSuperView:(UIView *)superView {
-    
-}
-
-- (void)handleViewMangerWithSubView:(UIView *)subView {
-    
-}
-
-- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
-    
-}
-
 @end
