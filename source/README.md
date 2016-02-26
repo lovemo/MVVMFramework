@@ -88,7 +88,7 @@ View <-> C <-> ViewModel <->Model
     return nil;
 }
 ```
-&emsp;&emsp;MyViewManger中的代码如下，它继承了基类的三个方法：
+&emsp;&emsp;MyViewManger中的代码如下，它实现了MVVMViewMangerProtocol协议的三个方法：
 ```objc
 // 此方法用来接收处理来自所管理View的一些事件。
 - (void)handleViewMangerWithSubView:(UIView *)subView
