@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HMSingleton.h"
 
 @interface MVVMStoreItem : NSObject
 
@@ -19,7 +18,7 @@
 
 @interface MVVMStore : NSObject
 
-HMSingletonH(Store)
++ (instancetype)sharedStore;
 
 /**
  *  根据dbName初始化数据库
