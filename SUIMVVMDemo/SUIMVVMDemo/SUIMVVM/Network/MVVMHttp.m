@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #include "netdb.h"
 #import "MVVMStore.h"
+#import <SUIUtils.h>
 
 #ifdef DEBUG
 #define BQLog(...) NSLog(__VA_ARGS__)
