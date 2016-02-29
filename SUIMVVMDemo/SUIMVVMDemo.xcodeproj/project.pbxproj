@@ -127,6 +127,7 @@
 		3474D9201C7EDAC20034822A /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
 		3474D9221C7EDAC20034822A /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
 		3474D9231C7EDAC20034822A /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		34C724031C83E31500D206D4 /* MVVMConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMConstant.h; sourceTree = "<group>"; };
 		676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6DB118411C7800BD00678885 /* SUIMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUIMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB1184E1C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -498,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				3474D8FD1C7EDAC20034822A /* BQMVVM.h */,
+				34C724021C83E30100D206D4 /* Constant */,
 				3474D8F61C7EDAC20034822A /* Base */,
 				3474D8FE1C7EDAC20034822A /* Extend */,
 				3474D90A1C7EDAC20034822A /* Handler */,
@@ -636,6 +638,14 @@
 				3474D9231C7EDAC20034822A /* YTKKeyValueStore.m */,
 			);
 			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
+		34C724021C83E30100D206D4 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				34C724031C83E31500D206D4 /* MVVMConstant.h */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		6DB118381C7800BD00678885 = {

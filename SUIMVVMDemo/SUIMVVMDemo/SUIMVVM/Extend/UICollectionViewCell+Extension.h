@@ -25,6 +25,6 @@
  *  获取自定义对象的cell高度
  */
 + (CGFloat)getCellHeightWithCustomObj:(id)obj
-                            indexPath:(NSIndexPath *)indexPath ;
+        indexPath:(NSIndexPath *)indexPath ;
 
 @end

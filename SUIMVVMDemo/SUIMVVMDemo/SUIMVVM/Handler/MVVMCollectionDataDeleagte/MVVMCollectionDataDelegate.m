@@ -84,13 +84,13 @@
     return self.cellItemSize();
 }
 
-//定义每个UICollectionView 的 margin
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+// 定义每个UICollectionView 的 margin
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return self.cellItemMargin();
 }
 
-//定义每个UICollectionView 纵向的间距
+// 定义每个UICollectionView 纵向的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 0;
 }

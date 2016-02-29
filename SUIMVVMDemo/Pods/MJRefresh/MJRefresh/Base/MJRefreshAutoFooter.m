@@ -86,7 +86,7 @@
 - (void)scrollViewPanStateDidChange:(NSDictionary *)change
 {
     [super scrollViewPanStateDidChange:change];
-    
+
     if (self.state != MJRefreshStateIdle) return;
     
     if (_scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded) {// 手松开
