@@ -12,6 +12,6 @@
 @interface MVVMBaseViewManger : NSObject <MVVMViewMangerProtocol>
 
 /** 用于传递数据的基模型 */
-@property (nonatomic, strong) NSObject *sui_model;
+@property (nonatomic, strong) NSObject *vm_model;
 
 @end

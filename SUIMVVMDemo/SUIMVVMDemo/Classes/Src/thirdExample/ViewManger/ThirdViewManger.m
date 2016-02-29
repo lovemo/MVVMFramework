@@ -24,31 +24,31 @@
     return _thirdView;
 }
 
-- (void)handleViewMangerWithSubView:(UIView *)subView {
+- (void)vm_handleViewMangerWithSubView:(UIView *)subView {
     
     __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
     __weak typeof(self) weakSelf = self;
     
     // btnClickBlock
     weakThirdView.btnClickBlock = ^() {
-        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"click"];
+        [weakSelf vm_handleViewMangerActionWithView:weakThirdView info:@"click"];
     };
     
     // btnJumpBlock
     weakThirdView.btnJumpBlock = ^() {
-        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"jump"];
+        [weakSelf vm_handleViewMangerActionWithView:weakThirdView info:@"jump"];
     };
     
 }
 
-- (void)handleViewMangerWithSuperView:(UIView *)superView {
+- (void)vm_handleViewMangerWithSuperView:(UIView *)superView {
     self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
     [superView addSubview:self.thirdView];
 }
 
-- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
+- (void)vm_handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
     if ([info isEqualToString:@"click"]) {
-        [view configureViewWithCustomObj:self.sui_model];
+        [view configureViewWithCustomObj:self.vm_model];
         
     } else {
         FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
