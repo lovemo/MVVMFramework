@@ -12,7 +12,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self handleViewMangerWithSubView:nil];
+        [self vm_handleViewMangerWithSubView:nil];
     }
     return self;
 }
