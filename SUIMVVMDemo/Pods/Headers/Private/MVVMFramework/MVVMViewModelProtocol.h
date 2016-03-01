@@ -1,0 +1,1 @@
+../../../MVVMFramework/SUIMVVM/Protocol/MVVMViewModelProtocol.h
