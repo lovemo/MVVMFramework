@@ -25,18 +25,6 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - SUIUtils (0.0.2):
-    - SUIUtils/Foundation (= 0.0.2)
-    - SUIUtils/Helper (= 0.0.2)
-    - SUIUtils/Tool (= 0.0.2)
-    - SUIUtils/UIKit (= 0.0.2)
-  - SUIUtils/Foundation (0.0.2)
-  - SUIUtils/Helper (0.0.2):
-    - SUIUtils/UIKit
-    - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - SUIUtils/Tool (0.0.2)
-  - SUIUtils/UIKit (0.0.2):
-    - SUIUtils/Foundation
   - SVProgressHUD (1.1.3)
   - UITableView+FDTemplateLayoutCell (1.4)
 
@@ -49,17 +37,8 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh (> 3.0.0)
   - SDWebImage
-  - SUIUtils (from `https://github.com/randomprocess/SUIUtils`)
   - SVProgressHUD
-
-EXTERNAL SOURCES:
-  SUIUtils:
-    :git: https://github.com/randomprocess/SUIUtils
-
-CHECKOUT OPTIONS:
-  SUIUtils:
-    :commit: 9fb199948e02045d90c6f22b26664c227533fd6c
-    :git: https://github.com/randomprocess/SUIUtils
+  - UITableView+FDTemplateLayoutCell
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -70,7 +49,6 @@ SPEC CHECKSUMS:
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  SUIUtils: 6cb2cad87bea1893566b09543cf60852f31ec3fb
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
