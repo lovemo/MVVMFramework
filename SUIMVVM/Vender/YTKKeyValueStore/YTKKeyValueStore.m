@@ -321,7 +321,7 @@ static NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id 
         return nil;
     }
 
-    NSString * sql = [NSString stringWithFormat:@"SELECT * FROM %@ LIMIT %lu, %lu",tableName, range.location, range.length];
+    NSString * sql = [NSString stringWithFormat:@"SELECT * FROM %@ LIMIT %zd, %zd",tableName, range.location, range.length];
     __block NSMutableArray * result = [NSMutableArray array];
     [_dbQueue inDatabase:^(FMDatabase *db) {
         FMResultSet * rs = [db executeQuery:sql];

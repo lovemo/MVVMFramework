@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name                  = 'MVVMFramework'
-  s.version      = '0.0.5'
+  s.version      = '0.0.6'
   s.summary               = 'MVVMFramework is a MVVM frameWork easy to develop iOS'
   s.homepage              = 'https://github.com/lovemo/MVVMFramework'
   s.platform     = :ios, '7.0'
   s.license               = 'MIT'
   s.author                = { 'lovemo' => 'lovemomoyulin@qq.com' }
-  s.source                = { :git => 'https://github.com/lovemo/MVVMFramework.git',:tag => '0.0.5' }
+  s.source                = { :git => 'https://github.com/lovemo/MVVMFramework.git',:tag => '0.0.6' }
   s.requires_arc          = true
   s.public_header_files = 'SUIMVVM/**/*.h'
   s.framework             = 'CoreFoundation','Foundation','CoreGraphics','UIKit'
