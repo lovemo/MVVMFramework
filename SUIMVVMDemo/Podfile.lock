@@ -22,9 +22,12 @@ PODS:
   - Masonry (0.6.4)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
-  - MVVMFramework (0.0.7):
-    - MVVMFramework/SUIMVVM (= 0.0.7)
-  - MVVMFramework/SUIMVVM (0.0.7):
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SUIMVVMKit (0.1.1):
+    - SUIMVVMKit/SUIMVVMKit (= 0.1.1)
+  - SUIMVVMKit/SUIMVVMKit (0.1.1):
     - AFNetworking
     - FDFullscreenPopGesture
     - FMDB
@@ -34,9 +37,6 @@ PODS:
     - MJRefresh
     - SDWebImage
     - SVProgressHUD
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
@@ -47,8 +47,8 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh (> 3.0.0)
-  - MVVMFramework (~> 0.0.7)
   - SDWebImage
+  - SUIMVVMKit
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -59,8 +59,8 @@ SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  MVVMFramework: afbdbb546788b0a74ee73bed4e95e8089f3e0f1c
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SUIMVVMKit: 8acf83558e2ee2eb96b4e1a59f05b252f0efeb55
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.39.0
