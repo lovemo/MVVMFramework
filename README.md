@@ -16,7 +16,7 @@
 ####使用用法
 CocoaPods：
 ```
-   pod 'MVVMFramework', '~> 0.0.7'
+	pod 'SUIMVVMKit'
 ```
 ====
 ##思维流程图示
