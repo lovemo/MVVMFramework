@@ -1,78 +1,77 @@
 Pod::Spec.new do |s|
   s.name                  = 'MVVMFramework'
-  s.version      = '0.0.7'
+  s.version      = '0.0.8'
   s.summary               = 'MVVMFramework is a MVVM frameWork easy to develop iOS'
   s.homepage              = 'https://github.com/lovemo/MVVMFramework'
   s.platform     = :ios, '7.0'
   s.license               = 'MIT'
   s.author                = { 'lovemo' => 'lovemomoyulin@qq.com' }
-  s.source                = { :git => 'https://github.com/lovemo/MVVMFramework.git',:tag => '0.0.7' }
+  s.source                = { :git => 'https://github.com/lovemo/MVVMFramework.git',:tag => '0.0.8' }
   s.requires_arc          = true
   s.public_header_files = 'SUIMVVM/**/*.h'
   s.source_files  = 'SUIMVVM/BQMVVM.h'
   s.framework             = 'CoreFoundation','Foundation','CoreGraphics','UIKit'
   s.library		= 'sqlite3'
 
-  s.subspec 'Base' do |Base|
-    Base.source_files = 'SUIMVVM/Base/**/*'
+  s.subspec 'Base' do |base|
+    base.source_files = 'SUIMVVM/Base/**/*'
   end
 
-  s.subspec 'ViewManger' do |ViewManger|
-    ViewManger.source_files = 'SUIMVVM/Base/ViewManger/**/*'
+  s.subspec 'ViewManger' do |viewManger|
+    viewManger.source_files = 'SUIMVVM/Base/ViewManger/**/*'
   end
 
-  s.subspec 'ViewModel' do |ViewModel|
-    ViewModel.source_files = 'SUIMVVM/Base/ViewModel/**/*'
+  s.subspec 'ViewModel' do |viewModel|
+    viewModel.source_files = 'SUIMVVM/Base/ViewModel/**/*'
   end
 
-  s.subspec 'Constant' do |Constant|
-    Constant.source_files = 'SUIMVVM/Constant/**/*'
+  s.subspec 'Constant' do |constant|
+    constant.source_files = 'SUIMVVM/Constant/**/*'
   end
 
-  s.subspec 'Extend' do |Extend|
-    Extend.source_files = 'SUIMVVM/Extend/**/*'
+  s.subspec 'Extend' do |extend|
+    extend.source_files = 'SUIMVVM/Extend/**/*'
   end
 
-  s.subspec 'Handler' do |Handler|
-    Handler.source_files = 'SUIMVVM/Handler/**/*'
+  s.subspec 'Handler' do |handler|
+    handler.source_files = 'SUIMVVM/Handler/**/*'
   end
 
-  s.subspec 'MVVMCollectionDataDeleagte' do |MVVMCollectionDataDeleagte|
-    MVVMCollectionDataDeleagte.source_files = 'SUIMVVM/Handler/MVVMCollectionDataDeleagte/**/*'
+  s.subspec 'MVVMCollectionDataDeleagte' do |collection|
+    collection.source_files = 'SUIMVVM/Handler/MVVMCollectionDataDeleagte/**/*'
   end
 
-  s.subspec 'MVVMTableDataDelegate' do |MVVMTableDataDelegate|
-    MVVMTableDataDelegate.source_files = 'SUIMVVM/Handler/MVVMTableDataDelegate/**/*'
+  s.subspec 'MVVMTableDataDelegate' do |table|
+    table.source_files = 'SUIMVVM/Handler/MVVMTableDataDelegate/**/*'
   end
 
-  s.subspec 'Network' do |Network|
-    Network.source_files = 'SUIMVVM/Network/**/*'
+  s.subspec 'Network' do |network|
+    network.source_files = 'SUIMVVM/Network/**/*'
   end
 
-  s.subspec 'Protocol' do |Protocol|
-    Protocol.source_files = 'SUIMVVM/Protocol/**/*'
+  s.subspec 'Protocol' do |protocol|
+    protocol.source_files = 'SUIMVVM/Protocol/**/*'
   end
 
-  end
-  s.subspec 'Store' do |Store|
-    Store.source_files = 'SUIMVVM/Store/**/*'
-  end
-
-  s.subspec 'Vender' do |Vender|
-    Vender.source_files = 'SUIMVVM/Vender/**/*'
+  s.subspec 'Store' do |store|
+    store.source_files = 'SUIMVVM/Store/**/*'
   end
 
-  s.subspec 'PMKVObserver' do |PMKVObserver|
-    PMKVObserver.source_files = 'SUIMVVM/Vender/PMKVObserver/**/*'
+  s.subspec 'Vender' do |vender|
+    vender.source_files = 'SUIMVVM/Vender/**/*'
   end
-  s.subspec 'SUIUtils' do |SUIUtils|
-    SUIUtils.source_files = 'SUIMVVM/Vender/SUIUtils/**/*'
+
+  s.subspec 'PMKVObserver' do |observer|
+    observer.source_files = 'SUIMVVM/Vender/PMKVObserver/**/*'
   end
-  s.subspec 'UITableView+FDTemplateLayoutCell' do |FDTemplateLayoutCell|
-    FDTemplateLayoutCell.source_files = 'SUIMVVM/Vender/UITableView+FDTemplateLayoutCell/**/*'
+  s.subspec 'SUIUtils' do |sui|
+    sui.source_files = 'SUIMVVM/Vender/SUIUtils/**/*'
   end
-  s.subspec 'YTKKeyValueStore' do |YTKKeyValueStore|
-    YTKKeyValueStore.source_files = 'SUIMVVM/Vender/YTKKeyValueStore/**/*'
+  s.subspec 'UITableView+FDTemplateLayoutCell' do |layoutCell|
+    layoutCell.source_files = 'SUIMVVM/Vender/UITableView+FDTemplateLayoutCell/**/*'
+  end
+  s.subspec 'YTKKeyValueStore' do |kv|
+    kv.source_files = 'SUIMVVM/Vender/YTKKeyValueStore/**/*'
   end
 
   s.subspec 'SUIMVVM' do |sp|
