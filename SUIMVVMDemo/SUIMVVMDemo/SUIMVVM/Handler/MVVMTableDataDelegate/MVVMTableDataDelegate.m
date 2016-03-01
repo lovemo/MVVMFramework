@@ -11,7 +11,7 @@
 #import "MVVMBaseViewModel.h"
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
-#import "UITableView+FDTemplateLayoutCell.h"
+#import <UITableView+FDTemplateLayoutCell.h>
 
 @interface MVVMTableDataDelegate ()
 
