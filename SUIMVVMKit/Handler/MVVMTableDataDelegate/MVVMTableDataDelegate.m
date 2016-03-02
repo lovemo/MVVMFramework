@@ -9,7 +9,7 @@
 #import "MVVMTableDataDelegate.h"
 #import "UITableViewCell+Extension.h"
 #import "MVVMBaseViewModel.h"
-#import "SVProgressHUD.h"
+#import "MVVMHUD.h"
 #import "MJRefresh.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 
@@ -56,17 +56,17 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(table) weakTable = table;
  
-    [SVProgressHUD show];
+    [MVVMHUD sui_show];
     // 下拉刷新
     table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         [weakSelf.viewModel vm_getDataSuccessHandler:^{
-            [SVProgressHUD dismiss];
+            [MVVMHUD sui_dismiss];
             [weakTable reloadData];
         }];
         // 结束刷新
         [weakTable.mj_header endRefreshing];
-        [SVProgressHUD dismiss];
+        [MVVMHUD sui_dismiss];
     }];
 
     [table.mj_header beginRefreshing];

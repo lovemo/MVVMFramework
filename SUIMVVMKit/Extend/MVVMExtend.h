@@ -14,5 +14,6 @@
 #import "UICollectionViewCell+Extension.h"
 #import "UITableView+TableDataDelegateAdditions.h"
 #import "UITableViewCell+Extension.h"
+#import "MVVMHUD.h"
 
 #endif /* MVVMExtend_h */
