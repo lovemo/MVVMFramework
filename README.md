@@ -3,6 +3,7 @@
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
 ====
+#####具体实现思路，请参看博客：
 ####博客：浅谈MVVM 
 ####地址：[点击链接进入](https://github.com/lovemo/MVVMFramework/tree/master/source)
 ====
