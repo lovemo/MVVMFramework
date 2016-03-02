@@ -55,17 +55,14 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(table) weakTable = table;
  
-    [SVProgressHUD show];
     // 下拉刷新
     table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         [weakSelf.viewModel vm_getDataSuccessHandler:^{
-            [SVProgressHUD dismiss];
             [weakTable reloadData];
         }];
         // 结束刷新
         [weakTable.mj_header endRefreshing];
-        [SVProgressHUD dismiss];
     }];
 
     [table.mj_header beginRefreshing];

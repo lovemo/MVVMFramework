@@ -10,7 +10,6 @@
 #import "UICollectionViewCell+Extension.h"
 #import "MVVMBaseViewModel.h"
 #import "MJRefresh.h"
-#import "SVProgressHUD.h"
 
 @interface MVVMCollectionDataDelegate ()
 
@@ -61,16 +60,13 @@
     __weak typeof(self) weakSelf = self;
     __weak typeof(collection) weakCollection = collection;
     
-    [SVProgressHUD show];
     // 下拉刷新
     collection.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf.viewModel vm_getDataSuccessHandler:^{
-            [SVProgressHUD dismiss];
             [weakCollection reloadData];
         }];
         // 结束刷新
         [weakCollection.mj_header endRefreshing];
-        [SVProgressHUD dismiss];
     }];
     [collection.mj_header beginRefreshing];
     collection.mj_header.automaticallyChangeAlpha = YES;
