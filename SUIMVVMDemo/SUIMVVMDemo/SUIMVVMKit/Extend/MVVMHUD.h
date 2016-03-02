@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SVProgressHUD.h>
 
 @interface MVVMHUD : NSObject
 
