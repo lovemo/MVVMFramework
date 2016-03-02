@@ -12,8 +12,6 @@
 #import "MVVMBaseViewModel.h"
 #import "MVVMTableDataDelegate.h"
 #import "MVVMCollectionDataDelegate.H"
-#import "MVVMStore.h"
-#import "MVVMDataService.h"
 #import "MVVMExtend.h"
 
 #endif /* BQMVVM_h */
