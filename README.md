@@ -103,9 +103,10 @@ CocoaPods：
 ### <a id="几行代码实现数据存储"></a>几行代码实现数据存储
 
 ```objc
-    MVVMStore *store = [[MVVMStore alloc]init];
-    [store db_initWithDBName:@"demo.sqlite" tableName:@"arrarList"];
-    [store db_putObject:array withId:@"arrayID" intoTable:@"arrarList"];
+    static NSString *tableName = @"arrarList";
+    MVVMStore *store = [MVVMStore sharedStore];
+    [store db_initWithDBName:@"demo.sqlite" tableName:tableName];
+    [store db_putObject:array withId:@"arrayID" intoTable:tableName];
 ```
 
 ### <a id="demo效果"></a> demo效果
