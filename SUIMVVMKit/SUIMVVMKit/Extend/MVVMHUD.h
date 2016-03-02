@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SVProgressHUD.h>
 
 @interface MVVMHUD : NSObject
 
