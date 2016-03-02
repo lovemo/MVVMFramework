@@ -9,7 +9,7 @@
 #import "FirstVC.h"
 #import "BQCell.h"
 #import "FirstModel.h"
-#import <SUIMVVMKit.h>
+#import "SUIMVVMKit.h"
 #import "SecondVC.h"
 #import "BQViewModel.h"
 #import "TestViewDelegate.h"

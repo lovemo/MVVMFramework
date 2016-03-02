@@ -8,6 +8,7 @@
 
 #import "ThirdViewModel.h"
 #import "ThirdModel.h"
+#import <MVVMNetworkPublic.h>
 
 @implementation ThirdViewModel
 

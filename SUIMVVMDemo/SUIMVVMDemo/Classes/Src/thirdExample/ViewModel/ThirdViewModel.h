@@ -6,7 +6,7 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import <SUIMVVMKit.h>
+#import "SUIMVVMKit.h"
 
 @interface ThirdViewModel : MVVMBaseViewModel
 

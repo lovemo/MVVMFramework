@@ -7,7 +7,7 @@
 //
 
 #import "BQGetDataList.h"
-
+#import <MVVMStorePublic.h>
 
 @implementation BQGetDataList
 

@@ -25,30 +25,29 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - SUIMVVMKit (0.1.1):
-    - SUIMVVMKit/SUIMVVMKit (= 0.1.1)
-  - SUIMVVMKit/SUIMVVMKit (0.1.1):
-    - AFNetworking
-    - FDFullscreenPopGesture
+  - SUIMVVMNetwork (0.0.1):
+    - SUIMVVMNetwork/SUIMVVMNetwork (= 0.0.1)
+  - SUIMVVMNetwork/SUIMVVMNetwork (0.0.1):
+    - AFNetworking (>= 3.0)
+    - SUIMVVMStore
+  - SUIMVVMStore (0.0.6):
+    - SUIMVVMStore/SUIMVVMStore (= 0.0.6)
+    - SUIMVVMStore/YTKKeyValueStore (= 0.0.6)
+  - SUIMVVMStore/SUIMVVMStore (0.0.6):
+    - SUIMVVMStore/YTKKeyValueStore
+  - SUIMVVMStore/YTKKeyValueStore (0.0.6):
     - FMDB
-    - LxDBAnything
-    - Masonry
-    - MJExtension
-    - MJRefresh
-    - SDWebImage
-    - SVProgressHUD
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
   - FDFullscreenPopGesture
-  - FMDB
   - LxDBAnything
   - Masonry
   - MJExtension
   - MJRefresh (> 3.0.0)
   - SDWebImage
-  - SUIMVVMKit
+  - SUIMVVMNetwork
   - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -60,7 +59,8 @@ SPEC CHECKSUMS:
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  SUIMVVMKit: 8acf83558e2ee2eb96b4e1a59f05b252f0efeb55
+  SUIMVVMNetwork: 5d53234529b1fb4e20c8a8399a8bf710655df132
+  SUIMVVMStore: dd3151913a1d9246aea9fdcb433d56f83bd9abad
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.39.0
