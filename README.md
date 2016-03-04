@@ -124,6 +124,8 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
+* [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
+* [MVVM 介绍](http://objccn.io/issue-13-1/)
 * [写给iOS小白的MVVM教程(序)](http://www.ios122.com/2015/10/mvvm_start/)
 * [多方位全面解析：如何正确地写好一个界面](http://ios.jobbole.com/83657/)
 * [iOS应用架构谈 view层的组织和调用方案](http://www.cocoachina.com/ios/20150525/11919.html)
