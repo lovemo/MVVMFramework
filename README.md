@@ -124,12 +124,11 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
-- (写给iOS小白的MVVM教程(序))[http://www.ios122.com/2015/10/mvvm_start/]
-
-* http://ios.jobbole.com/83657/
-* http://www.cocoachina.com/ios/20150525/11919.html
-* http://www.cocoachina.com/ios/20140716/9152.html
-* http://www.cocoachina.com/ios/20150122/10987.html
-* http://bifidy.net/index.php/407
-* http://www.jianshu.com/p/1e53f09d0f21
-* http://www.cocoachina.com/ios/20160108/14911.html
+* [写给iOS小白的MVVM教程(序)](http://www.ios122.com/2015/10/mvvm_start/)
+* [多方位全面解析：如何正确地写好一个界面](http://ios.jobbole.com/83657/)
+* [iOS应用架构谈 view层的组织和调用方案](http://www.cocoachina.com/ios/20150525/11919.html)
+* [用Model-View-ViewModel构建iOS App](http://www.cocoachina.com/ios/20140716/9152.html)
+* [浅谈iOS中MVVM的架构设计与团队协作](http://www.cocoachina.com/ios/20150122/10987.html)
+* [一次简单的 ViewModel 实践](http://bifidy.net/index.php/407)
+* [不要把ViewController变成处理tableView的"垃圾桶"](http://www.cocoachina.com/ios/20151218/14743.html)
+* [实践干货！猿题库 iOS 客户端架构设计](http://www.cocoachina.com/ios/20160108/14911.html)
