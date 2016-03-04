@@ -51,7 +51,7 @@ CocoaPods：
 ---
 
 ## <a id="代码示例"></a> 代码示例
-### <a id="一句代码集成展示tableView,cell自适应高度,下拉刷新"></a> 一句代码集成展示tableView,cell自适应高度,下拉刷新
+### <a id="一句代码集成展示tableView,cell自适应高度"></a> 一句代码集成展示tableView,cell自适应高度
 
 ```objc
       self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
