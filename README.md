@@ -124,8 +124,9 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
-* http://www.ios122.com/2015/10/mvvm_start/
-	- 写给iOS小白的MVVM教程(序)
+- 写给iOS小白的MVVM教程(序)
+	- http://www.ios122.com/2015/10/mvvm_start/
+
 * http://ios.jobbole.com/83657/
 * http://www.cocoachina.com/ios/20150525/11919.html
 * http://www.cocoachina.com/ios/20140716/9152.html
