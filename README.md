@@ -10,8 +10,8 @@
 再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，分离控制器代码，降低代码耦合
 
 终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
-
-代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，运行时自动布局UILabel，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
 
 ====
 ####使用用法
@@ -19,6 +19,13 @@ CocoaPods：
 ```
 	pod 'SUIMVVMKit'
 ```
+
+```
+- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
+- 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
+- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
+```
+
 ====
 ##思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
@@ -115,12 +122,6 @@ CocoaPods：
 - 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
 
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/demo.gif)
-
-### <a id="使用方法"></a> 使用方法
-- 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
-- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
-- 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
-- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
 
 ## 期待
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
