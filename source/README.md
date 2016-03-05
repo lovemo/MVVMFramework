@@ -70,8 +70,28 @@ View <-> C <-> ViewModel <->Model
 
 &emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的sui_model属性接收。
 ```objc
-- (IBAction)clickBtnAction:(UIButton *)sender {
-    self.thirdViewManger.sui_model = [self.viewModel getRandomData];
+// 两种消息传递方式，开发时任选其一即可
+- (void)smk_viewMangerWithSubView:(UIView *)subView {
+    
+    __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
+    __weak typeof(self) weakSelf = self;
+    
+    // btnClickBlock
+    weakThirdView.btnClickBlock = ^() {
+        [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
+    };
+}
+
+// 两种消息传递方式，开发时任选其一即可
+- (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
+    
+    NSLog(@"----------%@", events);
+    
+    if ([[events allKeys] containsObject:@"jump"]) {
+        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
+    }
+    
 }
 ```
 &emsp;&emsp;其中，MyViewModel中的加载代码如下，如上所述，它的工作就是分解以前控制器做的一些事情。
@@ -91,53 +111,64 @@ View <-> C <-> ViewModel <->Model
 &emsp;&emsp;MyViewManger中的代码如下，它实现了MVVMViewMangerProtocol协议的三个方法：
 ```objc
 // 此方法用来接收处理来自所管理View的一些事件。
-- (void)handleViewMangerWithSubView:(UIView *)subView
+- (void)smk_viewMangerWithSubView:(UIView *)subView;
 // 此方法将view的父视图传递过来，用来布局当前View
-- (void)handleViewMangerWithSuperView:(UIView *)superView
+- (void)smk_viewMangerWithSuperView:(UIView *)superView;
 // 根据所传入的view和info信息分别实现具体的方法
-- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info
+- (void)smk_viewMangerWithHandleOfSubView:(UIView *)subView info:(NSString *)info;
 ```
 ```objc
-- (void)handleViewMangerWithSubView:(UIView *)subView {
+
+// 两种消息传递方式，开发时任选其一即可
+- (void)smk_viewMangerWithSubView:(UIView *)subView {
+    
     __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
     __weak typeof(self) weakSelf = self;
     
     // btnClickBlock
     weakThirdView.btnClickBlock = ^() {
-        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"click"];
-    };
-    
-    // btnJumpBlock
-    weakThirdView.btnJumpBlock = ^() {
-        [weakSelf handleViewMangerActionWithView:weakThirdView info:@"jump"];
+        [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
     };
 }
 
-- (void)handleViewMangerWithSuperView:(UIView *)superView {
+// 两种消息传递方式，开发时任选其一即可 ---> 视图delegate
+- (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
+    
+    NSLog(@"----------%@", events);
+    
+    if ([[events allKeys] containsObject:@"jump"]) {
+        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
+    }
+    
+}
+
+- (void)smk_viewMangerWithSuperView:(UIView *)superView {
     self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
     [superView addSubview:self.thirdView];
 }
 
-- (void)handleViewMangerActionWithView:(UIView *)view info:(NSString *)info {
+- (void)smk_viewMangerWithHandleOfSubView:(UIView *)view info:(NSString *)info {
+    
     if ([info isEqualToString:@"click"]) {
-        [view configureViewWithCustomObj:self.sui_model];
-    } else {
-        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
-        [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
+        [view configureViewWithCustomObj:self.smk_model];
     }
 }
+
 ```
 &emsp;&emsp;MyView中的代码如下，主要是负责管理自身的内部控件视图，并根据业务逻辑需要定义了一些基本事件，通过交给ViewManger来实现：
 ```objc
 - (IBAction)testBtnClick:(UIButton *)sender {
+    
     if (self.btnClickBlock) {
         self.btnClickBlock();
     }
 }
 
 - (IBAction)jumpOtherVC:(UIButton *)sender {
-    if (self.btnJumpBlock) {
-        self.btnJumpBlock();
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(smk_view:withEvents:)]) {
+        [self.delegate smk_view:self withEvents:@{@"jump": @"vc"}];
     }
 }
 
