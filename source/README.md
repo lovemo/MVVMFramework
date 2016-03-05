@@ -96,14 +96,15 @@ View <-> C <-> ViewModel <->Model
 ```
 &emsp;&emsp;其中，MyViewModel中的加载代码如下，如上所述，它的工作就是分解以前控制器做的一些事情。
 ```objc
-- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
-   // 博客中省略，查看详细请参考demo
+
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
+    // 博客中省略，查看详细请参考demo
 }
 
 - (instancetype)getRandomData {
-    if (self.dataArrayList.count > 0) {
-        u_int32_t index = arc4random_uniform((u_int32_t)self.dataArrayList.count);
-        return self.dataArrayList[index];
+    if (self.smk_dataArrayList.count > 0) {
+        u_int32_t index = arc4random_uniform((u_int32_t)self.smk_dataArrayList.count);
+        return self.smk_dataArrayList[index];
     }
     return nil;
 }
