@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MVVMBaseViewManger.h"
+#import "SMKBaseViewManger.h"
 
-@interface ThirdViewManger : MVVMBaseViewManger
+@interface ThirdViewManger : SMKBaseViewManger
 
 @end

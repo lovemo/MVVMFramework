@@ -17,27 +17,21 @@
 
 @implementation BQViewModel
 
-- (NSUInteger)vm_numberOfRowsInSection:(NSUInteger)section {
+- (NSUInteger)smk_viewModelWithNumberOfRowsInSection:(NSUInteger)section {
   
-    return self.dataArrayList.count;
+    return self.smk_dataArrayList.count;
 }
 
-//- (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath {
-//    NSObject *obj = self.dataArrayList[indexPath.row];
-//    BQModel *model = (BQModel *)obj;
-//    return model;
-//}
-
-- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     
-    [BQGetDataList getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+    [BQGetDataList get:url param:nil cachePolicy:SMKHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
             return ;
         }
-        self.dataArrayList = dataObj;
+        self.smk_dataArrayList = dataObj;
         if (successHandler) {
             successHandler();
         }

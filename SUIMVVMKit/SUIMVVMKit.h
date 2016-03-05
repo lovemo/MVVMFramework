@@ -9,13 +9,25 @@
 #ifndef SUIMVVMKit_h
 #define SUIMVVMKit_h
 
-#import "MVVMBaseViewModel.h"
-#import "MVVMBaseViewManger.h"
-#import "MVVMTableDataDelegate.h"
-#import "MVVMCollectionDataDelegate.h"
-#import "MVVMExtend.h"
-#import "MVVMConstant.h"
-#import "MVVMSingleton.h"
+// Base：
+#import "SMKBaseViewManger.h"
+#import "SMKBaseViewModel.h"
+#import "SMKBaseTableViewManger.h"
+#import "SMKBaseCollectionViewManger.h"
+
+// Extend：
+#import "SMKExtendPublic.h"
+
+// Protocol：
+#import "SMKViewMangerProtocolDelegate.h"
+#import "SMKViewModelProtocolDelegate.h"
+#import "SMKViewProtocolDelegate.h"
+
+// Constant：
+#import "SMKConstant.h"
+#import "SMKSingleton.h"
+
+// Vender：
 #import "SUIUtils.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "PMKVObserver.h"

@@ -6,7 +6,6 @@
 //  Copyright © 2015年 momo. All rights reserved.
 //
 
-#import "MVVMBaseViewModel.h"
 #import "BQViewModel2.h"
 #import "BQTestModel.h"
 #import "SVProgressHUD.h"
@@ -15,27 +14,21 @@
 @implementation BQViewModel2
 
 
-- (NSUInteger)vm_numberOfItemsInSection:(NSUInteger)section {
+- (NSUInteger)smk_viewModelWithNumberOfItemsInSection:(NSUInteger)section {
     
-    return self.dataArrayList.count;
+    return self.smk_dataArrayList.count;
 }
 
-//- (instancetype)modelAtIndexPath:(NSIndexPath *)indexPath {
-//    NSObject *obj = self.dataArrayList[indexPath.row];
-//    BQModel *model = (BQModel *)obj;
-//    return model;
-//}
-
-- (void)vm_getDataSuccessHandler:(void (^)())successHandler {
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     
-    [BQGetDataList2 getWithUrl:url param:nil cachePolicy:MVVMHttpReturnCacheDataDontLoad modelClass:[BQTestModel class] responseBlock:^(id dataObj, NSError *error) {
+    [BQGetDataList2 get:url param:nil cachePolicy:SMKHttpReturnCacheDataDontLoad modelClass:[BQTestModel class] responseBlock:^(id dataObj, NSError *error) {
         
         if (error) {
             return ;
         }
-        self.dataArrayList = dataObj;
+        self.smk_dataArrayList = dataObj;
         if (successHandler) {
             successHandler();
         }

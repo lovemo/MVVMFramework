@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef void (^btnClickBlock)();
-typedef void (^btnJumpBlock)();
 
 @interface ThirdView : UIView
 
 @property (nonatomic, copy) btnClickBlock btnClickBlock;
-@property (nonatomic, copy) btnJumpBlock btnJumpBlock;
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import "MVVMTableDataDelegate.h"
+#import "SMKBaseTableViewManger.h"
 
-@interface TestViewDelegate : MVVMTableDataDelegate
+@interface TestViewDelegate : SMKBaseTableViewManger
 
 @end

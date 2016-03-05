@@ -8,7 +8,7 @@
 
 #import "SUIMVVMKit.h"
 
-@interface ThirdViewModel : MVVMBaseViewModel
+@interface ThirdViewModel : SMKBaseViewModel
 
 - (instancetype)getRandomData;
 

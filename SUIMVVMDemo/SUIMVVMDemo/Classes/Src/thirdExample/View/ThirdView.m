@@ -8,6 +8,7 @@
 
 #import "ThirdView.h"
 #import "ThirdModel.h"
+#import "UIView+ViewDelegateAdditions.h"
 
 @interface ThirdView()
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
@@ -21,14 +22,16 @@
 }
 
 - (IBAction)testBtnClick:(UIButton *)sender {
+    
     if (self.btnClickBlock) {
         self.btnClickBlock();
     }
 }
 
 - (IBAction)jumpOtherVC:(UIButton *)sender {
-    if (self.btnJumpBlock) {
-        self.btnJumpBlock();
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(smk_view:withEvents:)]) {
+        [self.delegate smk_view:self withEvents:@{@"jump": @"vc"}];
     }
 }
 

@@ -7,16 +7,16 @@
 //
 
 #import "UITableView+TableDataDelegateAdditions.h"
-#import "MVVMTableDataDelegate.h"
+#import "SMKBaseTableViewManger.H"
 #import <objc/runtime.h>
 
 @implementation UITableView (TableDataDelegateAdditions)
 
-- (MVVMTableDataDelegate *)tableHander
+- (SMKBaseTableViewManger *)tableHander
 {
     return objc_getAssociatedObject(self, _cmd);
 }
-- (void)setTableHander:(MVVMTableDataDelegate *)tableHander
+- (void)setTableHander:(SMKBaseTableViewManger *)tableHander
 {
     if (tableHander) {
         [tableHander handleTableViewDatasourceAndDelegate:self];

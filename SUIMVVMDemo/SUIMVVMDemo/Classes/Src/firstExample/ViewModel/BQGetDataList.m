@@ -7,7 +7,7 @@
 //
 
 #import "BQGetDataList.h"
-#import <MVVMStorePublic.h>
+#import "SMKStorePublic.h"
 
 @implementation BQGetDataList
 
@@ -18,7 +18,7 @@
     
     static NSString *tableName = @"arrarList";
     
-    MVVMStore *store = [MVVMStore sharedStore];
+    SMKStore *store = [SMKStore sharedStore];
     [store db_initWithDBName:@"demo.sqlite" tableName:tableName];
     [store db_putObject:array withId:@"arrayID" intoTable:tableName];
 

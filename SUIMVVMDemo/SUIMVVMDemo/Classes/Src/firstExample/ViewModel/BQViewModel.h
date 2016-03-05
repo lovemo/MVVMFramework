@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MVVMBaseViewModel.h"
+#import "SMKBaseViewModel.h"
 
-@interface BQViewModel : MVVMBaseViewModel
+@interface BQViewModel : SMKBaseViewModel
 
 @end

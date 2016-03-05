@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MVVMCollectionDataDelegate;
+@class SMKBaseCollectionViewManger;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionView (CollectionDataDelegateAdditions)
 
-@property (nullable,nonatomic,strong) MVVMCollectionDataDelegate *collectionHander;
+@property (nullable,nonatomic,strong) SMKBaseCollectionViewManger *collectionHander;
 
 @end
 

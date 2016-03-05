@@ -6,8 +6,8 @@
 //  Copyright © 2016年 momo. All rights reserved.
 //
 
-#import "MVVMDataService.h"
+#import "SMKDataService.h"
 
-@interface BQGetDataList2 : MVVMDataService
+@interface BQGetDataList2 : SMKDataService
 
 @end
