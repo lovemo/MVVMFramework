@@ -57,7 +57,7 @@ CocoaPods：
 ### <a id="一句代码集成展示tableView,cell自适应高度"></a> 一句代码集成展示tableView,cell自适应高度
 
 ```objc
-      self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
+      self.table.tableHander = [[SMKBaseTableViewManger alloc]initWithViewModel:[[BQViewModel alloc]init]
                                         cellIdentifiersArray:@[MyCellIdentifier]
                                         didSelectBlock:^(NSIndexPath *indexPath, id item) {
                                                                
@@ -71,7 +71,7 @@ CocoaPods：
 ### <a id="一句代码集成展示collectionView"></a> 一句代码集成展示collectionView
          
 ```objc
-     self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
+     self.collectionView.collectionHander = [[SMKBaseCollectionViewManger alloc]initWithViewModel:[[BQViewModel2 alloc]init]
                                             cellIdentifier:MyCellIdentifier
                                             collectionViewLayout:nil cellItemSizeBlock:^CGSize {
                                                 return CGSizeMake(110, 120);
@@ -92,10 +92,10 @@ CocoaPods：
 
 ```objc
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
+    [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
         NSArray *array = responseObj[@"stories"];
-        self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
+        self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         if (successHandler) {
             successHandler();
         }
@@ -109,7 +109,8 @@ CocoaPods：
 #####具体实现细节，[点击进入查看SUIMVVMStore](https://github.com/lovemo/SUIMVVMStore)
 ```objc
     static NSString *tableName = @"arrarList";
-    MVVMStore *store = [MVVMStore sharedStore];
+
+    SMKStore *store = [SMKStore sharedStore];
     [store db_initWithDBName:@"demo.sqlite" tableName:tableName];
     [store db_putObject:array withId:@"arrayID" intoTable:tableName];
 ```
