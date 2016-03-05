@@ -7,12 +7,12 @@
 //
 
 #import "UIView+ViewDelegateAdditions.h"
+#import <objc/runtime.h>
 
 @implementation UIView (ViewDelegateAdditions)
 
 - (id<SMKViewProtocolDelegate>)delegate {
     return objc_getAssociatedObject(self, _cmd);
-
 }
 
 - (void)setDelegate:(id<SMKViewProtocolDelegate>)delegate {
