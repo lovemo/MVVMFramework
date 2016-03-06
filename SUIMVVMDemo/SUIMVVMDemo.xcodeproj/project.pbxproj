@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0435D35A1C8C6CD10046D2B3 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3101C8C6CD10046D2B3 /* FirstVC.m */; };
+		0435D35B1C8C6CD10046D2B3 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */; };
+		0435D35C1C8C6CD10046D2B3 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3151C8C6CD10046D2B3 /* FirstModel.m */; };
+		0435D35D1C8C6CD10046D2B3 /* BQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3181C8C6CD10046D2B3 /* BQCell.m */; };
+		0435D35E1C8C6CD10046D2B3 /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3191C8C6CD10046D2B3 /* BQCell.xib */; };
+		0435D35F1C8C6CD10046D2B3 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */; };
+		0435D3601C8C6CD10046D2B3 /* BQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */; };
+		0435D3611C8C6CD10046D2B3 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3221C8C6CD10046D2B3 /* FourthVC.m */; };
+		0435D3621C8C6CD10046D2B3 /* FourthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3251C8C6CD10046D2B3 /* FourthModel.m */; };
+		0435D3631C8C6CD10046D2B3 /* FourthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3291C8C6CD10046D2B3 /* FourthView.m */; };
+		0435D3641C8C6CD10046D2B3 /* FourthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D32A1C8C6CD10046D2B3 /* FourthView.xib */; };
+		0435D3651C8C6CD10046D2B3 /* FourthView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D32D1C8C6CD10046D2B3 /* FourthView2.m */; };
+		0435D3661C8C6CD10046D2B3 /* FourthView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */; };
+		0435D3671C8C6CD10046D2B3 /* FourthViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */; };
+		0435D3681C8C6CD10046D2B3 /* FourthViewManger2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */; };
+		0435D3691C8C6CD10046D2B3 /* FourthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */; };
+		0435D36A1C8C6CD10046D2B3 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D33C1C8C6CD10046D2B3 /* SecondVC.m */; };
+		0435D36B1C8C6CD10046D2B3 /* BQTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */; };
+		0435D36C1C8C6CD10046D2B3 /* BQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */; };
+		0435D36D1C8C6CD10046D2B3 /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */; };
+		0435D36E1C8C6CD10046D2B3 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */; };
+		0435D36F1C8C6CD10046D2B3 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */; };
+		0435D3701C8C6CD10046D2B3 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D34C1C8C6CD10046D2B3 /* ThirdVC.m */; };
+		0435D3711C8C6CD10046D2B3 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D34F1C8C6CD10046D2B3 /* ThirdModel.m */; };
+		0435D3721C8C6CD10046D2B3 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3521C8C6CD10046D2B3 /* ThirdView.m */; };
+		0435D3731C8C6CD10046D2B3 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3531C8C6CD10046D2B3 /* ThirdView.xib */; };
+		0435D3741C8C6CD10046D2B3 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3561C8C6CD10046D2B3 /* ThirdViewManger.m */; };
+		0435D3751C8C6CD10046D2B3 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3591C8C6CD10046D2B3 /* ThirdViewModel.m */; };
 		348B3B451C8A8E2000F8569B /* SMKBaseCollectionViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AC91C8A8E2000F8569B /* SMKBaseCollectionViewManger.m */; };
 		348B3B461C8A8E2000F8569B /* SMKBaseTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3ACB1C8A8E2000F8569B /* SMKBaseTableViewManger.m */; };
 		348B3B471C8A8E2000F8569B /* SMKBaseViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3ACD1C8A8E2000F8569B /* SMKBaseViewManger.m */; };
@@ -61,34 +89,6 @@
 		34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F1F1C8BF6A90033ED03 /* BHNavViewController.m */; };
 		34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2A1C8BF6A90033ED03 /* AppDelegate.m */; };
 		34F72F871C8BF6A90033ED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2B1C8BF6A90033ED03 /* main.m */; };
-		34F72F881C8BF6A90033ED03 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F341C8BF6A90033ED03 /* FirstVC.m */; };
-		34F72F891C8BF6A90033ED03 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F361C8BF6A90033ED03 /* TestViewDelegate.m */; };
-		34F72F8A1C8BF6A90033ED03 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F391C8BF6A90033ED03 /* FirstModel.m */; };
-		34F72F8B1C8BF6A90033ED03 /* BQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F3C1C8BF6A90033ED03 /* BQCell.m */; };
-		34F72F8C1C8BF6A90033ED03 /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F72F3D1C8BF6A90033ED03 /* BQCell.xib */; };
-		34F72F8D1C8BF6A90033ED03 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F401C8BF6A90033ED03 /* BQGetDataList.m */; };
-		34F72F8E1C8BF6A90033ED03 /* BQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F421C8BF6A90033ED03 /* BQViewModel.m */; };
-		34F72F8F1C8BF6A90033ED03 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F461C8BF6A90033ED03 /* FourthVC.m */; };
-		34F72F901C8BF6A90033ED03 /* FourthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F491C8BF6A90033ED03 /* FourthModel.m */; };
-		34F72F911C8BF6A90033ED03 /* FourthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F4D1C8BF6A90033ED03 /* FourthView.m */; };
-		34F72F921C8BF6A90033ED03 /* FourthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F72F4E1C8BF6A90033ED03 /* FourthView.xib */; };
-		34F72F931C8BF6A90033ED03 /* FourthView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F511C8BF6A90033ED03 /* FourthView2.m */; };
-		34F72F941C8BF6A90033ED03 /* FourthView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F72F521C8BF6A90033ED03 /* FourthView2.xib */; };
-		34F72F951C8BF6A90033ED03 /* FourthViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F561C8BF6A90033ED03 /* FourthViewManger.m */; };
-		34F72F961C8BF6A90033ED03 /* FourthViewManger2.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F591C8BF6A90033ED03 /* FourthViewManger2.m */; };
-		34F72F971C8BF6A90033ED03 /* FourthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F5C1C8BF6A90033ED03 /* FourthViewModel.m */; };
-		34F72F981C8BF6A90033ED03 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F601C8BF6A90033ED03 /* SecondVC.m */; };
-		34F72F991C8BF6A90033ED03 /* BQTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F631C8BF6A90033ED03 /* BQTestModel.m */; };
-		34F72F9A1C8BF6A90033ED03 /* BQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F661C8BF6A90033ED03 /* BQCollectionCell.m */; };
-		34F72F9B1C8BF6A90033ED03 /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F72F671C8BF6A90033ED03 /* BQCollectionCell.xib */; };
-		34F72F9C1C8BF6A90033ED03 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F6A1C8BF6A90033ED03 /* BQGetDataList2.m */; };
-		34F72F9D1C8BF6A90033ED03 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F6C1C8BF6A90033ED03 /* BQViewModel2.m */; };
-		34F72F9E1C8BF6A90033ED03 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F701C8BF6A90033ED03 /* ThirdVC.m */; };
-		34F72F9F1C8BF6A90033ED03 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F731C8BF6A90033ED03 /* ThirdModel.m */; };
-		34F72FA01C8BF6A90033ED03 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F761C8BF6A90033ED03 /* ThirdView.m */; };
-		34F72FA11C8BF6A90033ED03 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F72F771C8BF6A90033ED03 /* ThirdView.xib */; };
-		34F72FA21C8BF6A90033ED03 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F7A1C8BF6A90033ED03 /* ThirdViewManger.m */; };
-		34F72FA31C8BF6A90033ED03 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F7D1C8BF6A90033ED03 /* ThirdViewModel.m */; };
 		34F72FA41C8BF6A90033ED03 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F7F1C8BF6A90033ED03 /* Foundation+Log.m */; };
 		3F5068AA9D3A497EF0300DF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB3BD65C3660279BC80592 /* libPods.a */; };
 		6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1184D1C7800BD00678885 /* Main.storyboard */; };
@@ -97,6 +97,57 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0435D30F1C8C6CD10046D2B3 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		0435D3101C8C6CD10046D2B3 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		0435D3111C8C6CD10046D2B3 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
+		0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
+		0435D3141C8C6CD10046D2B3 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
+		0435D3151C8C6CD10046D2B3 /* FirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstModel.m; sourceTree = "<group>"; };
+		0435D3171C8C6CD10046D2B3 /* BQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell.h; sourceTree = "<group>"; };
+		0435D3181C8C6CD10046D2B3 /* BQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell.m; sourceTree = "<group>"; };
+		0435D3191C8C6CD10046D2B3 /* BQCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell.xib; sourceTree = "<group>"; };
+		0435D31B1C8C6CD10046D2B3 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
+		0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
+		0435D31D1C8C6CD10046D2B3 /* BQViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel.h; sourceTree = "<group>"; };
+		0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel.m; sourceTree = "<group>"; };
+		0435D3211C8C6CD10046D2B3 /* FourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthVC.h; sourceTree = "<group>"; };
+		0435D3221C8C6CD10046D2B3 /* FourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthVC.m; sourceTree = "<group>"; };
+		0435D3241C8C6CD10046D2B3 /* FourthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthModel.h; sourceTree = "<group>"; };
+		0435D3251C8C6CD10046D2B3 /* FourthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthModel.m; sourceTree = "<group>"; };
+		0435D3281C8C6CD10046D2B3 /* FourthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView.h; sourceTree = "<group>"; };
+		0435D3291C8C6CD10046D2B3 /* FourthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView.m; sourceTree = "<group>"; };
+		0435D32A1C8C6CD10046D2B3 /* FourthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView.xib; sourceTree = "<group>"; };
+		0435D32C1C8C6CD10046D2B3 /* FourthView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView2.h; sourceTree = "<group>"; };
+		0435D32D1C8C6CD10046D2B3 /* FourthView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView2.m; sourceTree = "<group>"; };
+		0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView2.xib; sourceTree = "<group>"; };
+		0435D3311C8C6CD10046D2B3 /* FourthViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger.h; sourceTree = "<group>"; };
+		0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger.m; sourceTree = "<group>"; };
+		0435D3341C8C6CD10046D2B3 /* FourthViewManger2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger2.h; sourceTree = "<group>"; };
+		0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger2.m; sourceTree = "<group>"; };
+		0435D3371C8C6CD10046D2B3 /* FourthViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewModel.h; sourceTree = "<group>"; };
+		0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewModel.m; sourceTree = "<group>"; };
+		0435D33B1C8C6CD10046D2B3 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		0435D33C1C8C6CD10046D2B3 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		0435D33E1C8C6CD10046D2B3 /* BQTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQTestModel.h; sourceTree = "<group>"; };
+		0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQTestModel.m; sourceTree = "<group>"; };
+		0435D3411C8C6CD10046D2B3 /* BQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCollectionCell.h; sourceTree = "<group>"; };
+		0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCollectionCell.m; sourceTree = "<group>"; };
+		0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCollectionCell.xib; sourceTree = "<group>"; };
+		0435D3451C8C6CD10046D2B3 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
+		0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
+		0435D3471C8C6CD10046D2B3 /* BQViewModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel2.h; sourceTree = "<group>"; };
+		0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
+		0435D34B1C8C6CD10046D2B3 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		0435D34C1C8C6CD10046D2B3 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		0435D34E1C8C6CD10046D2B3 /* ThirdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdModel.h; sourceTree = "<group>"; };
+		0435D34F1C8C6CD10046D2B3 /* ThirdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdModel.m; sourceTree = "<group>"; };
+		0435D3511C8C6CD10046D2B3 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
+		0435D3521C8C6CD10046D2B3 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
+		0435D3531C8C6CD10046D2B3 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
+		0435D3551C8C6CD10046D2B3 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
+		0435D3561C8C6CD10046D2B3 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
+		0435D3581C8C6CD10046D2B3 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
+		0435D3591C8C6CD10046D2B3 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
 		344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		348B3AC81C8A8E2000F8569B /* SMKBaseCollectionViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKBaseCollectionViewManger.h; sourceTree = "<group>"; };
 		348B3AC91C8A8E2000F8569B /* SMKBaseCollectionViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKBaseCollectionViewManger.m; sourceTree = "<group>"; };
@@ -221,57 +272,6 @@
 		34F72F291C8BF6A90033ED03 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34F72F2A1C8BF6A90033ED03 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		34F72F2B1C8BF6A90033ED03 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		34F72F331C8BF6A90033ED03 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
-		34F72F341C8BF6A90033ED03 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		34F72F351C8BF6A90033ED03 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
-		34F72F361C8BF6A90033ED03 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
-		34F72F381C8BF6A90033ED03 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
-		34F72F391C8BF6A90033ED03 /* FirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstModel.m; sourceTree = "<group>"; };
-		34F72F3B1C8BF6A90033ED03 /* BQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell.h; sourceTree = "<group>"; };
-		34F72F3C1C8BF6A90033ED03 /* BQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell.m; sourceTree = "<group>"; };
-		34F72F3D1C8BF6A90033ED03 /* BQCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell.xib; sourceTree = "<group>"; };
-		34F72F3F1C8BF6A90033ED03 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
-		34F72F401C8BF6A90033ED03 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
-		34F72F411C8BF6A90033ED03 /* BQViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel.h; sourceTree = "<group>"; };
-		34F72F421C8BF6A90033ED03 /* BQViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel.m; sourceTree = "<group>"; };
-		34F72F451C8BF6A90033ED03 /* FourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthVC.h; sourceTree = "<group>"; };
-		34F72F461C8BF6A90033ED03 /* FourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthVC.m; sourceTree = "<group>"; };
-		34F72F481C8BF6A90033ED03 /* FourthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthModel.h; sourceTree = "<group>"; };
-		34F72F491C8BF6A90033ED03 /* FourthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthModel.m; sourceTree = "<group>"; };
-		34F72F4C1C8BF6A90033ED03 /* FourthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView.h; sourceTree = "<group>"; };
-		34F72F4D1C8BF6A90033ED03 /* FourthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView.m; sourceTree = "<group>"; };
-		34F72F4E1C8BF6A90033ED03 /* FourthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView.xib; sourceTree = "<group>"; };
-		34F72F501C8BF6A90033ED03 /* FourthView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView2.h; sourceTree = "<group>"; };
-		34F72F511C8BF6A90033ED03 /* FourthView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView2.m; sourceTree = "<group>"; };
-		34F72F521C8BF6A90033ED03 /* FourthView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView2.xib; sourceTree = "<group>"; };
-		34F72F551C8BF6A90033ED03 /* FourthViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger.h; sourceTree = "<group>"; };
-		34F72F561C8BF6A90033ED03 /* FourthViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger.m; sourceTree = "<group>"; };
-		34F72F581C8BF6A90033ED03 /* FourthViewManger2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger2.h; sourceTree = "<group>"; };
-		34F72F591C8BF6A90033ED03 /* FourthViewManger2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger2.m; sourceTree = "<group>"; };
-		34F72F5B1C8BF6A90033ED03 /* FourthViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewModel.h; sourceTree = "<group>"; };
-		34F72F5C1C8BF6A90033ED03 /* FourthViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewModel.m; sourceTree = "<group>"; };
-		34F72F5F1C8BF6A90033ED03 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
-		34F72F601C8BF6A90033ED03 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
-		34F72F621C8BF6A90033ED03 /* BQTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQTestModel.h; sourceTree = "<group>"; };
-		34F72F631C8BF6A90033ED03 /* BQTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQTestModel.m; sourceTree = "<group>"; };
-		34F72F651C8BF6A90033ED03 /* BQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCollectionCell.h; sourceTree = "<group>"; };
-		34F72F661C8BF6A90033ED03 /* BQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCollectionCell.m; sourceTree = "<group>"; };
-		34F72F671C8BF6A90033ED03 /* BQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCollectionCell.xib; sourceTree = "<group>"; };
-		34F72F691C8BF6A90033ED03 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
-		34F72F6A1C8BF6A90033ED03 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
-		34F72F6B1C8BF6A90033ED03 /* BQViewModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel2.h; sourceTree = "<group>"; };
-		34F72F6C1C8BF6A90033ED03 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
-		34F72F6F1C8BF6A90033ED03 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
-		34F72F701C8BF6A90033ED03 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
-		34F72F721C8BF6A90033ED03 /* ThirdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdModel.h; sourceTree = "<group>"; };
-		34F72F731C8BF6A90033ED03 /* ThirdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdModel.m; sourceTree = "<group>"; };
-		34F72F751C8BF6A90033ED03 /* ThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdView.h; sourceTree = "<group>"; };
-		34F72F761C8BF6A90033ED03 /* ThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdView.m; sourceTree = "<group>"; };
-		34F72F771C8BF6A90033ED03 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdView.xib; sourceTree = "<group>"; };
-		34F72F791C8BF6A90033ED03 /* ThirdViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewManger.h; sourceTree = "<group>"; };
-		34F72F7A1C8BF6A90033ED03 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
-		34F72F7C1C8BF6A90033ED03 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
-		34F72F7D1C8BF6A90033ED03 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
 		34F72F7F1C8BF6A90033ED03 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		34F72F821C8BF6A90033ED03 /* LibraryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryPublicHeader.h; sourceTree = "<group>"; };
 		34F72F841C8BF6A90033ED03 /* SDKFilePublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKFilePublicHeader.h; sourceTree = "<group>"; };
@@ -297,6 +297,272 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0435D30C1C8C6CD10046D2B3 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				0435D30D1C8C6CD10046D2B3 /* FirstExample */,
+				0435D31F1C8C6CD10046D2B3 /* FourthExample */,
+				0435D3391C8C6CD10046D2B3 /* SecondExample */,
+				0435D3491C8C6CD10046D2B3 /* ThirdExample */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		0435D30D1C8C6CD10046D2B3 /* FirstExample */ = {
+			isa = PBXGroup;
+			children = (
+				0435D30E1C8C6CD10046D2B3 /* Controller */,
+				0435D3131C8C6CD10046D2B3 /* Model */,
+				0435D3161C8C6CD10046D2B3 /* View */,
+				0435D31A1C8C6CD10046D2B3 /* ViewModel */,
+			);
+			path = FirstExample;
+			sourceTree = "<group>";
+		};
+		0435D30E1C8C6CD10046D2B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0435D30F1C8C6CD10046D2B3 /* FirstVC.h */,
+				0435D3101C8C6CD10046D2B3 /* FirstVC.m */,
+				0435D3111C8C6CD10046D2B3 /* TestViewDelegate.h */,
+				0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0435D3131C8C6CD10046D2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3141C8C6CD10046D2B3 /* FirstModel.h */,
+				0435D3151C8C6CD10046D2B3 /* FirstModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0435D3161C8C6CD10046D2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3171C8C6CD10046D2B3 /* BQCell.h */,
+				0435D3181C8C6CD10046D2B3 /* BQCell.m */,
+				0435D3191C8C6CD10046D2B3 /* BQCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0435D31A1C8C6CD10046D2B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0435D31B1C8C6CD10046D2B3 /* BQGetDataList.h */,
+				0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */,
+				0435D31D1C8C6CD10046D2B3 /* BQViewModel.h */,
+				0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0435D31F1C8C6CD10046D2B3 /* FourthExample */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3201C8C6CD10046D2B3 /* Controller */,
+				0435D3231C8C6CD10046D2B3 /* Model */,
+				0435D3261C8C6CD10046D2B3 /* View */,
+				0435D32F1C8C6CD10046D2B3 /* ViewManger */,
+				0435D3361C8C6CD10046D2B3 /* ViewModel */,
+			);
+			path = FourthExample;
+			sourceTree = "<group>";
+		};
+		0435D3201C8C6CD10046D2B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3211C8C6CD10046D2B3 /* FourthVC.h */,
+				0435D3221C8C6CD10046D2B3 /* FourthVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0435D3231C8C6CD10046D2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3241C8C6CD10046D2B3 /* FourthModel.h */,
+				0435D3251C8C6CD10046D2B3 /* FourthModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0435D3261C8C6CD10046D2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3271C8C6CD10046D2B3 /* FourthView */,
+				0435D32B1C8C6CD10046D2B3 /* FourthView2 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0435D3271C8C6CD10046D2B3 /* FourthView */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3281C8C6CD10046D2B3 /* FourthView.h */,
+				0435D3291C8C6CD10046D2B3 /* FourthView.m */,
+				0435D32A1C8C6CD10046D2B3 /* FourthView.xib */,
+			);
+			path = FourthView;
+			sourceTree = "<group>";
+		};
+		0435D32B1C8C6CD10046D2B3 /* FourthView2 */ = {
+			isa = PBXGroup;
+			children = (
+				0435D32C1C8C6CD10046D2B3 /* FourthView2.h */,
+				0435D32D1C8C6CD10046D2B3 /* FourthView2.m */,
+				0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */,
+			);
+			path = FourthView2;
+			sourceTree = "<group>";
+		};
+		0435D32F1C8C6CD10046D2B3 /* ViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3301C8C6CD10046D2B3 /* FourthViewManger */,
+				0435D3331C8C6CD10046D2B3 /* FourthViewManger2 */,
+			);
+			path = ViewManger;
+			sourceTree = "<group>";
+		};
+		0435D3301C8C6CD10046D2B3 /* FourthViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3311C8C6CD10046D2B3 /* FourthViewManger.h */,
+				0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */,
+			);
+			path = FourthViewManger;
+			sourceTree = "<group>";
+		};
+		0435D3331C8C6CD10046D2B3 /* FourthViewManger2 */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3341C8C6CD10046D2B3 /* FourthViewManger2.h */,
+				0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */,
+			);
+			path = FourthViewManger2;
+			sourceTree = "<group>";
+		};
+		0435D3361C8C6CD10046D2B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3371C8C6CD10046D2B3 /* FourthViewModel.h */,
+				0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0435D3391C8C6CD10046D2B3 /* SecondExample */ = {
+			isa = PBXGroup;
+			children = (
+				0435D33A1C8C6CD10046D2B3 /* Controller */,
+				0435D33D1C8C6CD10046D2B3 /* Model */,
+				0435D3401C8C6CD10046D2B3 /* View */,
+				0435D3441C8C6CD10046D2B3 /* ViewModel */,
+			);
+			path = SecondExample;
+			sourceTree = "<group>";
+		};
+		0435D33A1C8C6CD10046D2B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0435D33B1C8C6CD10046D2B3 /* SecondVC.h */,
+				0435D33C1C8C6CD10046D2B3 /* SecondVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0435D33D1C8C6CD10046D2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0435D33E1C8C6CD10046D2B3 /* BQTestModel.h */,
+				0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0435D3401C8C6CD10046D2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3411C8C6CD10046D2B3 /* BQCollectionCell.h */,
+				0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */,
+				0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0435D3441C8C6CD10046D2B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3451C8C6CD10046D2B3 /* BQGetDataList2.h */,
+				0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */,
+				0435D3471C8C6CD10046D2B3 /* BQViewModel2.h */,
+				0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0435D3491C8C6CD10046D2B3 /* ThirdExample */ = {
+			isa = PBXGroup;
+			children = (
+				0435D34A1C8C6CD10046D2B3 /* Controller */,
+				0435D34D1C8C6CD10046D2B3 /* Model */,
+				0435D3501C8C6CD10046D2B3 /* View */,
+				0435D3541C8C6CD10046D2B3 /* ViewManger */,
+				0435D3571C8C6CD10046D2B3 /* ViewModel */,
+			);
+			path = ThirdExample;
+			sourceTree = "<group>";
+		};
+		0435D34A1C8C6CD10046D2B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0435D34B1C8C6CD10046D2B3 /* ThirdVC.h */,
+				0435D34C1C8C6CD10046D2B3 /* ThirdVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0435D34D1C8C6CD10046D2B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0435D34E1C8C6CD10046D2B3 /* ThirdModel.h */,
+				0435D34F1C8C6CD10046D2B3 /* ThirdModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0435D3501C8C6CD10046D2B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3511C8C6CD10046D2B3 /* ThirdView.h */,
+				0435D3521C8C6CD10046D2B3 /* ThirdView.m */,
+				0435D3531C8C6CD10046D2B3 /* ThirdView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0435D3541C8C6CD10046D2B3 /* ViewManger */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3551C8C6CD10046D2B3 /* ThirdViewManger.h */,
+				0435D3561C8C6CD10046D2B3 /* ThirdViewManger.m */,
+			);
+			path = ViewManger;
+			sourceTree = "<group>";
+		};
+		0435D3571C8C6CD10046D2B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0435D3581C8C6CD10046D2B3 /* ThirdViewModel.h */,
+				0435D3591C8C6CD10046D2B3 /* ThirdViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		348B3AC41C8A8E2000F8569B /* SUIMVVMKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,7 +813,7 @@
 		34F72F151C8BF6A90033ED03 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				34F72F301C8BF6A90033ED03 /* Src */,
+				0435D30C1C8C6CD10046D2B3 /* Src */,
 				34F72F161C8BF6A90033ED03 /* Expand */,
 				34F72F281C8BF6A90033ED03 /* Other */,
 				34F72F2C1C8BF6A90033ED03 /* Resource */,
@@ -683,272 +949,6 @@
 			children = (
 			);
 			path = Plist;
-			sourceTree = "<group>";
-		};
-		34F72F301C8BF6A90033ED03 /* Src */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F311C8BF6A90033ED03 /* FirstExample */,
-				34F72F431C8BF6A90033ED03 /* FourthExample */,
-				34F72F5D1C8BF6A90033ED03 /* SecondExample */,
-				34F72F6D1C8BF6A90033ED03 /* ThirdExample */,
-			);
-			path = Src;
-			sourceTree = "<group>";
-		};
-		34F72F311C8BF6A90033ED03 /* FirstExample */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F321C8BF6A90033ED03 /* Controller */,
-				34F72F371C8BF6A90033ED03 /* Model */,
-				34F72F3A1C8BF6A90033ED03 /* View */,
-				34F72F3E1C8BF6A90033ED03 /* ViewModel */,
-			);
-			path = FirstExample;
-			sourceTree = "<group>";
-		};
-		34F72F321C8BF6A90033ED03 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F331C8BF6A90033ED03 /* FirstVC.h */,
-				34F72F341C8BF6A90033ED03 /* FirstVC.m */,
-				34F72F351C8BF6A90033ED03 /* TestViewDelegate.h */,
-				34F72F361C8BF6A90033ED03 /* TestViewDelegate.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		34F72F371C8BF6A90033ED03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F381C8BF6A90033ED03 /* FirstModel.h */,
-				34F72F391C8BF6A90033ED03 /* FirstModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		34F72F3A1C8BF6A90033ED03 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F3B1C8BF6A90033ED03 /* BQCell.h */,
-				34F72F3C1C8BF6A90033ED03 /* BQCell.m */,
-				34F72F3D1C8BF6A90033ED03 /* BQCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		34F72F3E1C8BF6A90033ED03 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F3F1C8BF6A90033ED03 /* BQGetDataList.h */,
-				34F72F401C8BF6A90033ED03 /* BQGetDataList.m */,
-				34F72F411C8BF6A90033ED03 /* BQViewModel.h */,
-				34F72F421C8BF6A90033ED03 /* BQViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		34F72F431C8BF6A90033ED03 /* FourthExample */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F441C8BF6A90033ED03 /* Controller */,
-				34F72F471C8BF6A90033ED03 /* Model */,
-				34F72F4A1C8BF6A90033ED03 /* View */,
-				34F72F531C8BF6A90033ED03 /* ViewManger */,
-				34F72F5A1C8BF6A90033ED03 /* ViewModel */,
-			);
-			path = FourthExample;
-			sourceTree = "<group>";
-		};
-		34F72F441C8BF6A90033ED03 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F451C8BF6A90033ED03 /* FourthVC.h */,
-				34F72F461C8BF6A90033ED03 /* FourthVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		34F72F471C8BF6A90033ED03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F481C8BF6A90033ED03 /* FourthModel.h */,
-				34F72F491C8BF6A90033ED03 /* FourthModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		34F72F4A1C8BF6A90033ED03 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F4B1C8BF6A90033ED03 /* FourthView */,
-				34F72F4F1C8BF6A90033ED03 /* FourthView2 */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		34F72F4B1C8BF6A90033ED03 /* FourthView */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F4C1C8BF6A90033ED03 /* FourthView.h */,
-				34F72F4D1C8BF6A90033ED03 /* FourthView.m */,
-				34F72F4E1C8BF6A90033ED03 /* FourthView.xib */,
-			);
-			path = FourthView;
-			sourceTree = "<group>";
-		};
-		34F72F4F1C8BF6A90033ED03 /* FourthView2 */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F501C8BF6A90033ED03 /* FourthView2.h */,
-				34F72F511C8BF6A90033ED03 /* FourthView2.m */,
-				34F72F521C8BF6A90033ED03 /* FourthView2.xib */,
-			);
-			path = FourthView2;
-			sourceTree = "<group>";
-		};
-		34F72F531C8BF6A90033ED03 /* ViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F541C8BF6A90033ED03 /* FourthViewManger */,
-				34F72F571C8BF6A90033ED03 /* FourthViewManger2 */,
-			);
-			path = ViewManger;
-			sourceTree = "<group>";
-		};
-		34F72F541C8BF6A90033ED03 /* FourthViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F551C8BF6A90033ED03 /* FourthViewManger.h */,
-				34F72F561C8BF6A90033ED03 /* FourthViewManger.m */,
-			);
-			path = FourthViewManger;
-			sourceTree = "<group>";
-		};
-		34F72F571C8BF6A90033ED03 /* FourthViewManger2 */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F581C8BF6A90033ED03 /* FourthViewManger2.h */,
-				34F72F591C8BF6A90033ED03 /* FourthViewManger2.m */,
-			);
-			path = FourthViewManger2;
-			sourceTree = "<group>";
-		};
-		34F72F5A1C8BF6A90033ED03 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F5B1C8BF6A90033ED03 /* FourthViewModel.h */,
-				34F72F5C1C8BF6A90033ED03 /* FourthViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		34F72F5D1C8BF6A90033ED03 /* SecondExample */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F5E1C8BF6A90033ED03 /* Controller */,
-				34F72F611C8BF6A90033ED03 /* Model */,
-				34F72F641C8BF6A90033ED03 /* View */,
-				34F72F681C8BF6A90033ED03 /* ViewModel */,
-			);
-			path = SecondExample;
-			sourceTree = "<group>";
-		};
-		34F72F5E1C8BF6A90033ED03 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F5F1C8BF6A90033ED03 /* SecondVC.h */,
-				34F72F601C8BF6A90033ED03 /* SecondVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		34F72F611C8BF6A90033ED03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F621C8BF6A90033ED03 /* BQTestModel.h */,
-				34F72F631C8BF6A90033ED03 /* BQTestModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		34F72F641C8BF6A90033ED03 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F651C8BF6A90033ED03 /* BQCollectionCell.h */,
-				34F72F661C8BF6A90033ED03 /* BQCollectionCell.m */,
-				34F72F671C8BF6A90033ED03 /* BQCollectionCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		34F72F681C8BF6A90033ED03 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F691C8BF6A90033ED03 /* BQGetDataList2.h */,
-				34F72F6A1C8BF6A90033ED03 /* BQGetDataList2.m */,
-				34F72F6B1C8BF6A90033ED03 /* BQViewModel2.h */,
-				34F72F6C1C8BF6A90033ED03 /* BQViewModel2.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		34F72F6D1C8BF6A90033ED03 /* ThirdExample */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F6E1C8BF6A90033ED03 /* Controller */,
-				34F72F711C8BF6A90033ED03 /* Model */,
-				34F72F741C8BF6A90033ED03 /* View */,
-				34F72F781C8BF6A90033ED03 /* ViewManger */,
-				34F72F7B1C8BF6A90033ED03 /* ViewModel */,
-			);
-			path = ThirdExample;
-			sourceTree = "<group>";
-		};
-		34F72F6E1C8BF6A90033ED03 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F6F1C8BF6A90033ED03 /* ThirdVC.h */,
-				34F72F701C8BF6A90033ED03 /* ThirdVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		34F72F711C8BF6A90033ED03 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F721C8BF6A90033ED03 /* ThirdModel.h */,
-				34F72F731C8BF6A90033ED03 /* ThirdModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		34F72F741C8BF6A90033ED03 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F751C8BF6A90033ED03 /* ThirdView.h */,
-				34F72F761C8BF6A90033ED03 /* ThirdView.m */,
-				34F72F771C8BF6A90033ED03 /* ThirdView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		34F72F781C8BF6A90033ED03 /* ViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F791C8BF6A90033ED03 /* ThirdViewManger.h */,
-				34F72F7A1C8BF6A90033ED03 /* ThirdViewManger.m */,
-			);
-			path = ViewManger;
-			sourceTree = "<group>";
-		};
-		34F72F7B1C8BF6A90033ED03 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				34F72F7C1C8BF6A90033ED03 /* ThirdViewModel.h */,
-				34F72F7D1C8BF6A90033ED03 /* ThirdViewModel.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		34F72F7E1C8BF6A90033ED03 /* Utils */ = {
@@ -1101,13 +1101,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F72F921C8BF6A90033ED03 /* FourthView.xib in Resources */,
-				34F72F941C8BF6A90033ED03 /* FourthView2.xib in Resources */,
-				34F72F9B1C8BF6A90033ED03 /* BQCollectionCell.xib in Resources */,
+				0435D3641C8C6CD10046D2B3 /* FourthView.xib in Resources */,
+				0435D3661C8C6CD10046D2B3 /* FourthView2.xib in Resources */,
+				0435D36D1C8C6CD10046D2B3 /* BQCollectionCell.xib in Resources */,
 				6DB118541C7800BD00678885 /* LaunchScreen.storyboard in Resources */,
-				34F72FA11C8BF6A90033ED03 /* ThirdView.xib in Resources */,
+				0435D3731C8C6CD10046D2B3 /* ThirdView.xib in Resources */,
 				6DB118511C7800BD00678885 /* Assets.xcassets in Resources */,
-				34F72F8C1C8BF6A90033ED03 /* BQCell.xib in Resources */,
+				0435D35E1C8C6CD10046D2B3 /* BQCell.xib in Resources */,
 				6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1167,25 +1167,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0435D3741C8C6CD10046D2B3 /* ThirdViewManger.m in Sources */,
 				348B3B671C8A8E2000F8569B /* UIImage+SUIAdditions.m in Sources */,
 				348B3B4A1C8A8E2000F8569B /* UICollectionViewCell+Extension.m in Sources */,
+				0435D35C1C8C6CD10046D2B3 /* FirstModel.m in Sources */,
 				348B3B661C8A8E2000F8569B /* UIControl+SUIAdditions.m in Sources */,
-				34F72F8A1C8BF6A90033ED03 /* FirstModel.m in Sources */,
 				348B3B731C8A8E2000F8569B /* UIViewController+SVVAdditions.m in Sources */,
+				0435D3681C8C6CD10046D2B3 /* FourthViewManger2.m in Sources */,
+				0435D36C1C8C6CD10046D2B3 /* BQCollectionCell.m in Sources */,
+				0435D35D1C8C6CD10046D2B3 /* BQCell.m in Sources */,
 				348B3B4F1C8A8E2000F8569B /* KVObserver.m in Sources */,
+				0435D3751C8C6CD10046D2B3 /* ThirdViewModel.m in Sources */,
 				348B3B5E1C8A8E2000F8569B /* UITableViewCell+SUIHelper.m in Sources */,
+				0435D3651C8C6CD10046D2B3 /* FourthView2.m in Sources */,
+				0435D3611C8C6CD10046D2B3 /* FourthVC.m in Sources */,
 				34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */,
+				0435D3691C8C6CD10046D2B3 /* FourthViewModel.m in Sources */,
 				348B3B5A1C8A8E2000F8569B /* NSString+SUICrypto.m in Sources */,
-				34F72F901C8BF6A90033ED03 /* FourthModel.m in Sources */,
+				0435D3671C8C6CD10046D2B3 /* FourthViewManger.m in Sources */,
 				348B3B681C8A8E2000F8569B /* UILabel+SUIAdditions.m in Sources */,
+				0435D35F1C8C6CD10046D2B3 /* BQGetDataList.m in Sources */,
 				348B3B4D1C8A8E2000F8569B /* UIView+Configure.m in Sources */,
 				348B3B471C8A8E2000F8569B /* SMKBaseViewManger.m in Sources */,
-				34F72F961C8BF6A90033ED03 /* FourthViewManger2.m in Sources */,
 				348B3B531C8A8E2000F8569B /* NSDate+SUIAdditions.m in Sources */,
 				348B3B4E1C8A8E2000F8569B /* UIView+ViewDelegateAdditions.m in Sources */,
-				34F72F991C8BF6A90033ED03 /* BQTestModel.m in Sources */,
 				348B3B451C8A8E2000F8569B /* SMKBaseCollectionViewManger.m in Sources */,
-				34F72F951C8BF6A90033ED03 /* FourthViewManger.m in Sources */,
 				348B3B641C8A8E2000F8569B /* UIButton+SUIAdditions.m in Sources */,
 				348B3B501C8A8E2000F8569B /* NSArray+SUIAdditions.m in Sources */,
 				34F72F871C8BF6A90033ED03 /* main.m in Sources */,
@@ -1193,57 +1199,51 @@
 				34F72FA41C8BF6A90033ED03 /* Foundation+Log.m in Sources */,
 				348B3B4B1C8A8E2000F8569B /* UITableView+TableDataDelegateAdditions.m in Sources */,
 				348B3B741C8A8E2000F8569B /* UITableView+FDIndexPathHeightCache.m in Sources */,
-				34F72F971C8BF6A90033ED03 /* FourthViewModel.m in Sources */,
-				34F72F9D1C8BF6A90033ED03 /* BQViewModel2.m in Sources */,
 				348B3B561C8A8E2000F8569B /* NSIndexPath+SUIAdditions.m in Sources */,
+				0435D36F1C8C6CD10046D2B3 /* BQViewModel2.m in Sources */,
 				348B3B541C8A8E2000F8569B /* NSDictionary+SUIAdditions.m in Sources */,
 				348B3B761C8A8E2000F8569B /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				0435D3701C8C6CD10046D2B3 /* ThirdVC.m in Sources */,
 				348B3B571C8A8E2000F8569B /* NSNumber+SUIAdditions.m in Sources */,
-				34F72F9F1C8BF6A90033ED03 /* ThirdModel.m in Sources */,
 				348B3B5D1C8A8E2000F8569B /* UITableView+SUIHelper.m in Sources */,
 				348B3B711C8A8E2000F8569B /* UIView+SVVAdditions.m in Sources */,
 				348B3B461C8A8E2000F8569B /* SMKBaseTableViewManger.m in Sources */,
-				34F72F891C8BF6A90033ED03 /* TestViewDelegate.m in Sources */,
-				34F72F9C1C8BF6A90033ED03 /* BQGetDataList2.m in Sources */,
-				34F72FA01C8BF6A90033ED03 /* ThirdView.m in Sources */,
-				34F72F9A1C8BF6A90033ED03 /* BQCollectionCell.m in Sources */,
 				348B3B771C8A8E2000F8569B /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
-				34F72FA31C8BF6A90033ED03 /* ThirdViewModel.m in Sources */,
-				34F72FA21C8BF6A90033ED03 /* ThirdViewManger.m in Sources */,
+				0435D36A1C8C6CD10046D2B3 /* SecondVC.m in Sources */,
+				0435D3711C8C6CD10046D2B3 /* ThirdModel.m in Sources */,
+				0435D35A1C8C6CD10046D2B3 /* FirstVC.m in Sources */,
 				348B3B651C8A8E2000F8569B /* UIButton+SVVAdditions.m in Sources */,
+				0435D3721C8C6CD10046D2B3 /* ThirdView.m in Sources */,
 				348B3B701C8A8E2000F8569B /* UIView+SUIAdditions.m in Sources */,
-				34F72F8B1C8BF6A90033ED03 /* BQCell.m in Sources */,
+				0435D35B1C8C6CD10046D2B3 /* TestViewDelegate.m in Sources */,
 				348B3B721C8A8E2000F8569B /* UIViewController+SUIAdditions.m in Sources */,
 				348B3B551C8A8E2000F8569B /* NSDictionary+SUISafeAccess.m in Sources */,
-				34F72F8F1C8BF6A90033ED03 /* FourthVC.m in Sources */,
-				34F72F911C8BF6A90033ED03 /* FourthView.m in Sources */,
-				34F72F8E1C8BF6A90033ED03 /* BQViewModel.m in Sources */,
 				348B3B581C8A8E2000F8569B /* NSObject+SUIAdditions.m in Sources */,
 				348B3B491C8A8E2000F8569B /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
 				348B3B601C8A8E2000F8569B /* SUITool+Delay.m in Sources */,
 				348B3B631C8A8E2000F8569B /* SUITool.m in Sources */,
 				348B3B611C8A8E2000F8569B /* SUITool+FileManager.m in Sources */,
 				348B3B6E1C8A8E2000F8569B /* UITextField+SUIAdditions.m in Sources */,
-				34F72F931C8BF6A90033ED03 /* FourthView2.m in Sources */,
 				348B3B591C8A8E2000F8569B /* NSString+SUIAdditions.m in Sources */,
-				34F72F9E1C8BF6A90033ED03 /* ThirdVC.m in Sources */,
-				34F72F981C8BF6A90033ED03 /* SecondVC.m in Sources */,
 				348B3B4C1C8A8E2000F8569B /* UITableViewCell+Extension.m in Sources */,
 				348B3B6B1C8A8E2000F8569B /* UIScrollView+SUIAdditions.m in Sources */,
 				348B3B6D1C8A8E2000F8569B /* UITableViewCell+SUIAdditions.m in Sources */,
+				0435D3601C8C6CD10046D2B3 /* BQViewModel.m in Sources */,
 				348B3B481C8A8E2000F8569B /* SMKBaseViewModel.m in Sources */,
 				348B3B5F1C8A8E2000F8569B /* SUITool+Camera.m in Sources */,
 				34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */,
-				34F72F881C8BF6A90033ED03 /* FirstVC.m in Sources */,
-				34F72F8D1C8BF6A90033ED03 /* BQGetDataList.m in Sources */,
 				348B3B621C8A8E2000F8569B /* SUITool+OpenURL.m in Sources */,
 				348B3B5C1C8A8E2000F8569B /* SUITableHelper.m in Sources */,
 				348B3B6A1C8A8E2000F8569B /* UINavigationController+SUIAdditions.m in Sources */,
+				0435D36E1C8C6CD10046D2B3 /* BQGetDataList2.m in Sources */,
 				348B3B5B1C8A8E2000F8569B /* NSString+SUIRegex.m in Sources */,
 				348B3B6C1C8A8E2000F8569B /* UIStoryboardSegue+SUIAdditions.m in Sources */,
+				0435D3631C8C6CD10046D2B3 /* FourthView.m in Sources */,
 				348B3B691C8A8E2000F8569B /* UILabel+SVVAdditions.m in Sources */,
 				348B3B521C8A8E2000F8569B /* NSData+SUIAdditions.m in Sources */,
+				0435D3621C8C6CD10046D2B3 /* FourthModel.m in Sources */,
 				348B3B6F1C8A8E2000F8569B /* UITextView+SUIAdditions.m in Sources */,
+				0435D36B1C8C6CD10046D2B3 /* BQTestModel.m in Sources */,
 				348B3B511C8A8E2000F8569B /* NSArray+SUISafeAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

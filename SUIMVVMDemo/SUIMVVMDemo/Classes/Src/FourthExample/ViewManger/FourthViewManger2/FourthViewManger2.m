@@ -10,14 +10,14 @@
 #import "SUIUtils.h"
 #import "FourthView2.h"
 #import "Masonry.h"
-#import "FourthView.h"
+
 
 @interface FourthViewManger2 ()
 
 /** fouthView */
 @property (nonatomic, weak) FourthView2 *fourthView2;
 /** mark */
-@property (nonatomic, weak) FourthView *fourthView;
+@property (nonatomic, weak) UIView *fourthView;
 
 @end
 
@@ -38,7 +38,7 @@
 
 - (void)smk_viewMangerWithOtherSubViews:(NSDictionary *)viewInfos {
     
-    FourthView *view1 = viewInfos[@"view1"];
+    UIView *view1 = viewInfos[@"view1"];
     self.fourthView = view1;
     
     [self.fourthView2 mas_makeConstraints:^(MASConstraintMaker *make) {
