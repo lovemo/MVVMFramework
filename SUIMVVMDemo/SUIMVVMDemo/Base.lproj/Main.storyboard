@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2fe-0d-FF1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2fe-0d-FF1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -14,12 +14,37 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="G3E-B3-uAG" kind="relationship" relationship="rootViewController" id="9c2-X4-k52"/>
+                        <segue destination="Xlq-bf-Q7H" kind="relationship" relationship="rootViewController" id="3gB-92-ZDg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3u-h2-rLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="325"/>
+        </scene>
+        <!--点击屏幕，利用viewManger管理相对布局-->
+        <scene sceneID="sXU-6T-JoW">
+            <objects>
+                <viewController id="Xlq-bf-Q7H" customClass="FourthVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c35-2E-X07"/>
+                        <viewControllerLayoutGuide type="bottom" id="B70-Sh-Jm4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FVZ-E0-A6e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="点击屏幕，利用viewManger管理相对布局" id="UUA-8q-NLw">
+                        <barButtonItem key="rightBarButtonItem" title="跳转" id="Hkz-uU-TyA">
+                            <connections>
+                                <segue destination="G3E-B3-uAG" kind="show" id="NNV-03-WWk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efi-L3-HPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="251"/>
         </scene>
         <!--ThirdVC-->
         <scene sceneID="MxY-m9-mBN">
@@ -62,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTe-D5-y8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701" y="325"/>
+            <point key="canvasLocation" x="991" y="262"/>
         </scene>
         <!--FirstVC-->
         <scene sceneID="uOc-3i-IV8">

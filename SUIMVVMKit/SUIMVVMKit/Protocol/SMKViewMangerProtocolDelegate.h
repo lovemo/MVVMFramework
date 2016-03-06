@@ -35,6 +35,32 @@
  */
 - (void)smk_viewMangerWithHandleOfSubView:(UIView *)subView info:(NSString *)info;
 
+/**
+ *  返回viewManger所管理的视图
+ *
+ *  @return viewManger所管理的视图
+ */
+- (__kindof UIView *)smk_viewMangerOfSubView;
+
+/**
+ *  得到其它viewManger所管理的subView，用于自己内部
+ *
+ *  @param views 其它的subViews
+ */
+- (void)smk_viewMangerWithOtherSubViews:(NSDictionary *)viewInfos;
+
+/**
+ *  需要重新布局subView时，更改subView的frame或者约束
+ *
+ *  @param block 更新布局完成的block
+ */
+- (void)smk_viewMangerWithLayoutSubViews:(void (^)( ))updateBlock;
+
+/**
+ *  使子视图更新到最新的布局约束或者frame
+ */
+- (void)smk_viewMangerWithUpdateLayoutSubViews;
+
 @end
 
 #endif /* SMKViewMangerProtocolDelegate_h */
