@@ -30,6 +30,7 @@
     return _fourthView;
 }
 
+// 得到自己所管理subView的父视图，并添加到父视图上
 - (void)smk_viewMangerWithSuperView:(UIView *)superView {
     [superView addSubview:self.fourthView];
     [self.fourthView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,10 +41,12 @@
     
 }
 
+// 返回自己所管理的View，降低耦合性
 - (UIView *)smk_viewMangerOfSubView {
     return self.fourthView;
 }
 
+// 根据model的变化重新布局自己所管理的字视图的位置，并用block回调给控制器
 - (void)smk_viewMangerWithLayoutSubViews:(void (^)())updateBlock {
     
     CGFloat left = arc4random_uniform(100) + 20;

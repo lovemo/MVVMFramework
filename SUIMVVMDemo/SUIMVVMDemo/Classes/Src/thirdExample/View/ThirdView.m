@@ -21,20 +21,26 @@
     self.backgroundColor = [UIColor colorWithRed:0.914 green:1.000 blue:0.604 alpha:1.000];
 }
 
+// 按钮事件
 - (IBAction)testBtnClick:(UIButton *)sender {
-    
+        // 传递事件
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(smk_view:withEvents:)]) {
+//        [self.delegate smk_view:self withEvents:@{@"click": @"btn"}];
+//    }
+        // 传递事件
     if (self.btnClickBlock) {
         self.btnClickBlock();
     }
 }
-
+// 按钮事件
 - (IBAction)jumpOtherVC:(UIButton *)sender {
-    
+    // 传递事件
     if (self.delegate && [self.delegate respondsToSelector:@selector(smk_view:withEvents:)]) {
         [self.delegate smk_view:self withEvents:@{@"jump": @"vc"}];
     }
 }
 
+// 根据模型数据配置View
 - (void)configureViewWithCustomObj:(id)obj {
     if (!obj) return;
     ThirdModel *thirdModel = (ThirdModel *)obj;

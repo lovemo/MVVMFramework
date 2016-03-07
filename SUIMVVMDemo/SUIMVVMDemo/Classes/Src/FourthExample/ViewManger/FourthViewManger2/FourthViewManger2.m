@@ -36,6 +36,7 @@
     [superView addSubview:self.fourthView2];
 }
 
+// 根据自身需要得到外界的视图view
 - (void)smk_viewMangerWithOtherSubViews:(NSDictionary *)viewInfos {
     
     UIView *view1 = viewInfos[@"view1"];
@@ -50,6 +51,7 @@
     
 }
 
+// 根据外界view或model的变化重新布局自己所管理的字视图的位置
 - (void)smk_viewMangerWithUpdateLayoutSubViews {
     
     CGFloat offset = arc4random_uniform(70) + 10;

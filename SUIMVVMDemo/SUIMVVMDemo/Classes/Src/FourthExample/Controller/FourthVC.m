@@ -24,10 +24,8 @@
 #pragma mark lazy
 - (FourthViewManger *)fourthViewManger1 {
     if (!_fourthViewManger1) {
-        
         FourthViewManger *viewManger = [[FourthViewManger alloc]init];
         _fourthViewManger1 = viewManger;
-        
     }
     return _fourthViewManger1;
 }
@@ -44,13 +42,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 得到父视图
     [self.fourthViewManger1 smk_viewMangerWithSuperView:self.view];
     [self.fourthViewManger2 smk_viewMangerWithSuperView:self.view];
     
+    // 传入其他Views
     [self.fourthViewManger2 smk_viewMangerWithOtherSubViews:@{@"view1": [self.fourthViewManger1 smk_viewMangerOfSubView]}];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    // 更新视图block
     [self.fourthViewManger1 smk_viewMangerWithLayoutSubViews:^{
         [self.fourthViewManger2 smk_viewMangerWithUpdateLayoutSubViews];
     }];

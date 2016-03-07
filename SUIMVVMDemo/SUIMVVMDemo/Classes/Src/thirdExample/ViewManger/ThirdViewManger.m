@@ -26,7 +26,7 @@
     return _thirdView;
 }
 
-// 两种消息传递方式，开发时任选其一即可
+// 两种消息传递方式，开发时任选其一即可，处理View中自定义的事件
 - (void)smk_viewMangerWithSubView:(UIView *)subView {
     
     __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
@@ -38,7 +38,7 @@
     };
 }
 
-// 两种消息传递方式，开发时任选其一即可
+// UIView的delegate方法 ，两种消息传递方式，开发时任选其一即可 根据传入的events信息处理事件
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
     
     NSLog(@"----------%@", events);
@@ -50,11 +50,13 @@
     
 }
 
+// 得到父视图，添加subView -> superView
 - (void)smk_viewMangerWithSuperView:(UIView *)superView {
     self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
     [superView addSubview:self.thirdView];
 }
 
+// 根据传入的info设置添加subView的事件
 - (void)smk_viewMangerWithHandleOfSubView:(UIView *)view info:(NSString *)info {
     
     if ([info isEqualToString:@"click"]) {
