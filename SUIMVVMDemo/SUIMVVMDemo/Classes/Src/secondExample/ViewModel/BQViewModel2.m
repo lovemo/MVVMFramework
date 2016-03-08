@@ -8,7 +8,6 @@
 
 #import "BQViewModel2.h"
 #import "BQTestModel.h"
-#import "SVProgressHUD.h"
 #import "BQGetDataList2.h"
 
 @implementation BQViewModel2
