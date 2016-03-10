@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^btnClickBlock)();
-
 @interface ThirdView : UIView
-
-@property (nonatomic, copy) btnClickBlock btnClickBlock;
 
 @end

@@ -85,6 +85,7 @@
 		348B3B751C8A8E2000F8569B /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3B401C8A8E2000F8569B /* UITableView+FDKeyedHeightCache.m */; };
 		348B3B761C8A8E2000F8569B /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3B421C8A8E2000F8569B /* UITableView+FDTemplateLayoutCell.m */; };
 		348B3B771C8A8E2000F8569B /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3B441C8A8E2000F8569B /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		34C7BAE21C9113C700833B60 /* UIViewController+ControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C7BAE11C9113C700833B60 /* UIViewController+ControllerAdditions.m */; };
 		34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F1F1C8BF6A90033ED03 /* BHNavViewController.m */; };
 		34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2A1C8BF6A90033ED03 /* AppDelegate.m */; };
 		34F72F871C8BF6A90033ED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2B1C8BF6A90033ED03 /* main.m */; };
@@ -257,6 +258,9 @@
 		348B3B421C8A8E2000F8569B /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		348B3B431C8A8E2000F8569B /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		348B3B441C8A8E2000F8569B /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		34C7BAE01C9113C700833B60 /* UIViewController+ControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ControllerAdditions.h"; sourceTree = "<group>"; };
+		34C7BAE11C9113C700833B60 /* UIViewController+ControllerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ControllerAdditions.m"; sourceTree = "<group>"; };
+		34C7BAE31C9115A700833B60 /* SMKViewControllerProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewControllerProtocolDelegate.h; sourceTree = "<group>"; };
 		34F72F181C8BF6A90033ED03 /* CategoryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1A1C8BF6A90033ED03 /* ConstantPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1E1C8BF6A90033ED03 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
@@ -637,6 +641,8 @@
 				348B3ADF1C8A8E2000F8569B /* UIView+Configure.m */,
 				348B3AE01C8A8E2000F8569B /* UIView+ViewDelegateAdditions.h */,
 				348B3AE11C8A8E2000F8569B /* UIView+ViewDelegateAdditions.m */,
+				34C7BAE01C9113C700833B60 /* UIViewController+ControllerAdditions.h */,
+				34C7BAE11C9113C700833B60 /* UIViewController+ControllerAdditions.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 				348B3AE41C8A8E2000F8569B /* SMKViewMangerProtocolDelegate.h */,
 				348B3AE51C8A8E2000F8569B /* SMKViewModelProtocolDelegate.h */,
 				348B3AE61C8A8E2000F8569B /* SMKViewProtocolDelegate.h */,
+				34C7BAE31C9115A700833B60 /* SMKViewControllerProtocolDelegate.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1214,6 +1221,7 @@
 				348B3B6D1C8A8E2000F8569B /* UITableViewCell+SUIAdditions.m in Sources */,
 				0435D3601C8C6CD10046D2B3 /* BQViewModel.m in Sources */,
 				348B3B481C8A8E2000F8569B /* SMKBaseViewModel.m in Sources */,
+				34C7BAE21C9113C700833B60 /* UIViewController+ControllerAdditions.m in Sources */,
 				348B3B5F1C8A8E2000F8569B /* SUITool+Camera.m in Sources */,
 				34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */,
 				348B3B621C8A8E2000F8569B /* SUITool+OpenURL.m in Sources */,

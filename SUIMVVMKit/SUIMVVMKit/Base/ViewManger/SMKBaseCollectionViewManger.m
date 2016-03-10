@@ -20,9 +20,9 @@
 - (id)initWithViewModel:(SMKBaseViewModel *)viewModel
      cellIdentifier:(NSString *)aCellIdentifier
      collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-     cellItemSizeBlock:(cellItemSize)cellItemSize
-     cellItemMarginBlock:(cellItemMargin)cellItemMargin
-     didSelectBlock:(didSelectCellBlock)didselectBlock
+     cellItemSizeBlock:(CellItemSize)cellItemSize
+     cellItemMarginBlock:(CellItemMargin)cellItemMargin
+     didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
     self = [super init] ;
     if (self) {
@@ -37,11 +37,11 @@
     return self ;
 }
 
-- (void)ItemSize:(cellItemSize)cellItemSize {
+- (void)itemSize:(CellItemSize)cellItemSize {
     self.cellItemSize = cellItemSize;
 }
 
-- (void)itemInset:(cellItemMargin)cellItemMargin {
+- (void)itemInset:(CellItemMargin)cellItemMargin {
     self.cellItemMargin = cellItemMargin;
 }
 

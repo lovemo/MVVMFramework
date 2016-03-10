@@ -21,11 +21,13 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 
 @implementation SecondVC
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
     [self setupCollectionView];
 }
+
 /**
  *  collectionView的一些初始化工作
  */

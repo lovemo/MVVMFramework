@@ -15,5 +15,6 @@
 #import "UITableView+TableDataDelegateAdditions.h"
 #import "UITableViewCell+Extension.h"
 #import "UIView+ViewDelegateAdditions.h"
+#import "UIViewController+ControllerAdditions.h"
 
 #endif /* SMKExtendPublic_h */

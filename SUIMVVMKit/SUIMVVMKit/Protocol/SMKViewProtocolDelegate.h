@@ -8,6 +8,7 @@
 
 #ifndef SMKViewProtocolDelegate_h
 #define SMKViewProtocolDelegate_h
+#import <UIKit/UIKit.h>
 
 @protocol SMKViewProtocolDelegate <NSObject>
 

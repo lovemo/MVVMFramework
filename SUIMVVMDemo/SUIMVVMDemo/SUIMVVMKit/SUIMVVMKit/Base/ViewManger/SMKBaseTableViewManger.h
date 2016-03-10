@@ -12,7 +12,7 @@
 /**
  *  选中UITableViewCell的Block
  */
-typedef void (^didSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 
 
  // - - - - - -- - - - - - - - - - -- 创建类 - -- - -  - - - - - -- - - - - -- -//
@@ -24,7 +24,7 @@ typedef void (^didSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 @property (nonatomic, copy) NSArray *cellIdentifierArray ;
 
 /** 选中cell */
-@property (nonatomic, copy) didSelectCellBlock didSelectCellBlock ;
+@property (nonatomic, copy) DidSelectCellBlock didSelectCellBlock ;
 
 /** tableView的ViewModel */
 @property (nonatomic, strong) SMKBaseViewModel *viewModel;
@@ -34,7 +34,7 @@ typedef void (^didSelectCellBlock)(NSIndexPath *indexPath, id item) ;
  */
 - (id)initWithViewModel:(SMKBaseViewModel *)viewModel
         cellIdentifiersArray:(NSArray *)cellIdentifiersArray
-        didSelectBlock:(didSelectCellBlock)didselectBlock ;
+        didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 /**
  *  设置UITableView的Datasource和Delegate为self

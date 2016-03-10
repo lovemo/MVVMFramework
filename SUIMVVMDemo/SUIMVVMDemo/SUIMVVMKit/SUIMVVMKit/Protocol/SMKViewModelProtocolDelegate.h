@@ -8,10 +8,16 @@
 
 #ifndef SMKViewModelProtocolDelegate_h
 #define SMKViewModelProtocolDelegate_h
+#import <UIKit/UIKit.h>
 
 @protocol SMKViewModelProtocolDelegate <NSObject>
 
 @optional
+
+/**
+ *  返回指定viewModel的所引用的控制器
+ */
+- (void)smk_viewModelWithViewController:(UIViewController *)viewController;
 
 /**
  *  返回指定indexPath的item

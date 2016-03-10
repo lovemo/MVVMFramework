@@ -27,7 +27,7 @@
 
 - (id)initWithViewModel:(SMKBaseViewModel *)viewModel
     cellIdentifiersArray:(NSArray *)cellIdentifiersArray
-    didSelectBlock:(didSelectCellBlock)didselectBlock
+    didSelectBlock:(DidSelectCellBlock)didselectBlock
 {
     self = [super init] ;
     if (self) {

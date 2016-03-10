@@ -11,11 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^ViewEventsBlock)( );
 
 @interface UIView (ViewDelegateAdditions)
 
 @property (nullable, nonatomic, weak) id<SMKViewProtocolDelegate> delegate;
 
+@property (nonatomic, copy) ViewEventsBlock viewEventsBlock;
 @end
 
 NS_ASSUME_NONNULL_END

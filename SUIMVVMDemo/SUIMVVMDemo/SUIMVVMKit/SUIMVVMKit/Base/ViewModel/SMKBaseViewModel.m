@@ -20,14 +20,6 @@
     return _smk_dataArrayList;
 }
 
-+ (instancetype)smk_viewModelWithViewController:(UIViewController *)viewController{
-    SMKBaseViewModel *model = self.new;
-    if (model) {
-        model.smk_viewController = viewController;
-    }
-    return model;
-}
-
 - (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
     
 }

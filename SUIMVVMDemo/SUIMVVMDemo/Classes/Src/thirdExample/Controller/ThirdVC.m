@@ -13,35 +13,45 @@
 
 @interface ThirdVC ()
 
-@property (nonatomic, strong) ThirdViewManger *thirdViewManger;
-@property (nonatomic, strong) ThirdViewModel *viewModel;
+//@property (nonatomic, strong) ThirdViewManger *thirdViewManger;
+//@property (nonatomic, strong) ThirdViewModel *viewModel;
 
 @end
 
 @implementation ThirdVC
 
-- (ThirdViewManger *)thirdViewManger {
-    if (_thirdViewManger == nil) {
-        _thirdViewManger = [[ThirdViewManger alloc]init];
-    }
-    return _thirdViewManger;
+- (Class)smk_classOfViewManger {
+    return [ThirdViewManger class];
 }
-- (ThirdViewModel *)viewModel {
-    if (_viewModel == nil) {
-        _viewModel = [[ThirdViewModel alloc]init];
-    }
-    return _viewModel;
+
+- (Class)smk_classOfViewModel {
+    return [ThirdViewModel class];
 }
+
+//- (ThirdViewManger *)thirdViewManger {
+//    if (_thirdViewManger == nil) {
+//        _thirdViewManger = [[ThirdViewManger alloc]init];
+//    }
+//    return _thirdViewManger;
+//}
+//- (ThirdViewModel *)viewModel {
+//    if (_viewModel == nil) {
+//        _viewModel = [[ThirdViewModel alloc]init];
+//    }
+//    return _viewModel;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"MVVM Example";
 
-    [self.thirdViewManger smk_viewMangerWithSuperView:self.view];
-    [self.viewModel smk_viewModelWithGetDataSuccessHandler:nil];
+    [self.smk_viewManger smk_viewMangerWithSuperView:self.view];
+    [self.smk_viewModel smk_viewModelWithGetDataSuccessHandler:nil];
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-    self.thirdViewManger.smk_model = [self.viewModel getRandomData];
+
+    ThirdViewManger *viewManger = (ThirdViewManger *)self.smk_viewManger;
+    viewManger.smk_model = [self.smk_viewModel getRandomData];
 }
 
 @end

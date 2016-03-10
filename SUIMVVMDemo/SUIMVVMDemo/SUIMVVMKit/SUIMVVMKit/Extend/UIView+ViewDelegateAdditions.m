@@ -19,4 +19,12 @@
     objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (ViewEventsBlock)viewEventsBlock {
+    return objc_getAssociatedObject(self, @selector(viewEventsBlock));
+}
+
+- (void)setViewEventsBlock:(ViewEventsBlock)viewEventsBlock {
+    objc_setAssociatedObject(self, @selector(viewEventsBlock), viewEventsBlock, OBJC_ASSOCIATION_COPY);
+}
+
 @end

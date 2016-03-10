@@ -33,7 +33,9 @@
     __weak typeof(self) weakSelf = self;
     
     // btnClickBlock
-    weakThirdView.btnClickBlock = ^() {
+    weakThirdView.viewEventsBlock = ^(NSString *str) {
+        NSLog(@"%@",str);
+        // 可以根据传入的信息，判断分写不同的响应方法
         [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
     };
 }

@@ -12,15 +12,15 @@
 /**
  *  选中UICollectionViewCell的Block
  */
-typedef void (^didSelectCellBlock)(NSIndexPath *indexPath, id item) ;
+typedef void (^DidSelectCellBlock)(NSIndexPath *indexPath, id item) ;
 /**
  *  设置UICollectionViewCell大小的Block
  */
-typedef CGSize (^cellItemSize)() ;
+typedef CGSize (^CellItemSize)() ;
 /**
  *  设置UICollectionViewCell间隔Margin的Block
  */
-typedef UIEdgeInsets (^cellItemMargin)() ;
+typedef UIEdgeInsets (^CellItemMargin)() ;
 
 
  // - - - - - -- - - - - - - - - - -- 创建类 - -- - -  - - - - - -- - - - - -- -//
@@ -35,13 +35,13 @@ typedef UIEdgeInsets (^cellItemMargin)() ;
 @property (nonatomic, strong) UICollectionViewLayout *collectionViewLayout;
 
 /** 选中cell */
-@property (nonatomic, copy) didSelectCellBlock didSelectCellBlock ;
+@property (nonatomic, copy) DidSelectCellBlock didSelectCellBlock ;
 
 /** cell的Size */
-@property (nonatomic, copy) cellItemSize cellItemSize;
+@property (nonatomic, copy) CellItemSize cellItemSize;
 
 /** cell的Margin */
-@property (nonatomic, copy) cellItemMargin cellItemMargin;
+@property (nonatomic, copy) CellItemMargin cellItemMargin;
 
 /** collectionView的ViewModel */
 @property (nonatomic, strong) SMKBaseViewModel *viewModel;
@@ -50,12 +50,12 @@ typedef UIEdgeInsets (^cellItemMargin)() ;
 /**
  *  设置UICollectionViewCell大小
  */
-- (void)ItemSize:(cellItemSize)cellItemSize;
+- (void)itemSize:(CellItemSize)cellItemSize;
 
 /**
  *  设置UICollectionViewCell间隔Margin
  */
-- (void)itemInset:(cellItemMargin)cellItemMargin;
+- (void)itemInset:(CellItemMargin)cellItemMargin;
 
 /**
  *  初始化方法
@@ -63,9 +63,9 @@ typedef UIEdgeInsets (^cellItemMargin)() ;
 - (id)initWithViewModel:(SMKBaseViewModel *)viewModel
          cellIdentifier:(NSString *)aCellIdentifier
          collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
-         cellItemSizeBlock:(cellItemSize)cellItemSize
-         cellItemMarginBlock:(cellItemMargin)cellItemMargin
-         didSelectBlock:(didSelectCellBlock)didselectBlock ;
+         cellItemSizeBlock:(CellItemSize)cellItemSize
+         cellItemMarginBlock:(CellItemMargin)cellItemMargin
+         didSelectBlock:(DidSelectCellBlock)didselectBlock ;
 
 /**
  *  设置CollectionView的Datasource和Delegate为self

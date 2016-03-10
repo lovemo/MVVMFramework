@@ -14,8 +14,6 @@
 @property (nonatomic, weak) UIViewController *smk_viewController;
 @property (nonatomic, strong) NSMutableArray *smk_dataArrayList;
 
-+ (instancetype)smk_viewModelWithViewController:(UIViewController *)viewController;
-
 /**
  *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
  */
