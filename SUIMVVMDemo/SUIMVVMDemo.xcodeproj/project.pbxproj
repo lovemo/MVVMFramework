@@ -45,7 +45,6 @@
 		348B3B4C1C8A8E2000F8569B /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3ADD1C8A8E2000F8569B /* UITableViewCell+Extension.m */; };
 		348B3B4D1C8A8E2000F8569B /* UIView+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3ADF1C8A8E2000F8569B /* UIView+Configure.m */; };
 		348B3B4E1C8A8E2000F8569B /* UIView+ViewDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AE11C8A8E2000F8569B /* UIView+ViewDelegateAdditions.m */; };
-		348B3B4F1C8A8E2000F8569B /* KVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AEB1C8A8E2000F8569B /* KVObserver.m */; };
 		348B3B501C8A8E2000F8569B /* NSArray+SUIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AF01C8A8E2000F8569B /* NSArray+SUIAdditions.m */; };
 		348B3B511C8A8E2000F8569B /* NSArray+SUISafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AF21C8A8E2000F8569B /* NSArray+SUISafeAccess.m */; };
 		348B3B521C8A8E2000F8569B /* NSData+SUIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 348B3AF41C8A8E2000F8569B /* NSData+SUIAdditions.m */; };
@@ -176,9 +175,6 @@
 		348B3AE51C8A8E2000F8569B /* SMKViewModelProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocolDelegate.h; sourceTree = "<group>"; };
 		348B3AE61C8A8E2000F8569B /* SMKViewProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewProtocolDelegate.h; sourceTree = "<group>"; };
 		348B3AE71C8A8E2000F8569B /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
-		348B3AEA1C8A8E2000F8569B /* KVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVObserver.h; sourceTree = "<group>"; };
-		348B3AEB1C8A8E2000F8569B /* KVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVObserver.m; sourceTree = "<group>"; };
-		348B3AEC1C8A8E2000F8569B /* PMKVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMKVObserver.h; sourceTree = "<group>"; };
 		348B3AEF1C8A8E2000F8569B /* NSArray+SUIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SUIAdditions.h"; sourceTree = "<group>"; };
 		348B3AF01C8A8E2000F8569B /* NSArray+SUIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SUIAdditions.m"; sourceTree = "<group>"; };
 		348B3AF11C8A8E2000F8569B /* NSArray+SUISafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SUISafeAccess.h"; sourceTree = "<group>"; };
@@ -665,21 +661,10 @@
 		348B3AE81C8A8E2000F8569B /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				348B3AE91C8A8E2000F8569B /* PMKVObserver */,
 				348B3AED1C8A8E2000F8569B /* SUIUtils */,
 				348B3B3C1C8A8E2000F8569B /* UITableView+FDTemplateLayoutCell */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		348B3AE91C8A8E2000F8569B /* PMKVObserver */ = {
-			isa = PBXGroup;
-			children = (
-				348B3AEA1C8A8E2000F8569B /* KVObserver.h */,
-				348B3AEB1C8A8E2000F8569B /* KVObserver.m */,
-				348B3AEC1C8A8E2000F8569B /* PMKVObserver.h */,
-			);
-			path = PMKVObserver;
 			sourceTree = "<group>";
 		};
 		348B3AED1C8A8E2000F8569B /* SUIUtils */ = {
@@ -1176,7 +1161,6 @@
 				0435D3681C8C6CD10046D2B3 /* FourthViewManger2.m in Sources */,
 				0435D36C1C8C6CD10046D2B3 /* BQCollectionCell.m in Sources */,
 				0435D35D1C8C6CD10046D2B3 /* BQCell.m in Sources */,
-				348B3B4F1C8A8E2000F8569B /* KVObserver.m in Sources */,
 				0435D3751C8C6CD10046D2B3 /* ThirdViewModel.m in Sources */,
 				348B3B5E1C8A8E2000F8569B /* UITableViewCell+SUIHelper.m in Sources */,
 				0435D3651C8C6CD10046D2B3 /* FourthView2.m in Sources */,

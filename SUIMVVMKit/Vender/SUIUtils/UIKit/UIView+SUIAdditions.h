@@ -25,8 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) CGFloat sui_height;
 @property (nonatomic) CGPoint sui_origin;
 @property (nonatomic) CGSize sui_size;
-@property (nonatomic) CGFloat sui_right; // (x + width).
-@property (nonatomic) CGFloat sui_bottom; // (y + height).
+@property (nonatomic, readonly) CGFloat sui_right; // (x + width).
+@property (nonatomic, readonly) CGFloat sui_bottom; // (y + height).
 @property (nonatomic) CGFloat sui_centerX; // (x + width/2).
 @property (nonatomic) CGFloat sui_centerY; // (y + height/2).
 

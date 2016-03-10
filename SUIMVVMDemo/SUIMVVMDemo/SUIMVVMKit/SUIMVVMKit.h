@@ -30,6 +30,5 @@
 // Vender：
 #import "SUIUtils.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "PMKVObserver.h"
 
 #endif /* SUIMVVMKit_h */
