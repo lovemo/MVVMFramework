@@ -65,7 +65,7 @@
 /**
  *  将model数据传递给viewManger
  */
-- (void)viewMangerWithModel:(NSDictionary * (^) ( ))dict;
+- (void)viewMangerWithModel:(NSDictionary * (^) ( ))dictBlock;
 
 @end
 

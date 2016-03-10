@@ -77,9 +77,9 @@
     }
 }
 
-- (void)viewMangerWithModel:(NSDictionary *(^)( ))dict {
-    if (dict) {
-        self.dict = dict();
+- (void)viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
+    if (dictBlock) {
+        self.dict = dictBlock();
     }
    
 }
