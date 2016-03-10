@@ -51,7 +51,10 @@
 - (IBAction)clickBtnAction:(UIButton *)sender {
 
     ThirdViewManger *viewManger = (ThirdViewManger *)self.smk_viewManger;
-    viewManger.smk_model = [self.smk_viewModel getRandomData];
+    [viewManger viewMangerWithModel:^NSDictionary *{
+        return @{@"model": [self.smk_viewModel getRandomData]};
+    }];
+    
 }
 
 @end

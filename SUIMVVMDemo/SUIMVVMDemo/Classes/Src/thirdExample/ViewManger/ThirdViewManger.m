@@ -13,6 +13,8 @@
 
 @interface ThirdViewManger ()<SMKViewProtocolDelegate>
 @property (nonatomic, weak) ThirdView *thirdView;
+/** dict */
+@property (nonatomic, strong) NSDictionary *dict;
 @end
 
 @implementation ThirdViewManger
@@ -22,23 +24,32 @@
         ThirdView *thirdView = [ThirdView svv_loadInstanceFromNib];
         _thirdView = thirdView;
         _thirdView.delegate = self;
+        
+        __weak typeof(_thirdView) weakThirdView =  _thirdView;
+        __weak typeof(self) weakSelf = self;
+        _thirdView.viewEventsBlock = ^(NSString *str) {
+            NSLog(@"%@",str);
+            // 可以根据传入的信息，判断分写不同的响应方法
+            [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
+        };
+        
     }
     return _thirdView;
 }
 
-// 两种消息传递方式，开发时任选其一即可，处理View中自定义的事件
-- (void)smk_viewMangerWithSubView:(UIView *)subView {
-    
-    __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
-    __weak typeof(self) weakSelf = self;
-    
-    // btnClickBlock
-    weakThirdView.viewEventsBlock = ^(NSString *str) {
-        NSLog(@"%@",str);
-        // 可以根据传入的信息，判断分写不同的响应方法
-        [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
-    };
-}
+//// 两种消息传递方式，开发时任选其一即可，处理View中自定义的事件
+//- (void)smk_viewMangerWithSubView:(UIView *)subView {
+//    
+//    __weak typeof(self.thirdView) weakThirdView =  self.thirdView;
+//    __weak typeof(self) weakSelf = self;
+//    
+//    // btnClickBlock
+//    weakThirdView.viewEventsBlock = ^(NSString *str) {
+//        NSLog(@"%@",str);
+//        // 可以根据传入的信息，判断分写不同的响应方法
+//        [weakSelf smk_viewMangerWithHandleOfSubView:weakThirdView info:@"click"];
+//    };
+//}
 
 // UIView的delegate方法 ，两种消息传递方式，开发时任选其一即可 根据传入的events信息处理事件
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
@@ -62,8 +73,15 @@
 - (void)smk_viewMangerWithHandleOfSubView:(UIView *)view info:(NSString *)info {
     
     if ([info isEqualToString:@"click"]) {
-        [view configureViewWithCustomObj:self.smk_model];
+        [view configureViewWithCustomObj:self.dict[@"model"]];
     }
+}
+
+- (void)viewMangerWithModel:(NSDictionary *(^)( ))dict {
+    if (dict) {
+        self.dict = dict();
+    }
+   
 }
 
 @end

@@ -62,6 +62,11 @@
  */
 - (void)smk_viewMangerWithUpdateLayoutSubViews;
 
+/**
+ *  将model数据传递给viewManger
+ */
+- (void)viewMangerWithModel:(NSDictionary * (^) ( ))dict;
+
 @end
 
 #endif /* SMKViewMangerProtocolDelegate_h */

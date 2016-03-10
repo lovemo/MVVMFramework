@@ -10,11 +10,5 @@
 
 @implementation SMKBaseViewManger
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self smk_viewMangerWithSubView:nil];
-    }
-    return self;
-}
 
 @end
