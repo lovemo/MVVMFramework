@@ -237,6 +237,7 @@ CocoaPods：
 
 ## 推荐-几篇不错的MVVM学习文章
 * [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
+* [ReactiveCocoa 和 MVVM 入门](http://yulingtianxia.com/blog/2015/05/21/ReactiveCocoa-and-MVVM-an-Introduction/)
 * [MVVM 介绍](http://objccn.io/issue-13-1/)
 * [写给iOS小白的MVVM教程(序)](http://www.ios122.com/2015/10/mvvm_start/)
 * [多方位全面解析：如何正确地写好一个界面](http://ios.jobbole.com/83657/)
