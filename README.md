@@ -193,22 +193,26 @@ CocoaPods：
 }
 ```
 
-### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
+###一句代码实现网络请求，自动缓存网络请求数据
 #####具体实现细节，[点击进入查看SUIMVVMNetwork](https://github.com/lovemo/SUIMVVMNetwork)
 
 ```objc
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
+    
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
         NSArray *array = responseObj[@"stories"];
         self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         if (successHandler) {
-            successHandler();
+            successHandler(self.smk_dataArrayList);
         }
         
     } failure:^(NSError *error) {
         
     }];
+    
+}
     
 ```
 
