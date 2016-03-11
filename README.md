@@ -110,37 +110,87 @@ CocoaPods：
 
 @end
 ```
-### <a id="一句代码集成展示tableView,cell自适应高度"></a> 一句代码集成展示tableView,cell自适应高度
+###配置代码集成展示tableView,cell自适应高度
 
 ```objc
-      self.table.tableHander = [[SMKBaseTableViewManger alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                        cellIdentifiersArray:@[MyCellIdentifier]
-                                        didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                               
-                                        SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
-                                        [weakSelf.navigationController pushViewController:vc animated:YES];
-                                        NSLog(@"click row : %@",@(indexPath.row)) ;
-                                        }];
+/**
+ *  tableView的一些初始化工作
+ */
+- (void)setupTableView
+{
+
+    self.table.separatorStyle = UITableViewCellSelectionStyleNone;
+
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(self.table) weakTable = self.table;
+    
+    // 下拉刷新
+    self.table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
+            [weakTable reloadData];
+        }];
+        // 结束刷新
+        [weakTable.mj_header endRefreshing];
+    }];
+    
+    [self.table.mj_header beginRefreshing];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    self.table.mj_header.automaticallyChangeAlpha = YES;
+    
+    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
+        SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        NSLog(@"click row : %@",@(indexPath.row)) ;
+    }];
+
+    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
+        [self.table.tableHander getItemsWithModelArray:^NSArray *{
+            return array;
+        } completion:^{
+            [self.table reloadData];
+        }];
+    }];
+
+}
 
 ```
        
-### <a id="一句代码集成展示collectionView"></a> 一句代码集成展示collectionView
+###配置代码集成展示collectionView
          
 ```objc
-     self.collectionView.collectionHander = [[SMKBaseCollectionViewManger alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                            cellIdentifier:MyCellIdentifier
-                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                return CGSizeMake(110, 120);
-                                            } cellItemMarginBlock:^UIEdgeInsets {
-                                                return UIEdgeInsetsMake(0, 20, 0, 20);
-                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-                                             [[[UIAlertView alloc] initWithTitle:@"提示"
-                                                                   message:strMsg
-                                                                   delegate:self
-                                                                   cancelButtonTitle:@"好的"
-                                                                   otherButtonTitles:nil, nil] show];
-                                              }];
+/**
+ *  collectionView的一些初始化工作
+ */
+- (void)setupCollectionView
+{
+
+    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
+    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
+    self.collectionView.collectionHander = [[SMKBaseCollectionViewManger alloc]initWithCellIdentifier:MyCellIdentifier collectionViewLayout:nil cellItemSizeBlock:^CGSize{
+        return CGSizeMake(110, 120);
+    } cellItemMarginBlock:^UIEdgeInsets{
+        return UIEdgeInsetsMake(0, 20, 0, 20);
+    } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+        NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+        [[[UIAlertView alloc] initWithTitle:@"提示"
+                                    message:strMsg
+                                   delegate:self
+                          cancelButtonTitle:@"好的"
+                          otherButtonTitles:nil, nil] show];
+    }];
+    
+    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
+      [self.collectionView.collectionHander getItemsWithModelArray:^NSArray *{
+          return array;
+      } completion:^{
+          [self.collectionView reloadData];
+      }];
+    }];
+
+}
 ```
 
 ### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
@@ -159,6 +209,7 @@ CocoaPods：
     } failure:^(NSError *error) {
         
     }];
+    
 ```
 
 ### <a id="几行代码实现数据存储"></a>几行代码实现数据存储
