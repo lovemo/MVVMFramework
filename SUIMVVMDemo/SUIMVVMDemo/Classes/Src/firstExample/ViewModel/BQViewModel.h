@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMKBaseViewModel.h"
 
-@interface BQViewModel : SMKBaseViewModel
+@interface BQViewModel : NSObject<SMKViewModelProtocolDelegate>
 
 @end

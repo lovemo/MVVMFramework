@@ -25,7 +25,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 
  // - - - - - -- - - - - - - - - - -- 创建类 - -- - -  - - - - - -- - - - - -- -//
 
-@class SMKBaseViewModel;
 @interface SMKBaseCollectionViewManger : NSObject <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 /** collectionViewCell 重用标识符 */
@@ -43,9 +42,6 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 /** cell的Margin */
 @property (nonatomic, copy) CellItemMargin cellItemMargin;
 
-/** collectionView的ViewModel */
-@property (nonatomic, strong) SMKBaseViewModel *viewModel;
-
 
 /**
  *  设置UICollectionViewCell大小
@@ -60,8 +56,7 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
 /**
  *  初始化方法
  */
-- (id)initWithViewModel:(SMKBaseViewModel *)viewModel
-         cellIdentifier:(NSString *)aCellIdentifier
+- (id)initWithCellIdentifier:(NSString *)aCellIdentifier
          collectionViewLayout:(UICollectionViewLayout *)collectionViewLayout
          cellItemSizeBlock:(CellItemSize)cellItemSize
          cellItemMarginBlock:(CellItemMargin)cellItemMargin
@@ -76,5 +71,13 @@ typedef UIEdgeInsets (^CellItemMargin)() ;
  *  获取CollectionView中Item所在的indexPath
  */
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath ;
+
+/**
+ *  获取模型数组
+ *
+ *  @param modelArrayBlock 返回模型数组Block
+ *  @param completion      获取数据完成时
+ */
+- (void)getItemsWithModelArray:(NSArray * (^) ( ))modelArrayBlock completion:( void(^) ( ))completion;
 
 @end

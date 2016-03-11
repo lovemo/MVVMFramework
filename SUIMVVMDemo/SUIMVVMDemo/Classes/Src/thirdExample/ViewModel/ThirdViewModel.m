@@ -10,9 +10,22 @@
 #import "ThirdModel.h"
 #import "SMKNetworkPublic.h"
 
+@interface ThirdViewModel ()
+
+@property (nonatomic, strong) NSArray *smk_dataArrayList;
+
+@end
+
 @implementation ThirdViewModel
 
-- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
+- (NSArray *)smk_dataArrayList {
+    if (_smk_dataArrayList == nil) {
+        _smk_dataArrayList = [NSArray array];
+    }
+    return _smk_dataArrayList;
+}
+
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
     [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
@@ -20,7 +33,7 @@
         NSArray *array = responseObj[@"stories"];
         self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         if (successHandler) {
-            successHandler();
+            successHandler(self.smk_dataArrayList);
         }
         
     } failure:^(NSError *error) {

@@ -7,12 +7,11 @@
 //
 
 #import "FirstVC.h"
-#import "BQCell.h"
-#import "FirstModel.h"
 #import "SUIMVVMKit.h"
 #import "SecondVC.h"
 #import "BQViewModel.h"
 #import "TestViewDelegate.h"
+#import "MJRefresh.h"
 
 static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
@@ -20,6 +19,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
 
 @property (nonatomic, weak) IBOutlet UITableView *table;
 
+@property (nonatomic, strong) BQViewModel *viewModel;
 @end
 
 @implementation FirstVC
@@ -28,7 +28,6 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
 {
     [super viewDidLoad] ;
     [self setupTableView] ;
-
 }
 
 /**
@@ -36,17 +35,48 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
  */
 - (void)setupTableView
 {
-    __weak typeof(self) weakSelf = self;
+
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
+
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(self.table) weakTable = self.table;
     
-    self.table.tableHander = [[TestViewDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                                     cellIdentifiersArray:@[MyCellIdentifier]
-                                                           didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                               
-                                                               SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
-                                                               [weakSelf.navigationController pushViewController:vc animated:YES];
-                                                               NSLog(@"click row : %@",@(indexPath.row)) ;
-                                                           }];
+    // 下拉刷新
+    self.table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
+            [weakTable reloadData];
+        }];
+        // 结束刷新
+        [weakTable.mj_header endRefreshing];
+    }];
+    
+    [self.table.mj_header beginRefreshing];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    self.table.mj_header.automaticallyChangeAlpha = YES;
+    
+    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
+        SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        NSLog(@"click row : %@",@(indexPath.row)) ;
+    }];
+
+    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
+        [self.table.tableHander getItemsWithModelArray:^NSArray *{
+            return array;
+        } completion:^{
+            [self.table reloadData];
+        }];
+    }];
+
+}
+
+#pragma mark lazy
+- (BQViewModel *)viewModel {
+    if (_viewModel == nil) {
+        _viewModel = [[BQViewModel alloc]init];
+    }
+    return _viewModel;
 }
 
 @end

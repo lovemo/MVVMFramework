@@ -6,8 +6,8 @@
 //  Copyright © 2015年 momo. All rights reserved.
 //
 
-#import "SMKBaseViewModel.h"
+#import <Foundation/Foundation.h>
 
-@interface BQViewModel2 : SMKBaseViewModel
+@interface BQViewModel2 : NSObject<SMKViewModelProtocolDelegate>
 
 @end

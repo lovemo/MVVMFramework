@@ -20,6 +20,11 @@
 - (void)smk_viewModelWithViewController:(UIViewController *)viewController;
 
 /**
+ *  用来判断是否加载成功,方便外部根据不同需求处理 (外部使用)
+ */
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *array))successHandler;
+
+/**
  *  返回指定indexPath的item
  */
 - (instancetype)smk_viewModelWithIndexPath:(NSIndexPath *)indexPath;

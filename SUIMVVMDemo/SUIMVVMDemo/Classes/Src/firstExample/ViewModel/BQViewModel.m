@@ -17,23 +17,13 @@
 
 @implementation BQViewModel
 
-- (NSUInteger)smk_viewModelWithNumberOfRowsInSection:(NSUInteger)section {
-  
-    return self.smk_dataArrayList.count;
-}
-
-- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)())successHandler {
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
     
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    
-    [BQGetDataList get:url param:nil cachePolicy:SMKHttpReturnCacheDataElseLoad modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
-        
-        if (error) {
-            return ;
-        }
-        self.smk_dataArrayList = dataObj;
+    [BQGetDataList get:url param:nil cachePolicy:SMKHttpReturnDefault modelClass:[FirstModel class] responseBlock:^(id dataObj, NSError *error) {
+
         if (successHandler) {
-            successHandler();
+            successHandler(dataObj);
         }
         
     }];

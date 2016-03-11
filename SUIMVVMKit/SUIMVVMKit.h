@@ -10,8 +10,6 @@
 #define SUIMVVMKit_h
 
 // Base：
-#import "SMKBaseViewManger.h"
-#import "SMKBaseViewModel.h"
 #import "SMKBaseTableViewManger.h"
 #import "SMKBaseCollectionViewManger.h"
 

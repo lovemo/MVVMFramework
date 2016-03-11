@@ -12,9 +12,10 @@
 #import "UIView+ViewDelegateAdditions.h"
 
 @interface ThirdViewManger ()<SMKViewProtocolDelegate>
+
 @property (nonatomic, weak) ThirdView *thirdView;
-/** dict */
 @property (nonatomic, strong) NSDictionary *dict;
+
 @end
 
 @implementation ThirdViewManger

@@ -8,15 +8,22 @@
 
 #import "SMKBaseTableViewManger.h"
 #import "UITableViewCell+Extension.h"
-#import "SMKBaseViewModel.h"
-#import "MJRefresh.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 
+
 @interface SMKBaseTableViewManger ()
+/** items */
+@property (nonatomic, strong) NSArray *smk_dataArrayList;
 
 @end
 
 @implementation SMKBaseTableViewManger
+- (NSArray *)smk_dataArrayList {
+    if (_smk_dataArrayList == nil) {
+        _smk_dataArrayList = [NSArray array];
+    }
+    return _smk_dataArrayList;
+}
 
 - (NSArray *)cellIdentifierArray {
     if (_cellIdentifierArray == nil) {
@@ -25,13 +32,9 @@
     return _cellIdentifierArray;
 }
 
-- (id)initWithViewModel:(SMKBaseViewModel *)viewModel
-    cellIdentifiersArray:(NSArray *)cellIdentifiersArray
-    didSelectBlock:(DidSelectCellBlock)didselectBlock
-{
+- (id)initWithCellIdentifiers:(NSArray *)cellIdentifiersArray didSelectBlock:(DidSelectCellBlock)didselectBlock {
     self = [super init] ;
     if (self) {
-        self.viewModel = viewModel;
         self.cellIdentifierArray = cellIdentifiersArray ;
         self.didSelectCellBlock = didselectBlock ;
     }
@@ -41,7 +44,7 @@
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.viewModel.smk_dataArrayList[indexPath.row];
+    return self.smk_dataArrayList[indexPath.row];
 }
 
 - (void)handleTableViewDatasourceAndDelegate:(UITableView *)table
@@ -52,30 +55,22 @@
     
     [UITableViewCell registerTable:table nibIdentifier:self.cellIdentifierArray[0]] ;
     table.tableFooterView = [UIView new];
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(table) weakTable = table;
- 
-    // 下拉刷新
-    table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^{
-            [weakTable reloadData];
-        }];
-        // 结束刷新
-        [weakTable.mj_header endRefreshing];
-    }];
+}
 
-    [table.mj_header beginRefreshing];
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
-    table.mj_header.automaticallyChangeAlpha = YES;
-
+- (void)getItemsWithModelArray:(NSArray *(^)())modelArrayBlock completion:(void (^)())completion{
+    if (modelArrayBlock) {
+        self.smk_dataArrayList = modelArrayBlock();
+        if (completion) {
+            completion();
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.viewModel smk_viewModelWithNumberOfRowsInSection:section];
+    return self.smk_dataArrayList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -90,13 +85,12 @@
  
 }
 
-#pragma mark --c
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id item = [self itemAtIndexPath:indexPath] ;
     __weak typeof(self) weakSelf = self;
-   
+    
     return [tableView fd_heightForCellWithIdentifier:weakSelf.cellIdentifierArray[0] cacheByIndexPath:indexPath configuration:^(UITableViewCell *cell) {
         [cell configure:cell customObj:item indexPath:indexPath];
     }];

@@ -16,6 +16,7 @@
 {
     return objc_getAssociatedObject(self, _cmd);
 }
+
 - (void)setTableHander:(SMKBaseTableViewManger *)tableHander
 {
     if (tableHander) {
