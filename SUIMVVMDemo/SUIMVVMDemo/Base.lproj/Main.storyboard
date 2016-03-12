@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2fe-0d-FF1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2fe-0d-FF1">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="lel-BA-3d9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J3u-h2-rLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="2fe-0d-FF1" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RGQ-SA-sz9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="G3E-B3-uAG" kind="relationship" relationship="rootViewController" id="9c2-X4-k52"/>
+                        <segue destination="Xlq-bf-Q7H" kind="relationship" relationship="rootViewController" id="3gB-92-ZDg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3u-h2-rLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-50" y="325"/>
+        </scene>
+        <!--点击屏幕，利用viewManger管理相对布局-->
+        <scene sceneID="sXU-6T-JoW">
+            <objects>
+                <viewController id="Xlq-bf-Q7H" customClass="FourthVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c35-2E-X07"/>
+                        <viewControllerLayoutGuide type="bottom" id="B70-Sh-Jm4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FVZ-E0-A6e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="点击屏幕，利用viewManger管理相对布局" id="UUA-8q-NLw">
+                        <barButtonItem key="rightBarButtonItem" title="跳转" id="Hkz-uU-TyA">
+                            <connections>
+                                <segue destination="G3E-B3-uAG" kind="show" id="NNV-03-WWk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="efi-L3-HPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="251"/>
         </scene>
         <!--ThirdVC-->
         <scene sceneID="MxY-m9-mBN">
@@ -34,19 +59,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1l-b9-T7p">
-                                <rect key="frame" x="208" y="270" width="185" height="60"/>
+                                <rect key="frame" x="223" y="270" width="155" height="60"/>
                                 <color key="backgroundColor" red="0.86678733009999998" green="1" blue="0.2028579875" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="ILz-WS-Epl"/>
                                     <constraint firstAttribute="height" constant="60" id="mjJ-0Z-iMF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="点我加载/监听模型数据变化"/>
+                                <state key="normal" title="点我加载/改变模型数据"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ILz-WS-Epl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="clickBtnAction:" destination="G3E-B3-uAG" eventType="touchUpInside" id="OLj-pd-Z7x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,13 +84,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kDh-l4-Yzn"/>
-                    <connections>
-                        <outlet property="clickBtn" destination="a1l-b9-T7p" id="EHw-4f-imw"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTe-D5-y8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="701" y="325"/>
+            <point key="canvasLocation" x="991" y="262"/>
         </scene>
         <!--FirstVC-->
         <scene sceneID="uOc-3i-IV8">
@@ -79,6 +104,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RVb-gP-mad">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="irn-i3-cp7" id="JBP-JT-dWp"/>
+                                    <outlet property="delegate" destination="irn-i3-cp7" id="aZ8-4N-tMw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +118,9 @@
                             <constraint firstItem="RVb-gP-mad" firstAttribute="leading" secondItem="t7k-5e-zg6" secondAttribute="leading" id="xxI-6B-wwM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="RVb-gP-mad" id="I3L-kD-2uv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kay-FA-qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,8 +137,33 @@
                     <view key="view" contentMode="scaleToFill" id="wEz-aW-y60">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cic-VP-jRn">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="57S-zG-yXw">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pN2-aT-ZGk" id="wEv-f8-1HG"/>
+                                    <outlet property="delegate" destination="pN2-aT-ZGk" id="JCj-IF-hcI"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cic-VP-jRn" firstAttribute="leading" secondItem="wEz-aW-y60" secondAttribute="leading" id="RRG-42-DWZ"/>
+                            <constraint firstItem="vxv-jX-Fsf" firstAttribute="top" secondItem="cic-VP-jRn" secondAttribute="bottom" id="TS8-Hh-Nv7"/>
+                            <constraint firstItem="cic-VP-jRn" firstAttribute="top" secondItem="ShP-ya-hUv" secondAttribute="bottom" id="cjg-Jy-Baw"/>
+                            <constraint firstAttribute="trailing" secondItem="cic-VP-jRn" secondAttribute="trailing" id="y46-vZ-RCU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="cic-VP-jRn" id="dNA-6p-tXG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCN-Pk-ZSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

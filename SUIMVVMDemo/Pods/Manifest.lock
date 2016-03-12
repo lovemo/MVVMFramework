@@ -14,64 +14,39 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
-  - FDFullscreenPopGesture (1.1)
   - FMDB (2.6):
     - FMDB/standard (= 2.6)
   - FMDB/standard (2.6)
-  - LxDBAnything (1.1.0)
   - Masonry (0.6.4)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
-  - SUIUtils (0.0.2):
-    - SUIUtils/Foundation (= 0.0.2)
-    - SUIUtils/Helper (= 0.0.2)
-    - SUIUtils/Tool (= 0.0.2)
-    - SUIUtils/UIKit (= 0.0.2)
-  - SUIUtils/Foundation (0.0.2)
-  - SUIUtils/Helper (0.0.2):
-    - SUIUtils/UIKit
-    - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - SUIUtils/Tool (0.0.2)
-  - SUIUtils/UIKit (0.0.2):
-    - SUIUtils/Foundation
-  - SVProgressHUD (1.1.3)
-  - UITableView+FDTemplateLayoutCell (1.4)
+  - SUIMVVMNetwork (0.0.3):
+    - SUIMVVMNetwork/SUIMVVMNetwork (= 0.0.3)
+  - SUIMVVMNetwork/SUIMVVMNetwork (0.0.3):
+    - AFNetworking (>= 3.0)
+    - SUIMVVMStore
+  - SUIMVVMStore (0.0.8):
+    - SUIMVVMStore/SUIMVVMStore (= 0.0.8)
+    - SUIMVVMStore/YTKKeyValueStore (= 0.0.8)
+  - SUIMVVMStore/SUIMVVMStore (0.0.8):
+    - SUIMVVMStore/YTKKeyValueStore
+  - SUIMVVMStore/YTKKeyValueStore (0.0.8):
+    - FMDB
 
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
-  - FDFullscreenPopGesture
-  - FMDB
-  - LxDBAnything
   - Masonry
   - MJExtension
-  - MJRefresh (> 3.0.0)
-  - SDWebImage
-  - SUIUtils (from `https://github.com/randomprocess/SUIUtils`)
-  - SVProgressHUD
-
-EXTERNAL SOURCES:
-  SUIUtils:
-    :git: https://github.com/randomprocess/SUIUtils
-
-CHECKOUT OPTIONS:
-  SUIUtils:
-    :commit: 9fb199948e02045d90c6f22b26664c227533fd6c
-    :git: https://github.com/randomprocess/SUIUtils
+  - MJRefresh
+  - SUIMVVMNetwork
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
-  LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  SUIUtils: 6cb2cad87bea1893566b09543cf60852f31ec3fb
-  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
-  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  SUIMVVMNetwork: 68310f14b8b6361620fb3f30052d8ea283d99fd9
+  SUIMVVMStore: a393af1cc70ecec19e571791e7f143e023f21fac
 
 COCOAPODS: 0.39.0

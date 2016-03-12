@@ -3,20 +3,31 @@
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
 ====
+#####具体实现思路，请参看博客：
 ####博客：浅谈MVVM 
 ####地址：[点击链接进入](https://github.com/lovemo/MVVMFramework/tree/master/source)
 ====
-再看了几篇博客后，总结整理下一个快速开发MVVM框架(抛砖引玉)，分离控制器代码，降低代码耦合
 
-终于再也不用为ViewController中一坨坨tableView和collectionView的烦人代码忧虑了
+总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
 
-代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，运行时自动布局UILabel，配合MJExtension，MJRefresh，AFNetworking等常用开发框架使用更佳，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。
+====
+####usage:
+CocoaPods：
+```
+	pod 'SUIMVVMKit'
+```
 
+- 根据需要继承SMKBaseTableViewManger或SMKBaseCollectionViewManger扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
+- 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
+- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
+
+
+====
 ##思维流程图示
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking.png)
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/MVVMFrameWork-Thinking2.jpeg)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking2.jpeg)
 ##现在的工程代码结构
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/directory_tree.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/directory_tree.png)
 
 ### <a id="模块构建"></a> 模块构建
   
@@ -34,6 +45,8 @@
 * [MVVM中模块的集合](#MVVM)
 	* [Handler 负责处理实现tableView和collectionView的delegate和dataSource中的一些协议方法](#Handler)
 	* [Network 实现常用的网络请求代码](#Network)
+	* [Base 一些基础模块](#Base)
+	* [Extend 扩展系统功能模块](#Extend)
 	* [Store 实现常用的数据存储方法](#Store)
 	* [ViewModel 声明了一些基本的方法,负责处理一些系统业务逻辑](#ViewModel)
 	* [Vender 一些依赖库](#Vender)
@@ -41,85 +54,230 @@
 ---
 
 ## <a id="代码示例"></a> 代码示例
-### <a id="一句代码集成展示tableView,cell自适应高度,下拉刷新"></a> 一句代码集成展示tableView,cell自适应高度,下拉刷新
+###部分protocol定义
+```objc
+@protocol SMKViewMangerProtocolDelegate <NSObject>
+
+@optional
+
+/**
+ *  设置Controller的子视图的管理者为self
+ *
+ *  @param superView 一般指subView所在控制器的view
+ */
+- (void)smk_viewMangerWithSuperView:(UIView *)superView;
+
+/**
+ *  设置subView的管理者为self
+ *
+ *  @param subView 管理的subView
+ */
+- (void)smk_viewMangerWithSubView:(UIView *)subView;
+
+/**
+ *  设置添加subView的事件
+ *
+ *  @param view 管理的subView
+ *  @param info 附带信息，用于区分调用
+ */
+- (void)smk_viewMangerWithHandleOfSubView:(UIView *)subView info:(NSString *)info;
+
+/**
+ *  返回viewManger所管理的视图
+ *
+ *  @return viewManger所管理的视图
+ */
+- (__kindof UIView *)smk_viewMangerOfSubView;
+
+/**
+ *  得到其它viewManger所管理的subView，用于自己内部
+ *
+ *  @param views 其它的subViews
+ */
+- (void)smk_viewMangerWithOtherSubViews:(NSDictionary *)viewInfos;
+
+/**
+ *  需要重新布局subView时，更改subView的frame或者约束
+ *
+ *  @param block 更新布局完成的block
+ */
+- (void)smk_viewMangerWithLayoutSubViews:(void (^)( ))updateBlock;
+
+/**
+ *  使子视图更新到最新的布局约束或者frame
+ */
+- (void)smk_viewMangerWithUpdateLayoutSubViews;
+
+@end
+```
+###配置代码集成展示tableView,cell自适应高度
 
 ```objc
-      self.table.tableHander = [[MVVMTableDataDelegate alloc]initWithViewModel:[[BQViewModel alloc]init]
-                                        cellIdentifiersArray:@[MyCellIdentifier]
-                                        didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                                               
-                                        SecondVC *vc = (SecondVC *)[UIViewController viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
-                                        [weakSelf.navigationController pushViewController:vc animated:YES];
-                                        NSLog(@"click row : %@",@(indexPath.row)) ;
-                                        }];
+/**
+ *  tableView的一些初始化工作
+ */
+- (void)setupTableView
+{
+
+    self.table.separatorStyle = UITableViewCellSelectionStyleNone;
+
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(self.table) weakTable = self.table;
+    
+    // 下拉刷新
+    self.table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
+            [weakTable reloadData];
+        }];
+        // 结束刷新
+        [weakTable.mj_header endRefreshing];
+    }];
+    
+    [self.table.mj_header beginRefreshing];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    self.table.mj_header.automaticallyChangeAlpha = YES;
+    
+    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
+        SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        NSLog(@"click row : %@",@(indexPath.row)) ;
+    }];
+
+    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
+        [self.table.tableHander getItemsWithModelArray:^NSArray *{
+            return array;
+        } completion:^{
+            [self.table reloadData];
+        }];
+    }];
+
+}
 
 ```
        
-### <a id="一句代码集成展示collectionView"></a> 一句代码集成展示collectionView
+###配置代码集成展示collectionView
          
 ```objc
-     self.collectionView.collectionHander = [[MVVMCollectionDataDelegate alloc]initWithViewModel:[[BQViewModel2 alloc]init]
-                                            cellIdentifier:MyCellIdentifier
-                                            collectionViewLayout:nil cellItemSizeBlock:^CGSize {
-                                                return CGSizeMake(110, 120);
-                                            } cellItemMarginBlock:^UIEdgeInsets {
-                                                return UIEdgeInsetsMake(0, 20, 0, 20);
-                                            } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-                                             NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-                                             [[[UIAlertView alloc] initWithTitle:@"提示"
-                                                                   message:strMsg
-                                                                   delegate:self
-                                                                   cancelButtonTitle:@"好的"
-                                                                   otherButtonTitles:nil, nil] show];
-                                              }];
+/**
+ *  collectionView的一些初始化工作
+ */
+- (void)setupCollectionView
+{
+
+    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
+    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
+    self.collectionView.collectionHander = [[SMKBaseCollectionViewManger alloc]initWithCellIdentifier:MyCellIdentifier collectionViewLayout:nil cellItemSizeBlock:^CGSize{
+        return CGSizeMake(110, 120);
+    } cellItemMarginBlock:^UIEdgeInsets{
+        return UIEdgeInsetsMake(0, 20, 0, 20);
+    } didSelectBlock:^(NSIndexPath *indexPath, id item) {
+        NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
+        [[[UIAlertView alloc] initWithTitle:@"提示"
+                                    message:strMsg
+                                   delegate:self
+                          cancelButtonTitle:@"好的"
+                          otherButtonTitles:nil, nil] show];
+    }];
+    
+    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
+      [self.collectionView.collectionHander getItemsWithModelArray:^NSArray *{
+          return array;
+      } completion:^{
+          [self.collectionView reloadData];
+      }];
+    }];
+
+}
+```
+###配置viewManger
+```objc
+// UIView的delegate方法 ，两种消息传递方式，开发时任选其一即可 根据传入的events信息处理事件
+- (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
+
+    NSLog(@"----------%@", events);
+    
+    if ([[events allKeys] containsObject:@"jump"]) {
+        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
+    }
+    
+}
+
+// 得到父视图，添加subView -> superView
+- (void)smk_viewMangerWithSuperView:(UIView *)superView {
+    self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
+    [superView addSubview:self.thirdView];
+}
+
+// 根据传入的info设置添加subView的事件
+- (void)smk_viewMangerWithHandleOfSubView:(UIView *)view info:(NSString *)info {
+    
+    if ([info isEqualToString:@"click"]) {
+        [view configureViewWithCustomObj:self.dict[@"model"]];
+    }
+}
+// 得到模型数据
+- (void)viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
+    if (dictBlock) {
+        self.dict = dictBlock();
+    }
+}
 ```
 
-### <a id="一句代码实现网络请求，自动缓存网络请求数据"></a> 一句代码实现网络请求，自动缓存网络请求数据
+###一句代码实现网络请求，自动缓存网络请求数据
+#####具体实现细节，[点击进入查看SUIMVVMNetwork](https://github.com/lovemo/SUIMVVMNetwork)
 
 ```objc
+- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
+    
     NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    [MVVMHttp get:url params:nil cachePolicy:MVVMHttpReturnCacheDataThenLoad success:^(id responseObj) {
+    [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
         
         NSArray *array = responseObj[@"stories"];
-        self.dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
+        self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
         if (successHandler) {
-            successHandler();
+            successHandler(self.smk_dataArrayList);
         }
         
     } failure:^(NSError *error) {
         
     }];
+    
+}
+    
 ```
 
 ### <a id="几行代码实现数据存储"></a>几行代码实现数据存储
-
+#####具体实现细节，[点击进入查看SUIMVVMStore](https://github.com/lovemo/SUIMVVMStore)
 ```objc
-    MVVMStore *store = [[MVVMStore alloc]init];
-    [store db_initWithDBName:@"demo.sqlite" tableName:@"arrarList"];
-    [store db_putObject:array withId:@"arrayID" intoTable:@"arrarList"];
+    static NSString *tableName = @"arrarList";
+
+    SMKStore *store = [SMKStore sharedStore];
+    [store db_initWithDBName:@"demo.sqlite" tableName:tableName];
+    [store db_putObject:array withId:@"arrayID" intoTable:tableName];
 ```
 
 ### <a id="demo效果"></a> demo效果
 - 只需实现加载请求以及配置自定义cell和上述代码，就能轻松实现以下效果，最重要的是代码解耦。
 
-![image](https://github.com/lovemo/MVVMFramework/raw/master/MVVMFramework/screenshots/demo.gif)
-
-### <a id="使用方法"></a> 使用方法
-- 拖拽MVVM文件夹，然后在模块代码中新建ViewModel子类，继承MVVMBaseViewModel类型，实现加载数据等方法。
-- 根据需要继承MVVMTableDataDelegate或MVVMCollectionDataDelegate扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
-- 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
-- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/demo.gif)
 
 ## 期待
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
-* http://www.ios122.com/tag/mvvm/
-* http://ios.jobbole.com/83657/
-* http://www.cocoachina.com/ios/20150525/11919.html
-* http://www.cocoachina.com/ios/20140716/9152.html
-* http://www.cocoachina.com/ios/20150122/10987.html
-* http://bifidy.net/index.php/407
-* http://www.jianshu.com/p/1e53f09d0f21
-* http://www.cocoachina.com/ios/20160108/14911.html
+* [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
+* [ReactiveCocoa 和 MVVM 入门](http://yulingtianxia.com/blog/2015/05/21/ReactiveCocoa-and-MVVM-an-Introduction/)
+* [MVVM 介绍](http://objccn.io/issue-13-1/)
+* [写给iOS小白的MVVM教程(序)](http://www.ios122.com/2015/10/mvvm_start/)
+* [多方位全面解析：如何正确地写好一个界面](http://ios.jobbole.com/83657/)
+* [iOS应用架构谈 view层的组织和调用方案](http://www.cocoachina.com/ios/20150525/11919.html)
+* [用Model-View-ViewModel构建iOS App](http://www.cocoachina.com/ios/20140716/9152.html)
+* [浅谈iOS中MVVM的架构设计与团队协作](http://www.cocoachina.com/ios/20150122/10987.html)
+* [一次简单的 ViewModel 实践](http://bifidy.net/index.php/407)
+* [不要把ViewController变成处理tableView的"垃圾桶"](http://www.cocoachina.com/ios/20151218/14743.html)
+* [实践干货！猿题库 iOS 客户端架构设计](http://www.cocoachina.com/ios/20160108/14911.html)
