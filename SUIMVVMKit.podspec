@@ -12,15 +12,10 @@ Pod::Spec.new do |s|
     s.source_files  = 'SUIMVVMKit/SUIMVVMKit.h'
     s.frameworks             = 'CoreFoundation','Foundation','UIKit'
 
-    s.subspec 'Vender' do |ss|
-    ss.requires_arc = true
-    ss.source_files = 'SUIMVVMKit/Vender/**/*'
-    ss.public_header_files = 'SUIMVVMKit/Vender/**/*.h'
-    end
-
     s.subspec 'SUIMVVMKit' do |ss|
     ss.requires_arc = true
     ss.library = 'sqlite3'
+    ss.dependency 'SUIUtils'
     ss.dependency 'AFNetworking'
     ss.dependency 'MJRefresh'
     ss.dependency 'SUIMVVMNetwork'
