@@ -32,6 +32,20 @@ PODS:
     - SUIMVVMStore/YTKKeyValueStore
   - SUIMVVMStore/YTKKeyValueStore (0.0.8):
     - FMDB
+  - SUIUtils (0.0.1):
+    - SUIUtils/Foundation (= 0.0.1)
+    - SUIUtils/Helper (= 0.0.1)
+    - SUIUtils/Tool (= 0.0.1)
+    - SUIUtils/UIKit (= 0.0.1)
+  - SUIUtils/Foundation (0.0.1):
+    - SUIUtils/Tool
+  - SUIUtils/Helper (0.0.1):
+    - SUIUtils/UIKit
+    - UITableView+FDTemplateLayoutCell (~> 1.4)
+  - SUIUtils/Tool (0.0.1)
+  - SUIUtils/UIKit (0.0.1):
+    - SUIUtils/Foundation
+  - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
@@ -39,6 +53,16 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SUIMVVMNetwork
+  - SUIUtils (from `https://github.com/randomprocess/SUIUtils`)
+
+EXTERNAL SOURCES:
+  SUIUtils:
+    :git: https://github.com/randomprocess/SUIUtils
+
+CHECKOUT OPTIONS:
+  SUIUtils:
+    :commit: ab5dd411db7fe038599ce5e9cd3d87ea545cccdb
+    :git: https://github.com/randomprocess/SUIUtils
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -48,5 +72,7 @@ SPEC CHECKSUMS:
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SUIMVVMNetwork: 68310f14b8b6361620fb3f30052d8ea283d99fd9
   SUIMVVMStore: a393af1cc70ecec19e571791e7f143e023f21fac
+  SUIUtils: c1b214bac5b9cb2726e43299ab36a6dc28c7a2d8
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.39.0

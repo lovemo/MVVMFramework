@@ -35,9 +35,9 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
  */
 - (void)setupTableView
 {
-
+    
     self.table.separatorStyle = UITableViewCellSelectionStyleNone;
-
+    
     __weak typeof(self) weakSelf = self;
     __weak typeof(self.table) weakTable = self.table;
     
@@ -55,20 +55,36 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     // 设置自动切换透明度(在导航栏下面自动隐藏)
     self.table.mj_header.automaticallyChangeAlpha = YES;
     
-    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
-        SecondVC *vc = (SecondVC *)[UIViewController sui_viewControllerWithStoryboard:nil identifier:@"SecondVCID"];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-        NSLog(@"click row : %@",@(indexPath.row)) ;
+    
+    //    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
+    //        SecondVC *vc = (SecondVC *)[UIViewController sui_viewControllerWithStoryboard:nil identifier:@"SecondVCID"];
+    //        [weakSelf.navigationController pushViewController:vc animated:YES];
+    //        NSLog(@"click row : %@",@(indexPath.row)) ;
+    //    }];
+    
+    // cell自动计算高度
+    self.table.sui_autoSizingCell = YES;
+    // 注册cell
+    [self.table.sui_tableHelper registerNibs:@[MyCellIdentifier]];
+    // cell被选中时跳转
+    [self.table.sui_tableHelper didSelect:^(NSIndexPath * _Nonnull cIndexPath, id  _Nonnull model) {
+        [weakSelf sui_storyboardInstantiate:@"Main.SecondVCID"];
+        NSLog(@"click row : %@",@(cIndexPath.row)) ;
     }];
-
+    
+    
+    //    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
+    //        [self.table.tableHander getItemsWithModelArray:^NSArray *{
+    //            return array;
+    //        } completion:^{
+    //            [self.table reloadData];
+    //        }];
+    //    }];
+    
     [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
-        [self.table.tableHander getItemsWithModelArray:^NSArray *{
-            return array;
-        } completion:^{
-            [self.table reloadData];
-        }];
+        [weakSelf.table sui_resetDataAry:array];
     }];
-
+    
 }
 
 #pragma mark lazy
