@@ -22,7 +22,7 @@
 
 - (ThirdView *)thirdView {
     if (_thirdView == nil) {
-        ThirdView *thirdView = [ThirdView svv_loadInstanceFromNib];
+        ThirdView *thirdView = [ThirdView sui_loadInstanceFromNib];
         _thirdView = thirdView;
         _thirdView.delegate = self;
         
@@ -54,11 +54,11 @@
 
 // UIView的delegate方法 ，两种消息传递方式，开发时任选其一即可 根据传入的events信息处理事件
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
-    
+
     NSLog(@"----------%@", events);
     
     if ([[events allKeys] containsObject:@"jump"]) {
-        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        FirstVC *firstVC = [UIViewController sui_viewControllerWithStoryboard:nil identifier:@"FirstVCID"];
         [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
     }
     
@@ -77,12 +77,11 @@
         [view configureViewWithCustomObj:self.dict[@"model"]];
     }
 }
-
-- (void)viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
+// 得到模型数据
+- (void)smk_viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
     if (dictBlock) {
         self.dict = dictBlock();
     }
-   
 }
 
 @end

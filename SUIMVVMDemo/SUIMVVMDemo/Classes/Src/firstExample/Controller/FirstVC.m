@@ -56,7 +56,7 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     self.table.mj_header.automaticallyChangeAlpha = YES;
     
     self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
-        SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
+        SecondVC *vc = (SecondVC *)[UIViewController sui_viewControllerWithStoryboard:nil identifier:@"SecondVCID"];
         [weakSelf.navigationController pushViewController:vc animated:YES];
         NSLog(@"click row : %@",@(indexPath.row)) ;
     }];

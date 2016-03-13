@@ -35,6 +35,7 @@ static NSString *const MyCellIdentifier = @"BQCollectionCell" ; // `cellIdentifi
 {
     [super viewDidLoad] ;
     [self setupCollectionView];
+
 }
 
 /**

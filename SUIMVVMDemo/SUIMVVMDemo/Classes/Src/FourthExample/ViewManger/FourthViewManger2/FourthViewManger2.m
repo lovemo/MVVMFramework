@@ -46,7 +46,6 @@
         make.size.mas_equalTo(CGSizeMake(250, 250));
         make.top.mas_equalTo(view1.mas_bottom).offset(20);
         make.left.mas_equalTo(view1);
-        
     }];
     
 }
