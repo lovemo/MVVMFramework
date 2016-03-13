@@ -68,7 +68,7 @@ View <-> C <-> ViewModel <->Model
 
 <img src="https://github.com/lovemo/MVVMFramework/raw/master/resources/img1.jpeg "height="460">
 
-&emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的sui_model属性接收。
+&emsp;&emsp;当用户点击MyBtn按钮触发动作时，控制器就会就将ViewMode中加载的数据模型转发分配给ViewManger中的回调函数`- (void)smk_viewMangerWithModel:(NSDictionary * (^) ( ))dictBlock`接收。
 ```objc
 // 两种消息传递方式，开发时任选其一即可
 - (void)smk_viewMangerWithSubView:(UIView *)subView {
