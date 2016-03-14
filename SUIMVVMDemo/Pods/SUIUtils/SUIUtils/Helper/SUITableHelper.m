@@ -42,6 +42,9 @@
         [cellNibNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [self.sui_tableView registerNib:[UINib nibWithNibName:obj bundle:nil] forCellReuseIdentifier:obj];
         }];
+        if (cellNibNames.count == 1) {
+            self.cellIdentifier = cellNibNames[0];
+        }
     }
 }
 
