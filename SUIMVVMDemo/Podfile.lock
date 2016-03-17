@@ -61,7 +61,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SUIUtils:
-    :commit: e7c78be2fbfceb0d0f6f7b03441146ca866173e0
+    :commit: a4267058ca70f53402726f05b8e32411606b52df
     :git: https://github.com/randomprocess/SUIUtils
 
 SPEC CHECKSUMS:

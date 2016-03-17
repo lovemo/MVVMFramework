@@ -206,7 +206,7 @@ void sui_segue(void) {
     }
 }
 
-+ (UIViewController *)sui_viewControllerWithStoryboard:(NSString *)storyboard identifier:(NSString *)identifier {
++ (UIViewController *)sui_viewControllerWithStoryboard:(nullable NSString *)storyboard identifier:(NSString *)identifier {
     NSString *storyboardName = storyboard ?: @"Main";
     UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     return [sb instantiateViewControllerWithIdentifier:identifier];
