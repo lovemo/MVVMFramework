@@ -13,13 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol SUITableHelperProtocol <NSObject>
 @optional
 
-- (void)sui_cellWillDisplayWithModel:(id)cModel indexPath:(NSIndexPath *)cIndexPath;
+- (void)sui_cellWillDisplayWithModel:(id)cModel;
 
 @end
 
 
-
 @interface UITableViewCell (SUIHelper) <SUITableHelperProtocol>
+
+
+@property (nullable,nonatomic,strong) NSIndexPath *sui_indexPath;
+
 
 @end
 

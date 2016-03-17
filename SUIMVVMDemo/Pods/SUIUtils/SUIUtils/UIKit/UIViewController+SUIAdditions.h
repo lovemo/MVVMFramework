@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return 指定identifer的控制器
  */
-+ (__kindof UIViewController *)sui_viewControllerWithStoryboard:(NSString *)storyboard identifier:(NSString *)identifier;
++ (__kindof UIViewController *)sui_viewControllerWithStoryboard:(nullable NSString *)storyboard identifier:(NSString *)identifier;
 
 /*o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o~o*
  *  Geometry
