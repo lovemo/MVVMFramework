@@ -270,6 +270,7 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐-几篇不错的MVVM学习文章
+* [MVVM With ReactiveCocoa](http://www.cocoachina.com/ios/20160330/15823.html)
 * [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
 * [ReactiveCocoa 和 MVVM 入门](http://yulingtianxia.com/blog/2015/05/21/ReactiveCocoa-and-MVVM-an-Introduction/)
 * [MVVM 介绍](http://objccn.io/issue-13-1/)
