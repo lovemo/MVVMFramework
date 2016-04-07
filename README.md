@@ -281,6 +281,13 @@ CocoaPods：
 	* [蘑菇街App的组件化之路(博客文章)](http://limboy.me/ios/2016/03/10/mgj-components.html?utm_source=tuicool&utm_medium=referral)
 * [蘑菇街 App 的组件化之路·续](http://limboy.me/ios/2016/03/14/mgj-components-continued.html)
 * [猿题库 iOS 客户端架构设计](http://gracelancy.com/blog/2016/01/06/ape-ios-arch-design/)
+* [豆瓣混合开发实践](http://lincode.github.io/Hybrid-Rexxar)
+* [滴滴出行iOS客户端架构演进之路](http://chuansong.me/n/2687514)
+* [不要写死！天猫App的动态化配置中心实践 ](http://chuansong.me/n/2682208)
+* [为移动应用提供离线支持](http://www.infoq.com/cn/articles/mobile-apps-offline-support)
+* [携程App的网络性能优化实践](http://www.infoq.com/cn/articles/how-ctrip-improves-app-networking-performance
+* [QCon旧金山演讲总结：阿里无线技术架构演进](http://www.infoq.com/cn/articles/alibaba-mobile-infrastructure)
+
 
 ###MVVM学习文章
 * [面向协议的 MVVM 架构介绍](https://realm.io/cn/news/doios-natasha-murashev-protocol-oriented-mvvm/)
