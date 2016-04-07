@@ -285,7 +285,7 @@ CocoaPods：
 * [滴滴出行iOS客户端架构演进之路](http://chuansong.me/n/2687514)
 * [不要写死！天猫App的动态化配置中心实践 ](http://chuansong.me/n/2682208)
 * [为移动应用提供离线支持](http://www.infoq.com/cn/articles/mobile-apps-offline-support)
-* [携程App的网络性能优化实践](http://www.infoq.com/cn/articles/how-ctrip-improves-app-networking-performance
+* [携程App的网络性能优化实践](http://www.infoq.com/cn/articles/how-ctrip-improves-app-networking-performance)
 * [QCon旧金山演讲总结：阿里无线技术架构演进](http://www.infoq.com/cn/articles/alibaba-mobile-infrastructure)
 
 
