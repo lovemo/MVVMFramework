@@ -8,42 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0435D35A1C8C6CD10046D2B3 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3101C8C6CD10046D2B3 /* FirstVC.m */; };
-		0435D35B1C8C6CD10046D2B3 /* TestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */; };
 		0435D35C1C8C6CD10046D2B3 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3151C8C6CD10046D2B3 /* FirstModel.m */; };
-		0435D35D1C8C6CD10046D2B3 /* BQCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3181C8C6CD10046D2B3 /* BQCell.m */; };
-		0435D35E1C8C6CD10046D2B3 /* BQCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3191C8C6CD10046D2B3 /* BQCell.xib */; };
-		0435D35F1C8C6CD10046D2B3 /* BQGetDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */; };
-		0435D3601C8C6CD10046D2B3 /* BQViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */; };
-		0435D3611C8C6CD10046D2B3 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3221C8C6CD10046D2B3 /* FourthVC.m */; };
-		0435D3621C8C6CD10046D2B3 /* FourthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3251C8C6CD10046D2B3 /* FourthModel.m */; };
-		0435D3631C8C6CD10046D2B3 /* FourthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3291C8C6CD10046D2B3 /* FourthView.m */; };
-		0435D3641C8C6CD10046D2B3 /* FourthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D32A1C8C6CD10046D2B3 /* FourthView.xib */; };
-		0435D3651C8C6CD10046D2B3 /* FourthView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D32D1C8C6CD10046D2B3 /* FourthView2.m */; };
-		0435D3661C8C6CD10046D2B3 /* FourthView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */; };
-		0435D3671C8C6CD10046D2B3 /* FourthViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */; };
-		0435D3681C8C6CD10046D2B3 /* FourthViewManger2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */; };
-		0435D3691C8C6CD10046D2B3 /* FourthViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */; };
-		0435D36A1C8C6CD10046D2B3 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D33C1C8C6CD10046D2B3 /* SecondVC.m */; };
-		0435D36B1C8C6CD10046D2B3 /* BQTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */; };
-		0435D36C1C8C6CD10046D2B3 /* BQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */; };
-		0435D36D1C8C6CD10046D2B3 /* BQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */; };
-		0435D36E1C8C6CD10046D2B3 /* BQGetDataList2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */; };
-		0435D36F1C8C6CD10046D2B3 /* BQViewModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */; };
+		0435D35D1C8C6CD10046D2B3 /* FirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3181C8C6CD10046D2B3 /* FirstCell.m */; };
+		0435D35E1C8C6CD10046D2B3 /* FirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3191C8C6CD10046D2B3 /* FirstCell.xib */; };
+		0435D3601C8C6CD10046D2B3 /* FirstViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D31E1C8C6CD10046D2B3 /* FirstViewModel.m */; };
 		0435D3701C8C6CD10046D2B3 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D34C1C8C6CD10046D2B3 /* ThirdVC.m */; };
 		0435D3711C8C6CD10046D2B3 /* ThirdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D34F1C8C6CD10046D2B3 /* ThirdModel.m */; };
 		0435D3721C8C6CD10046D2B3 /* ThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3521C8C6CD10046D2B3 /* ThirdView.m */; };
 		0435D3731C8C6CD10046D2B3 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0435D3531C8C6CD10046D2B3 /* ThirdView.xib */; };
 		0435D3741C8C6CD10046D2B3 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3561C8C6CD10046D2B3 /* ThirdViewManger.m */; };
 		0435D3751C8C6CD10046D2B3 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0435D3591C8C6CD10046D2B3 /* ThirdViewModel.m */; };
-		34B708CF1C95253000CCB2D1 /* SMKBaseCollectionViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708621C95253000CCB2D1 /* SMKBaseCollectionViewManger.m */; };
-		34B708D01C95253000CCB2D1 /* SMKBaseTableViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708641C95253000CCB2D1 /* SMKBaseTableViewManger.m */; };
-		34B708D11C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B7086B1C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.m */; };
-		34B708D21C95253000CCB2D1 /* UICollectionViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B7086D1C95253000CCB2D1 /* UICollectionViewCell+Extension.m */; };
-		34B708D31C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B7086F1C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.m */; };
-		34B708D41C95253000CCB2D1 /* UITableViewCell+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708711C95253000CCB2D1 /* UITableViewCell+Extension.m */; };
-		34B708D51C95253000CCB2D1 /* UIView+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708731C95253000CCB2D1 /* UIView+Configure.m */; };
-		34B708D61C95253000CCB2D1 /* UIView+ViewDelegateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708751C95253000CCB2D1 /* UIView+ViewDelegateAdditions.m */; };
-		34B708D71C95253000CCB2D1 /* UIViewController+ControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B708771C95253000CCB2D1 /* UIViewController+ControllerAdditions.m */; };
+		34978FE91CB7522200995D23 /* FirstRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FE81CB7522200995D23 /* FirstRequest.m */; };
+		34978FEF1CB77F5400995D23 /* ThirdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FEE1CB77F5400995D23 /* ThirdRequest.m */; };
+		349790091CB7898000995D23 /* NSObject+SMKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FF21CB7898000995D23 /* NSObject+SMKProperties.m */; };
+		3497900A1CB7898000995D23 /* NSObject+SMKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FF41CB7898000995D23 /* NSObject+SMKRequest.m */; };
+		3497900B1CB7898000995D23 /* SMKAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FF61CB7898000995D23 /* SMKAction.m */; };
+		3497900C1CB7898000995D23 /* SMKStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34978FFA1CB7898000995D23 /* SMKStore.m */; };
+		3497900D1CB7898000995D23 /* UICollectionViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 349790021CB7898000995D23 /* UICollectionViewCell+SMKConfigure.m */; };
+		3497900E1CB7898000995D23 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 349790041CB7898000995D23 /* UITableViewCell+SMKConfigure.m */; };
+		3497900F1CB7898000995D23 /* UIView+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 349790061CB7898000995D23 /* UIView+SMKConfigure.m */; };
+		349790101CB7898000995D23 /* UIView+SMKEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 349790081CB7898000995D23 /* UIView+SMKEvents.m */; };
+		34F688A11CB7A85400518803 /* FirstTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A01CB7A85400518803 /* FirstTableViewModel.m */; };
 		34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F1F1C8BF6A90033ED03 /* BHNavViewController.m */; };
 		34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2A1C8BF6A90033ED03 /* AppDelegate.m */; };
 		34F72F871C8BF6A90033ED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2B1C8BF6A90033ED03 /* main.m */; };
@@ -57,44 +42,13 @@
 /* Begin PBXFileReference section */
 		0435D30F1C8C6CD10046D2B3 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		0435D3101C8C6CD10046D2B3 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		0435D3111C8C6CD10046D2B3 /* TestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewDelegate.h; sourceTree = "<group>"; };
-		0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewDelegate.m; sourceTree = "<group>"; };
 		0435D3141C8C6CD10046D2B3 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
 		0435D3151C8C6CD10046D2B3 /* FirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstModel.m; sourceTree = "<group>"; };
-		0435D3171C8C6CD10046D2B3 /* BQCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCell.h; sourceTree = "<group>"; };
-		0435D3181C8C6CD10046D2B3 /* BQCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCell.m; sourceTree = "<group>"; };
-		0435D3191C8C6CD10046D2B3 /* BQCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCell.xib; sourceTree = "<group>"; };
-		0435D31B1C8C6CD10046D2B3 /* BQGetDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList.h; sourceTree = "<group>"; };
-		0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList.m; sourceTree = "<group>"; };
-		0435D31D1C8C6CD10046D2B3 /* BQViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel.h; sourceTree = "<group>"; };
-		0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel.m; sourceTree = "<group>"; };
-		0435D3211C8C6CD10046D2B3 /* FourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthVC.h; sourceTree = "<group>"; };
-		0435D3221C8C6CD10046D2B3 /* FourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthVC.m; sourceTree = "<group>"; };
-		0435D3241C8C6CD10046D2B3 /* FourthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthModel.h; sourceTree = "<group>"; };
-		0435D3251C8C6CD10046D2B3 /* FourthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthModel.m; sourceTree = "<group>"; };
-		0435D3281C8C6CD10046D2B3 /* FourthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView.h; sourceTree = "<group>"; };
-		0435D3291C8C6CD10046D2B3 /* FourthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView.m; sourceTree = "<group>"; };
-		0435D32A1C8C6CD10046D2B3 /* FourthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView.xib; sourceTree = "<group>"; };
-		0435D32C1C8C6CD10046D2B3 /* FourthView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthView2.h; sourceTree = "<group>"; };
-		0435D32D1C8C6CD10046D2B3 /* FourthView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthView2.m; sourceTree = "<group>"; };
-		0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourthView2.xib; sourceTree = "<group>"; };
-		0435D3311C8C6CD10046D2B3 /* FourthViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger.h; sourceTree = "<group>"; };
-		0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger.m; sourceTree = "<group>"; };
-		0435D3341C8C6CD10046D2B3 /* FourthViewManger2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewManger2.h; sourceTree = "<group>"; };
-		0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewManger2.m; sourceTree = "<group>"; };
-		0435D3371C8C6CD10046D2B3 /* FourthViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewModel.h; sourceTree = "<group>"; };
-		0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewModel.m; sourceTree = "<group>"; };
-		0435D33B1C8C6CD10046D2B3 /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
-		0435D33C1C8C6CD10046D2B3 /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
-		0435D33E1C8C6CD10046D2B3 /* BQTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQTestModel.h; sourceTree = "<group>"; };
-		0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQTestModel.m; sourceTree = "<group>"; };
-		0435D3411C8C6CD10046D2B3 /* BQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQCollectionCell.h; sourceTree = "<group>"; };
-		0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQCollectionCell.m; sourceTree = "<group>"; };
-		0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BQCollectionCell.xib; sourceTree = "<group>"; };
-		0435D3451C8C6CD10046D2B3 /* BQGetDataList2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQGetDataList2.h; sourceTree = "<group>"; };
-		0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQGetDataList2.m; sourceTree = "<group>"; };
-		0435D3471C8C6CD10046D2B3 /* BQViewModel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQViewModel2.h; sourceTree = "<group>"; };
-		0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BQViewModel2.m; sourceTree = "<group>"; };
+		0435D3171C8C6CD10046D2B3 /* FirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstCell.h; sourceTree = "<group>"; };
+		0435D3181C8C6CD10046D2B3 /* FirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstCell.m; sourceTree = "<group>"; };
+		0435D3191C8C6CD10046D2B3 /* FirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstCell.xib; sourceTree = "<group>"; };
+		0435D31D1C8C6CD10046D2B3 /* FirstViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewModel.h; sourceTree = "<group>"; };
+		0435D31E1C8C6CD10046D2B3 /* FirstViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewModel.m; sourceTree = "<group>"; };
 		0435D34B1C8C6CD10046D2B3 /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
 		0435D34C1C8C6CD10046D2B3 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 		0435D34E1C8C6CD10046D2B3 /* ThirdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdModel.h; sourceTree = "<group>"; };
@@ -107,32 +61,36 @@
 		0435D3581C8C6CD10046D2B3 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
 		0435D3591C8C6CD10046D2B3 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
 		344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		34B708611C95253000CCB2D1 /* SMKBaseCollectionViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKBaseCollectionViewManger.h; sourceTree = "<group>"; };
-		34B708621C95253000CCB2D1 /* SMKBaseCollectionViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKBaseCollectionViewManger.m; sourceTree = "<group>"; };
-		34B708631C95253000CCB2D1 /* SMKBaseTableViewManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKBaseTableViewManger.h; sourceTree = "<group>"; };
-		34B708641C95253000CCB2D1 /* SMKBaseTableViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKBaseTableViewManger.m; sourceTree = "<group>"; };
-		34B708661C95253000CCB2D1 /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
-		34B708671C95253000CCB2D1 /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
-		34B708691C95253000CCB2D1 /* SMKExtendPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKExtendPublic.h; sourceTree = "<group>"; };
-		34B7086A1C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CollectionDataDelegateAdditions.h"; sourceTree = "<group>"; };
-		34B7086B1C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+CollectionDataDelegateAdditions.m"; sourceTree = "<group>"; };
-		34B7086C1C95253000CCB2D1 /* UICollectionViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Extension.h"; sourceTree = "<group>"; };
-		34B7086D1C95253000CCB2D1 /* UICollectionViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Extension.m"; sourceTree = "<group>"; };
-		34B7086E1C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+TableDataDelegateAdditions.h"; sourceTree = "<group>"; };
-		34B7086F1C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+TableDataDelegateAdditions.m"; sourceTree = "<group>"; };
-		34B708701C95253000CCB2D1 /* UITableViewCell+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Extension.h"; sourceTree = "<group>"; };
-		34B708711C95253000CCB2D1 /* UITableViewCell+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Extension.m"; sourceTree = "<group>"; };
-		34B708721C95253000CCB2D1 /* UIView+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Configure.h"; sourceTree = "<group>"; };
-		34B708731C95253000CCB2D1 /* UIView+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Configure.m"; sourceTree = "<group>"; };
-		34B708741C95253000CCB2D1 /* UIView+ViewDelegateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewDelegateAdditions.h"; sourceTree = "<group>"; };
-		34B708751C95253000CCB2D1 /* UIView+ViewDelegateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewDelegateAdditions.m"; sourceTree = "<group>"; };
-		34B708761C95253000CCB2D1 /* UIViewController+ControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ControllerAdditions.h"; sourceTree = "<group>"; };
-		34B708771C95253000CCB2D1 /* UIViewController+ControllerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ControllerAdditions.m"; sourceTree = "<group>"; };
-		34B7087A1C95253000CCB2D1 /* SMKViewControllerProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewControllerProtocolDelegate.h; sourceTree = "<group>"; };
-		34B7087B1C95253000CCB2D1 /* SMKViewMangerProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewMangerProtocolDelegate.h; sourceTree = "<group>"; };
-		34B7087C1C95253000CCB2D1 /* SMKViewModelProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocolDelegate.h; sourceTree = "<group>"; };
-		34B7087D1C95253000CCB2D1 /* SMKViewProtocolDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewProtocolDelegate.h; sourceTree = "<group>"; };
-		34B7087E1C95253000CCB2D1 /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
+		34978FE71CB7522200995D23 /* FirstRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstRequest.h; path = SUIMVVMDemo/Classes/Src/firstExample/Model/FirstRequest.h; sourceTree = SOURCE_ROOT; };
+		34978FE81CB7522200995D23 /* FirstRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstRequest.m; path = SUIMVVMDemo/Classes/Src/firstExample/Model/FirstRequest.m; sourceTree = SOURCE_ROOT; };
+		34978FED1CB77F5400995D23 /* ThirdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdRequest.h; path = SUIMVVMDemo/Classes/Src/thirdExample/Model/ThirdRequest.h; sourceTree = SOURCE_ROOT; };
+		34978FEE1CB77F5400995D23 /* ThirdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdRequest.m; path = SUIMVVMDemo/Classes/Src/thirdExample/Model/ThirdRequest.m; sourceTree = SOURCE_ROOT; };
+		34978FF11CB7898000995D23 /* NSObject+SMKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKProperties.h"; sourceTree = "<group>"; };
+		34978FF21CB7898000995D23 /* NSObject+SMKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKProperties.m"; sourceTree = "<group>"; };
+		34978FF31CB7898000995D23 /* NSObject+SMKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKRequest.h"; sourceTree = "<group>"; };
+		34978FF41CB7898000995D23 /* NSObject+SMKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKRequest.m"; sourceTree = "<group>"; };
+		34978FF51CB7898000995D23 /* SMKAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKAction.h; sourceTree = "<group>"; };
+		34978FF61CB7898000995D23 /* SMKAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKAction.m; sourceTree = "<group>"; };
+		34978FF71CB7898000995D23 /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
+		34978FF81CB7898000995D23 /* SMKExtendPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKExtendPublic.h; sourceTree = "<group>"; };
+		34978FF91CB7898000995D23 /* SMKStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKStore.h; sourceTree = "<group>"; };
+		34978FFA1CB7898000995D23 /* SMKStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKStore.m; sourceTree = "<group>"; };
+		34978FFB1CB7898000995D23 /* SMKRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKRequestProtocol.h; sourceTree = "<group>"; };
+		34978FFC1CB7898000995D23 /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
+		34978FFD1CB7898000995D23 /* SMKViewMangerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewMangerProtocol.h; sourceTree = "<group>"; };
+		34978FFE1CB7898000995D23 /* SMKViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocol.h; sourceTree = "<group>"; };
+		34978FFF1CB7898000995D23 /* SMKViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewProtocol.h; sourceTree = "<group>"; };
+		349790001CB7898000995D23 /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
+		349790011CB7898000995D23 /* UICollectionViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
+		349790021CB7898000995D23 /* UICollectionViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
+		349790031CB7898000995D23 /* UITableViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
+		349790041CB7898000995D23 /* UITableViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
+		349790051CB7898000995D23 /* UIView+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKConfigure.h"; sourceTree = "<group>"; };
+		349790061CB7898000995D23 /* UIView+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKConfigure.m"; sourceTree = "<group>"; };
+		349790071CB7898000995D23 /* UIView+SMKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKEvents.h"; sourceTree = "<group>"; };
+		349790081CB7898000995D23 /* UIView+SMKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKEvents.m"; sourceTree = "<group>"; };
+		34F6889F1CB7A85400518803 /* FirstTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstTableViewModel.h; path = SUIMVVMDemo/Classes/Src/firstExample/ViewModel/FirstTableViewModel.h; sourceTree = SOURCE_ROOT; };
+		34F688A01CB7A85400518803 /* FirstTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTableViewModel.m; path = SUIMVVMDemo/Classes/Src/firstExample/ViewModel/FirstTableViewModel.m; sourceTree = SOURCE_ROOT; };
 		34F72F181C8BF6A90033ED03 /* CategoryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1A1C8BF6A90033ED03 /* ConstantPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1E1C8BF6A90033ED03 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
@@ -173,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				0435D30D1C8C6CD10046D2B3 /* FirstExample */,
-				0435D31F1C8C6CD10046D2B3 /* FourthExample */,
-				0435D3391C8C6CD10046D2B3 /* SecondExample */,
 				0435D3491C8C6CD10046D2B3 /* ThirdExample */,
 			);
 			path = Src;
@@ -196,8 +152,6 @@
 			children = (
 				0435D30F1C8C6CD10046D2B3 /* FirstVC.h */,
 				0435D3101C8C6CD10046D2B3 /* FirstVC.m */,
-				0435D3111C8C6CD10046D2B3 /* TestViewDelegate.h */,
-				0435D3121C8C6CD10046D2B3 /* TestViewDelegate.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +161,8 @@
 			children = (
 				0435D3141C8C6CD10046D2B3 /* FirstModel.h */,
 				0435D3151C8C6CD10046D2B3 /* FirstModel.m */,
+				34978FE71CB7522200995D23 /* FirstRequest.h */,
+				34978FE81CB7522200995D23 /* FirstRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,9 +170,9 @@
 		0435D3161C8C6CD10046D2B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0435D3171C8C6CD10046D2B3 /* BQCell.h */,
-				0435D3181C8C6CD10046D2B3 /* BQCell.m */,
-				0435D3191C8C6CD10046D2B3 /* BQCell.xib */,
+				0435D3171C8C6CD10046D2B3 /* FirstCell.h */,
+				0435D3181C8C6CD10046D2B3 /* FirstCell.m */,
+				0435D3191C8C6CD10046D2B3 /* FirstCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,155 +180,10 @@
 		0435D31A1C8C6CD10046D2B3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0435D31B1C8C6CD10046D2B3 /* BQGetDataList.h */,
-				0435D31C1C8C6CD10046D2B3 /* BQGetDataList.m */,
-				0435D31D1C8C6CD10046D2B3 /* BQViewModel.h */,
-				0435D31E1C8C6CD10046D2B3 /* BQViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0435D31F1C8C6CD10046D2B3 /* FourthExample */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3201C8C6CD10046D2B3 /* Controller */,
-				0435D3231C8C6CD10046D2B3 /* Model */,
-				0435D3261C8C6CD10046D2B3 /* View */,
-				0435D32F1C8C6CD10046D2B3 /* ViewManger */,
-				0435D3361C8C6CD10046D2B3 /* ViewModel */,
-			);
-			path = FourthExample;
-			sourceTree = "<group>";
-		};
-		0435D3201C8C6CD10046D2B3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3211C8C6CD10046D2B3 /* FourthVC.h */,
-				0435D3221C8C6CD10046D2B3 /* FourthVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0435D3231C8C6CD10046D2B3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3241C8C6CD10046D2B3 /* FourthModel.h */,
-				0435D3251C8C6CD10046D2B3 /* FourthModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0435D3261C8C6CD10046D2B3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3271C8C6CD10046D2B3 /* FourthView */,
-				0435D32B1C8C6CD10046D2B3 /* FourthView2 */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0435D3271C8C6CD10046D2B3 /* FourthView */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3281C8C6CD10046D2B3 /* FourthView.h */,
-				0435D3291C8C6CD10046D2B3 /* FourthView.m */,
-				0435D32A1C8C6CD10046D2B3 /* FourthView.xib */,
-			);
-			path = FourthView;
-			sourceTree = "<group>";
-		};
-		0435D32B1C8C6CD10046D2B3 /* FourthView2 */ = {
-			isa = PBXGroup;
-			children = (
-				0435D32C1C8C6CD10046D2B3 /* FourthView2.h */,
-				0435D32D1C8C6CD10046D2B3 /* FourthView2.m */,
-				0435D32E1C8C6CD10046D2B3 /* FourthView2.xib */,
-			);
-			path = FourthView2;
-			sourceTree = "<group>";
-		};
-		0435D32F1C8C6CD10046D2B3 /* ViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3301C8C6CD10046D2B3 /* FourthViewManger */,
-				0435D3331C8C6CD10046D2B3 /* FourthViewManger2 */,
-			);
-			path = ViewManger;
-			sourceTree = "<group>";
-		};
-		0435D3301C8C6CD10046D2B3 /* FourthViewManger */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3311C8C6CD10046D2B3 /* FourthViewManger.h */,
-				0435D3321C8C6CD10046D2B3 /* FourthViewManger.m */,
-			);
-			path = FourthViewManger;
-			sourceTree = "<group>";
-		};
-		0435D3331C8C6CD10046D2B3 /* FourthViewManger2 */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3341C8C6CD10046D2B3 /* FourthViewManger2.h */,
-				0435D3351C8C6CD10046D2B3 /* FourthViewManger2.m */,
-			);
-			path = FourthViewManger2;
-			sourceTree = "<group>";
-		};
-		0435D3361C8C6CD10046D2B3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3371C8C6CD10046D2B3 /* FourthViewModel.h */,
-				0435D3381C8C6CD10046D2B3 /* FourthViewModel.m */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0435D3391C8C6CD10046D2B3 /* SecondExample */ = {
-			isa = PBXGroup;
-			children = (
-				0435D33A1C8C6CD10046D2B3 /* Controller */,
-				0435D33D1C8C6CD10046D2B3 /* Model */,
-				0435D3401C8C6CD10046D2B3 /* View */,
-				0435D3441C8C6CD10046D2B3 /* ViewModel */,
-			);
-			path = SecondExample;
-			sourceTree = "<group>";
-		};
-		0435D33A1C8C6CD10046D2B3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0435D33B1C8C6CD10046D2B3 /* SecondVC.h */,
-				0435D33C1C8C6CD10046D2B3 /* SecondVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0435D33D1C8C6CD10046D2B3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0435D33E1C8C6CD10046D2B3 /* BQTestModel.h */,
-				0435D33F1C8C6CD10046D2B3 /* BQTestModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0435D3401C8C6CD10046D2B3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3411C8C6CD10046D2B3 /* BQCollectionCell.h */,
-				0435D3421C8C6CD10046D2B3 /* BQCollectionCell.m */,
-				0435D3431C8C6CD10046D2B3 /* BQCollectionCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0435D3441C8C6CD10046D2B3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0435D3451C8C6CD10046D2B3 /* BQGetDataList2.h */,
-				0435D3461C8C6CD10046D2B3 /* BQGetDataList2.m */,
-				0435D3471C8C6CD10046D2B3 /* BQViewModel2.h */,
-				0435D3481C8C6CD10046D2B3 /* BQViewModel2.m */,
+				0435D31D1C8C6CD10046D2B3 /* FirstViewModel.h */,
+				0435D31E1C8C6CD10046D2B3 /* FirstViewModel.m */,
+				34F6889F1CB7A85400518803 /* FirstTableViewModel.h */,
+				34F688A01CB7A85400518803 /* FirstTableViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -403,6 +214,8 @@
 			children = (
 				0435D34E1C8C6CD10046D2B3 /* ThirdModel.h */,
 				0435D34F1C8C6CD10046D2B3 /* ThirdModel.m */,
+				34978FED1CB77F5400995D23 /* ThirdRequest.h */,
+				34978FEE1CB77F5400995D23 /* ThirdRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,85 +248,35 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		34B7085E1C95253000CCB2D1 /* SUIMVVMKit */ = {
+		34978FF01CB7898000995D23 /* SUIMVVMKit */ = {
 			isa = PBXGroup;
 			children = (
-				34B7085F1C95253000CCB2D1 /* SUIMVVMKit */,
-				34B7087E1C95253000CCB2D1 /* SUIMVVMKit.h */,
+				34978FF11CB7898000995D23 /* NSObject+SMKProperties.h */,
+				34978FF21CB7898000995D23 /* NSObject+SMKProperties.m */,
+				34978FF31CB7898000995D23 /* NSObject+SMKRequest.h */,
+				34978FF41CB7898000995D23 /* NSObject+SMKRequest.m */,
+				34978FF51CB7898000995D23 /* SMKAction.h */,
+				34978FF61CB7898000995D23 /* SMKAction.m */,
+				34978FF71CB7898000995D23 /* SMKConstant.h */,
+				34978FF81CB7898000995D23 /* SMKExtendPublic.h */,
+				34978FF91CB7898000995D23 /* SMKStore.h */,
+				34978FFA1CB7898000995D23 /* SMKStore.m */,
+				34978FFB1CB7898000995D23 /* SMKRequestProtocol.h */,
+				34978FFC1CB7898000995D23 /* SMKSingleton.h */,
+				34978FFD1CB7898000995D23 /* SMKViewMangerProtocol.h */,
+				34978FFE1CB7898000995D23 /* SMKViewModelProtocol.h */,
+				34978FFF1CB7898000995D23 /* SMKViewProtocol.h */,
+				349790001CB7898000995D23 /* SUIMVVMKit.h */,
+				349790011CB7898000995D23 /* UICollectionViewCell+SMKConfigure.h */,
+				349790021CB7898000995D23 /* UICollectionViewCell+SMKConfigure.m */,
+				349790031CB7898000995D23 /* UITableViewCell+SMKConfigure.h */,
+				349790041CB7898000995D23 /* UITableViewCell+SMKConfigure.m */,
+				349790051CB7898000995D23 /* UIView+SMKConfigure.h */,
+				349790061CB7898000995D23 /* UIView+SMKConfigure.m */,
+				349790071CB7898000995D23 /* UIView+SMKEvents.h */,
+				349790081CB7898000995D23 /* UIView+SMKEvents.m */,
 			);
 			path = SUIMVVMKit;
-			sourceTree = "<group>";
-		};
-		34B7085F1C95253000CCB2D1 /* SUIMVVMKit */ = {
-			isa = PBXGroup;
-			children = (
-				34B708601C95253000CCB2D1 /* Base */,
-				34B708651C95253000CCB2D1 /* Constant */,
-				34B708681C95253000CCB2D1 /* Extend */,
-				34B708781C95253000CCB2D1 /* Handler */,
-				34B708791C95253000CCB2D1 /* Protocol */,
-			);
-			path = SUIMVVMKit;
-			sourceTree = "<group>";
-		};
-		34B708601C95253000CCB2D1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				34B708611C95253000CCB2D1 /* SMKBaseCollectionViewManger.h */,
-				34B708621C95253000CCB2D1 /* SMKBaseCollectionViewManger.m */,
-				34B708631C95253000CCB2D1 /* SMKBaseTableViewManger.h */,
-				34B708641C95253000CCB2D1 /* SMKBaseTableViewManger.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		34B708651C95253000CCB2D1 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				34B708661C95253000CCB2D1 /* SMKConstant.h */,
-				34B708671C95253000CCB2D1 /* SMKSingleton.h */,
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
-		34B708681C95253000CCB2D1 /* Extend */ = {
-			isa = PBXGroup;
-			children = (
-				34B708691C95253000CCB2D1 /* SMKExtendPublic.h */,
-				34B7086A1C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.h */,
-				34B7086B1C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.m */,
-				34B7086C1C95253000CCB2D1 /* UICollectionViewCell+Extension.h */,
-				34B7086D1C95253000CCB2D1 /* UICollectionViewCell+Extension.m */,
-				34B7086E1C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.h */,
-				34B7086F1C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.m */,
-				34B708701C95253000CCB2D1 /* UITableViewCell+Extension.h */,
-				34B708711C95253000CCB2D1 /* UITableViewCell+Extension.m */,
-				34B708721C95253000CCB2D1 /* UIView+Configure.h */,
-				34B708731C95253000CCB2D1 /* UIView+Configure.m */,
-				34B708741C95253000CCB2D1 /* UIView+ViewDelegateAdditions.h */,
-				34B708751C95253000CCB2D1 /* UIView+ViewDelegateAdditions.m */,
-				34B708761C95253000CCB2D1 /* UIViewController+ControllerAdditions.h */,
-				34B708771C95253000CCB2D1 /* UIViewController+ControllerAdditions.m */,
-			);
-			path = Extend;
-			sourceTree = "<group>";
-		};
-		34B708781C95253000CCB2D1 /* Handler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Handler;
-			sourceTree = "<group>";
-		};
-		34B708791C95253000CCB2D1 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				34B7087A1C95253000CCB2D1 /* SMKViewControllerProtocolDelegate.h */,
-				34B7087B1C95253000CCB2D1 /* SMKViewMangerProtocolDelegate.h */,
-				34B7087C1C95253000CCB2D1 /* SMKViewModelProtocolDelegate.h */,
-				34B7087D1C95253000CCB2D1 /* SMKViewProtocolDelegate.h */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		34F72F151C8BF6A90033ED03 /* Classes */ = {
@@ -711,7 +474,7 @@
 		6DB118431C7800BD00678885 /* SUIMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				34B7085E1C95253000CCB2D1 /* SUIMVVMKit */,
+				34978FF01CB7898000995D23 /* SUIMVVMKit */,
 				34F72F151C8BF6A90033ED03 /* Classes */,
 				6DB118441C7800BD00678885 /* Supporting Files */,
 			);
@@ -776,6 +539,7 @@
 		6DB118391C7800BD00678885 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SMK;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = lovemo;
 				TargetAttributes = {
@@ -807,13 +571,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0435D3641C8C6CD10046D2B3 /* FourthView.xib in Resources */,
-				0435D3661C8C6CD10046D2B3 /* FourthView2.xib in Resources */,
-				0435D36D1C8C6CD10046D2B3 /* BQCollectionCell.xib in Resources */,
 				6DB118541C7800BD00678885 /* LaunchScreen.storyboard in Resources */,
 				0435D3731C8C6CD10046D2B3 /* ThirdView.xib in Resources */,
 				6DB118511C7800BD00678885 /* Assets.xcassets in Resources */,
-				0435D35E1C8C6CD10046D2B3 /* BQCell.xib in Resources */,
+				0435D35E1C8C6CD10046D2B3 /* FirstCell.xib in Resources */,
 				6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,40 +636,28 @@
 			files = (
 				0435D3741C8C6CD10046D2B3 /* ThirdViewManger.m in Sources */,
 				0435D35C1C8C6CD10046D2B3 /* FirstModel.m in Sources */,
-				0435D3681C8C6CD10046D2B3 /* FourthViewManger2.m in Sources */,
-				0435D36C1C8C6CD10046D2B3 /* BQCollectionCell.m in Sources */,
-				34B708D41C95253000CCB2D1 /* UITableViewCell+Extension.m in Sources */,
-				0435D35D1C8C6CD10046D2B3 /* BQCell.m in Sources */,
+				0435D35D1C8C6CD10046D2B3 /* FirstCell.m in Sources */,
 				0435D3751C8C6CD10046D2B3 /* ThirdViewModel.m in Sources */,
-				0435D3651C8C6CD10046D2B3 /* FourthView2.m in Sources */,
-				0435D3611C8C6CD10046D2B3 /* FourthVC.m in Sources */,
-				34B708D51C95253000CCB2D1 /* UIView+Configure.m in Sources */,
+				3497900E1CB7898000995D23 /* UITableViewCell+SMKConfigure.m in Sources */,
+				34978FE91CB7522200995D23 /* FirstRequest.m in Sources */,
+				3497900C1CB7898000995D23 /* SMKStore.m in Sources */,
+				3497900A1CB7898000995D23 /* NSObject+SMKRequest.m in Sources */,
 				34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */,
-				0435D3691C8C6CD10046D2B3 /* FourthViewModel.m in Sources */,
-				0435D3671C8C6CD10046D2B3 /* FourthViewManger.m in Sources */,
-				34B708D31C95253000CCB2D1 /* UITableView+TableDataDelegateAdditions.m in Sources */,
-				0435D35F1C8C6CD10046D2B3 /* BQGetDataList.m in Sources */,
+				34978FEF1CB77F5400995D23 /* ThirdRequest.m in Sources */,
+				3497900B1CB7898000995D23 /* SMKAction.m in Sources */,
+				349790091CB7898000995D23 /* NSObject+SMKProperties.m in Sources */,
+				349790101CB7898000995D23 /* UIView+SMKEvents.m in Sources */,
+				3497900D1CB7898000995D23 /* UICollectionViewCell+SMKConfigure.m in Sources */,
 				34F72F871C8BF6A90033ED03 /* main.m in Sources */,
 				34F72FA41C8BF6A90033ED03 /* Foundation+Log.m in Sources */,
-				0435D36F1C8C6CD10046D2B3 /* BQViewModel2.m in Sources */,
 				0435D3701C8C6CD10046D2B3 /* ThirdVC.m in Sources */,
-				0435D36A1C8C6CD10046D2B3 /* SecondVC.m in Sources */,
 				0435D3711C8C6CD10046D2B3 /* ThirdModel.m in Sources */,
 				0435D35A1C8C6CD10046D2B3 /* FirstVC.m in Sources */,
-				34B708CF1C95253000CCB2D1 /* SMKBaseCollectionViewManger.m in Sources */,
 				0435D3721C8C6CD10046D2B3 /* ThirdView.m in Sources */,
-				0435D35B1C8C6CD10046D2B3 /* TestViewDelegate.m in Sources */,
-				0435D3601C8C6CD10046D2B3 /* BQViewModel.m in Sources */,
+				34F688A11CB7A85400518803 /* FirstTableViewModel.m in Sources */,
+				0435D3601C8C6CD10046D2B3 /* FirstViewModel.m in Sources */,
 				34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */,
-				34B708D21C95253000CCB2D1 /* UICollectionViewCell+Extension.m in Sources */,
-				0435D36E1C8C6CD10046D2B3 /* BQGetDataList2.m in Sources */,
-				34B708D01C95253000CCB2D1 /* SMKBaseTableViewManger.m in Sources */,
-				0435D3631C8C6CD10046D2B3 /* FourthView.m in Sources */,
-				0435D3621C8C6CD10046D2B3 /* FourthModel.m in Sources */,
-				34B708D71C95253000CCB2D1 /* UIViewController+ControllerAdditions.m in Sources */,
-				0435D36B1C8C6CD10046D2B3 /* BQTestModel.m in Sources */,
-				34B708D61C95253000CCB2D1 /* UIView+ViewDelegateAdditions.m in Sources */,
-				34B708D11C95253000CCB2D1 /* UICollectionView+CollectionDataDelegateAdditions.m in Sources */,
+				3497900F1CB7898000995D23 /* UIView+SMKConfigure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ThirdModel : NSObject
-@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, copy) NSString *publisher;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *summary;
+
 @end

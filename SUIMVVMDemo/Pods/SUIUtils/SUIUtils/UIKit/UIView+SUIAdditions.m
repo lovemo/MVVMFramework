@@ -228,7 +228,7 @@
     if (sui_loadNib) {
         UIView *curMainView = [self sui_mainView];
         if (!curMainView) {
-            curMainView = [UIView sui_loadInstanceFromNib];
+            curMainView = [[NSBundle mainBundle] loadNibNamed:gClassName(self) owner:self options:nil][0];
             curMainView.frame = self.bounds;
             curMainView.backgroundColor = [UIColor clearColor];
             [self setSui_mainView:curMainView];
@@ -251,7 +251,7 @@
 
 + (instancetype)sui_loadInstanceFromNib
 {
-    return [self sui_loadInstanceFromNibWithName:gClassName(self)];
+    return [self sui_loadInstanceFromNibWithName:NSStringFromClass([self class])];
 }
 + (instancetype)sui_loadInstanceFromNibWithName:(NSString *)nibName
 {

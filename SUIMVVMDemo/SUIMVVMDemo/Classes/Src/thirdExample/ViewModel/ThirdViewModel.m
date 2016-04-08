@@ -8,45 +8,31 @@
 
 #import "ThirdViewModel.h"
 #import "ThirdModel.h"
-#import "SMKNetworkPublic.h"
+#import "ThirdRequest.h"
+#import "SMKAction.h"
 
 @interface ThirdViewModel ()
-
-@property (nonatomic, strong) NSArray *smk_dataArrayList;
 
 @end
 
 @implementation ThirdViewModel
 
-- (NSArray *)smk_dataArrayList {
-    if (_smk_dataArrayList == nil) {
-        _smk_dataArrayList = [NSArray array];
-    }
-    return _smk_dataArrayList;
-}
-
-- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
-    
-    NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
-        
-        NSArray *array = responseObj[@"stories"];
-        self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
-        if (successHandler) {
-            successHandler(self.smk_dataArrayList);
+- (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
+        return [[ThirdRequest alloc]init];
+    } progress:nil success:^(id responseObject) {
+        NSArray *modelArray = [ThirdModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
+        if (success) {
+            success(modelArray);
         }
         
     } failure:^(NSError *error) {
         
     }];
-    
 }
 
-- (instancetype)getRandomData {
-    if (self.smk_dataArrayList.count > 0) {
-        u_int32_t index = arc4random_uniform((u_int32_t)self.smk_dataArrayList.count);
-        return self.smk_dataArrayList[index];
-    }
-    return nil;
+- (id)getRandomData:(NSArray *)array {
+    u_int32_t index = arc4random_uniform((u_int32_t)10);
+    return array[index];
 }
 @end

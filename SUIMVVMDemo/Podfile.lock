@@ -1,58 +1,46 @@
 PODS:
-  - AFNetworking (3.0.4):
-    - AFNetworking/NSURLSession (= 3.0.4)
-    - AFNetworking/Reachability (= 3.0.4)
-    - AFNetworking/Security (= 3.0.4)
-    - AFNetworking/Serialization (= 3.0.4)
-    - AFNetworking/UIKit (= 3.0.4)
-  - AFNetworking/NSURLSession (3.0.4):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.4)
-  - AFNetworking/Security (3.0.4)
-  - AFNetworking/Serialization (3.0.4)
-  - AFNetworking/UIKit (3.0.4):
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - FMDB (2.6):
-    - FMDB/standard (= 2.6)
-  - FMDB/standard (2.6)
-  - Masonry (0.6.4)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - Masonry (1.0.0)
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
-  - SUIMVVMNetwork (0.0.3):
-    - SUIMVVMNetwork/SUIMVVMNetwork (= 0.0.3)
-  - SUIMVVMNetwork/SUIMVVMNetwork (0.0.3):
-    - AFNetworking (>= 3.0)
-    - SUIMVVMStore
-  - SUIMVVMStore (0.0.8):
-    - SUIMVVMStore/SUIMVVMStore (= 0.0.8)
-    - SUIMVVMStore/YTKKeyValueStore (= 0.0.8)
-  - SUIMVVMStore/SUIMVVMStore (0.0.8):
-    - SUIMVVMStore/YTKKeyValueStore
-  - SUIMVVMStore/YTKKeyValueStore (0.0.8):
-    - FMDB
-  - SUIUtils (0.0.1):
-    - SUIUtils/Foundation (= 0.0.1)
-    - SUIUtils/Helper (= 0.0.1)
-    - SUIUtils/Tool (= 0.0.1)
-    - SUIUtils/UIKit (= 0.0.1)
-  - SUIUtils/Foundation (0.0.1):
+  - SUIUtils (0.0.2):
+    - SUIUtils/Foundation (= 0.0.2)
+    - SUIUtils/Helper (= 0.0.2)
+    - SUIUtils/Tool (= 0.0.2)
+    - SUIUtils/UIKit (= 0.0.2)
+  - SUIUtils/Foundation (0.0.2):
     - SUIUtils/Tool
-  - SUIUtils/Helper (0.0.1):
+  - SUIUtils/Helper (0.0.2):
     - SUIUtils/UIKit
     - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - SUIUtils/Tool (0.0.1)
-  - SUIUtils/UIKit (0.0.1):
+  - SUIUtils/Tool (0.0.2)
+  - SUIUtils/UIKit (0.0.2):
     - SUIUtils/Foundation
   - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
   - AFNetworking (>= 3.0)
+  - FMDB
   - Masonry
   - MJExtension
   - MJRefresh
-  - SUIMVVMNetwork
   - SUIUtils (from `https://github.com/randomprocess/SUIUtils`)
 
 EXTERNAL SOURCES:
@@ -61,18 +49,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SUIUtils:
-    :commit: a4267058ca70f53402726f05b8e32411606b52df
+    :commit: f0685ad7a76db3f5880fc3fbe894b31a2085d308
     :git: https://github.com/randomprocess/SUIUtils
 
 SPEC CHECKSUMS:
-  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
-  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  SUIMVVMNetwork: 68310f14b8b6361620fb3f30052d8ea283d99fd9
-  SUIMVVMStore: a393af1cc70ecec19e571791e7f143e023f21fac
-  SUIUtils: c1b214bac5b9cb2726e43299ab36a6dc28c7a2d8
+  SUIUtils: b4dc603df7a7f08dab0005522353414260a1b719
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
 COCOAPODS: 0.39.0

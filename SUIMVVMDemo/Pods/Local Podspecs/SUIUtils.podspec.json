@@ -1,6 +1,6 @@
 {
   "name": "SUIUtils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "platforms": {
     "ios": "7.0"
   },
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/randomprocess/SUIUtils.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "requires_arc": true,
   "public_header_files": "SUIUtils/**/*.h",

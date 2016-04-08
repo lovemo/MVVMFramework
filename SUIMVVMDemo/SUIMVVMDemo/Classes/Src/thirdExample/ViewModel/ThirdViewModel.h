@@ -8,8 +8,8 @@
 
 #import "SUIMVVMKit.h"
 
-@interface ThirdViewModel : NSObject<SMKViewModelProtocolDelegate>
+@interface ThirdViewModel : NSObject<SMKViewModelProtocol>
 
-- (instancetype)getRandomData;
+- (id)getRandomData:(NSArray *)array;
 
 @end

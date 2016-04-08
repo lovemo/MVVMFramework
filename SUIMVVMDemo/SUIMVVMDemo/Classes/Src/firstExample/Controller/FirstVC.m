@@ -7,19 +7,23 @@
 //
 
 #import "FirstVC.h"
-#import "SUIMVVMKit.h"
-#import "SecondVC.h"
-#import "BQViewModel.h"
-#import "TestViewDelegate.h"
+#import "FirstViewModel.h"
 #import "MJRefresh.h"
+#import "FirstTableViewModel.h"
 
-static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `NibName` HAS TO BE SAME !
 
 @interface FirstVC ()
 
 @property (nonatomic, weak) IBOutlet UITableView *table;
 
-@property (nonatomic, strong) BQViewModel *viewModel;
+@property (nonatomic, strong) FirstViewModel *viewModel;
+/**
+ *  hudView
+ */
+@property (nonatomic, weak) UIView *hudView;
+
+@property (nonatomic, strong) FirstTableViewModel *firstTableViewModel;
+
 @end
 
 @implementation FirstVC
@@ -30,69 +34,62 @@ static NSString *const MyCellIdentifier = @"BQCell" ;  // `cellIdentifier` AND `
     [self setupTableView] ;
 }
 
+- (FirstTableViewModel *)firstTableViewModel {
+    if (_firstTableViewModel == nil) {
+        _firstTableViewModel = [[FirstTableViewModel alloc]init];
+    }
+    return _firstTableViewModel;
+}
+
 /**
  *  tableView的一些初始化工作
  */
 - (void)setupTableView
 {
     
-    self.table.separatorStyle = UITableViewCellSelectionStyleNone;
+    [self.firstTableViewModel handleWithTable:self.table];
     
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(self.table) weakTable = self.table;
-    
-    // 下拉刷新
-    self.table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
-            [weakTable reloadData];
-        }];
-        // 结束刷新
-        [weakTable.mj_header endRefreshing];
-    }];
-    
-    [self.table.mj_header beginRefreshing];
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
-    self.table.mj_header.automaticallyChangeAlpha = YES;
-    
-    
-    //    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
-    //        SecondVC *vc = (SecondVC *)[UIViewController sui_viewControllerWithStoryboard:nil identifier:@"SecondVCID"];
-    //        [weakSelf.navigationController pushViewController:vc animated:YES];
-    //        NSLog(@"click row : %@",@(indexPath.row)) ;
-    //    }];
-    
-    // cell自动计算高度
-    self.table.sui_autoSizingCell = YES;
-    // 注册cell
-    [self.table.sui_tableHelper registerNibs:@[MyCellIdentifier]];
-    // cell被选中时跳转
-    [self.table.sui_tableHelper didSelect:^(NSIndexPath * _Nonnull cIndexPath, id  _Nonnull model) {
-        [weakSelf sui_storyboardInstantiate:@"Main.SecondVCID"];
-        NSLog(@"click row : %@",@(cIndexPath.row)) ;
-    }];
-    
-    
-    //    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
-    //        [self.table.tableHander getItemsWithModelArray:^NSArray *{
-    //            return array;
-    //        } completion:^{
-    //            [self.table reloadData];
-    //        }];
-    //    }];
-    
-    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
-        [weakSelf.table sui_resetDataAry:array];
-    }];
+    uWeakSelf
+    self.hudView.hidden = NO;
+   [self.viewModel smk_viewModelWithProgress:nil success:^(id responseObject) {
+       self.hudView.hidden = YES;
+       [weakSelf.firstTableViewModel getDataWithModelArray:^NSArray *{
+           return responseObject;
+       } completion:^{
+            [weakSelf.table reloadData];
+       }];
+   } failure:^(NSError *error) {
+       
+   }];
     
 }
 
+
+
 #pragma mark lazy
-- (BQViewModel *)viewModel {
+- (FirstViewModel *)viewModel {
     if (_viewModel == nil) {
-        _viewModel = [[BQViewModel alloc]init];
+        _viewModel = [[FirstViewModel alloc]init];
     }
     return _viewModel;
+}
+- (UIView *)hudView {
+    if (_hudView == nil) {
+        UIView *hudView = [[UIView alloc]init];
+        hudView.frame = [UIApplication sharedApplication].keyWindow.bounds;
+        UILabel *label = [[UILabel alloc]init];
+        label.frame = CGRectMake(0, 0, 200, 30);
+        CGPoint center = hudView.center;
+        center.x = center.x + 50;
+        label.center = center;
+        label.font = [UIFont systemFontOfSize:20];
+        label.textColor = [UIColor orangeColor];
+        label.text = @"加载中。。。";
+        hudView.hidden = YES;
+        [hudView addSubview:label];
+        [[UIApplication sharedApplication].keyWindow addSubview:(_hudView = hudView)];
+    }
+    return _hudView;
 }
 
 @end

@@ -9,24 +9,15 @@
 #ifndef SUIMVVMKit_h
 #define SUIMVVMKit_h
 
-// Base：
-#import "SMKBaseTableViewManger.h"
-#import "SMKBaseCollectionViewManger.h"
-
-// Extend：
 #import "SMKExtendPublic.h"
-
-// Protocol：
-#import "SMKViewMangerProtocolDelegate.h"
-#import "SMKViewModelProtocolDelegate.h"
-#import "SMKViewProtocolDelegate.h"
-
-// Constant：
+#import "SMKAction.h"
 #import "SMKConstant.h"
+#import "SMKStore.h"
 #import "SMKSingleton.h"
+#import "SMKRequestProtocol.h"
+#import "SMKViewMangerProtocol.h"
+#import "SMKViewModelProtocol.h"
+#import "SMKViewProtocol.h"
 
-// Vender：
-#import "SUIUtils.h"
-#import "UITableView+FDTemplateLayoutCell.h"
 
 #endif /* SUIMVVMKit_h */

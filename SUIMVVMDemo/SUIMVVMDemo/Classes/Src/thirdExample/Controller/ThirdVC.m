@@ -10,51 +10,59 @@
 #import "ThirdViewModel.h"
 #import "ThirdViewManger.h"
 #import "FirstVC.h"
+#import "ThirdView.h"
+#import "UIView+SMKEvents.h"
+#import "UIView+SMKConfigure.h"
 
 @interface ThirdVC ()
 
-//@property (nonatomic, strong) ThirdViewManger *thirdViewManger;
-//@property (nonatomic, strong) ThirdViewModel *viewModel;
-
+@property (nonatomic, strong) ThirdViewManger *thirdViewManger;
+@property (nonatomic, strong) ThirdViewModel *viewModel;
+@property (nonatomic, weak) ThirdView *thirdView;
 @end
 
 @implementation ThirdVC
 
-- (Class)smk_classOfViewManger {
-    return [ThirdViewManger class];
+- (ThirdView *)thirdView {
+    if (_thirdView == nil) {
+        ThirdView *thirdView = [ThirdView sui_loadInstanceFromNib];
+        thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
+        [self.view addSubview:(_thirdView = thirdView)];
+    }
+    return _thirdView;
 }
 
-- (Class)smk_classOfViewModel {
-    return [ThirdViewModel class];
+- (ThirdViewManger *)thirdViewManger {
+    if (_thirdViewManger == nil) {
+        _thirdViewManger = [[ThirdViewManger alloc]init];
+    }
+    return _thirdViewManger;
 }
 
-//- (ThirdViewManger *)thirdViewManger {
-//    if (_thirdViewManger == nil) {
-//        _thirdViewManger = [[ThirdViewManger alloc]init];
-//    }
-//    return _thirdViewManger;
-//}
-//- (ThirdViewModel *)viewModel {
-//    if (_viewModel == nil) {
-//        _viewModel = [[ThirdViewModel alloc]init];
-//    }
-//    return _viewModel;
-//}
+- (ThirdViewModel *)viewModel {
+    if (_viewModel == nil) {
+        _viewModel = [[ThirdViewModel alloc]init];
+    }
+    return _viewModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"MVVM Example";
 
-    [self.smk_viewManger smk_viewMangerWithSuperView:self.view];
-    [self.smk_viewModel smk_viewModelWithGetDataSuccessHandler:nil];
+    [self.thirdView smk_viewWithViewManger:self.thirdViewManger];
+    self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithEventBlockOfView:self.thirdView];
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
-
-    ThirdViewManger *viewManger = (ThirdViewManger *)self.smk_viewManger;
-    [viewManger smk_viewMangerWithModel:^NSDictionary *{
-        return @{@"model" : [self.smk_viewModel getRandomData]};
-    }];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [self.viewModel smk_viewModelWithProgress:nil success:^(id responseObject) {
+        [weakSelf.thirdViewManger smk_viewMangerWithModel:^NSDictionary *{
+            return @{@"model" : [weakSelf.viewModel getRandomData:responseObject]};
+        }];
+    } failure:nil];
     
 }
 

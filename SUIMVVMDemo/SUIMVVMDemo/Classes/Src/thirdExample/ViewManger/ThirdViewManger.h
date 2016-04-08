@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ThirdViewManger : NSObject<SMKViewMangerProtocolDelegate>
+@interface ThirdViewManger : NSObject<SMKViewMangerProtocol, SMKViewProtocol>
 
 
 @end

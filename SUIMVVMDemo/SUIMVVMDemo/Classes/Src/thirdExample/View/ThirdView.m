@@ -8,7 +8,8 @@
 
 #import "ThirdView.h"
 #import "ThirdModel.h"
-#import "UIView+ViewDelegateAdditions.h"
+#import "UIView+SMKEvents.h"
+#import "UIView+SMKConfigure.h"
 
 @interface ThirdView()
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
@@ -36,9 +37,8 @@
 }
 
 // 根据模型数据配置View
-- (void)configureViewWithCustomObj:(id)obj {
-    if (!obj) return;
-    ThirdModel *thirdModel = (ThirdModel *)obj;
+- (void)smk_configureViewWithModel:(id)model {
+    ThirdModel *thirdModel = (ThirdModel *)model;
     self.testLabel.text = thirdModel.title;
 }
 
