@@ -9,6 +9,7 @@
 #import "SMKStore.h"
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
+#import "NSObject+SMKProperties.h"
 
 #ifdef DEBUG
 #define debugLog(...)    NSLog(__VA_ARGS__)
