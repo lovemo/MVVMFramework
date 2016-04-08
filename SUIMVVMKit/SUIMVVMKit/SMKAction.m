@@ -8,7 +8,7 @@
 
 #import "SMKAction.h"
 #import "AFNetworking.h"
-#import "NSObject+SMKProperties.h"
+#import "NSObject+SMKRequest.h"
 
 static NSString * const SMKRequestUrlPath = @"SMKRequestUrlPath";
 static NSString * const SMKRequestParameters = @"SMKRequestParameters";
