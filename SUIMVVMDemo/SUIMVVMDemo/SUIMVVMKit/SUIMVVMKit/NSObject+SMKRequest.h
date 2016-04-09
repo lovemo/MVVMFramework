@@ -41,7 +41,7 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, assign) SMKRequestMethod smk_method;
 /**
- *  url
+ *  url (如果设置了url，则不需要在设置scheme，host，path 属性)
  */
 @property (nonatomic, copy, nonnull) NSString *smk_url;
 /**
