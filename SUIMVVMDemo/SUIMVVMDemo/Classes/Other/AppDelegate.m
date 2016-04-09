@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    // config global scheme and host
+//    [[SMKAction sharedAction] configScheme:@"http" host:@"www.baidu.com"];
+    
     return YES;
 }
 

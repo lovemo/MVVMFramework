@@ -60,6 +60,14 @@ typedef void (^progressBlock)(NSProgress * progress);
 - (void)cancelAllOperations;
 
 /**
+ *  配置全局的scheme和host，若request中重新设置新值，则值为request中设置的新值
+ *
+ *  @param scheme scheme (eg: http, https, ftp)
+ *  @param host   host
+ */
+- (void)configScheme:(NSString *)scheme host:(NSString *)host;
+
+/**
  *  发送请求(在外部配置request)
  */
 - (NSURLSessionTask *)sendRequest:

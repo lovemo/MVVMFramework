@@ -64,8 +64,6 @@
     
 }
 
-
-
 #pragma mark lazy
 - (FirstViewModel *)viewModel {
     if (_viewModel == nil) {

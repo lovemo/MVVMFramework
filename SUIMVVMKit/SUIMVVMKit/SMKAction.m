@@ -18,6 +18,15 @@ static NSString * const SMKRequestParameters = @"SMKRequestParameters";
 
 @property (strong, nonatomic) AFHTTPSessionManager *sessionManager;
 
+/**
+ *  scheme
+ */
+@property (nonatomic, copy) NSString *scheme;
+/**
+ *  host
+ */
+@property (nonatomic, copy) NSString *host;
+
 @end
 
 @implementation SMKAction
@@ -54,6 +63,11 @@ static id _instace;
         _sessionManager.requestSerializer.timeoutInterval = (!self.timeoutInterval ?: self.timeoutInterval);
     }
     return _sessionManager;
+}
+
+- (void)configScheme:(NSString *)scheme host:(NSString *)host {
+    self.scheme = scheme;
+    self.host = host;
 }
 
 - (NSURLSessionTask *)sendRequest:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
@@ -198,7 +212,11 @@ static id _instace;
     if (requestObject.smk_url.length) {
         urlPath = requestObject.smk_url;
     } else {
-        urlPath = [NSString stringWithFormat:@"%@://%@%@",requestObject.smk_scheme, requestObject.smk_host, requestObject.smk_path];
+        NSString *scheme = nil;
+        NSString *host = nil;
+        scheme = (self.scheme.length > 0) ? self.scheme : requestObject.smk_scheme;
+        host = (self.host.length > 0) ? self.host : requestObject.smk_host;
+        urlPath = [NSString stringWithFormat:@"%@://%@%@",scheme, host, requestObject.smk_path];
     }
  
     // parameters
