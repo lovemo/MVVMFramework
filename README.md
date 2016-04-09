@@ -231,21 +231,18 @@ CocoaPods：
 #####具体实现细节，[点击进入查看SUIMVVMNetwork](https://github.com/lovemo/SUIMVVMNetwork)
 
 ```objc
-- (void)smk_viewModelWithGetDataSuccessHandler:(void (^)(NSArray *))successHandler {
-    
-    NSString *url = @"http://news-at.zhihu.com/api/4/news/latest";
-    [SMKHttp get:url params:nil cachePolicy:SMKHttpReturnCacheDataThenLoad success:^(id responseObj) {
-        
-        NSArray *array = responseObj[@"stories"];
-        self.smk_dataArrayList = [ThirdModel mj_objectArrayWithKeyValuesArray:array];
-        if (successHandler) {
-            successHandler(self.smk_dataArrayList);
+- (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
+        return [[FirstRequest alloc]init];
+    } progress:nil success:^(id responseObject) {
+        if (responseObject) {
+            NSArray *modelArray = [FirstModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
+            success(modelArray);
         }
-        
     } failure:^(NSError *error) {
         
     }];
-    
+
 }
     
 ```
