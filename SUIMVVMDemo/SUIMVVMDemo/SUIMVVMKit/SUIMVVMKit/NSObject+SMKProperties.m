@@ -11,6 +11,46 @@
 
 @implementation NSObject (SMKProperties)
 
+- (id<SMKViewModelProtocol>)viewModelDelegate {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setViewModelDelegate:(id<SMKViewModelProtocol>)viewModelDelegate {
+    objc_setAssociatedObject(self, @selector(viewModelDelegate), viewModelDelegate, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (id<SMKViewMangerProtocol>)viewMangerDelegate {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setViewMangerDelegate:(id<SMKViewMangerProtocol>)viewMangerDelegate {
+    objc_setAssociatedObject(self, @selector(viewMangerDelegate), viewMangerDelegate, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (ViewMangerInfosBlock)viewMangerInfosBlock {
+    return objc_getAssociatedObject(self, @selector(viewMangerInfosBlock));
+}
+
+- (void)setViewMangerInfosBlock:(ViewMangerInfosBlock)viewMangerInfosBlock {
+    objc_setAssociatedObject(self, @selector(viewMangerInfosBlock), viewMangerInfosBlock, OBJC_ASSOCIATION_COPY);
+}
+
+- (ViewModelInfosBlock)viewModelInfosBlock {
+    return objc_getAssociatedObject(self, @selector(viewModelInfosBlock));
+}
+
+- (void)setViewModelInfosBlock:(ViewModelInfosBlock)viewModelInfosBlock {
+    objc_setAssociatedObject(self, @selector(viewModelInfosBlock), viewModelInfosBlock, OBJC_ASSOCIATION_COPY);
+}
+
+- (ViewModelBlock)viewModelBlock {
+    return objc_getAssociatedObject(self, @selector(viewModelBlock));
+}
+
+- (void)setViewModelBlock:(ViewModelBlock)viewModelBlock {
+    objc_setAssociatedObject(self, @selector(viewModelBlock), viewModelBlock, OBJC_ASSOCIATION_COPY);
+}
+
 - (nullable NSDictionary *)smk_allProperties
 {
     unsigned int count = 0;

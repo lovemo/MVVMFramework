@@ -10,6 +10,7 @@
 #import "ThirdModel.h"
 #import "UIView+SMKEvents.h"
 #import "UIView+SMKConfigure.h"
+#import "ThirdViewModel.h"
 
 @interface ThirdView()
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
@@ -28,18 +29,27 @@
         self.viewEventsBlock(@"btnClick");
     }
 }
+
 // 按钮事件
 - (IBAction)jumpOtherVC:(UIButton *)sender {
     // 传递事件
-    if (self.delegate && [self.delegate respondsToSelector:@selector(smk_view:withEvents:)]) {
-        [self.delegate smk_view:self withEvents:@{@"jump": @"vc"}];
+    if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(smk_view:withEvents:)]) {
+        [self.viewDelegate smk_view:self withEvents:@{@"jump": @"vc"}];
     }
 }
 
-// 根据模型数据配置View
-- (void)smk_configureViewWithModel:(id)model {
-    ThirdModel *thirdModel = (ThirdModel *)model;
-    self.testLabel.text = thirdModel.title;
+//// 根据模型数据配置View
+//- (void)smk_configureViewWithModel:(id)model {
+//    ThirdModel *thirdModel = (ThirdModel *)model;
+//    self.testLabel.text = thirdModel.title;
+//}
+
+- (void)smk_configureViewWithViewModel:(id<SMKViewModelProtocol>)viewModel {
+    [viewModel smk_viewModelWithModelBlcok:^(id model) {
+        
+        ThirdModel *thirdModel = (ThirdModel *)model;
+        self.testLabel.text = thirdModel.title;
+    }];
 }
 
 @end

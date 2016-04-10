@@ -24,6 +24,11 @@ typedef void (^responseBlock)(id dataObj, NSError *error);
  *  监听进度响应block
  */
 typedef void (^progressBlock)(NSProgress * progress);
+/**
+ *  将自己的信息返回给ViewManger的block
+ */
+typedef void (^ViewMangerInfosBlock)( );
+
 
 
 @protocol SMKViewModelProtocol <NSObject>
@@ -38,6 +43,24 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  加载数据
  */
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure;
+
+/**
+ *  传递模型给view
+ */
+- (void)smk_viewModelWithModelBlcok:(void (^)(id model))modelBlock;
+
+/**
+ *  处理ViewMangerInfosBlock
+ */
+- (ViewMangerInfosBlock)smk_viewModelWithViewMangerBlockOfInfos:(NSDictionary *)infos;
+
+/**
+ *  将viewModel中的信息通过代理传递给ViewManger
+ *
+ *  @param viewModel   viewModel自己
+ *  @param infos 描述信息
+ */
+- (void)smk_viewModel:(id)viewModel withInfos:(NSDictionary *)infos;
 
 
 @end

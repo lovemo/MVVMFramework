@@ -28,26 +28,32 @@ typedef enum : NSUInteger {
  *  scheme (eg: http, https, ftp)
  */
 @property (nonatomic, copy, nonnull) NSString *smk_scheme;
+
 /**
  *  host
  */
 @property (nonatomic, copy, nonnull) NSString *smk_host;
+
 /**
  *  path
  */
 @property (nonatomic, copy, nonnull) NSString *smk_path;
+
 /**
  *  method
  */
 @property (nonatomic, assign) SMKRequestMethod smk_method;
+
 /**
  *  url (如果设置了url，则不需要在设置scheme，host，path 属性)
  */
 @property (nonatomic, copy, nonnull) NSString *smk_url;
+
 /**
  *  parameters
  */
 @property (nonatomic, retain, nonnull) id smk_params;
+
 /**
  *  fileConfig
  */

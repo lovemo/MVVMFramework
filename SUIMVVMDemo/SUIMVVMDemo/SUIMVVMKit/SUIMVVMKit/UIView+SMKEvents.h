@@ -17,15 +17,18 @@ typedef void (^ViewEventsBlock)( );
 @interface UIView (SMKEvents)
 
 /**
- *  delegate 传递事件
+ *  viewDelegate 传递事件
  */
-@property (nullable, nonatomic, weak) id<SMKViewProtocol> delegate;
+@property (nullable, nonatomic, weak) id<SMKViewProtocol> viewDelegate;
 
 /**
  *  block 传递事件
  */
 @property (nonatomic, copy) ViewEventsBlock viewEventsBlock;
 
+/**
+ *  将view中的事件交由viewManger处理
+ */
 - (void)smk_viewWithViewManger:(id<SMKViewProtocol>)viewManger;
 
 @end

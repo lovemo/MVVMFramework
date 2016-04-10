@@ -13,7 +13,7 @@
 
 @interface ThirdViewManger ()<SMKViewProtocol>
 
-@property (nonatomic, strong) NSDictionary *dict;
+//@property (nonatomic, strong) NSDictionary *dict;
 
 @end
 
@@ -30,17 +30,32 @@
     
 }
 
-- (ViewEventsBlock)smk_viewMangerWithEventBlockOfView:(__kindof UIView *)view {
+- (ViewEventsBlock)smk_viewMangerWithViewEventBlockOfInfos:(NSDictionary *)infos {
+    
     return ^(NSString *info){
-        [view smk_configureViewWithModel:self.dict[@"model"]];
+        
+        if (self.viewMangerInfosBlock) {
+            self.viewMangerInfosBlock();
+        }
+        
+        if (self.viewMangerDelegate && [self.viewMangerDelegate respondsToSelector:@selector(smk_viewManger:withInfos:)]) {
+            [self.viewMangerDelegate smk_viewManger:self withInfos: @{@"info" : @"哈哈，你好ViewModel，我是viewManger，我被点击了"}];
+        }
+        
+    //    NSLog(@"%@",info);
+     //   [view smk_configureViewWithModel:self.dict[@"model"]];
     };
 }
 
-// 得到模型数据
-- (void)smk_viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
-    if (dictBlock) {
-        self.dict = dictBlock();
-    }
+- (void)smk_viewModel:(id)viewModel withInfos:(NSDictionary *)infos {
+    NSLog(@"%@",infos);
 }
+
+//// 得到模型数据
+//- (void)smk_viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
+//    if (dictBlock) {
+//        self.dict = dictBlock();
+//    }
+//}
 
 @end

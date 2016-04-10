@@ -13,14 +13,17 @@
  *  请求成功block
  */
 typedef void (^successBlock)(id responseObject);
+
 /**
  *  请求失败block
  */
 typedef void (^failureBlock) (NSError *error);
+
 /**
  *  请求响应block
  */
 typedef void (^responseBlock)(id dataObj, NSError *error);
+
 /**
  *  监听进度响应block
  */
@@ -35,14 +38,17 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  请求超时时间
  */
 @property (nonatomic, assign) NSTimeInterval timeoutInterval;
+
 /**
  reachable
  */
 @property (readonly, nonatomic, assign, getter = isReachable) BOOL reachable;
+
 /**
  reachableViaWWAN
  */
 @property (readonly, nonatomic, assign, getter = isReachableViaWWAN) BOOL reachableViaWWAN;
+
 /**
  reachableViaWiFi
  */
@@ -90,6 +96,8 @@ typedef void (^progressBlock)(NSProgress * progress);
 @end
 
 
+
+
 /**
  *  用来封装上文件数据的模型类
  */
@@ -99,14 +107,17 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  文件数据
  */
 @property (nonatomic, strong) NSData *fileData;
+
 /**
  *  服务器接收参数名
  */
 @property (nonatomic, copy) NSString *name;
+
 /**
  *  文件名
  */
 @property (nonatomic, copy) NSString *fileName;
+
 /**
  *  文件类型
  */

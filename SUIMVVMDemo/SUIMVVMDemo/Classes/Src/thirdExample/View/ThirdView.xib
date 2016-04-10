@@ -25,7 +25,7 @@
                     <rect key="frame" x="20" y="24" width="201" height="71"/>
                     <color key="backgroundColor" red="1" green="0.76364387256469834" blue="0.76711821004815572" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="点我显示改变后模型数据"/>
+                    <state key="normal" title="点我监听事件改变"/>
                     <connections>
                         <action selector="testBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="y1L-A3-Buv"/>
                     </connections>

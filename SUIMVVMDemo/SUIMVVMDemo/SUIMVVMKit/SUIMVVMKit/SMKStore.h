@@ -24,34 +24,42 @@
  *  根据dbName初始化数据库
  */
 - (id)initDBWithName:(NSString *)dbName;
+
 /**
  *  根据dbPath初始化数据库
  */
 - (id)initWithDBWithPath:(NSString *)dbPath;
+
 /**
  *  根据tableName创建数据表
  */
 - (void)smk_createTableWithName:(NSString *)tableName;
+
 /**
  *  清空数据表
  */
 - (void)smk_clearTable:(NSString *)tableName;
+
 /**
  *  tableName是否存在
  */
 - (BOOL)smk_isExistTableWithName:(NSString *)tableName;
+
 /**
  *  删除表
  */
 - (BOOL)smk_deleteTable:(NSString *)tableName;
+
 /**
  *  删除数据库
  */
 - (void)smk_deleteDatabseWithDBName:(NSString *)DBName;
+
 /**
  *  获得数据库存储路径
  */
 - (NSString *)smk_getDBPath;
+
 /**
  *  关闭数据库
  */

@@ -50,19 +50,33 @@
     [super viewDidLoad];
     self.title = @"MVVM Example";
 
+    // 将thirdView的事件处理者代理给thirdViewManger (代理方式)
     [self.thirdView smk_viewWithViewManger:self.thirdViewManger];
-    self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithEventBlockOfView:self.thirdView];
+    
+    // self.thirdView.viewEventsBlock （block方式）
+    self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithViewEventBlockOfInfos:@{@"view" : self.thirdView}];
+    
+    // viewManger ---->  <-----  viewModel 之间通过代理方式交互
+    self.thirdViewManger.viewMangerDelegate = self.viewModel;
+    self.viewModel.viewModelDelegate = self.thirdViewManger;
+    
+    // viewManger ---->  <-----  viewModel 之间通过block方式交互
+    self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
     
-    __weak typeof(self) weakSelf = self;
+ //   __weak typeof(self) weakSelf = self;
     
-    [self.viewModel smk_viewModelWithProgress:nil success:^(id responseObject) {
-        [weakSelf.thirdViewManger smk_viewMangerWithModel:^NSDictionary *{
-            return @{@"model" : [weakSelf.viewModel getRandomData:responseObject]};
-        }];
-    } failure:nil];
+ //   [self.viewModel smk_viewModelWithProgress:nil success:^(id responseObject) {
+
+    // thirdView 通过viewModel传递的model来配置view
+    [self.thirdView smk_configureViewWithViewModel:self.viewModel];
+        
+//        [weakSelf.thirdViewManger smk_viewMangerWithModel:^NSDictionary *{
+//            return @{@"model" : [weakSelf.viewModel getRandomData:responseObject]};
+//        }];
+//    } failure:nil];
     
 }
 

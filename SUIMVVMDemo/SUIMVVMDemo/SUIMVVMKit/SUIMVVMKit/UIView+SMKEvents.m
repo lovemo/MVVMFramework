@@ -11,12 +11,12 @@
 
 @implementation UIView (SMKEvents)
 
-- (id<SMKViewProtocol>)delegate {
+- (id<SMKViewProtocol>)viewDelegate {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setDelegate:(id<SMKViewProtocol>)delegate {
-    objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_ASSIGN);
+- (void)setViewDelegate:(id<SMKViewProtocol>)viewDelegate {
+    objc_setAssociatedObject(self, @selector(viewDelegate), viewDelegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (ViewEventsBlock)viewEventsBlock {
@@ -29,7 +29,7 @@
 
 - (void)smk_viewWithViewManger:(id<SMKViewProtocol>)viewManger {
     if (viewManger) {
-        self.delegate = viewManger;
+        self.viewDelegate = viewManger;
     }
 }
 

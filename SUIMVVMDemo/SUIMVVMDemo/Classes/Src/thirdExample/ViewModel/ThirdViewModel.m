@@ -35,4 +35,29 @@
     u_int32_t index = arc4random_uniform((u_int32_t)10);
     return array[index];
 }
+
+- (void)smk_viewModelWithModelBlcok:(void (^)(id))modelBlock {
+    [self smk_viewModelWithProgress:nil success:^(id responseObject) {
+        if (modelBlock) {
+            
+            if (self.viewModelDelegate && [self.viewModelDelegate respondsToSelector:@selector(smk_viewModel:withInfos:)]) {
+                [self.viewModelDelegate smk_viewModel:self withInfos:@{@"info" : @"呵呵， 你好， 我是ViewModel，我加载数据成功了"}];
+            }
+            
+            modelBlock([self getRandomData:responseObject]);
+        }
+    } failure:nil];
+
+}
+
+- (void)smk_viewManger:(id)viewManger withInfos:(NSDictionary *)infos  {
+    NSLog(@"%@",infos);
+}
+
+- (ViewMangerInfosBlock)smk_viewModelWithViewMangerBlockOfInfos:(NSDictionary *)infos {
+    return ^{
+      NSLog(@"hello");
+    };
+}
+
 @end

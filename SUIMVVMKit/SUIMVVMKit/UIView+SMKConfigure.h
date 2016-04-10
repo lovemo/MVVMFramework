@@ -21,4 +21,5 @@
  */
 - (void)smk_configureViewWithViewModel:(id<SMKViewModelProtocol>)viewModel;
 
+
 @end
