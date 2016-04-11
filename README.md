@@ -2,7 +2,7 @@
 ###Swift版本地址：https://github.com/lovemo/MVVMFramework-Swift
 ####本项目交流群：474292335
 ####欢迎有兴趣的有好的想法的参与到项目中来
-######Tip:SMKStore是在[YTKKeyValueStore](https://github.com/yuantiku/YTKKeyValueStore)的基础上直接增加了相关功能函数，(偷懒:smile:)
+######Tip:SMKStore是在[YTKKeyValueStore](https://github.com/yuantiku/YTKKeyValueStore)的基础上直接增加了很多的相关功能函数，(偷懒:smile:)
 ====
 #####具体实现思路，请参看博客：
 ####博客：浅谈MVVM 
