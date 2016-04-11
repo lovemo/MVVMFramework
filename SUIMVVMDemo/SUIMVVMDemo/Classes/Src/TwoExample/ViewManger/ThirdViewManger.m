@@ -19,7 +19,7 @@
 
 @implementation ThirdViewManger
 
-// UIView的delegate方法
+#pragma mark UIView的delegate方法
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
 
     NSLog(@"----------%@", events);
@@ -30,6 +30,7 @@
     
 }
 
+#pragma mark ViewEvents Block
 - (ViewEventsBlock)smk_viewMangerWithViewEventBlockOfInfos:(NSDictionary *)infos {
     
     return ^(NSString *info){
@@ -47,6 +48,7 @@
     };
 }
 
+#pragma mark ViewModel delegate
 - (void)smk_viewModel:(id)viewModel withInfos:(NSDictionary *)infos {
     NSLog(@"%@",infos);
 }

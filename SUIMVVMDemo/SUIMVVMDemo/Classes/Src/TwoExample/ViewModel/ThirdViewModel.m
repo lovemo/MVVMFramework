@@ -17,6 +17,7 @@
 
 @implementation ThirdViewModel
 
+#pragma mark 加载网络请求
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
         return [[ThirdRequest alloc]init];
@@ -36,6 +37,7 @@
     return array[index];
 }
 
+#pragma mark 配置加工模型数据，并通过block传递给view
 - (void)smk_viewModelWithModelBlcok:(void (^)(id))modelBlock {
     [self smk_viewModelWithProgress:nil success:^(id responseObject) {
         if (modelBlock) {
@@ -50,10 +52,12 @@
 
 }
 
+#pragma mark ViewManger delegate
 - (void)smk_viewManger:(id)viewManger withInfos:(NSDictionary *)infos  {
     NSLog(@"%@",infos);
 }
 
+#pragma mark ViewManger Block
 - (ViewMangerInfosBlock)smk_viewModelWithViewMangerBlockOfInfos:(NSDictionary *)infos {
     return ^{
       NSLog(@"hello");

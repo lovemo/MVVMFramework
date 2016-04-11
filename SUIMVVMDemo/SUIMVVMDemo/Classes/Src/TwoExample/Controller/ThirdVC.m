@@ -66,18 +66,9 @@
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
     
- //   __weak typeof(self) weakSelf = self;
-    
- //   [self.viewModel smk_viewModelWithProgress:nil success:^(id responseObject) {
-
-    // thirdView 通过viewModel传递的model来配置view
+    // 根据viewModel配置view
     [self.thirdView smk_configureViewWithViewModel:self.viewModel];
-        
-//        [weakSelf.thirdViewManger smk_viewMangerWithModel:^NSDictionary *{
-//            return @{@"model" : [weakSelf.viewModel getRandomData:responseObject]};
-//        }];
-//    } failure:nil];
-    
+
 }
 
 @end

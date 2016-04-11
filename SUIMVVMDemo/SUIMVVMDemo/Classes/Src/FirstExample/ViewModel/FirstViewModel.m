@@ -18,6 +18,7 @@
 @implementation FirstViewModel
 
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    
     return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
         return [[FirstRequest alloc]init];
     } progress:nil success:^(id responseObject) {
