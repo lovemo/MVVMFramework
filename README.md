@@ -138,7 +138,57 @@ CocoaPods：
 }
 
 ```
+###配置ViewModel
+```objc
 
+#pragma mark 加载网络请求
+- (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
+        return [[ThirdRequest alloc]init];
+    } progress:nil success:^(id responseObject) {
+        NSArray *modelArray = [ThirdModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
+        if (success) {
+            success(modelArray);
+        }
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+- (id)getRandomData:(NSArray *)array {
+    u_int32_t index = arc4random_uniform((u_int32_t)10);
+    return array[index];
+}
+
+#pragma mark 配置加工模型数据，并通过block传递给view
+- (void)smk_viewModelWithModelBlcok:(void (^)(id))modelBlock {
+    [self smk_viewModelWithProgress:nil success:^(id responseObject) {
+        if (modelBlock) {
+            
+            if (self.viewModelDelegate && [self.viewModelDelegate respondsToSelector:@selector(smk_viewModel:withInfos:)]) {
+                [self.viewModelDelegate smk_viewModel:self withInfos:@{@"info" : @"呵呵， 你好， 我是ViewModel，我加载数据成功了"}];
+            }
+            
+            modelBlock([self getRandomData:responseObject]);
+        }
+    } failure:nil];
+
+}
+
+#pragma mark ViewManger delegate
+- (void)smk_viewManger:(id)viewManger withInfos:(NSDictionary *)infos  {
+    NSLog(@"%@",infos);
+}
+
+#pragma mark ViewManger Block
+- (ViewMangerInfosBlock)smk_viewModelWithViewMangerBlockOfInfos:(NSDictionary *)infos {
+    return ^{
+      NSLog(@"hello");
+    };
+}
+
+```
 ###配置viewManger
 ```objc
 #pragma mark UIView的delegate方法
@@ -152,7 +202,7 @@ CocoaPods：
     
 }
 
-#pragma mark viewManger Block
+#pragma mark ViewEvents Block
 - (ViewEventsBlock)smk_viewMangerWithViewEventBlockOfInfos:(NSDictionary *)infos {
     
     return ^(NSString *info){
@@ -176,9 +226,7 @@ CocoaPods：
 }
 ```
 
-###一句代码实现网络请求，自动缓存网络请求数据
-#####具体实现细节，[点击进入查看SUIMVVMNetwork](https://github.com/lovemo/SUIMVVMNetwork)
-
+###SMKAction发送网络请求
 ```objc
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
