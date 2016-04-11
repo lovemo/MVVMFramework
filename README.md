@@ -9,7 +9,7 @@
 ####地址：[点击链接进入](https://github.com/lovemo/MVVMFramework/tree/master/source)
 ====
 
-总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,自动缓存网络请求至sqlite数据库，更加高效的数据库存储库。
+总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,使用SMKStore缓存数据至sqlite数据库，更加高效的数据库存储库(Tip:存储自定义模型时，为了方便，数据库存储的为其转化为json后的数据，所以当读取时，请在自行转为模型即可，<利用[MJExtension](https://github.com/CoderMJLee/MJExtension)一行代码即可>)。
 
 ====
 ####usage:
@@ -18,9 +18,7 @@ CocoaPods：
 	pod 'SUIMVVMKit'
 ```
 
-- 根据需要继承SMKBaseTableViewManger或SMKBaseCollectionViewManger扩展方法,如需显示多种cell,重写显示cell的数据源方法即可
-- 在Controller中，初始化tableView或者collectionView，根据需要实现block代码，将自动根据传入的内容去展现数据。
-- 利用xib自定义cell，在- (void)configure:customObj:indexPath:方法中根据模型Model内容配置cell展示的数据。
+- 详细用法，请参看demo
 
 
 ====
@@ -111,120 +109,70 @@ CocoaPods：
 
 @end
 ```
-###配置代码集成展示tableView,cell自适应高度
+###Controller中的代码
 
 ```objc
-/**
- *  tableView的一些初始化工作
- */
-- (void)setupTableView
-{
 
-    self.table.separatorStyle = UITableViewCellSelectionStyleNone;
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
-    __weak typeof(self) weakSelf = self;
-    __weak typeof(self.table) weakTable = self.table;
+    // 将thirdView的事件处理者代理给thirdViewManger (代理方式)
+    [self.thirdView smk_viewWithViewManger:self.thirdViewManger];
     
-    // 下拉刷新
-    self.table.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
-        [weakSelf.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
-            [weakTable reloadData];
-        }];
-        // 结束刷新
-        [weakTable.mj_header endRefreshing];
-    }];
+    // self.thirdView.viewEventsBlock （block方式）
+    self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithViewEventBlockOfInfos:@{@"view" : self.thirdView}];
     
-    [self.table.mj_header beginRefreshing];
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
-    self.table.mj_header.automaticallyChangeAlpha = YES;
+    // viewManger ---->  <-----  viewModel 之间通过代理方式交互
+    self.thirdViewManger.viewMangerDelegate = self.viewModel;
+    self.viewModel.viewModelDelegate = self.thirdViewManger;
     
-    self.table.tableHander = [[TestViewDelegate alloc]initWithCellIdentifiers:@[MyCellIdentifier] didSelectBlock:^(NSIndexPath *indexPath, id item) {
-        SecondVC *vc = (SecondVC *)[UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"SecondVCID"];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-        NSLog(@"click row : %@",@(indexPath.row)) ;
-    }];
+    // viewManger ---->  <-----  viewModel 之间通过block方式交互
+    self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
+}
 
-    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array){
-        [self.table.tableHander getItemsWithModelArray:^NSArray *{
-            return array;
-        } completion:^{
-            [self.table reloadData];
-        }];
-    }];
-
+- (IBAction)clickBtnAction:(UIButton *)sender {
+    
+    // thirdView 通过viewModel传递的model来配置view
+    [self.thirdView smk_configureViewWithViewModel:self.viewModel];
+    
 }
 
 ```
-       
-###配置代码集成展示collectionView
-         
-```objc
-/**
- *  collectionView的一些初始化工作
- */
-- (void)setupCollectionView
-{
 
-    // 可用自定义UICollectionViewLayout,默认为UICollectionViewFlowLayout
-    self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    
-    self.collectionView.collectionHander = [[SMKBaseCollectionViewManger alloc]initWithCellIdentifier:MyCellIdentifier collectionViewLayout:nil cellItemSizeBlock:^CGSize{
-        return CGSizeMake(110, 120);
-    } cellItemMarginBlock:^UIEdgeInsets{
-        return UIEdgeInsetsMake(0, 20, 0, 20);
-    } didSelectBlock:^(NSIndexPath *indexPath, id item) {
-        NSString *strMsg = [NSString stringWithFormat:@"click row : %zd",indexPath.row];
-        [[[UIAlertView alloc] initWithTitle:@"提示"
-                                    message:strMsg
-                                   delegate:self
-                          cancelButtonTitle:@"好的"
-                          otherButtonTitles:nil, nil] show];
-    }];
-    
-    [self.viewModel smk_viewModelWithGetDataSuccessHandler:^(NSArray *array) {
-      [self.collectionView.collectionHander getItemsWithModelArray:^NSArray *{
-          return array;
-      } completion:^{
-          [self.collectionView reloadData];
-      }];
-    }];
-
-}
-```
 ###配置viewManger
 ```objc
-// UIView的delegate方法 ，两种消息传递方式，开发时任选其一即可 根据传入的events信息处理事件
+#pragma mark UIView的delegate方法
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
 
     NSLog(@"----------%@", events);
-    
     if ([[events allKeys] containsObject:@"jump"]) {
-        FirstVC *firstVC = [UIViewController svv_viewControllerWithStoryBoardName:@"Main" identifier:@"FirstVCID"];
+        FirstVC *firstVC = [UIViewController sui_viewControllerWithStoryboard:nil identifier:@"FirstVCID"];
         [view.sui_currentVC.navigationController pushViewController:firstVC animated:YES];
     }
     
 }
 
-// 得到父视图，添加subView -> superView
-- (void)smk_viewMangerWithSuperView:(UIView *)superView {
-    self.thirdView.frame = CGRectMake(0, 66, [UIScreen mainScreen].bounds.size.width, 200);
-    [superView addSubview:self.thirdView];
+#pragma mark viewManger Block
+- (ViewEventsBlock)smk_viewMangerWithViewEventBlockOfInfos:(NSDictionary *)infos {
+    
+    return ^(NSString *info){
+        
+        if (self.viewMangerInfosBlock) {
+            self.viewMangerInfosBlock();
+        }
+        
+        if (self.viewMangerDelegate && [self.viewMangerDelegate respondsToSelector:@selector(smk_viewManger:withInfos:)]) {
+            [self.viewMangerDelegate smk_viewManger:self withInfos: @{@"info" : @"哈哈，你好ViewModel，我是viewManger，我被点击了"}];
+        }
+        
+    //    NSLog(@"%@",info);
+     //   [view smk_configureViewWithModel:self.dict[@"model"]];
+    };
 }
 
-// 根据传入的info设置添加subView的事件
-- (void)smk_viewMangerWithHandleOfSubView:(UIView *)view info:(NSString *)info {
-    
-    if ([info isEqualToString:@"click"]) {
-        [view configureViewWithCustomObj:self.dict[@"model"]];
-    }
-}
-// 得到模型数据
-- (void)viewMangerWithModel:(NSDictionary *(^)( ))dictBlock {
-    if (dictBlock) {
-        self.dict = dictBlock();
-    }
+#pragma mark ViewModel delegate
+- (void)smk_viewModel:(id)viewModel withInfos:(NSDictionary *)infos {
+    NSLog(@"%@",infos);
 }
 ```
 
@@ -246,16 +194,6 @@ CocoaPods：
 
 }
     
-```
-
-### <a id="几行代码实现数据存储"></a>几行代码实现数据存储
-#####具体实现细节，[点击进入查看SUIMVVMStore](https://github.com/lovemo/SUIMVVMStore)
-```objc
-    static NSString *tableName = @"arrarList";
-
-    SMKStore *store = [SMKStore sharedStore];
-    [store db_initWithDBName:@"demo.sqlite" tableName:tableName];
-    [store db_putObject:array withId:@"arrayID" intoTable:tableName];
 ```
 
 ### <a id="demo效果"></a> demo效果
