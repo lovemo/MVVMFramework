@@ -55,7 +55,7 @@ CocoaPods：
 ## <a id="代码示例"></a> 代码示例
 ###部分protocol定义
 ```objc
-@protocol SMKViewMangerProtocolDelegate <NSObject>
+@protocol SMKViewMangerProtocol <NSObject>
 
 @optional
 
@@ -107,7 +107,31 @@ CocoaPods：
  */
 - (void)smk_viewMangerWithUpdateLayoutSubViews;
 
+/**
+ *  将model数据传递给viewManger
+ */
+- (void)smk_viewMangerWithModel:(NSDictionary * (^) ( ))dictBlock;
+
+/**
+ *  处理viewBlock事件
+ */
+- (ViewEventsBlock)smk_viewMangerWithViewEventBlockOfInfos:(NSDictionary *)infos;
+
+/**
+ *  处理ViewModelInfosBlock
+ */
+- (ViewModelInfosBlock)smk_viewMangerWithViewModelBlockOfInfos:(NSDictionary *)infos;
+
+/**
+ *  将viewManger中的信息通过代理传递给ViewModel
+ *
+ *  @param viewManger   viewManger自己
+ *  @param infos 描述信息
+ */
+- (void)smk_viewManger:(id)viewManger withInfos:(NSDictionary *)infos;
+
 @end
+
 ```
 ###Controller中的代码
 
@@ -122,11 +146,11 @@ CocoaPods：
     // self.thirdView.viewEventsBlock （block方式）
     self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithViewEventBlockOfInfos:@{@"view" : self.thirdView}];
     
-    // viewManger ---->  <-----  viewModel 之间通过代理方式交互
+    // viewManger ----> info <-----  viewModel 之间通过代理方式交互
     self.thirdViewManger.viewMangerDelegate = self.viewModel;
     self.viewModel.viewModelDelegate = self.thirdViewManger;
     
-    // viewManger ---->  <-----  viewModel 之间通过block方式交互
+    // viewManger ----> info <-----  viewModel 之间通过block方式交互
     self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
 }
 
