@@ -56,11 +56,11 @@
     // self.thirdView.viewEventsBlock （block方式）
     self.thirdView.viewEventsBlock = [self.thirdViewManger smk_viewMangerWithViewEventBlockOfInfos:@{@"view" : self.thirdView}];
     
-    // viewManger ---->  <-----  viewModel 之间通过代理方式交互
+    // viewManger ----> info <-----  viewModel 之间通过代理方式交互
     self.thirdViewManger.viewMangerDelegate = self.viewModel;
     self.viewModel.viewModelDelegate = self.thirdViewManger;
     
-    // viewManger ---->  <-----  viewModel 之间通过block方式交互
+    // viewManger ----> info <-----  viewModel 之间通过block方式交互
     self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
 }
 
