@@ -249,7 +249,23 @@ CocoaPods：
     NSLog(@"%@",infos);
 }
 ```
+###配置Request模型
+```objc
 
+- (void)smk_requestConfigures {
+
+    self.smk_scheme = @"https";
+    self.smk_host = @"api.douban.com";
+    self.smk_path = @"/v2/book/search";
+    self.smk_method = SMKRequestMethodGET;
+
+}
+
+- (id)smk_requestParameters {
+    return @{@"q": @"基础"};
+}
+
+```
 ###SMKAction发送网络请求
 ```objc
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
