@@ -19,17 +19,36 @@
 
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     
-    return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
-        return [[FirstRequest alloc]init];
+//    // 方式1
+//    return [[SMKAction sharedAction] sendRequest:[[FirstRequest alloc]init] progress:nil success:^(id responseObject) {
+//        if (responseObject) {
+//            NSArray *modelArray = [FirstModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
+//            success(modelArray);
+//        }
+//    } failure:nil];
+    
+    
+    return [[SMKAction sharedAction] sendRequestBlock:^(NSObject *request) {
+        
+//        // 方式2
+//        return [[FirstRequest alloc]init];
+        
+        // 方式3
+        request.smk_scheme = @"https";
+        request.smk_host = @"api.douban.com";
+        request.smk_path = @"/v2/book/search";
+        request.smk_method = SMKRequestMethodGET;
+        request.smk_params = @{@"q": @"基础"};
+        
+        return request;
+        
     } progress:nil success:^(id responseObject) {
         if (responseObject) {
             NSArray *modelArray = [FirstModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
             success(modelArray);
         }
-    } failure:^(NSError *error) {
-        
-    }];
-
+    } failure:nil];
+    
 }
 
 @end

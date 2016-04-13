@@ -52,7 +52,6 @@
 }
 
 /**
- 
  *  url
  */
 - (NSString *)smk_url {
@@ -81,5 +80,6 @@
 - (void)setSmk_fileConfig:(SMKRequestFileConfig *)smk_fileConfig {
     objc_setAssociatedObject(self, @selector(smk_fileConfig), smk_fileConfig, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
 
 @end

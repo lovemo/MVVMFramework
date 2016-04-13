@@ -19,17 +19,16 @@
 
 #pragma mark 加载网络请求
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
-    return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
+    
+    return [[SMKAction sharedAction] sendRequestBlock:^id(NSObject *request) {
         return [[ThirdRequest alloc]init];
     } progress:nil success:^(id responseObject) {
         NSArray *modelArray = [ThirdModel mj_objectArrayWithKeyValuesArray:responseObject[@"books"]];
         if (success) {
             success(modelArray);
         }
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    } failure:nil];
+    
 }
 
 - (id)getRandomData:(NSArray *)array {

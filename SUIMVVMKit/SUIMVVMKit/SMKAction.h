@@ -77,7 +77,7 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  发送请求(在外部配置request)
  */
 - (NSURLSessionTask *)sendRequest:
-                        (id<SMKRequestProtocol>)request
+                        (id)request
                          progress:(progressBlock)progress
                           success:(successBlock)success
                           failure:(failureBlock)failure;
@@ -86,7 +86,7 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  发送请求Block(在block内部配置request)
  */
 - (NSURLSessionTask *)sendRequestBlock:
-                            (id<SMKRequestProtocol> (^)())requestBlock
+                            (id (^)(NSObject *request))requestBlock
                               progress:(progressBlock)progress
                                success:(successBlock)success
                                failure:(failureBlock)failure;

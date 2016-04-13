@@ -70,7 +70,7 @@ static id _instace;
     self.host = host;
 }
 
-- (NSURLSessionTask *)sendRequest:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+- (NSURLSessionTask *)sendRequest:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     if ([request respondsToSelector:@selector(smk_requestConfigures)]) {
         [request smk_requestConfigures];
     } 
@@ -102,12 +102,21 @@ static id _instace;
     return sessionDataTask;
 }
 
-- (NSURLSessionTask *)sendRequestBlock:(id<SMKRequestProtocol> (^)())requestBlock progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
-    if (requestBlock) return [self sendRequest:requestBlock() progress:progress success:success failure:failure];
-    return nil;
+- (NSURLSessionTask *)sendRequestBlock:(id (^)(NSObject *))requestBlock progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    
+    if (requestBlock) {
+        
+        NSObject *requestObj = [[NSObject alloc]init];
+        return [self sendRequest:requestBlock(requestObj) progress:progress success:success failure:failure];
+        
+    }else {
+        return nil;
+    }
+    
+
 }
 
-- (NSURLSessionDataTask *)get:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+- (NSURLSessionDataTask *)get:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     
     NSDictionary *requestDictionary = [self requestObject:request];
     NSString *urlPath = requestDictionary[SMKRequestUrlPath];
@@ -128,7 +137,8 @@ static id _instace;
    }];
 }
 
-- (NSURLSessionDataTask *)post:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+- (NSURLSessionDataTask *)post:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+    
     NSDictionary *requestDictionary = [self requestObject:request];
     NSString *urlPath = requestDictionary[SMKRequestUrlPath];
     NSDictionary *parameters = requestDictionary[SMKRequestParameters];
@@ -148,7 +158,7 @@ static id _instace;
     }];
 }
 
-- (NSURLSessionDownloadTask *)download:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+- (NSURLSessionDownloadTask *)download:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     
     NSDictionary *requestDictionary = [self requestObject:request];
     NSString *urlPath = requestDictionary[SMKRequestUrlPath];
@@ -177,7 +187,7 @@ static id _instace;
     return downloadTask;
 }
 
-- (NSURLSessionDataTask *)upload:(id<SMKRequestProtocol>)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
+- (NSURLSessionDataTask *)upload:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     
     NSDictionary *requestDictionary = [self requestObject:request];
     NSString *urlPath = requestDictionary[SMKRequestUrlPath];
@@ -203,7 +213,7 @@ static id _instace;
     
 }
 
-- (NSDictionary *)requestObject:(id<SMKRequestProtocol>)request {
+- (NSDictionary *)requestObject:(id)request {
 
     NSObject *requestObject = (NSObject *)request;
     

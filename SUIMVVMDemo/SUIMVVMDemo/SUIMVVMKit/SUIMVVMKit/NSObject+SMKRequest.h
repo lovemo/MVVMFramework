@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SMKRequestProtocol.h"
 
 typedef enum : NSUInteger {
     /** GET */
@@ -22,7 +23,7 @@ typedef enum : NSUInteger {
 
 
 @class SMKRequestFileConfig;
-@interface NSObject (SMKRequest)
+@interface NSObject (SMKRequest)<SMKRequestProtocol>
 
 /**
  *  scheme (eg: http, https, ftp)
@@ -58,5 +59,6 @@ typedef enum : NSUInteger {
  *  fileConfig
  */
 @property (nonatomic, retain, nonnull) SMKRequestFileConfig *smk_fileConfig;
+
 
 @end
