@@ -34,10 +34,11 @@
 //        return [[FirstRequest alloc]init];
         
         // 方式3
+        //smk_url (如果设置了url，则不需要在设置scheme，host，path 属性)
         request.smk_scheme = @"https";
         request.smk_host = @"api.douban.com";
         request.smk_path = @"/v2/book/search";
-        request.smk_method = SMKRequestMethodGET;
+        request.smk_method = SMKRequestMethodGET;     // default
         request.smk_params = @{@"q": @"基础"};
         
         return request;
