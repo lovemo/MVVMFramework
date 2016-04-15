@@ -10,7 +10,7 @@
 #import "SMKViewProtocol.h"
 #import "SMKViewModelProtocol.h"
 #import "SMKViewMangerProtocol.h"
-#import "SMKAbstractMediator.h"
+#import "SMKMediator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -65,7 +65,7 @@ typedef void (^ViewModelInfosBlock)( );
 /**
  *  mediator
  */
-@property (nonatomic, strong) SMKAbstractMediator *smk_mediator;
+@property (nonatomic, strong) SMKMediator *smk_mediator;
 
 /**
  *  smk_viewMangerInfos

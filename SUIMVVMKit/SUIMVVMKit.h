@@ -18,6 +18,6 @@
 #import "SMKViewMangerProtocol.h"
 #import "SMKViewModelProtocol.h"
 #import "SMKViewProtocol.h"
-
+#import "SMKMediator.h"
 
 #endif /* SUIMVVMKit_h */

@@ -10,7 +10,7 @@
 #import "FirstVC.h"
 #import "UIView+SMKEvents.h"
 #import "UIView+SMKConfigure.h"
-#import "SMKAbstractMediator.h"
+#import "SMKMediator.h"
 
 @interface ThirdViewManger ()<SMKViewProtocol>
 

@@ -1,15 +1,16 @@
 //
-//  SMKAbstractMediator.m
+//  SMKMediator.m
 //  SUIMVVMDemo
 //
 //  Created by yuantao on 16/4/15.
 //  Copyright © 2016年 lovemo. All rights reserved.
 //
 
-#import "SMKAbstractMediator.h"
-#import "NSObject+SMKRequest.h"
+#import "SMKMediator.h"
+#import "NSObject+SMKProperties.h"
 
-@implementation SMKAbstractMediator
+
+@implementation SMKMediator
 
 - (instancetype)initWithViewModel:(id<SMKViewModelProtocol>)viewModel viewManger:(id<SMKViewMangerProtocol>)viewManger {
     if (self = [super init]) {

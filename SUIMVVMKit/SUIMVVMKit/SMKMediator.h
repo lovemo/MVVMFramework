@@ -1,5 +1,5 @@
 //
-//  SMKAbstractMediator.h
+//  SMKMediator.h
 //  SUIMVVMDemo
 //
 //  Created by yuantao on 16/4/15.
@@ -10,7 +10,7 @@
 #import "SMKViewModelProtocol.h"
 #import "SMKViewMangerProtocol.h"
 
-@interface SMKAbstractMediator : NSObject
+@interface SMKMediator : NSObject
 
 /**
  *  viewModel

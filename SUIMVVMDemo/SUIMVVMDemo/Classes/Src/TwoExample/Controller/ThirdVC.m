@@ -13,7 +13,7 @@
 #import "ThirdView.h"
 #import "UIView+SMKEvents.h"
 #import "UIView+SMKConfigure.h"
-#import "SMKAbstractMediator.h"
+#import "SMKMediator.h"
 
 @interface ThirdVC ()
 
@@ -65,7 +65,7 @@
     self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
     
     // 中介者传值
-    SMKAbstractMediator *mediator = [SMKAbstractMediator mediatorWithViewModel:self.viewModel viewManger:self.thirdViewManger];
+    SMKMediator *mediator = [SMKMediator mediatorWithViewModel:self.viewModel viewManger:self.thirdViewManger];
     
     self.thirdViewManger.smk_mediator = mediator;
     self.viewModel.smk_mediator = mediator;

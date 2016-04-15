@@ -54,10 +54,10 @@
 /**
  *  mediator
  */
-- (void)setSmk_mediator:(SMKAbstractMediator *)smk_mediator {
+- (void)setSmk_mediator:(SMKMediator *)smk_mediator {
     objc_setAssociatedObject(self, @selector(smk_mediator), smk_mediator, OBJC_ASSOCIATION_RETAIN);
 }
-- (SMKAbstractMediator *)smk_mediator {
+- (SMKMediator *)smk_mediator {
     return objc_getAssociatedObject(self, @selector(smk_mediator));
 }
 

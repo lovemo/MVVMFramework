@@ -21,7 +21,7 @@
 		34870A4B1CBA4B1200EDEF26 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34870A391CBA4B1200EDEF26 /* ThirdView.xib */; };
 		34870A4C1CBA4B1200EDEF26 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A3C1CBA4B1200EDEF26 /* ThirdViewManger.m */; };
 		34870A4D1CBA4B1200EDEF26 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A3F1CBA4B1200EDEF26 /* ThirdViewModel.m */; };
-		3491C7291CC07922008A9312 /* SMKAbstractMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491C7281CC07922008A9312 /* SMKAbstractMediator.m */; };
+		3491C7291CC07922008A9312 /* SMKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491C7281CC07922008A9312 /* SMKMediator.m */; };
 		34F688BC1CB7B09E00518803 /* NSObject+SMKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A51CB7B09E00518803 /* NSObject+SMKProperties.m */; };
 		34F688BD1CB7B09E00518803 /* NSObject+SMKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A71CB7B09E00518803 /* NSObject+SMKRequest.m */; };
 		34F688BE1CB7B09E00518803 /* SMKAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A91CB7B09E00518803 /* SMKAction.m */; };
@@ -68,8 +68,8 @@
 		34870A3C1CBA4B1200EDEF26 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
 		34870A3E1CBA4B1200EDEF26 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
 		34870A3F1CBA4B1200EDEF26 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
-		3491C7271CC07922008A9312 /* SMKAbstractMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKAbstractMediator.h; sourceTree = "<group>"; };
-		3491C7281CC07922008A9312 /* SMKAbstractMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKAbstractMediator.m; sourceTree = "<group>"; };
+		3491C7271CC07922008A9312 /* SMKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKMediator.h; sourceTree = "<group>"; };
+		3491C7281CC07922008A9312 /* SMKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKMediator.m; sourceTree = "<group>"; };
 		34F688A41CB7B09E00518803 /* NSObject+SMKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKProperties.h"; sourceTree = "<group>"; };
 		34F688A51CB7B09E00518803 /* NSObject+SMKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKProperties.m"; sourceTree = "<group>"; };
 		34F688A61CB7B09E00518803 /* NSObject+SMKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKRequest.h"; sourceTree = "<group>"; };
@@ -286,8 +286,8 @@
 				34F688B81CB7B09E00518803 /* UIView+SMKConfigure.m */,
 				34F688B91CB7B09E00518803 /* UIView+SMKEvents.h */,
 				34F688BA1CB7B09E00518803 /* UIView+SMKEvents.m */,
-				3491C7271CC07922008A9312 /* SMKAbstractMediator.h */,
-				3491C7281CC07922008A9312 /* SMKAbstractMediator.m */,
+				3491C7271CC07922008A9312 /* SMKMediator.h */,
+				3491C7281CC07922008A9312 /* SMKMediator.m */,
 			);
 			path = SUIMVVMKit;
 			sourceTree = "<group>";
@@ -667,7 +667,7 @@
 				34F688BF1CB7B09E00518803 /* SMKStore.m in Sources */,
 				34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */,
 				34870A4C1CBA4B1200EDEF26 /* ThirdViewManger.m in Sources */,
-				3491C7291CC07922008A9312 /* SMKAbstractMediator.m in Sources */,
+				3491C7291CC07922008A9312 /* SMKMediator.m in Sources */,
 				34870A451CBA4B1200EDEF26 /* FirstTableViewModel.m in Sources */,
 				34870A431CBA4B1200EDEF26 /* FirstCell.m in Sources */,
 				34870A4A1CBA4B1200EDEF26 /* ThirdView.m in Sources */,
