@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 typedef void (^ViewEventsBlock)( );
 
 /**
@@ -17,10 +18,12 @@ typedef void (^ViewEventsBlock)( );
 typedef void (^ViewModelInfosBlock)( );
 
 
-
 @protocol SMKViewMangerProtocol <NSObject>
 
 @optional
+
+
+- (void)smk_notice;
 
 /**
  *  设置Controller的子视图的管理者为self

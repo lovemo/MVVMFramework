@@ -51,6 +51,36 @@
     objc_setAssociatedObject(self, @selector(viewModelBlock), viewModelBlock, OBJC_ASSOCIATION_COPY);
 }
 
+/**
+ *  mediator
+ */
+- (void)setSmk_mediator:(SMKAbstractMediator *)smk_mediator {
+    objc_setAssociatedObject(self, @selector(smk_mediator), smk_mediator, OBJC_ASSOCIATION_RETAIN);
+}
+- (SMKAbstractMediator *)smk_mediator {
+    return objc_getAssociatedObject(self, @selector(smk_mediator));
+}
+
+/**
+ *  smk_viewMangerInfos
+ */
+- (void)setSmk_viewMangerInfos:(NSDictionary *)smk_viewMangerInfos {
+    objc_setAssociatedObject(self, @selector(smk_viewMangerInfos), smk_viewMangerInfos, OBJC_ASSOCIATION_COPY);
+}
+- (NSDictionary *)smk_viewMangerInfos {
+    return objc_getAssociatedObject(self, @selector(smk_viewMangerInfos));
+}
+
+/**
+ *  smk_viewModelInfos
+ */
+- (void)setSmk_viewModelInfos:(NSDictionary *)smk_viewModelInfos {
+    objc_setAssociatedObject(self, @selector(smk_viewModelInfos), smk_viewModelInfos, OBJC_ASSOCIATION_COPY);
+}
+- (NSDictionary *)smk_viewModelInfos {
+    return objc_getAssociatedObject(self, @selector(smk_viewModelInfos));
+}
+
 - (nullable NSDictionary *)smk_allProperties
 {
     unsigned int count = 0;
