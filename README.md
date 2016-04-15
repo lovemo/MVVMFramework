@@ -140,7 +140,7 @@ CocoaPods：
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // 将thirdView的事件处理者代理给thirdViewManger (代理方式)
+       // 将thirdView的事件处理者代理给thirdViewManger (代理方式)
     [self.thirdView smk_viewWithViewManger:self.thirdViewManger];
     
     // self.thirdView.viewEventsBlock （block方式）
@@ -152,6 +152,20 @@ CocoaPods：
     
     // viewManger ----> info <-----  viewModel 之间通过block方式交互
     self.thirdViewManger.viewMangerInfosBlock = [self.viewModel smk_viewModelWithViewMangerBlockOfInfos:@{@"info" : @"viewManger"}];
+    
+    // 中介者传值
+    SMKAbstractMediator *mediator = [SMKAbstractMediator mediatorWithViewModel:self.viewModel viewManger:self.thirdViewManger];
+    
+    self.thirdViewManger.smk_mediator = mediator;
+    self.viewModel.smk_mediator = mediator;
+    
+    self.thirdViewManger.smk_viewMangerInfos = @{@"xxxxxx" : @"22222222"};
+    [self.thirdViewManger smk_notice];
+    NSLog(@"viewManger------>viewModel==%@", self.viewModel.smk_viewModelInfos);
+    
+    self.viewModel.smk_viewModelInfos = @{@"oooooo" : @"888888888"};
+    [self.viewModel smk_notice];
+    NSLog(@"viewModel=====>viewManger==%@", self.thirdViewManger.smk_viewMangerInfos);
 }
 
 - (IBAction)clickBtnAction:(UIButton *)sender {
