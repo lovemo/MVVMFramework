@@ -63,4 +63,10 @@
     };
 }
 
+#pragma mark 中介者传值
+- (void)smk_notice {
+    [self.smk_mediator noticeViewMangerWithInfos:self.smk_viewModelInfos];
+}
+
+
 @end

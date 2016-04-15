@@ -10,6 +10,7 @@
 #import "FirstVC.h"
 #import "UIView+SMKEvents.h"
 #import "UIView+SMKConfigure.h"
+#import "SMKAbstractMediator.h"
 
 @interface ThirdViewManger ()<SMKViewProtocol>
 
@@ -51,6 +52,11 @@
 #pragma mark ViewModel delegate
 - (void)smk_viewModel:(id)viewModel withInfos:(NSDictionary *)infos {
     NSLog(@"%@",infos);
+}
+
+#pragma mark 中介者传值
+- (void)smk_notice {
+    [self.smk_mediator noticeViewModelWithInfos:self.smk_viewMangerInfos];
 }
 
 //// 得到模型数据

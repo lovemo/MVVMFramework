@@ -45,8 +45,8 @@
 //}
 
 - (void)smk_configureViewWithViewModel:(id<SMKViewModelProtocol>)viewModel {
+    
     [viewModel smk_viewModelWithModelBlcok:^(id model) {
-        
         ThirdModel *thirdModel = (ThirdModel *)model;
         self.testLabel.text = thirdModel.title;
     }];

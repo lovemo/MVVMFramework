@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 /**
  *  请求成功block
  */
@@ -30,10 +31,13 @@ typedef void (^progressBlock)(NSProgress * progress);
 typedef void (^ViewMangerInfosBlock)( );
 
 
-
 @protocol SMKViewModelProtocol <NSObject>
 
 @optional
+
+
+- (void)smk_notice;
+
 /**
  *  返回指定viewModel的所引用的控制器
  */
