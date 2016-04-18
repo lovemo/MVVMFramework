@@ -21,19 +21,19 @@
 		34870A4B1CBA4B1200EDEF26 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34870A391CBA4B1200EDEF26 /* ThirdView.xib */; };
 		34870A4C1CBA4B1200EDEF26 /* ThirdViewManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A3C1CBA4B1200EDEF26 /* ThirdViewManger.m */; };
 		34870A4D1CBA4B1200EDEF26 /* ThirdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A3F1CBA4B1200EDEF26 /* ThirdViewModel.m */; };
-		3491C7291CC07922008A9312 /* SMKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3491C7281CC07922008A9312 /* SMKMediator.m */; };
-		34F688BC1CB7B09E00518803 /* NSObject+SMKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A51CB7B09E00518803 /* NSObject+SMKProperties.m */; };
-		34F688BD1CB7B09E00518803 /* NSObject+SMKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A71CB7B09E00518803 /* NSObject+SMKRequest.m */; };
-		34F688BE1CB7B09E00518803 /* SMKAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688A91CB7B09E00518803 /* SMKAction.m */; };
-		34F688BF1CB7B09E00518803 /* SMKStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688AF1CB7B09E00518803 /* SMKStore.m */; };
-		34F688C01CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688B41CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.m */; };
-		34F688C11CB7B09E00518803 /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688B61CB7B09E00518803 /* UITableViewCell+SMKConfigure.m */; };
-		34F688C21CB7B09E00518803 /* UIView+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688B81CB7B09E00518803 /* UIView+SMKConfigure.m */; };
-		34F688C31CB7B09E00518803 /* UIView+SMKEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F688BA1CB7B09E00518803 /* UIView+SMKEvents.m */; };
 		34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F1F1C8BF6A90033ED03 /* BHNavViewController.m */; };
 		34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2A1C8BF6A90033ED03 /* AppDelegate.m */; };
 		34F72F871C8BF6A90033ED03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F2B1C8BF6A90033ED03 /* main.m */; };
 		34F72FA41C8BF6A90033ED03 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F72F7F1C8BF6A90033ED03 /* Foundation+Log.m */; };
+		34FFD3FE1CC4DAA80025AFCF /* NSObject+SMKProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3E51CC4DAA80025AFCF /* NSObject+SMKProperties.m */; };
+		34FFD3FF1CC4DAA80025AFCF /* NSObject+SMKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3E71CC4DAA80025AFCF /* NSObject+SMKRequest.m */; };
+		34FFD4001CC4DAA80025AFCF /* SMKAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3E91CC4DAA80025AFCF /* SMKAction.m */; };
+		34FFD4011CC4DAA80025AFCF /* SMKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3ED1CC4DAA80025AFCF /* SMKMediator.m */; };
+		34FFD4021CC4DAA80025AFCF /* SMKStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3F11CC4DAA80025AFCF /* SMKStore.m */; };
+		34FFD4031CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3F61CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.m */; };
+		34FFD4041CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3F81CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.m */; };
+		34FFD4051CC4DAA80025AFCF /* UIView+SMKConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3FA1CC4DAA80025AFCF /* UIView+SMKConfigure.m */; };
+		34FFD4061CC4DAA80025AFCF /* UIView+SMKEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD3FC1CC4DAA80025AFCF /* UIView+SMKEvents.m */; };
 		3F5068AA9D3A497EF0300DF0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB3BD65C3660279BC80592 /* libPods.a */; };
 		6DB1184F1C7800BD00678885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DB1184D1C7800BD00678885 /* Main.storyboard */; };
 		6DB118511C7800BD00678885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DB118501C7800BD00678885 /* Assets.xcassets */; };
@@ -68,32 +68,6 @@
 		34870A3C1CBA4B1200EDEF26 /* ThirdViewManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewManger.m; sourceTree = "<group>"; };
 		34870A3E1CBA4B1200EDEF26 /* ThirdViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewModel.h; sourceTree = "<group>"; };
 		34870A3F1CBA4B1200EDEF26 /* ThirdViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewModel.m; sourceTree = "<group>"; };
-		3491C7271CC07922008A9312 /* SMKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKMediator.h; sourceTree = "<group>"; };
-		3491C7281CC07922008A9312 /* SMKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKMediator.m; sourceTree = "<group>"; };
-		34F688A41CB7B09E00518803 /* NSObject+SMKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKProperties.h"; sourceTree = "<group>"; };
-		34F688A51CB7B09E00518803 /* NSObject+SMKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKProperties.m"; sourceTree = "<group>"; };
-		34F688A61CB7B09E00518803 /* NSObject+SMKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKRequest.h"; sourceTree = "<group>"; };
-		34F688A71CB7B09E00518803 /* NSObject+SMKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKRequest.m"; sourceTree = "<group>"; };
-		34F688A81CB7B09E00518803 /* SMKAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKAction.h; sourceTree = "<group>"; };
-		34F688A91CB7B09E00518803 /* SMKAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKAction.m; sourceTree = "<group>"; };
-		34F688AA1CB7B09E00518803 /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
-		34F688AB1CB7B09E00518803 /* SMKExtendPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKExtendPublic.h; sourceTree = "<group>"; };
-		34F688AC1CB7B09E00518803 /* SMKRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKRequestProtocol.h; sourceTree = "<group>"; };
-		34F688AD1CB7B09E00518803 /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
-		34F688AE1CB7B09E00518803 /* SMKStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKStore.h; sourceTree = "<group>"; };
-		34F688AF1CB7B09E00518803 /* SMKStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKStore.m; sourceTree = "<group>"; };
-		34F688B01CB7B09E00518803 /* SMKViewMangerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewMangerProtocol.h; sourceTree = "<group>"; };
-		34F688B11CB7B09E00518803 /* SMKViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocol.h; sourceTree = "<group>"; };
-		34F688B21CB7B09E00518803 /* SMKViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewProtocol.h; sourceTree = "<group>"; };
-		34F688B31CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
-		34F688B41CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
-		34F688B51CB7B09E00518803 /* UITableViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
-		34F688B61CB7B09E00518803 /* UITableViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
-		34F688B71CB7B09E00518803 /* UIView+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKConfigure.h"; sourceTree = "<group>"; };
-		34F688B81CB7B09E00518803 /* UIView+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKConfigure.m"; sourceTree = "<group>"; };
-		34F688B91CB7B09E00518803 /* UIView+SMKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKEvents.h"; sourceTree = "<group>"; };
-		34F688BA1CB7B09E00518803 /* UIView+SMKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKEvents.m"; sourceTree = "<group>"; };
-		34F688BB1CB7B09E00518803 /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
 		34F72F181C8BF6A90033ED03 /* CategoryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1A1C8BF6A90033ED03 /* ConstantPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantPublicHeader.h; sourceTree = "<group>"; };
 		34F72F1E1C8BF6A90033ED03 /* BHNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHNavViewController.h; sourceTree = "<group>"; };
@@ -108,6 +82,32 @@
 		34F72F7F1C8BF6A90033ED03 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		34F72F821C8BF6A90033ED03 /* LibraryPublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryPublicHeader.h; sourceTree = "<group>"; };
 		34F72F841C8BF6A90033ED03 /* SDKFilePublicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKFilePublicHeader.h; sourceTree = "<group>"; };
+		34FFD3E41CC4DAA80025AFCF /* NSObject+SMKProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKProperties.h"; sourceTree = "<group>"; };
+		34FFD3E51CC4DAA80025AFCF /* NSObject+SMKProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKProperties.m"; sourceTree = "<group>"; };
+		34FFD3E61CC4DAA80025AFCF /* NSObject+SMKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKRequest.h"; sourceTree = "<group>"; };
+		34FFD3E71CC4DAA80025AFCF /* NSObject+SMKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKRequest.m"; sourceTree = "<group>"; };
+		34FFD3E81CC4DAA80025AFCF /* SMKAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKAction.h; sourceTree = "<group>"; };
+		34FFD3E91CC4DAA80025AFCF /* SMKAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKAction.m; sourceTree = "<group>"; };
+		34FFD3EA1CC4DAA80025AFCF /* SMKConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKConstant.h; sourceTree = "<group>"; };
+		34FFD3EB1CC4DAA80025AFCF /* SMKExtendPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKExtendPublic.h; sourceTree = "<group>"; };
+		34FFD3EC1CC4DAA80025AFCF /* SMKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKMediator.h; sourceTree = "<group>"; };
+		34FFD3ED1CC4DAA80025AFCF /* SMKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKMediator.m; sourceTree = "<group>"; };
+		34FFD3EE1CC4DAA80025AFCF /* SMKRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKRequestProtocol.h; sourceTree = "<group>"; };
+		34FFD3EF1CC4DAA80025AFCF /* SMKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKSingleton.h; sourceTree = "<group>"; };
+		34FFD3F01CC4DAA80025AFCF /* SMKStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKStore.h; sourceTree = "<group>"; };
+		34FFD3F11CC4DAA80025AFCF /* SMKStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMKStore.m; sourceTree = "<group>"; };
+		34FFD3F21CC4DAA80025AFCF /* SMKViewMangerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewMangerProtocol.h; sourceTree = "<group>"; };
+		34FFD3F31CC4DAA80025AFCF /* SMKViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewModelProtocol.h; sourceTree = "<group>"; };
+		34FFD3F41CC4DAA80025AFCF /* SMKViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMKViewProtocol.h; sourceTree = "<group>"; };
+		34FFD3F51CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
+		34FFD3F61CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
+		34FFD3F71CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SMKConfigure.h"; sourceTree = "<group>"; };
+		34FFD3F81CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SMKConfigure.m"; sourceTree = "<group>"; };
+		34FFD3F91CC4DAA80025AFCF /* UIView+SMKConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKConfigure.h"; sourceTree = "<group>"; };
+		34FFD3FA1CC4DAA80025AFCF /* UIView+SMKConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKConfigure.m"; sourceTree = "<group>"; };
+		34FFD3FB1CC4DAA80025AFCF /* UIView+SMKEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SMKEvents.h"; sourceTree = "<group>"; };
+		34FFD3FC1CC4DAA80025AFCF /* UIView+SMKEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SMKEvents.m"; sourceTree = "<group>"; };
+		34FFD3FD1CC4DAA80025AFCF /* SUIMVVMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIMVVMKit.h; sourceTree = "<group>"; };
 		676848CDB706ABC1C5B4FF66 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6DB118411C7800BD00678885 /* SUIMVVMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SUIMVVMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB1184E1C7800BD00678885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -249,47 +249,6 @@
 				34870A3F1CBA4B1200EDEF26 /* ThirdViewModel.m */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		34F688A21CB7B09E00518803 /* SUIMVVMKit */ = {
-			isa = PBXGroup;
-			children = (
-				34F688A31CB7B09E00518803 /* SUIMVVMKit */,
-				34F688BB1CB7B09E00518803 /* SUIMVVMKit.h */,
-			);
-			path = SUIMVVMKit;
-			sourceTree = "<group>";
-		};
-		34F688A31CB7B09E00518803 /* SUIMVVMKit */ = {
-			isa = PBXGroup;
-			children = (
-				34F688A41CB7B09E00518803 /* NSObject+SMKProperties.h */,
-				34F688A51CB7B09E00518803 /* NSObject+SMKProperties.m */,
-				34F688A61CB7B09E00518803 /* NSObject+SMKRequest.h */,
-				34F688A71CB7B09E00518803 /* NSObject+SMKRequest.m */,
-				34F688A81CB7B09E00518803 /* SMKAction.h */,
-				34F688A91CB7B09E00518803 /* SMKAction.m */,
-				34F688AA1CB7B09E00518803 /* SMKConstant.h */,
-				34F688AB1CB7B09E00518803 /* SMKExtendPublic.h */,
-				34F688AC1CB7B09E00518803 /* SMKRequestProtocol.h */,
-				34F688AD1CB7B09E00518803 /* SMKSingleton.h */,
-				34F688AE1CB7B09E00518803 /* SMKStore.h */,
-				34F688AF1CB7B09E00518803 /* SMKStore.m */,
-				34F688B01CB7B09E00518803 /* SMKViewMangerProtocol.h */,
-				34F688B11CB7B09E00518803 /* SMKViewModelProtocol.h */,
-				34F688B21CB7B09E00518803 /* SMKViewProtocol.h */,
-				34F688B31CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.h */,
-				34F688B41CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.m */,
-				34F688B51CB7B09E00518803 /* UITableViewCell+SMKConfigure.h */,
-				34F688B61CB7B09E00518803 /* UITableViewCell+SMKConfigure.m */,
-				34F688B71CB7B09E00518803 /* UIView+SMKConfigure.h */,
-				34F688B81CB7B09E00518803 /* UIView+SMKConfigure.m */,
-				34F688B91CB7B09E00518803 /* UIView+SMKEvents.h */,
-				34F688BA1CB7B09E00518803 /* UIView+SMKEvents.m */,
-				3491C7271CC07922008A9312 /* SMKMediator.h */,
-				3491C7281CC07922008A9312 /* SMKMediator.m */,
-			);
-			path = SUIMVVMKit;
 			sourceTree = "<group>";
 		};
 		34F72F151C8BF6A90033ED03 /* Classes */ = {
@@ -466,6 +425,48 @@
 			path = SDKFiles;
 			sourceTree = "<group>";
 		};
+		34FFD3E21CC4DAA80025AFCF /* SUIMVVMKit */ = {
+			isa = PBXGroup;
+			children = (
+				34FFD3E31CC4DAA80025AFCF /* SUIMVVMKit */,
+				34FFD3FD1CC4DAA80025AFCF /* SUIMVVMKit.h */,
+			);
+			name = SUIMVVMKit;
+			path = ../../SUIMVVMKit;
+			sourceTree = "<group>";
+		};
+		34FFD3E31CC4DAA80025AFCF /* SUIMVVMKit */ = {
+			isa = PBXGroup;
+			children = (
+				34FFD3E41CC4DAA80025AFCF /* NSObject+SMKProperties.h */,
+				34FFD3E51CC4DAA80025AFCF /* NSObject+SMKProperties.m */,
+				34FFD3E61CC4DAA80025AFCF /* NSObject+SMKRequest.h */,
+				34FFD3E71CC4DAA80025AFCF /* NSObject+SMKRequest.m */,
+				34FFD3E81CC4DAA80025AFCF /* SMKAction.h */,
+				34FFD3E91CC4DAA80025AFCF /* SMKAction.m */,
+				34FFD3EA1CC4DAA80025AFCF /* SMKConstant.h */,
+				34FFD3EB1CC4DAA80025AFCF /* SMKExtendPublic.h */,
+				34FFD3EC1CC4DAA80025AFCF /* SMKMediator.h */,
+				34FFD3ED1CC4DAA80025AFCF /* SMKMediator.m */,
+				34FFD3EE1CC4DAA80025AFCF /* SMKRequestProtocol.h */,
+				34FFD3EF1CC4DAA80025AFCF /* SMKSingleton.h */,
+				34FFD3F01CC4DAA80025AFCF /* SMKStore.h */,
+				34FFD3F11CC4DAA80025AFCF /* SMKStore.m */,
+				34FFD3F21CC4DAA80025AFCF /* SMKViewMangerProtocol.h */,
+				34FFD3F31CC4DAA80025AFCF /* SMKViewModelProtocol.h */,
+				34FFD3F41CC4DAA80025AFCF /* SMKViewProtocol.h */,
+				34FFD3F51CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.h */,
+				34FFD3F61CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.m */,
+				34FFD3F71CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.h */,
+				34FFD3F81CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.m */,
+				34FFD3F91CC4DAA80025AFCF /* UIView+SMKConfigure.h */,
+				34FFD3FA1CC4DAA80025AFCF /* UIView+SMKConfigure.m */,
+				34FFD3FB1CC4DAA80025AFCF /* UIView+SMKEvents.h */,
+				34FFD3FC1CC4DAA80025AFCF /* UIView+SMKEvents.m */,
+			);
+			path = SUIMVVMKit;
+			sourceTree = "<group>";
+		};
 		6DB118381C7800BD00678885 = {
 			isa = PBXGroup;
 			children = (
@@ -487,7 +488,7 @@
 		6DB118431C7800BD00678885 /* SUIMVVMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				34F688A21CB7B09E00518803 /* SUIMVVMKit */,
+				34FFD3E21CC4DAA80025AFCF /* SUIMVVMKit */,
 				34F72F151C8BF6A90033ED03 /* Classes */,
 				6DB118441C7800BD00678885 /* Supporting Files */,
 			);
@@ -647,31 +648,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F688C11CB7B09E00518803 /* UITableViewCell+SMKConfigure.m in Sources */,
+				34FFD4001CC4DAA80025AFCF /* SMKAction.m in Sources */,
 				34870A401CBA4B1200EDEF26 /* FirstVC.m in Sources */,
-				34F688BE1CB7B09E00518803 /* SMKAction.m in Sources */,
-				34F688BD1CB7B09E00518803 /* NSObject+SMKRequest.m in Sources */,
-				34F688C01CB7B09E00518803 /* UICollectionViewCell+SMKConfigure.m in Sources */,
+				34FFD4061CC4DAA80025AFCF /* UIView+SMKEvents.m in Sources */,
+				34FFD3FF1CC4DAA80025AFCF /* NSObject+SMKRequest.m in Sources */,
 				34870A461CBA4B1200EDEF26 /* FirstViewModel.m in Sources */,
 				34870A421CBA4B1200EDEF26 /* FirstRequest.m in Sources */,
 				34870A491CBA4B1200EDEF26 /* ThirdRequest.m in Sources */,
 				34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */,
-				34F688C21CB7B09E00518803 /* UIView+SMKConfigure.m in Sources */,
+				34FFD4031CC4DAA80025AFCF /* UICollectionViewCell+SMKConfigure.m in Sources */,
 				34870A4D1CBA4B1200EDEF26 /* ThirdViewModel.m in Sources */,
+				34FFD4051CC4DAA80025AFCF /* UIView+SMKConfigure.m in Sources */,
 				34F72F871C8BF6A90033ED03 /* main.m in Sources */,
 				34870A411CBA4B1200EDEF26 /* FirstModel.m in Sources */,
 				34870A481CBA4B1200EDEF26 /* ThirdModel.m in Sources */,
 				34870A471CBA4B1200EDEF26 /* ThirdVC.m in Sources */,
+				34FFD4011CC4DAA80025AFCF /* SMKMediator.m in Sources */,
 				34F72FA41C8BF6A90033ED03 /* Foundation+Log.m in Sources */,
-				34F688C31CB7B09E00518803 /* UIView+SMKEvents.m in Sources */,
-				34F688BF1CB7B09E00518803 /* SMKStore.m in Sources */,
 				34F72F861C8BF6A90033ED03 /* AppDelegate.m in Sources */,
+				34FFD4041CC4DAA80025AFCF /* UITableViewCell+SMKConfigure.m in Sources */,
+				34FFD4021CC4DAA80025AFCF /* SMKStore.m in Sources */,
 				34870A4C1CBA4B1200EDEF26 /* ThirdViewManger.m in Sources */,
-				3491C7291CC07922008A9312 /* SMKMediator.m in Sources */,
 				34870A451CBA4B1200EDEF26 /* FirstTableViewModel.m in Sources */,
 				34870A431CBA4B1200EDEF26 /* FirstCell.m in Sources */,
 				34870A4A1CBA4B1200EDEF26 /* ThirdView.m in Sources */,
-				34F688BC1CB7B09E00518803 /* NSObject+SMKProperties.m in Sources */,
+				34FFD3FE1CC4DAA80025AFCF /* NSObject+SMKProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

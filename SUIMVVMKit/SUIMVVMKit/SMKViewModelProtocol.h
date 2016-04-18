@@ -6,7 +6,7 @@
 //  Copyright © 2016年 lovemo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
