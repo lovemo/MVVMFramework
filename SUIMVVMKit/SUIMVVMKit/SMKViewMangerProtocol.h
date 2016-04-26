@@ -17,6 +17,11 @@ typedef void (^ViewEventsBlock)( );
  */
 typedef void (^ViewModelInfosBlock)( );
 
+/**
+ *  将自己的信息返回给ViewManger的block
+ */
+typedef void (^ViewMangerInfosBlock)( );
+
 
 @protocol SMKViewMangerProtocol <NSObject>
 
@@ -87,6 +92,11 @@ typedef void (^ViewModelInfosBlock)( );
  *  处理ViewModelInfosBlock
  */
 - (ViewModelInfosBlock)smk_viewMangerWithViewModelBlockOfInfos:(NSDictionary *)infos;
+
+/**
+ *  处理ViewMangerInfosBlock
+ */
+- (ViewMangerInfosBlock)smk_viewMangerWithOtherViewMangerBlockOfInfos:(NSDictionary *)infos;
 
 /**
  *  将viewManger中的信息通过代理传递给ViewModel

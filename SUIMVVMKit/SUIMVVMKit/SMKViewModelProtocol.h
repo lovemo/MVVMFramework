@@ -29,6 +29,10 @@ typedef void (^progressBlock)(NSProgress * progress);
  *  将自己的信息返回给ViewManger的block
  */
 typedef void (^ViewMangerInfosBlock)( );
+/**
+ *  将自己的信息返回给ViewModel的block
+ */
+typedef void (^ViewModelInfosBlock)( );
 
 
 @protocol SMKViewModelProtocol <NSObject>
@@ -57,6 +61,11 @@ typedef void (^ViewMangerInfosBlock)( );
  *  处理ViewMangerInfosBlock
  */
 - (ViewMangerInfosBlock)smk_viewModelWithViewMangerBlockOfInfos:(NSDictionary *)infos;
+
+/**
+ *  处理ViewModelInfosBlock
+ */
+- (ViewModelInfosBlock)smk_viewModelWithOtherViewModelBlockOfInfos:(NSDictionary *)infos;
 
 /**
  *  将viewModel中的信息通过代理传递给ViewManger
