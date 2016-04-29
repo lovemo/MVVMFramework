@@ -309,6 +309,10 @@ CocoaPods：
 
 ## 推荐
 ###应用架构文章
+* [文化碰撞：函数式、面向协议、面向对象编程的最佳实践](https://realm.io/cn/news/tryswift-daniel-steinberg-blending-cultures/)
+* [探索 Swift 中的 MVC-N 模式](https://realm.io/cn/news/slug-marcus-zarra-exploring-mvcn-swift/)
+* [Code-T 沙龙资料](https://github.com/Code-T/salon-resources)
+* [高速公路换轮胎——为遗留系统替换数据库](http://www.jianshu.com/p/d684693f1d77)
 * [围观神仙打架，反革命工程师《iOS应用架构谈 组件化方案》和蘑菇街Limboy的《蘑菇街 App 的组件化之路》的阅读指导](http://reviewcode.cn/article.html?reviewId=20)
 * [iOS 组件化方案探索](http://blog.cnbang.net/tech/3080/)
 * [iOS应用架构谈 组件化方案 ](http://casatwy.com/iOS-Modulization.html)
