@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346F3BC21CD345B5004C735E /* NSObject+SMKCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 346F3BC11CD345B5004C735E /* NSObject+SMKCoding.m */; };
 		34870A401CBA4B1200EDEF26 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A1E1CBA4B1200EDEF26 /* FirstVC.m */; };
 		34870A411CBA4B1200EDEF26 /* FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A211CBA4B1200EDEF26 /* FirstModel.m */; };
 		34870A421CBA4B1200EDEF26 /* FirstRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34870A231CBA4B1200EDEF26 /* FirstRequest.m */; };
@@ -42,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		344113281C7AD7FE001FEAE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		346F3BC01CD345B5004C735E /* NSObject+SMKCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SMKCoding.h"; sourceTree = "<group>"; };
+		346F3BC11CD345B5004C735E /* NSObject+SMKCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SMKCoding.m"; sourceTree = "<group>"; };
 		34870A1D1CBA4B1200EDEF26 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		34870A1E1CBA4B1200EDEF26 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 		34870A201CBA4B1200EDEF26 /* FirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstModel.h; sourceTree = "<group>"; };
@@ -438,6 +441,8 @@
 		34FFD3E31CC4DAA80025AFCF /* SUIMVVMKit */ = {
 			isa = PBXGroup;
 			children = (
+				346F3BC01CD345B5004C735E /* NSObject+SMKCoding.h */,
+				346F3BC11CD345B5004C735E /* NSObject+SMKCoding.m */,
 				34FFD3E41CC4DAA80025AFCF /* NSObject+SMKProperties.h */,
 				34FFD3E51CC4DAA80025AFCF /* NSObject+SMKProperties.m */,
 				34FFD3E61CC4DAA80025AFCF /* NSObject+SMKRequest.h */,
@@ -653,6 +658,7 @@
 				34FFD4061CC4DAA80025AFCF /* UIView+SMKEvents.m in Sources */,
 				34FFD3FF1CC4DAA80025AFCF /* NSObject+SMKRequest.m in Sources */,
 				34870A461CBA4B1200EDEF26 /* FirstViewModel.m in Sources */,
+				346F3BC21CD345B5004C735E /* NSObject+SMKCoding.m in Sources */,
 				34870A421CBA4B1200EDEF26 /* FirstRequest.m in Sources */,
 				34870A491CBA4B1200EDEF26 /* ThirdRequest.m in Sources */,
 				34F72F851C8BF6A90033ED03 /* BHNavViewController.m in Sources */,

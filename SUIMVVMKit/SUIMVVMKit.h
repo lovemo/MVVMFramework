@@ -9,6 +9,7 @@
 #ifndef SUIMVVMKit_h
 #define SUIMVVMKit_h
 
+#import "NSObject+SMKCoding.h"
 #import "SMKExtendPublic.h"
 #import "SMKAction.h"
 #import "SMKConstant.h"
