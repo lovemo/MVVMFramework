@@ -31,29 +31,29 @@ static NSString * const SMKRequestParameters = @"SMKRequestParameters";
 
 @implementation SMKAction
 
-static id _instace;
+static id _instance;
 
 + (id)allocWithZone:(struct _NSZone *)zone
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instace = [super allocWithZone:zone];
+        _instance = [super allocWithZone:zone];
     });
-    return _instace;
+    return _instance;
 }
 
 + (instancetype)sharedAction
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instace = [[self alloc] init];
+        _instance = [[self alloc] init];
     });
-    return _instace;
+    return _instance;
 }
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return _instace;
+    return _instance;
 }
 
 - (AFHTTPSessionManager *)sessionManager {

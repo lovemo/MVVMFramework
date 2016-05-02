@@ -1,6 +1,6 @@
 //
 //  NSObject+SMKCoding.m
-//  SMKMVVM
+//  TestSql
 //
 //  Created by yuantao on 16/4/29.
 //  Copyright © 2016年 momo. All rights reserved.
@@ -18,7 +18,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-      [self setWithCoder:aDecoder];
+    [self setWithCoder:aDecoder];
     return self;
 }
 #pragma clang diagnostic pop
@@ -38,14 +38,22 @@
 }
 
 - (NSDictionary *)getPropertiesDict {
-
+    
     Class class = [self class];
     unsigned int propertyCount;
     __autoreleasing NSMutableDictionary *propertiesDict = [NSMutableDictionary dictionary];
     objc_property_t *properties = class_copyPropertyList(class, &propertyCount);
-
-    NSArray *allowedCodingPropertyNames = [class smk_allowedCodingPropertyNames];
-    NSArray *ignoredCodingPropertyNames = [class smk_ignoredCodingPropertyNames];
+    
+    NSArray *allowedCodingPropertyNames = nil;
+    if ([self respondsToSelector:@selector(smk_allowedCodingPropertyNames)]) {
+        allowedCodingPropertyNames = [class smk_allowedCodingPropertyNames];
+    }
+    
+    NSArray *ignoredCodingPropertyNames = nil;
+    if ([self respondsToSelector:@selector(smk_ignoredCodingPropertyNames)]) {
+        ignoredCodingPropertyNames = [class smk_ignoredCodingPropertyNames];
+    }
+    
     
     void(^setValueBlock)(NSString *key, NSMutableDictionary *propertiesDict) = ^(NSString *key, NSMutableDictionary *propertiesDict) {
         if (![ignoredCodingPropertyNames containsObject:key]) {
@@ -75,7 +83,7 @@
         const char *propertyName = property_getName(property);
         __autoreleasing NSString *key = @(propertyName);
         setValueBlock(key, propertiesDict);
-   
+        
     }
     
     free(properties);
@@ -105,9 +113,9 @@
 }
 
 + (instancetype)smk_objectWithFile:(NSString *)path {
-
+    
     NSData *data = [NSData dataWithContentsOfFile:path];
-
+    
     id object = nil;
     if (data) {
         NSPropertyListFormat format;
