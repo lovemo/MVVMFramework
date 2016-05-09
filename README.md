@@ -309,7 +309,7 @@ CocoaPods：
 
 ## 推荐
 ###应用架构文章
-####部分来自原创微信公众平台-移动开发前线
+#####部分来自原创微信公众平台-移动开发前线
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
 * [文化碰撞：函数式、面向协议、面向对象编程的最佳实践](https://realm.io/cn/news/tryswift-daniel-steinberg-blending-cultures/)
 * [探索 Swift 中的 MVC-N 模式](https://realm.io/cn/news/slug-marcus-zarra-exploring-mvcn-swift/)
