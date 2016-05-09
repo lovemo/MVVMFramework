@@ -308,7 +308,8 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐
-###应用架构文章
+###应用架构文章(部分来自原创微信公众平台-移动开发前线)
+* [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
 * [文化碰撞：函数式、面向协议、面向对象编程的最佳实践](https://realm.io/cn/news/tryswift-daniel-steinberg-blending-cultures/)
 * [探索 Swift 中的 MVC-N 模式](https://realm.io/cn/news/slug-marcus-zarra-exploring-mvcn-swift/)
 * [Code-T 沙龙资料](https://github.com/Code-T/salon-resources)
