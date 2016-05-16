@@ -309,7 +309,7 @@ CocoaPods：
 * 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的代码看看BUG修复没有）
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
-## 推荐<a id="Recommend"></a>
+## 推荐(欢迎补充)<a id="Recommend"></a>
 ###应用架构文章
 #####部分来自原创微信公众平台-移动开发前线
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
