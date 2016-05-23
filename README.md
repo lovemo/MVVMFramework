@@ -312,6 +312,8 @@ CocoaPods：
 ## 推荐(欢迎补充)<a id="Recommend"></a>
 ###应用架构文章
 #####部分来自原创微信公众平台-移动开发前线
+* [Service Oriented 的 iOS 应用架构](http://www.cocoachina.com/ios/20160520/16363.html)
+* [新浪微博iOS客户端架构与优化之路](http://chuansong.me/n/335912751245)
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
 * [文化碰撞：函数式、面向协议、面向对象编程的最佳实践](https://realm.io/cn/news/tryswift-daniel-steinberg-blending-cultures/)
 * [探索 Swift 中的 MVC-N 模式](https://realm.io/cn/news/slug-marcus-zarra-exploring-mvcn-swift/)
@@ -336,6 +338,7 @@ CocoaPods：
 
 
 ###MVVM学习文章
+* [MVVM奇葩说](http://www.cocoachina.com/ios/20160520/16004.html)
 * [面向协议的 MVVM 架构介绍](https://realm.io/cn/news/doios-natasha-murashev-protocol-oriented-mvvm/)
 * [MVVM With ReactiveCocoa](http://www.cocoachina.com/ios/20160330/15823.html)
 * [#1 更轻量的 View Controllers](http://objccn.io/issue-1/)
