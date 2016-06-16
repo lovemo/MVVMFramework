@@ -1,4 +1,4 @@
-![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVM@3x.png)
+![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVM@2x.png)
 
 #MVVMFramework
 ###Swift版本地址：https://github.com/lovemo/MVVMFramework-Swift
