@@ -7,7 +7,7 @@
 ###### Tip:SMKStore是在[YTKKeyValueStore](https://github.com/yuantiku/YTKKeyValueStore)的基础上直接增加了很多的相关功能函数，(偷懒:smile:)
 ###### 感谢[小学生](https://github.com/chouxun)提供的图标
 
-====
+---
 
 ##### 具体实现思路，请参看博客：
 #### 博客：浅谈MVVM 
@@ -15,11 +15,11 @@
 
 #### [获取更多MVVM推荐文章](#Recommend)
 
-====
+---
 
 总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,使用SMKStore缓存数据至sqlite数据库，更加高效的数据库存储库(Tip:存储自定义模型时，为了方便，数据库存储的为其转化为json后的数据，所以当读取时，请在自行转为模型即可，<利用[MJExtension](https://github.com/CoderMJLee/MJExtension)一行代码即可>)。
 
-====
+---
 
 #### usage:
 CocoaPods：
@@ -29,8 +29,8 @@ CocoaPods：
 
 - 详细用法，请参看demo
 
+---
 
-====
 ## 思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking2.jpeg)
@@ -62,7 +62,7 @@ CocoaPods：
 ---
 
 ## <a id="代码示例"></a> 代码示例
-###部分protocol定义
+### 部分protocol定义
 ```objc
 @protocol SMKViewMangerProtocol <NSObject>
 
@@ -142,7 +142,7 @@ CocoaPods：
 @end
 
 ```
-###Controller中的代码
+### Controller中的代码
 
 ```objc
 
@@ -185,7 +185,7 @@ CocoaPods：
 }
 
 ```
-###配置ViewModel
+### 配置ViewModel
 ```objc
 
 #pragma mark 加载网络请求
@@ -236,7 +236,7 @@ CocoaPods：
 }
 
 ```
-###配置viewManger
+### 配置viewManger
 ```objc
 #pragma mark UIView的delegate方法
 - (void)smk_view:(__kindof UIView *)view withEvents:(NSDictionary *)events {
@@ -272,7 +272,7 @@ CocoaPods：
     NSLog(@"%@",infos);
 }
 ```
-###配置Request模型
+### 配置Request模型
 ```objc
 
 - (void)smk_requestConfigures {
@@ -289,7 +289,7 @@ CocoaPods：
 }
 
 ```
-###SMKAction发送网络请求
+### SMKAction发送网络请求
 ```objc
 - (NSURLSessionTask *)smk_viewModelWithProgress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     return [[SMKAction sharedAction] sendRequestBlock:^id<SMKRequestProtocol>{
@@ -317,8 +317,8 @@ CocoaPods：
 * 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
 
 ## 推荐(欢迎补充)<a id="Recommend"></a>
-###应用架构文章
-#####部分来自原创微信公众平台-移动开发前线
+### 应用架构文章
+##### 部分来自原创微信公众平台-移动开发前线
 * [Service Oriented 的 iOS 应用架构](http://www.cocoachina.com/ios/20160520/16363.html)
 * [新浪微博iOS客户端架构与优化之路](http://chuansong.me/n/335912751245)
 * [糯米移动组件架构演进之路](http://top.caibaojian.com/t?url=http://t.cn/RqRDJIe)
@@ -344,7 +344,7 @@ CocoaPods：
 * [QCon旧金山演讲总结：阿里无线技术架构演进](http://www.infoq.com/cn/articles/alibaba-mobile-infrastructure)
 
 
-###MVVM学习文章
+### MVVM学习文章
 * [MVVM奇葩说](http://www.cocoachina.com/ios/20160520/16004.html)
 * [面向协议的 MVVM 架构介绍](https://realm.io/cn/news/doios-natasha-murashev-protocol-oriented-mvvm/)
 * [MVVM With ReactiveCocoa](http://www.cocoachina.com/ios/20160330/15823.html)
