@@ -34,7 +34,7 @@ CocoaPods：
 ## 思维流程图示
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking.png)
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/MVVMFrameWork-Thinking2.jpeg)
-##现在的工程代码结构
+## 现在的工程代码结构
 ![image](https://github.com/lovemo/MVVMFramework/raw/master/resources/directory_tree.png)
 
 ### <a id="模块构建"></a> 模块构建
