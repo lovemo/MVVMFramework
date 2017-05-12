@@ -7,7 +7,6 @@
 ###### Tip:SMKStore是在[YTKKeyValueStore](https://github.com/yuantiku/YTKKeyValueStore)的基础上直接增加了很多的相关功能函数，(偷懒:smile:)
 ###### 感谢[小学生](https://github.com/chouxun)提供的图标
 
----
 
 ##### 具体实现思路，请参看博客：
 #### 博客：浅谈MVVM 
@@ -15,11 +14,9 @@
 
 #### [获取更多MVVM推荐文章](#Recommend)
 
----
 
 总结整理下一个快速开发MVVM框架(抛砖引玉)，主要用于分离控制器中的代码，降低代码耦合程度，可以根据自己使用习惯调整代码。欢迎来喷，提issues。代码加入了cell自适应高度,使用SMKStore缓存数据至sqlite数据库，更加高效的数据库存储库(Tip:存储自定义模型时，为了方便，数据库存储的为其转化为json后的数据，所以当读取时，请在自行转为模型即可，<利用[MJExtension](https://github.com/CoderMJLee/MJExtension)一行代码即可>)。
 
----
 
 #### usage:
 CocoaPods：
