@@ -260,3 +260,22 @@ static id _instance;
 }
 
 @end
+
+@implementation SMKRequestFileConfig
+
+- (instancetype)initWithfileData:(NSData *)fileData name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType {
+    
+    SMKRequestFileConfig *fileObject = [[SMKRequestFileConfig alloc]init];
+    fileObject.fileData = fileData;
+    fileObject.name = name;
+    fileObject.fileName = fileName;
+    fileObject.mimeType = mimeType;
+    
+    return fileObject;
+}
+
++ (instancetype)fileConfigWithfileData:(NSData *)fileData name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType {
+    return [[SMKRequestFileConfig alloc]initWithfileData:fileData name:name fileName:fileName mimeType:mimeType];
+}
+
+@end
