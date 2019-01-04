@@ -81,5 +81,16 @@
     objc_setAssociatedObject(self, @selector(smk_fileConfig), smk_fileConfig, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+/**
+ *  fileConfigs
+ */
+- (NSArray <SMKRequestFileConfig *>*)smk_fileConfigs
+{
+    return objc_getAssociatedObject(self, @selector(smk_fileConfigs));
+}
+
+- (void)setSmk_fileConfigs:(NSArray <SMKRequestFileConfig *>*)smk_fileConfigs {
+    objc_setAssociatedObject(self, @selector(smk_fileConfigs), smk_fileConfigs, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 @end

@@ -70,6 +70,11 @@ static id _instance;
     self.host = host;
 }
 
+- (void)configValue:(nonnull NSString *)value forHTTPHeaderField:(nonnull NSString *)field
+{
+    [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:field];
+}
+
 - (NSURLSessionTask *)sendRequest:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     if ([request respondsToSelector:@selector(smk_requestConfigures)]) {
         [request smk_requestConfigures];
@@ -196,7 +201,17 @@ static id _instance;
     NSObject *requestObject = (NSObject *)request;
     
    return [self.sessionManager POST:urlPath parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:requestObject.smk_fileConfig.fileData name:requestObject.smk_fileConfig.name fileName:requestObject.smk_fileConfig.fileName mimeType:requestObject.smk_fileConfig.mimeType];
+       
+       if (requestObject.smk_fileConfigs.count) {
+           for (SMKRequestFileConfig *file in requestObject.smk_fileConfigs) {
+               [formData appendPartWithFileData:file.fileData name:file.name fileName:file.fileName mimeType:file.mimeType];
+           }
+       }
+       else
+       {
+           [formData appendPartWithFileData:requestObject.smk_fileConfig.fileData name:requestObject.smk_fileConfig.name fileName:requestObject.smk_fileConfig.fileName mimeType:requestObject.smk_fileConfig.mimeType];
+       }
+       
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             if (uploadProgress) progress(uploadProgress);
