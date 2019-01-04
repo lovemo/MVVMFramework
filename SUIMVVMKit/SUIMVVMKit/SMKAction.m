@@ -70,6 +70,11 @@ static id _instance;
     self.host = host;
 }
 
+- (void)configValue:(nonnull NSString *)value forHTTPHeaderField:(nonnull NSString *)field
+{
+    [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:field];
+}
+
 - (NSURLSessionTask *)sendRequest:(id)request progress:(progressBlock)progress success:(successBlock)success failure:(failureBlock)failure {
     if ([request respondsToSelector:@selector(smk_requestConfigures)]) {
         [request smk_requestConfigures];

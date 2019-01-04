@@ -74,6 +74,14 @@ typedef void (^progressBlock)(NSProgress * progress);
 - (void)configScheme:(NSString *)scheme host:(NSString *)host;
 
 /**
+ *  配置全局的请求头
+ *
+ *  @param value 值
+ *  @param field 字段
+ */
+- (void)configValue:(nonnull NSString *)value forHTTPHeaderField:(nonnull NSString *)field;
+
+/**
  *  发送请求(在外部配置request)
  */
 - (NSURLSessionTask *)sendRequest:
