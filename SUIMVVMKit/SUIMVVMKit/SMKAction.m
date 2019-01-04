@@ -201,7 +201,17 @@ static id _instance;
     NSObject *requestObject = (NSObject *)request;
     
    return [self.sessionManager POST:urlPath parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:requestObject.smk_fileConfig.fileData name:requestObject.smk_fileConfig.name fileName:requestObject.smk_fileConfig.fileName mimeType:requestObject.smk_fileConfig.mimeType];
+       
+       if (requestObject.smk_fileConfigs.count) {
+           for (SMKRequestFileConfig *file in requestObject.smk_fileConfigs) {
+               [formData appendPartWithFileData:file.fileData name:file.name fileName:file.fileName mimeType:file.mimeType];
+           }
+       }
+       else
+       {
+           [formData appendPartWithFileData:requestObject.smk_fileConfig.fileData name:requestObject.smk_fileConfig.name fileName:requestObject.smk_fileConfig.fileName mimeType:requestObject.smk_fileConfig.mimeType];
+       }
+       
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             if (uploadProgress) progress(uploadProgress);

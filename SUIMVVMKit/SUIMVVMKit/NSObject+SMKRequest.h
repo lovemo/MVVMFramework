@@ -60,5 +60,9 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, retain, nonnull) SMKRequestFileConfig *smk_fileConfig;
 
+/**
+ *  fileConfigs(如果fileConfigs有值，不会处理fileConfig的值)
+ */
+@property (nonatomic, retain, nonnull) NSArray <SMKRequestFileConfig *>*smk_fileConfigs;
 
 @end
